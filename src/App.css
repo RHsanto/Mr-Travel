@@ -20,19 +20,20 @@ body{
 
 /* search section css */
 
-.search{
-  position: relative;
+.search-section {
+  padding-top: 150px;
 }
 .all-category{
   margin-bottom: -30px;
   padding: 20px 0;
   z-index: 1111 !important;
-  background-color: darkturquoise;
+  background-color: rgb(255, 255, 255);
   position: relative;
 }
 .all-category li{
 list-style: none;
 }
-.all-inputs{
-
+.search-btn{
+position: relative;
+margin-top: -25px;
 }
