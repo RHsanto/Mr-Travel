@@ -1,11 +1,13 @@
 import React from 'react';
+import SearchResult from '../SearchResult/SearchResult';
 
 const Banner = () => {
   return (
     <div className='banner-section'>
   <header >
-     <div className="container mx-auto flex justify-between items-center">
-      <div className="logo text-4xl font-bold">
+   
+   <div className="container p-4 mx-auto flex justify-between items-center">
+      <div className="logo text-4xl font-bold text-white">
        Mr.Travel
      </div>
      <div className="sign-in">
@@ -13,7 +15,9 @@ const Banner = () => {
      </div>
      </div>
    </header>
-      <h1>Banner</h1>
+     {/* add search section */}
+
+     <SearchResult/>
     </div>
   );
 };
