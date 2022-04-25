@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 body{
   font-family: 'Montserrat', sans-serif;
@@ -13,7 +11,28 @@ body{
   background-size: cover;
   height:700px ;
 }
-.social-icon li{
-  list-style: none;
-  margin-left: 30px;
+.sign-in button{
+  background-color: #1E40AF;
+  border: 0;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* search section css */
+
+.search{
+  position: relative;
+}
+.all-category{
+  margin-bottom: -30px;
+  padding: 20px 0;
+  z-index: 1111 !important;
+  background-color: darkturquoise;
+  position: relative;
+}
+.all-category li{
+list-style: none;
+}
+.all-inputs{
+
 }

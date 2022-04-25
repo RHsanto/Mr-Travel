@@ -6,12 +6,12 @@ const Banner = () => {
     <div className='banner-section'>
   <header >
    
-   <div className="container p-4 mx-auto flex justify-between items-center">
-      <div className="logo text-4xl font-bold text-white">
-       Mr.Travel
+   <div className="container p-4 mx-auto d-flex justify-content-between align-items-center">
+      <div className="logo  text-white">
+      <h1> Mr.Travel</h1>
      </div>
      <div className="sign-in">
-       <button className='bg-blue-800 text-white py-3 px-6 rounded'>Sign-in</button>
+       <button className='rounded'>Sign-in</button>
      </div>
      </div>
    </header>
