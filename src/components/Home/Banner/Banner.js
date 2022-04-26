@@ -11,9 +11,10 @@ const Banner = () => {
       <h1> Mr.Travel</h1>
      </div>
      <div className="sign-in">
-       <button className='rounded'>Sign-in</button>
+       <button className='rounded '>Sign-in</button>
      </div>
      </div>
+     
    </header>
      {/* add search section */}
 

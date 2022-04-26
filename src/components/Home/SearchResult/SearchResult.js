@@ -37,6 +37,7 @@ const SearchResult = () => {
        <div className="all-inputs bg-white rounded shadow-lg py-5 px-4">
         <h4 className='text-center pt-2 pb-4'>SELECTED YOU DESTINATION</h4>
          <Routes>
+         <Route path="/" element={<Flight />}/>
          <Route path="/flight" element={<Flight />}/>
          <Route path="/hotel" element={<Hotel />}/>
          <Route path="/tour" element={<Tour />}/>

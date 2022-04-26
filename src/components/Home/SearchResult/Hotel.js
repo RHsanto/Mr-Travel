@@ -4,7 +4,13 @@ const Hotel = () => {
   return (
     <div>
       <div className="d-block  d-md-flex justify-content-center ">
-        <div class="form-floating w-50">
+        <div class="form-floating w-50 d-none d-md-block">
+           <input type="text" class="form-control"
+               id="floatingInput" placeholder="From"/>
+           <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
+       </div>
+       {/* for mobile device input */}
+        <div class="form-floating  d-block d-md-none">
            <input type="text" class="form-control"
                id="floatingInput" placeholder="From"/>
            <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>

@@ -15,7 +15,12 @@ const Bus = () => {
            <label for="floatingInput">TO</label>
        </div>
     </div>
-      <div class="form-floating  mt-3 mt-md-0 ">
+      <div class="form-floating  mt-3 mt-md-0 w-50 d-none d-md-block">
+           <input type="text" class="form-control"
+               id="floatingInput" placeholder="name@example.com"/>
+           <label for="floatingInput">JOURNEY DATE</label>
+       </div>
+      <div class="form-floating  mt-3 mt-md-0  d-block d-md-none">
            <input type="text" class="form-control"
                id="floatingInput" placeholder="name@example.com"/>
            <label for="floatingInput">JOURNEY DATE</label>

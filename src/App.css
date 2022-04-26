@@ -5,11 +5,11 @@ body{
   box-sizing: border-box;
 }
 .banner-section{
-  background-image: url('./images/bg-10.avif');
-  background-position: center;
+  background-image: url('./images/banner-1.jpg');
+  background-position:top center;
   background-repeat: no-repeat;
   background-size: cover;
-  height:700px ;
+  height:600px ;
 }
 .sign-in button{
   background-color: #1E40AF;
@@ -41,4 +41,33 @@ color: black;
 .search-btn{
 position: relative;
 margin-top: -25px;
+}
+/* About section css */
+
+.about-section{
+  padding: 100px 0;
+}
+.about-section .card{
+  
+  border-radius: 20px;
+}
+.about-section .card img{
+  border-top-left-radius:  20px;
+  border-top-right-radius:  20px;
+}
+.card-icons{
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #FF7C5B;
+  margin: 0 auto;
+  margin-top: -40px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 30px;
+  
 }
