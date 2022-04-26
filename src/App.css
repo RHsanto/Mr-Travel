@@ -25,13 +25,19 @@ body{
 }
 .all-category{
   margin-bottom: -30px;
-  padding: 20px 0;
   z-index: 1111 !important;
   background-color: rgb(255, 255, 255);
   position: relative;
 }
 .all-category li{
 list-style: none;
+border-bottom: 2px solid #1E40AF;
+padding: 20px ;
+
+}
+.all-category li a{
+text-decoration: none;
+color: black;
 }
 .search-btn{
 position: relative;
