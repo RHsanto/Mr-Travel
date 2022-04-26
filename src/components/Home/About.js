@@ -13,7 +13,7 @@ const About = () => {
   return (
     <div className='about-section text-center'>
      <p className='text-secondary'><b>MR.TRAVEL SPECIALS</b></p>
-     <h1 className='fw-bold pb-5'>Why Travel with MR.TRAVEL</h1>
+     <h1 className='fw-bold pb-5'>Why Travel with Mr.Travel</h1>
      <div className="container">
      <div class="row row-cols-1 row-cols-md-4 g-4">
   <div class="col">
