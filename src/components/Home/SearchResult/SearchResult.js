@@ -20,7 +20,7 @@ const SearchResult = () => {
     <div className="container px-5 ">
       <div className="search-field">
         <div className="row">
-          <div className="col-lg-6 mx-auto">
+          <div className="col-lg-6 mx-auto col-10">
           <div className="all-category  rounded shadow-lg
        d-flex justify-content-around align-items-center   "> 
          <li><Link to='/flight'><GiCommercialAirplane/> Flight</Link></li>  
@@ -34,7 +34,7 @@ const SearchResult = () => {
      {/* search body */}
      <div className="row">
        <div className="col">
-       <div className="all-inputs bg-white rounded shadow-lg p-5">
+       <div className="all-inputs bg-white rounded shadow-lg py-5 px-4">
         <h4 className='text-center pt-2 pb-4'>SELECTED YOU DESTINATION</h4>
          <Routes>
          <Route path="/flight" element={<Flight />}/>
@@ -46,7 +46,7 @@ const SearchResult = () => {
        </div> 
      </div>
      <div className="row search-btn">
-       <div className="col-2 mx-auto">
+       <div className="col-5 mx-auto col-lg-2">
        <div className="btn btn-warning px-5 py-3">Search</div>
        </div>
      </div>

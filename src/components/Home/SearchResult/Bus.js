@@ -2,18 +2,20 @@ import React from 'react';
 
 const Bus = () => {
   return (
-    <div className='d-flex gap-3'>
-      <div class="form-floating w-50">
+    <div className='d-block  d-md-flex  gap-3'>
+    <div className="d-flex  w-100">
+    <div class="form-floating w-50">
            <input type="text" class="form-control"
                id="floatingInput" placeholder="name@example.com"/>
            <label for="floatingInput">FROM</label>
        </div>
-      <div class="form-floating w-50">
+      <div class="form-floating w-50 ms-2">
            <input type="text" class="form-control"
                id="floatingInput" placeholder="name@example.com"/>
            <label for="floatingInput">TO</label>
        </div>
-      <div class="form-floating w-50">
+    </div>
+      <div class="form-floating  mt-3 mt-md-0 ">
            <input type="text" class="form-control"
                id="floatingInput" placeholder="name@example.com"/>
            <label for="floatingInput">JOURNEY DATE</label>
