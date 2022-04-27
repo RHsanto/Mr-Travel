@@ -70,3 +70,39 @@ margin-top: -25px;
   font-size: 30px;
   
 }
+.offer-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.subs-title{
+  background-color: #FA9E1B;
+  padding: 5px;
+  font-weight: bold;
+  color: white;
+  width: 80% ;
+  position: relative;
+  bottom: 50px;
+  z-index: 1111;
+}
+.offer-section .title{
+  padding: 100px 0;
+}
+.offer-section .price h1{
+  color: #FA9E1B;
+  font-weight: bold;
+}
+
+.offer-section .price li{
+list-style: none;
+color: #FA9E1B;
+font-size: 18px;
+}
+
+.offer-icons li{
+list-style: none;
+}
+
+.offer-info button{
+  margin-top: 50px;
+}
