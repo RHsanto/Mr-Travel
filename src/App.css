@@ -87,7 +87,7 @@ margin-top: -25px;
   font-style: italic;
 }
 .offer-section .title{
-  padding: 100px 0;
+  padding: 100px  0px 50px 0px;
 }
 .offer-section .price h1{
   color: #FA9E1B;
@@ -109,4 +109,18 @@ list-style: none;
 }
 .Second-row{
   margin-top: 80px;
+}
+/* review-section */
+
+.review-section{
+  margin: 150px 0;
+  background-image: url('https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/skiing-parallax-1.jpg');
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+
+}
+.review-icon li{
+list-style: none;
+color: #FA9E1B;
 }

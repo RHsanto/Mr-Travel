@@ -13,14 +13,14 @@ const BestOffer = () => {
     <div className='offer-section '>
       <h2 className='text-center title'><b>THE BEST OFFERS WITH ROOMS</b></h2>
       <div className="container">
-        <div className="row g-5">
-          <div className="col-lg-6">
+        <div className="row g-5 m-0">
+          <div className="col-lg-6 ">
             <div className="row">
               <div className="col-lg-6 offer-img">
                 <img className='border' src={offers1} alt="" />
              <div className="subs-title">GRAND SULTAN RESORT</div>
               </div>
-              <div className="col-lg-6">
+              <div className="col-lg-6 ">
                 <div className="offer-info">
                     <div className="d-flex align-items-center">
                     <div className="price">
