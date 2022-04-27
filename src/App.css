@@ -83,7 +83,8 @@ margin-top: -25px;
   width: 80% ;
   position: relative;
   bottom: 50px;
-  z-index: 1111;
+  font-size: 15px;
+  font-style: italic;
 }
 .offer-section .title{
   padding: 100px 0;
@@ -105,4 +106,7 @@ list-style: none;
 
 .offer-info button{
   margin-top: 50px;
+}
+.Second-row{
+  margin-top: 80px;
 }
