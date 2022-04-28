@@ -6,7 +6,6 @@ const Reviews = () => {
 
  
   var settings = {
-    dots: true,
     infinite: true,
     speed: 2000,
     slidesToShow: 3,
@@ -21,7 +20,6 @@ const Reviews = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
           autoplay: true,
           autoplaySpeed: 2000,
         }
