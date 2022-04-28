@@ -16,7 +16,7 @@ const Footer = () => {
                   <li>Dhaka , Bangladesh</li>
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-3 services">
               <h4>Services</h4>
               <li>About Us</li>
               <li>How It Works</li>
@@ -30,9 +30,9 @@ const Footer = () => {
                 adipisicing elit. Eum, officiis!</p>
 
                 <div className="subs-input">
-                  <input type="text" />
-                  <input type="email" /> <br />
-                 <button>Submit</button>
+                  <input type="text" placeholder='Name'/>
+                  <input type="email" name="" id="" placeholder='Email' /> <br />
+                   <input type="submit" value="Subscribe" className='subscribe'/>
                 </div>
             </div>
             <div className="col-3">

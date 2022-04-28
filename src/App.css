@@ -134,10 +134,25 @@ footer{
  padding: 100px;
  color: white;
 }
-.gallery-img li{
+.gallery-img li, .services li{
   list-style: none;
   margin: 10px;
 }
 .gallery-img li img{
   border-radius: 5px;
+}
+.subs-input input{
+  padding: 15px;
+  width: 90%;
+  margin-bottom: 5px;
+  background-color: #595959;
+  border: 0;
+  outline: 0;
+  color: white;
+}
+.subs-input input::placeholder{
+  color: white;
+}
+.subs-input .subscribe{
+background-color: #1E40AF;
 }
