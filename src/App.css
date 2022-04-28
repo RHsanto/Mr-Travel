@@ -113,7 +113,7 @@ list-style: none;
 /* review-section */
 
 .review-section{
-  margin: 150px 0px 100px 0px;
+  margin: 150px 0px ;
   background-image: url('https://images.unsplash.com/photo-1475150409808-de5542258c19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
   background-position: center;
   background-size: cover;
@@ -124,15 +124,20 @@ list-style: none;
 color: #FA9E1B;
 }
 .reviews{
-  padding: 150px 0;
+  padding: 150px 0px;
 }
-
+/* .slick-prev:before {
+  display: none;}
+.slick-next:before {
+  display: none;
+} */
 /* footer section css */
 
 footer{
  background-color: #212121;
- padding: 100px;
  color: white;
+ padding: 50px;
+
 }
 .gallery-img li, .services li{
   list-style: none;
@@ -140,6 +145,7 @@ footer{
 }
 .gallery-img li img{
   border-radius: 5px;
+
 }
 .subs-input input{
   padding: 15px;
