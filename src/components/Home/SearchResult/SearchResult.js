@@ -29,8 +29,8 @@ const SearchResult = () => {
     <div className="container px-5 ">
       <div className="search-field">
         <div className="row">
-          <div className="col-lg-6 mx-auto col-10">
-          <div className="all-category  rounded shadow-lg
+          <div className="col-lg-6 mx-auto col-11">
+          <div className="all-category   rounded shadow-lg
        d-flex justify-content-around align-items-center   "> 
          <li ><button onClick={handleFlight}><GiCommercialAirplane/> Flight</button></li>  
          <li><button onClick={handleHotel}><RiHotelFill/> Hotel</button></li>  

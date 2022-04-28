@@ -34,9 +34,10 @@ list-style: none;
 padding: 20px ;
 
 }
-.all-category li a{
-text-decoration: none;
+.all-category li button{
+border: 0;
 color: black;
+background: none;
 }
 .search-btn{
 position: relative;
