@@ -2,6 +2,9 @@ import React from 'react';
 import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 import Slider from "react-slick";
 const Reviews = () => {
+
+
+ 
   var settings = {
     dots: true,
     infinite: true,
