@@ -3,8 +3,6 @@ import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 import Slider from "react-slick";
 const Reviews = () => {
 
-
- 
   var settings = {
     infinite: true,
     speed: 2000,
