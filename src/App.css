@@ -39,6 +39,9 @@ border: 0;
 color: black;
 background: none;
 }
+.all-category   .active {
+  color: #FA9E1B;
+}
 .search-btn{
 position: relative;
 margin-top: -25px;

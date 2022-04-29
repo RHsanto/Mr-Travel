@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { GiCommercialAirplane ,GiPalmTree} from "react-icons/gi";
 import { RiHotelFill } from "react-icons/ri";
@@ -7,12 +8,15 @@ import Hotel from './Hotel'
 import Tour from './Tour'
 import Bus from './Bus'
 import { useState } from 'react';
+
 const SearchResult = () => {
   const[info,setInfo]=useState(<Flight/>)
 
   const handleFlight =(e)=>{
  setInfo(<Flight/>)
+
   }
+
   const handleTour =(e)=>{
  setInfo(<Tour/>)
   }
@@ -31,11 +35,13 @@ const SearchResult = () => {
         <div className="row">
           <div className="col-lg-6 mx-auto col-11">
           <div className="all-category   rounded shadow-lg
-       d-flex justify-content-around align-items-center   "> 
-         <li ><button onClick={handleFlight}><GiCommercialAirplane/> Flight</button></li>  
-         <li><button onClick={handleHotel}><RiHotelFill/> Hotel</button></li>  
-         <li><button onClick={handleTour}><GiPalmTree/> Tour</button></li>  
-         <li><button onClick={handleBus}><FaBus/> Bus</button></li>  
+         "> 
+         <ul className='d-flex justify-content-around align-items-center '>
+         <li className='active'><a onClick={handleFlight}><GiCommercialAirplane/> Flight</a></li>  
+         <li><a onClick={handleHotel}><RiHotelFill/> Hotel</a></li>  
+         <li><a onClick={handleTour}><GiPalmTree/> Tour</a></li>  
+         <li><a onClick={handleBus}><FaBus/> Bus</a></li>  
+         </ul>
          
        </div>
           </div>
@@ -56,9 +62,11 @@ const SearchResult = () => {
      </div>
       </div>
     </div>
+
+   
     </div>
    
-   
+
   );
 };
 
