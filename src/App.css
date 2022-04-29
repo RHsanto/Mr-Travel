@@ -23,6 +23,12 @@ body{
 .search-section {
   padding: 150px 0px 100px 0px;
 }
+.search-btn button{
+  background-color: #1E40AF;
+  border: 0;
+  color: white;
+  border-radius: 5px;
+}
 .all-category{
   margin-bottom: -30px;
   z-index: 1111 !important;

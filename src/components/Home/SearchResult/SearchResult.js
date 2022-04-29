@@ -57,7 +57,7 @@ const SearchResult = () => {
      </div>
      <div className="row search-btn">
        <div className="col-5 mx-auto col-lg-2">
-       <div className="btn btn-warning px-5 py-3">Search</div>
+       <button className=" px-5 py-3">Search</button>
        </div>
      </div>
       </div>
