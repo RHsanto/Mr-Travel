@@ -5,16 +5,16 @@ body{
   box-sizing: border-box;
 }
 .banner-section{
-  background-image: url('./images/banner-1.jpg');
+  background-image: url('./images/bg-7.avif');
   background-position:top center;
   background-repeat: no-repeat;
   background-size: cover;
   height:auto ;
 }
 .sign-in button{
-  background-color: #1E40AF;
+  background-color: #FFCA28;
   border: 0;
-  color: white;
+  color: black;
   padding: 10px 20px;
 }
 
