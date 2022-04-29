@@ -30,17 +30,17 @@ const SearchResult = () => {
   
  
       <div className='search-section '>
-    <div className="container px-5 ">
+    <div className="container ">
       <div className="search-field">
         <div className="row">
-          <div className="col-lg-6 mx-auto col-11">
-          <div className="all-category   rounded shadow-lg
+          <div className="col-lg-6 mx-auto col-11 ">
+          <div className="all-category rounded shadow-lg
          "> 
-         <ul className='d-flex justify-content-around align-items-center '>
-         <li className='active'><a onClick={handleFlight}><GiCommercialAirplane/> Flight</a></li>  
-         <li><a onClick={handleHotel}><RiHotelFill/> Hotel</a></li>  
-         <li><a onClick={handleTour}><GiPalmTree/> Tour</a></li>  
-         <li><a onClick={handleBus}><FaBus/> Bus</a></li>  
+         <ul className='d-flex  ps-0 justify-content-between align-items-center '>
+         <li onClick={handleFlight} className='active'><a ><GiCommercialAirplane/> Flight</a></li>  
+         <li onClick={handleHotel}><a ><RiHotelFill/> Hotel</a></li>  
+         <li onClick={handleTour}><a ><GiPalmTree/> Tour</a></li>  
+         <li onClick={handleBus}><a ><FaBus/> Bus</a></li>  
          </ul>
          
        </div>
@@ -48,7 +48,7 @@ const SearchResult = () => {
         </div>
      {/* search body */}
      <div className="row">
-       <div className="col">
+       <div className="col-12">
        <div className="all-inputs bg-white rounded shadow-lg py-5 px-4">
         <h4 className='text-center pt-2 pb-4'>SELECTED YOU DESTINATION</h4>
          {info}

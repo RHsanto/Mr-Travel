@@ -9,7 +9,7 @@ body{
   background-position:top center;
   background-repeat: no-repeat;
   background-size: cover;
-  height:600px ;
+  height:auto ;
 }
 .sign-in button{
   background-color: #1E40AF;
@@ -21,7 +21,7 @@ body{
 /* search section css */
 
 .search-section {
-  padding-top: 150px;
+  padding: 150px 0px 100px 0px;
 }
 .all-category{
   margin-bottom: -30px;
@@ -29,18 +29,21 @@ body{
   background-color: rgb(255, 255, 255);
   position: relative;
 }
-.all-category li{
+.all-category ul li{
 list-style: none;
 padding: 20px ;
 
 }
-.all-category li button{
+.all-category ul li {
 border: 0;
 color: black;
 background: none;
+cursor: pointer;
+
 }
 .all-category   .active {
   color: #FA9E1B;
+  border-bottom: 2px solid;
 }
 .search-btn{
 position: relative;
@@ -130,11 +133,13 @@ color: #FA9E1B;
 .reviews{
   padding: 150px 0px;
 }
-/* .slick-prev:before {
-  display: none;}
-.slick-next:before {
-  display: none;
-} */
+.sliders{
+  margin:15px;
+}
+.review-card{
+  margin: 10px;
+}
+
 /* footer section css */
 
 footer{
