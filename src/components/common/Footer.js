@@ -25,15 +25,7 @@ const Footer = () => {
               <li>Contact Us</li>
             </div>
             <div className="col-lg-3">
-              <h4>Subscribe to our Newsletter</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Eum, officiis!</p>
-
-                <div className="subs-input">
-                  <input type="text" placeholder='Name'/>
-                  <input type="email" name="" id="" placeholder='Email' /> <br />
-                   <input type="submit" value="Subscribe" className='subscribe'/>
-                </div>
+             
             </div>
             <div className="col-lg-3">
               <h4>Our Instagram</h4>
