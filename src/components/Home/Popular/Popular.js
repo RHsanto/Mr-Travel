@@ -4,7 +4,7 @@ const Popular = () => {
   return (
     <div className='popular-section'>
       <div className="container">
-        <h2 className='text-center'>POPULAR DESTINATION</h2>
+        <h1 className='text-center title fw-bold pb-3'>POPULAR DESTINATION</h1>
         <p className='text-center '>
           Sorem ipsum dolor sit amet, consectetur adipisicing Suscipit 
           votas addf <br />aperiam  Sorem ipsum dolor consectur adipisicing elit.</p>

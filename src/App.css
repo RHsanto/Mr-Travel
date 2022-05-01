@@ -7,6 +7,9 @@ box-sizing: border-box;
 .logo{
   font-family: 'Faster One', cursive;
 }
+.title{
+  font-family: 'Playfair Display', serif;
+}
 .banner-section{
   background-image: url('./images/bg-7.avif');
   background-position:top center;

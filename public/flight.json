@@ -1,0 +1,35 @@
+[
+  {"from":"Dhaka",
+   "to":"sylhet",
+   "journeyDate":"12-may-2022",
+   "returnDate":"20-may-2022",
+   "class":"Business",
+   "price":"15000",
+   "img":""
+  },
+  {"from":"Dhaka",
+   "to":"sylhet",
+   "journeyDate":"12-may-2022",
+   "returnDate":"20-may-2022",
+   "class":"Business",
+   "price":"15000",
+   "img":""
+  },
+  {"from":"Dhaka",
+   "to":"kumillah",
+   "journeyDate":"2-may-2022",
+   "returnDate":"20-may-2022",
+   "class":"Business",
+   "price":"8000",
+   "img":""
+  },
+  {"from":"Dhaka",
+   "to":"Khulna",
+   "journeyDate":"22-may-2022",
+   "returnDate":"30-may-2022",
+   "class":"Business",
+   "price":"20000",
+   "img":""
+  }
+
+]
