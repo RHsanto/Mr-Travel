@@ -151,29 +151,23 @@ color: #FA9E1B;
 footer{
  background-color: #212121;
  color: white;
- padding: 50px;
+ padding: 100px 0;
+list-style: none;
 
 }
-.gallery-img li, .services li{
-  list-style: none;
+.gallery-img li, .services li, .contact li{
   margin: 10px;
 }
 .gallery-img li img{
   border-radius: 5px;
-
 }
-.subs-input input{
+.footer-icons{
+  display: flex;
+  gap: 30px;
+}
+.footer-icons li{
+  font-size: 22px;
+  background-color: #FA9E1B;
   padding: 15px;
-  width: 90%;
-  margin-bottom: 5px;
-  background-color: #595959;
-  border: 0;
-  outline: 0;
-  color: white;
-}
-.subs-input input::placeholder{
-  color: white;
-}
-.subs-input .subscribe{
-background-color: #1E40AF;
+
 }

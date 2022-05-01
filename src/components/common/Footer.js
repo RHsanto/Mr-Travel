@@ -1,9 +1,10 @@
 import React from 'react';
-
+import { FaMapMarkedAlt,FaFacebookF,FaYoutube,FaInstagram,FaTwitter } from 'react-icons/fa';
+import { MdCall ,MdEmail} from 'react-icons/md';
 const Footer = () => {
   return (
     <div>
-      <footer className=''>
+      <footer>
         <div className="container">
           <div className="row g-4">
             <div className="col-lg-3">
@@ -11,21 +12,26 @@ const Footer = () => {
                 <h1>Mr. Travel </h1>
                 <p>Lorem ipsum dolor sit 
                   ametco nsec te tuer adipiscing elitae</p>
-                  <li>mr.travel123@gmail.com</li>
-                  <li>1562 867 5309</li>
-                  <li>Dhaka , Bangladesh</li>
+                  <div className="footer-icons">
+                  <li><FaFacebookF/></li>
+                  <li><FaYoutube/></li>
+                  <li><FaInstagram/></li>
+                  <li><FaTwitter/></li>
+                  </div>
               </div>
             </div>
-            <div className="col-lg-3 services">
+            <div className="col-lg-3 services px-5">
               <h4>Services</h4>
               <li>About Us</li>
               <li>How It Works</li>
-              <li>Our Blog</li>
               <li>Our Services</li>
               <li>Contact Us</li>
             </div>
-            <div className="col-lg-3">
-             
+            <div className="col-lg-3 contact">
+             <h4>Contact Info</h4>
+               <li><FaMapMarkedAlt className='me-2'/> Dhaka, Bangladesh</li>
+               <li><MdCall className='me-2'/> +8801887403752</li>
+               <li><MdEmail className='me-2'/> mrtravel123@gmail.com</li>
             </div>
             <div className="col-lg-3">
               <h4>Our Instagram</h4>
