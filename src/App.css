@@ -160,6 +160,7 @@ list-style: none;
 }
 .gallery-img li img{
   border-radius: 5px;
+  width: 100px;
 }
 .footer-icons{
   display: flex;

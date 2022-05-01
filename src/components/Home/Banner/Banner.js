@@ -6,7 +6,7 @@ const Banner = () => {
     <div className='banner-section'>
   <header >
    
-   <div className="container pt-3 mx-auto d-flex justify-content-between align-items-center">
+   <div className="container pt-3 px-5 px-lg-0  d-flex justify-content-between align-items-center">
       <div className="logo  text-white">
       <h1> Mr.Travel</h1>
      </div>
