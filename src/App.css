@@ -1,11 +1,11 @@
 
 
 body{
-font-family: 'Faster One', cursive;
-/* font-family: 'Playfair Display', serif;
-font-family: 'Roboto', sans-serif; */
-  
-  box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+box-sizing: border-box;
+}
+.logo{
+  font-family: 'Faster One', cursive;
 }
 .banner-section{
   background-image: url('./images/bg-7.avif');
