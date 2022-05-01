@@ -1,7 +1,10 @@
 
 
 body{
-  font-family: 'Montserrat', sans-serif;
+font-family: 'Faster One', cursive;
+/* font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif; */
+  
   box-sizing: border-box;
 }
 .banner-section{
