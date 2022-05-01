@@ -23,11 +23,17 @@ body{
 .search-section {
   padding: 150px 0px 100px 0px;
 }
+.search-btn {
+position: relative;
+margin-top: 20px;
+}
 .search-btn button{
   background-color: #1E40AF;
   border: 0;
   color: white;
   border-radius: 5px;
+  padding: 15px 30px;
+
 }
 .all-category{
   margin-bottom: -30px;
@@ -51,10 +57,7 @@ cursor: pointer;
   color: #FA9E1B;
   border-bottom: 2px solid;
 }
-.search-btn{
-position: relative;
-margin-top: -25px;
-}
+
 /* About section css */
 
 .about-section{

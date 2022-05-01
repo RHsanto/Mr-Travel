@@ -2,7 +2,8 @@ import React from 'react';
 
 const Bus = () => {
   return (
-    <div className='d-block  d-md-flex  gap-3'>
+   <div>
+      <div className='d-block  d-md-flex  gap-3'>
     <div className="d-flex  w-100">
     <div class="form-floating w-50 ms-2 ">
   <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
@@ -33,6 +34,18 @@ const Bus = () => {
            <label for="floatingInput">JOURNEY DATE</label>
        </div>
     </div>
+      <div className="search-btn">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-1 mx-auto ">
+          <button>
+           Search
+        </button>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
   );
 };
 

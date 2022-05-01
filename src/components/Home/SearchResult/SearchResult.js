@@ -49,17 +49,13 @@ const SearchResult = () => {
      {/* search body */}
      <div className="row">
        <div className="col-12">
-       <div className="all-inputs bg-white rounded shadow-lg py-5 px-4">
+       <div className="all-inputs bg-white rounded shadow-lg pt-5 pb-3 px-4">
         <h4 className='text-center pt-2 pb-4'>SELECTED YOU DESTINATION</h4>
          {info}
        </div>
        </div> 
      </div>
-     <div className="row search-btn">
-       <div className="col-5 mx-auto col-lg-2">
-       <button className=" px-5 py-3">Search</button>
-       </div>
-     </div>
+  
       </div>
     </div>
 

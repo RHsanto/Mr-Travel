@@ -59,6 +59,17 @@ const Flight = () => {
            <label for="floatingSelect">TRAVELER CLASS</label>
          </div>
       </div>
+      <div className="search-btn">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-1 mx-auto ">
+            <button>
+             Search
+          </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };  
