@@ -149,7 +149,7 @@ color: #FA9E1B;
 /* footer section css */
 
 footer{
- background-color: #212121;
+ background-color: #0E0E11;
  color: white;
  padding: 100px 0;
 list-style: none;
@@ -163,11 +163,23 @@ list-style: none;
 }
 .footer-icons{
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 .footer-icons li{
   font-size: 22px;
-  background-color: #FA9E1B;
-  padding: 15px;
+  padding:7px 12px;
+  border-radius: 50%;
+}
+.footer-icons li:nth-child(1){
+  background-color: #1E40AF;
 
+}
+.footer-icons li:nth-child(2){
+  background-color: #E10404;
+}
+.footer-icons li:nth-child(3){
+  background: linear-gradient(#4E5CC7,#E7476B,#FF7638);
+}
+.footer-icons li:nth-child(4){
+  background-color: #1C96E8;
 }
