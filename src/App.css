@@ -4,8 +4,10 @@ body{
 font-family: 'Roboto', sans-serif;
 box-sizing: border-box;
 }
-.logo{
+.logo, .logos{
   font-family: 'Faster One', cursive;
+}.logo h1 a{
+  text-decoration: none;color: white;
 }
 .title{
   font-family: 'Playfair Display', serif;
@@ -23,7 +25,10 @@ box-sizing: border-box;
   color: black;
   padding: 10px 20px;
 }
-
+/* nav section */
+.logos h1 a{
+  text-decoration: none;color: black;
+}
 /* search section css */
 
 .search-section {
