@@ -13,22 +13,15 @@ const SearchResult = () => {
   const[info,setInfo]=useState(<Flight/>)
 
   const handleFlight =(e)=>{
- setInfo(<Flight/>)
-
-  }
-
+ setInfo(<Flight/>)}
   const handleTour =(e)=>{
- setInfo(<Tour/>)
-  }
+ setInfo(<Tour/>)}
   const handleHotel =(e)=>{
- setInfo(<Hotel/>)
-  }
+ setInfo(<Hotel/>)}
   const handleBus =(e)=>{
- setInfo(<Bus/>)
-  }
-  return (
+ setInfo(<Bus/>)}
   
- 
+ return (
       <div className='search-section '>
     <div className="container ">
       <div className="search-field">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Flight = () => {
   return (
@@ -62,10 +63,8 @@ const Flight = () => {
       <div className="search-btn">
         <div className="container">
           <div className="row">
-            <div className="col-lg-1 mx-auto ">
-            <button>
-             Search
-          </button>
+            <div className="col-lg-1 mx-auto "> 
+           <Link to='/flight'> <button>  Search </button></Link>
             </div>
           </div>
         </div>

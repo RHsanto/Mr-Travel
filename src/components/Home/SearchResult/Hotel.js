@@ -1,9 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hotel = () => {
-  const handleSearch =()=>{
-    console.log('Hello World');
-  }
+  
   return (
     <div>
       <div className="d-block  d-md-flex justify-content-center ">
@@ -55,9 +54,8 @@ const Hotel = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-1 mx-auto ">
-            <button type="submit" onClick={handleSearch}>
-             Search
-          </button>
+            <Link to='/hotel'> <button>  Search </button></Link>
+
             </div>
           </div>
         </div>
