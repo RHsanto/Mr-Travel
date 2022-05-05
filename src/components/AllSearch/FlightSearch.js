@@ -1,9 +1,12 @@
 import React from 'react';
-
+import Navbar from '../common/Navbar';
 const FlightSearch = () => {
   return (
     <div>
-      <h1>FlightSearch</h1>
+     <Navbar/>
+     <div className="container">
+       <h1>d;ljdodj</h1>
+     </div>
     </div>
   );
 };
