@@ -4,28 +4,28 @@
    "checkOut":"10-june-2022",
    "member":"1 room, 4 guests",
    "price":"8000",
-   "img":""
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/4466f990-b6f6-497a-a762-4048a730827d.png"
   },
   {"area":"kumillah",
    "checkIn":"12-july-2022",
    "checkOut":"20-july-2022",
    "member":"1 room, 4 guests",
    "price":"2000",
-   "img":""
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/c0e74058-d2dc-4cb9-96e1-e46abddff8c1.png"
   },
   {"area":"Barishal",
    "checkIn":"15-june-2022",
    "checkOut":"30-june-2022",
    "member":"2 room, 4 guests",
    "price":"1000",
-   "img":""
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/4466f990-b6f6-497a-a762-4048a730827d.png"
   },
   {"area":"Khulna",
    "checkIn":"12-aug-2022",
    "checkOut":"20-aug-2022",
    "member":"1 room, 5 guests",
    "price":"5000",
-   "img":""
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/e149f05a-c040-4ce5-b42a-fb83d3fb9a86.jpg"
   }
 
 ]

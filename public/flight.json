@@ -5,7 +5,7 @@
    "returnDate":"20-may-2022",
    "class":"Business",
    "price":"15000",
-   "img":""
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_DOMFLY0307.jpg"
   },
   {"from":"Dhaka",
    "to":"sylhet",
@@ -13,7 +13,7 @@
    "returnDate":"20-may-2022",
    "class":"Business",
    "price":"15000",
-   "img":""
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_INTFLY0409.jpg"
   },
   {"from":"Dhaka",
    "to":"kumillah",
@@ -21,7 +21,7 @@
    "returnDate":"20-may-2022",
    "class":"Business",
    "price":"8000",
-   "img":""
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_DOMFLY0307.jpg"
   },
   {"from":"Dhaka",
    "to":"Khulna",
@@ -29,7 +29,7 @@
    "returnDate":"30-may-2022",
    "class":"Business",
    "price":"20000",
-   "img":""
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_INTFLY0409.jpg"
   }
 
 ]
