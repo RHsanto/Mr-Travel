@@ -2,7 +2,7 @@ import React from 'react';
 
 const ModifyTour = () => {
   return (
-    <div>
+    <div className='d-flex'>
     <div class="form-floating w-100">
         <input type="text" class="form-control"
             id="floatingInput" placeholder="name@example.com"/>
