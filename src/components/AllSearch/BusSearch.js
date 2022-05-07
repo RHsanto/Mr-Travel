@@ -7,7 +7,7 @@ const BusSearch = () => {
     <div>
       <Navbar/>  {/* here search input */}
     <div className=' all-inputs'>
-    <div className=" rounded shadow-lg pt-5 pb-3 px-4">
+    <div className=" rounded  pt-5 pb-3 px-4">
       <div className="container">
         <ModifyBus/>
       </div>

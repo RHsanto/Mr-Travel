@@ -28,6 +28,9 @@ box-sizing: border-box;
   padding: 10px 20px;
 }
 /* nav section */
+.nav-sections{
+  
+}
 .logos h1 a{
   text-decoration: none;color: black;
 }
