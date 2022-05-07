@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { RiArrowLeftRightFill } from "react-icons/ri";
 import Navbar from '../common/Navbar';
 import ModifyFlight from '../ModifySearch/ModifyFlight';
 import '../AllSearch/Allcss.css'
@@ -35,7 +36,17 @@ const FlightSearch = () => {
            </div>
            <div class="col-md-8">
              <div class="card-body">
-               <h5 class="card-title">Card title</h5>
+               <div className="d-flex align-items-center">
+              <div>
+              <h5 class="card-title">{flight?.from}</h5>
+              <h6 class="card-title">{flight?.startDate}</h6>
+              </div>
+               <h6  className='mx-5 arrow'><RiArrowLeftRightFill/></h6>
+               <div>
+               <h5 class="card-title">{flight?.to}</h5>
+               <h6 class="card-title">{flight?.endDate}</h6>
+               </div>
+               </div>
                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
              </div>
