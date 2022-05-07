@@ -13,10 +13,12 @@ const BusSearch = () => {
       </div>
      </div>
     </div>
-      <div className="container">
-      <h1>BusSearch
-BusSearch</h1>
-      </div>
+    <div className="common-section">
+    <div className="container">
+     <h1>Bus
+     HotelSearch</h1>
+     </div>
+    </div>
     </div>
   );
 };

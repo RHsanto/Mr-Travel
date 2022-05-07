@@ -14,10 +14,13 @@ const HotelSearch = () => {
       </div>
      </div>
     </div>
-     <div className="container">
+    <div className="common-section">
+    <div className="container">
      <h1>HotelSearch
      HotelSearch</h1>
      </div>
+    </div>
+   
     </div>
   );
 };

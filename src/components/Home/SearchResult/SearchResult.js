@@ -10,7 +10,7 @@ import Bus from './Bus'
 import { useState } from 'react';
 
 const SearchResult = () => {
-  const[info,setInfo]=useState(<Flight/>)
+  const[info,setInfo]=useState(<Bus/>)
 
   const handleFlight =(e)=>{
  setInfo(<Flight/>)}
@@ -30,10 +30,10 @@ const SearchResult = () => {
           <div className="all-category rounded shadow-lg
          "> 
          <ul className='d-flex  ps-0 justify-content-between align-items-center '>
-         <li onClick={handleFlight} className='active'><a ><GiCommercialAirplane/> Flight</a></li>  
+         <li onClick={handleBus}  className='active'><a ><FaBus/> Bus</a></li>  
+         <li onClick={handleFlight} ><a ><GiCommercialAirplane/> Flight</a></li>  
          <li onClick={handleHotel}><a ><RiHotelFill/> Hotel</a></li>  
          <li onClick={handleTour}><a ><GiPalmTree/> Tour</a></li>  
-         <li onClick={handleBus}><a ><FaBus/> Bus</a></li>  
          </ul>
          
        </div>

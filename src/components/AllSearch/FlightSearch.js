@@ -23,7 +23,7 @@ const FlightSearch = () => {
      </div>
     </div>
     {/* here input result */}
-    <div className="flights-section ">
+    <div className="common-section ">
     <div className="container">
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {flights.map(flight=>(
