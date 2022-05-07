@@ -2,7 +2,7 @@ import React from 'react';
 
 const ModifyHotel = () => {
   return (
-    <div>
+    <div className='pb-5'>
       <div className="d-block  d-md-flex justify-content-center ">
         <div class="form-floating w-50 d-none d-md-block">
            <input type="text" class="form-control"
@@ -46,7 +46,7 @@ const ModifyHotel = () => {
   <label for="floatingSelect">ROOMS & GUESTS</label>
 </div>
     
-     <button className='modify-btn mt-md-0 mt-3 py-2 py-lg-0'>Modify Search</button>
+     <button className='modify-btn mt-md-0 mt-3 py-3 py-lg-0'>Modify Search</button>
      </div> 
     </div>
   );

@@ -4,7 +4,7 @@ import ModifyHotel from '../ModifySearch/ModifyHotel';
 
 const HotelSearch = () => {
   return (
-    <div>
+    <div >
       <Navbar/>
         {/* here search input */}
     <div className=' all-inputs'>

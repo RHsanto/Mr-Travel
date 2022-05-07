@@ -58,7 +58,7 @@ const ModifyFlight = () => {
            </select>
            <label for="floatingSelect">TRAVELER CLASS</label>
          </div>
-        <button className='modify-btn mt-md-0 mt-3 py-2 py-lg-0'>Modify Search</button>
+        <button className='modify-btn mt-md-0 mt-3 py-3 py-lg-0'>Modify Search</button>
       </div>
     </div>
   );
