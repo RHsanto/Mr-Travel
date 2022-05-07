@@ -46,8 +46,8 @@ const ModifyHotel = () => {
   <label for="floatingSelect">ROOMS & GUESTS</label>
 </div>
     
-     </div> 
      <button className='modify-btn mt-md-0 mt-3 py-2 py-lg-0'>Modify Search</button>
+     </div> 
     </div>
   );
 };
