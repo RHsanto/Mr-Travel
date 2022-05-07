@@ -5,6 +5,10 @@
    "returnDate":"20-may-2022",
    "class":"Business",
    "price":"15000",
+   "planeName":"NOVOAIR",
+   "startDate":"15:00",
+   "endDate":"16:20",
+   "totalTime":"1h 20m",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_DOMFLY0307.jpg"
   },
   {"from":"Dhaka",
@@ -13,6 +17,10 @@
    "returnDate":"20-may-2022",
    "class":"Business",
    "price":"15000",
+   "planeName":"US-BANGLA",
+   "startDate":"18:00",
+   "endDate":"20:30",
+   "totalTime":"2h 30m",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_INTFLY0409.jpg"
   },
   {"from":"Dhaka",
@@ -21,6 +29,10 @@
    "returnDate":"20-may-2022",
    "class":"Business",
    "price":"8000",
+   "planeName":"US-BANGLA",
+   "startDate":"10:00",
+   "endDate":"11:30",
+   "totalTime":"1h 30m",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_DOMFLY0307.jpg"
   },
   {"from":"Dhaka",
@@ -29,6 +41,10 @@
    "returnDate":"30-may-2022",
    "class":"Business",
    "price":"20000",
+   "planeName":"NOVOAIR",
+   "startDate":"18:00",
+   "endDate":"20:30",
+   "totalTime":"2h 30m",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_INTFLY0409.jpg"
   }
 
