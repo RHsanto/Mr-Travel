@@ -13,7 +13,8 @@ const FlightSearch = () => {
   return (
     <div>
      <Navbar/>
-     <div className="container">
+    <div className="flights-section ">
+    <div className="container">
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {flights.map(flight=>(
          <div className="flight mt-5">
@@ -35,6 +36,7 @@ const FlightSearch = () => {
         ))}
       </div>
      </div>
+    </div>
     </div>
   );
 };

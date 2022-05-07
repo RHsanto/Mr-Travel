@@ -29,6 +29,17 @@ box-sizing: border-box;
 .logos h1 a{
   text-decoration: none;color: black;
 }
+nav{
+  margin-left: -150px;
+}
+nav ul li{
+  display: inline-block;
+  padding-left: 50px;
+  color: #0B1C80;
+}
+nav ul li a{
+  color: #236DB8;
+}
 /* search section css */
 
 .search-section {
