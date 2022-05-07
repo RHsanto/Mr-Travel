@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import Navbar from '../common/Navbar';
+import ModifyFlight from '../ModifySearch/ModifyFlight';
 import '../AllSearch/Allcss.css'
 const FlightSearch = () => {
   const[flights,setFlights]=useState([]);
@@ -13,6 +14,15 @@ const FlightSearch = () => {
   return (
     <div>
      <Navbar/>
+     {/* here search input */}
+    <div className=' all-inputs'>
+    <div className=" rounded shadow-lg pt-5 pb-3 px-4">
+      <div className="container">
+        <ModifyFlight/>
+      </div>
+     </div>
+    </div>
+    {/* here input result */}
     <div className="flights-section ">
     <div className="container">
       <div className="row row-cols-1 row-cols-md-2 g-4">

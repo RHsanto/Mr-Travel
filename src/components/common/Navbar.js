@@ -22,31 +22,24 @@ const Navbar = () => {
   return (
     <>
     <div className='nav-section '>
-       <div className="container  pt-3 px-5 px-lg-0  d-flex justify-content-between align-items-center">
+    <div className="container  pt-3 px-5 px-lg-0  d-flex justify-content-between align-items-center">
       <div className="logos">
       <h1><Link to='/'>  Mr.Travel</Link></h1>
      </div>
-     <div>  <nav>
-        <ul className=''>
-         <li><Link to='/flight'><GiCommercialAirplane/> Flight</Link></li>  
-         <li><Link to='/hotel' >< GiPalmTree/> Tour</Link></li>  
-         <li ><Link to='/tour' ><RiHotelFill/> Hotel</Link></li>  
-         <li ><Link to='/bus' ><FaBus/> Bus</Link></li>  
+     <div className='d-none d-lg-block'> 
+        <nav >
+         <ul className=''>
+           <li><Link to='/flight'><GiCommercialAirplane/> Flight</Link></li>  
+           <li><Link to='/hotel' >< GiPalmTree/> Tour</Link></li>  
+           <li ><Link to='/tour' ><RiHotelFill/> Hotel</Link></li>  
+           <li ><Link to='/bus' ><FaBus/> Bus</Link></li>  
          </ul>
-     </nav></div>
-     <div className="sign-in">
-       <button className='rounded '>Sign-in</button>
-     </div>
-       </div>
-
-    </div>
-    
-    <div className=' all-inputs'>
-    <div className=" rounded shadow-lg pt-5 pb-3 px-4">
-      <div className="container">
-      {info}
+       </nav>
       </div>
+     <div className="sign-in">
+       <button className='rounded mb-2'>Sign-in</button>
      </div>
+   </div>
     </div>
     </>
   );
