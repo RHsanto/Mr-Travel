@@ -30,6 +30,12 @@ a{text-decoration: none;}
 .sign-in button a{
   color: black;
 }
+.signIn button{
+  
+}
+.signIn button img{
+  width: 40px;
+}
 /* nav section */
 .nav-sections{
   box-shadow: 0 1px 5px rgb(51 65 80 / 25%);
