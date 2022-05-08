@@ -57,10 +57,11 @@ const BusSearch = () => {
                <s className='ms-3 text-secondary'>{bus?.oldPrice}</s>
               </div>
               <div className='select'>
-              <button>select  <RiArrowRightLine className='ms-5 fs-5'/></button> 
+              <button>view sites  <RiArrowRightLine className='ms-4 fs-5'/></button> 
               </div>
               </div>
             </div>
+
            </div>
          </div>
        </div>
