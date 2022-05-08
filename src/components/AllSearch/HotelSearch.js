@@ -40,7 +40,7 @@ const HotelSearch = () => {
            <div class="col-md-8">
              <div class="card-body color">
                <div className="d-flex hotel ">
-               <p className='border   px-3 py-1 rounded'>{hotel?.type}</p>
+               <p className='hotel'>{hotel?.type}</p>
                <Rating className='ms-2  mt-1'
                    emptySymbol={<AiOutlineStar className='fs-5 '/>}
                    fullSymbol={<AiFillStar className='fs-5 '/>}
@@ -58,7 +58,7 @@ const HotelSearch = () => {
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select'>
-              <button>booking <RiArrowRightLine className='ms-2 fs-5'/></button> 
+              <button>Booking <RiArrowRightLine className='ms-2 fs-5'/></button> 
               </div>
               </div>
             </div>

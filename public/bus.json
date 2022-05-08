@@ -8,6 +8,7 @@
    "endDate":"20:20",
    "totalTime":"10h 20m",
    "price":"500",
+   "type":"NON-AC",
    "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
   },
   {"from":"Dhaka",
@@ -19,6 +20,7 @@
    "endDate":"23:20",
    "totalTime":"8h 20m",
    "price":"1500",
+   "type":"AC",
    "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
   },
   {"from":"Dhaka",
@@ -30,6 +32,7 @@
    "endDate":"12:20",
    "totalTime":"7h 20m",
    "price":"800",
+   "type":"NON-AC",
    "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
   },
   {"from":"Dhaka",
@@ -41,6 +44,7 @@
    "endDate":"23:20",
    "totalTime":"11 20m",
    "price":"780",
+   "type":"AC",
    "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
   }
 

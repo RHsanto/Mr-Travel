@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Navbar from '../common/Navbar';
 import ModifyBus from '../ModifySearch/ModifyBus';
 import { RiArrowLeftRightFill ,RiArrowRightLine} from "react-icons/ri";
+import { SiAirplayaudio} from "react-icons/si";
 
 const BusSearch = () => {
   const [busData,setBusData]=useState([]);
@@ -36,25 +37,26 @@ const BusSearch = () => {
            </div>
            <div class="col-md-8">
              <div class="card-body">
-            <div className="d-flex align-items-center justify-content-around mb-5">
+            <div className="d-flex align-items-center justify-content-around ">
               <div>
-              <h5 class="card-title">{bus?.from}</h5>
-              <h6 class="card-title">{bus?.startDate}</h6>
+              <h6 class="card-title fw-bold">{bus?.from}</h6>
+              <h6 class="card-title"><small>{bus?.startDate}</small></h6>
               </div>
                <h6  className='mx-5 arrow'><RiArrowLeftRightFill/></h6>
                <div>
-               <h5 class="card-title">{bus?.to}</h5>
-               <h6 class="card-title">{bus?.endDate}</h6>
+               <h6 class="card-title fw-bold">{bus?.to}</h6>
+               <h6 class="card-title"><small>{bus?.endDate}</small></h6>
                </div>
                <div className="time ms-5">
                  <h6>{bus?.totalTime}</h6>
                </div>
             </div>
+            <h6 className='m-2'><SiAirplayaudio/> {bus?.type}</h6>
               
-              <div className="d-flex justify-content-between">
+              <div className="d-flex justify-content-between mt-5">
               <div className="d-flex">
-              <h5 className='ms-1'>BDT {bus?.price}</h5>
-               <s className='ms-3 text-secondary'>{bus?.oldPrice}</s>
+              <h5 className='mx-1 fw-bold'>BDT {bus?.price}</h5>
+              <small>(per person)</small>
               </div>
               <div className='select'>
               <button>view sites  <RiArrowRightLine className='ms-4 fs-5'/></button> 

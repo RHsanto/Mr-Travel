@@ -18,10 +18,13 @@ object-fit: cover;
 height: 100%;
 width: 100%;
 }
-.color{
-  color: #1C3C6B;
-}
+.color{color: #1C3C6B;}
 
-.card{
-  font-family: 'Poppins', sans-serif;
+.card{font-family: 'Poppins', sans-serif;}
+
+.hotel p{
+border: 1px solid ;
+padding: 5px 15px;
+border-radius: 5px;
+color: #0B1C80;
 }

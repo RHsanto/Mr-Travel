@@ -38,13 +38,13 @@ const FlightSearch = () => {
              <div class="card-body">
             <div className="d-flex align-items-center justify-content-around mb-5">
               <div>
-              <h5 class="card-title">{flight?.from}</h5>
-              <h6 class="card-title">{flight?.startDate}</h6>
+              <h6 class="card-title fw-bold">{flight?.from}</h6>
+              <h6 class="card-title"><small>{flight?.startDate}</small></h6>
               </div>
                <h6  className='mx-5 arrow'><RiArrowLeftRightFill/></h6>
                <div>
-               <h5 class="card-title">{flight?.to}</h5>
-               <h6 class="card-title">{flight?.endDate}</h6>
+               <h6 class="card-title fw-bold">{flight?.to}</h6>
+               <h6 class="card-title"><small>{flight?.endDate}</small></h6>
                </div>
                <div className="time ms-5">
                  <h6>{flight?.totalTime}</h6>
@@ -53,11 +53,11 @@ const FlightSearch = () => {
               
               <div className="d-flex justify-content-between">
               <div className="d-flex">
-              <h5 className='ms-1'>BDT {flight?.price}</h5>
+              <h5 className='ms-1 fw-bold'>BDT {flight?.price}</h5>
                <s className='ms-3 text-secondary'>{flight?.oldPrice}</s>
               </div>
               <div className='select'>
-              <button>select  <RiArrowRightLine className='ms-5 fs-5'/></button> 
+              <button>Booking  <RiArrowRightLine className='ms-5 fs-5'/></button> 
               </div>
               </div>
             </div>

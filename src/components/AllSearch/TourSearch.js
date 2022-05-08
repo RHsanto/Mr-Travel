@@ -52,7 +52,7 @@ const TourSearch = () => {
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select'>
-              <button>booking <RiArrowRightLine className='ms-4 fs-5'/></button> 
+              <button>Booking <RiArrowRightLine className='ms-4 fs-5'/></button> 
               </div>
               </div>
             </div>
