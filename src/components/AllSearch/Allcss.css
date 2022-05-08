@@ -6,3 +6,10 @@
   color:#074B9E;
   font-size: 30px;
 }
+.select button{
+border: 0;
+background-color: #0B1C80;
+padding:8px 10px ;
+color: white;
+border-radius: 5px;
+}

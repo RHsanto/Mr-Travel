@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { RiArrowLeftRightFill } from "react-icons/ri";
+import { RiArrowLeftRightFill ,RiArrowRightLine} from "react-icons/ri";
 import Navbar from '../common/Navbar';
 import ModifyFlight from '../ModifySearch/ModifyFlight';
 import '../AllSearch/Allcss.css'
 const FlightSearch = () => {
   const[flights,setFlights]=useState([]);
   useEffect(()=>{
-    fetch('http://localhost:8000/flights')
+    fetch('./flight.json')
     .then(response=>response.json())
     .then(data=>setFlights(data))
 
@@ -36,7 +36,7 @@ const FlightSearch = () => {
            </div>
            <div class="col-md-8">
              <div class="card-body">
-               <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center justify-content-around mb-5">
               <div>
               <h5 class="card-title">{flight?.from}</h5>
               <h6 class="card-title">{flight?.startDate}</h6>
@@ -46,10 +46,21 @@ const FlightSearch = () => {
                <h5 class="card-title">{flight?.to}</h5>
                <h6 class="card-title">{flight?.endDate}</h6>
                </div>
+               <div className="time ms-5">
+                 <h6>{flight?.totalTime}</h6>
                </div>
-               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-             </div>
+            </div>
+              
+              <div className="d-flex justify-content-between">
+              <div className="d-flex">
+              <h5 className='ms-1'>BDT {flight?.price}</h5>
+               <s className='ms-3 text-secondary'>{flight?.oldPrice}</s>
+              </div>
+              <div className='select'>
+              <button>select  <RiArrowRightLine className='ms-5 fs-5'/></button> 
+              </div>
+              </div>
+            </div>
            </div>
          </div>
        </div>
