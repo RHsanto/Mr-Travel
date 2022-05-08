@@ -42,7 +42,7 @@ const BestOffer = () => {
                         <li><img src={icon3} alt="" /></li>
                         <li><img src={icon4} alt="" /></li>
                       </div>
-                    <button className='' href="http://">READ MORE</button>
+                    <button className='read'>READ MORE</button>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ Step into stylish rooms at our luxury hotel in Gulshan Dhaka</p>
                         <li><img src={icon3} alt="" /></li>
                         <li><img src={icon4} alt="" /></li>
                       </div>
-                    <button className='' href="http://">READ MORE</button>
+                    <button className='read'>READ MORE</button>
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@ Step into stylish rooms at our luxury hotel in Gulshan Dhaka</p>
                         <li><img src={icon3} alt="" /></li>
                         <li><img src={icon4} alt="" /></li>
                       </div>
-                    <button className='' href="http://">READ MORE</button>
+                    <button className='read'>READ MORE</button>
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ Step into stylish rooms at our luxury hotel in Gulshan Dhaka</p>
                         <li><img src={icon3} alt="" /></li>
                         <li><img src={icon4} alt="" /></li>
                       </div>
-                    <button className='' href="http://">READ MORE</button>
+                    <button className='read'>READ MORE</button>
                 </div>
               </div>
             </div>
