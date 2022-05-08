@@ -27,6 +27,9 @@ a{text-decoration: none;}
   color: black;
   padding: 10px 20px;
 }
+.sign-in button a{
+  color: black;
+}
 /* nav section */
 .nav-sections{
   box-shadow: 0 1px 5px rgb(51 65 80 / 25%);
@@ -74,11 +77,11 @@ margin-top: 20px;
 
 }
 .all-category{
-  margin-bottom: -30px;
-  z-index: 1111 !important;
   background-color: rgb(255, 255, 255);
   position: relative;
+  margin-bottom: -40px;
 }
+
 .all-category ul li{
 list-style: none;
 padding: 20px ;
@@ -239,3 +242,5 @@ list-style: none;
   padding:8px 15px;
   border-radius: 5px;
 }
+
+/* authentication */
