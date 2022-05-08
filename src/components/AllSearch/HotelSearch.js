@@ -40,10 +40,11 @@ const HotelSearch = () => {
            <div class="col-md-8">
              <div class="card-body color">
                <div className="d-flex hotel ">
-               <p className='border px-3 py-1 rounded'>{hotel?.type}</p>
+               <p className='border   px-3 py-1 rounded'>{hotel?.type}</p>
                <Rating className='ms-2  mt-1'
-                   emptySymbol={<AiOutlineStar className='fs-5'/>}
-                   fullSymbol={<AiFillStar className='fs-5'/>}
+                   emptySymbol={<AiOutlineStar className='fs-5 '/>}
+                   fullSymbol={<AiFillStar className='fs-5 '/>}
+                   readonly
                   initialRating={hotel?.ratings}
                   > 
             </Rating>
