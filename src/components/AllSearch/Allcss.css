@@ -13,3 +13,12 @@ padding:8px 10px ;
 color: white;
 border-radius: 5px;
 }
+.card img{
+  object-fit: cover;
+}
+.color{
+  color: #1C3C6B;
+}
+.card{
+  font-family: 'Poppins', sans-serif;
+}
