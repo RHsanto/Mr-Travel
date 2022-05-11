@@ -25,7 +25,7 @@ const Navbar = () => {
        </nav>
       </div>
      <div className="sign-in">
-       <button className='rounded mb-2'>Sign-in</button>
+     <button className='rounded '><Link to='/sign-in'>Sign-in</Link></button>
      </div>
    </div>
     </div>
