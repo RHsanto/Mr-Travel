@@ -24,7 +24,7 @@ const Banner = () => {
             <button className='btn btn-danger ms-3' onClick={logOut}>
                Log-out</button> </>
      :  <div className="sign-in">
-     <button className='rounded '><Link to='/sign-in'>Sign-in</Link></button>
+     <Link to='/sign-in'><button className='rounded '> Sign-in</button> </Link>
      </div>
      }
    </div>
