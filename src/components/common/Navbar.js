@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { GiCommercialAirplane ,GiPalmTree} from "react-icons/gi";
 import { RiHotelFill } from "react-icons/ri";
 import { FaBus } from "react-icons/fa";
+import useFirebase from '../../hooks/useFirebase';
 
 const Navbar = () => {
- 
+  const{user,logOut}=useFirebase();
   return (
     <>
     <div className='nav-sections '>
@@ -24,9 +25,21 @@ const Navbar = () => {
          </ul>
        </nav>
       </div>
-     <div className="sign-in">
+     {/* here use login functionality */}
+   <div>
+   {user?.email ?
+     <>
+      <img className="UserImg" src={user.photoURL} alt="" />
+            {/* <span className='user-name'>{user.displayName} </span> */}   
+           {user.emailVerified? <></>:
+            <span className='user-name'>{user.email} </span>}
+            <button className='btn btn-danger ms-3' onClick={logOut}>
+               Log-out</button> </>
+     :  <div className="sign-in">
      <button className='rounded '><Link to='/sign-in'>Sign-in</Link></button>
      </div>
+     }
+   </div>
    </div>
     </div>
     </>

@@ -13,11 +13,7 @@ const [error,setError] = useState("")
 
 
 const signInUsingGoogle =()=>{
-    signInWithPopup(auth,provider)
-    .then(result=>{
-      setUser(result.user)
-      console.log(result.user);
-    })
+  return  signInWithPopup(auth,provider)
    .catch(error => {
      setError(error.message);
      });
@@ -43,7 +39,7 @@ const signInUsingGoogle =()=>{
   return{
 signInUsingGoogle,
 logOut,
-user,error
+user,error,setUser
   };
 };
 

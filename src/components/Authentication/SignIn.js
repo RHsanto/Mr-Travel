@@ -1,16 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaFacebookF } from 'react-icons/fa';
 import signIn from '../../images/log-in.png'
 import google from '../../images/gmail.png'
 import useFirebase from '../../hooks/useFirebase';
 
 const SignIn = () => {
-  const{signInUsingGoogle,logOut,user,error}=useFirebase();
+
+  const{signInUsingGoogle}=useFirebase();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const redirect_uri = location.state?.from || '/';
+ 
   const handleGoogle=(e)=>{
-    signInUsingGoogle();
+     signInUsingGoogle()
+     .then(result=>{
+      navigate( redirect_uri);
+        })
   }
+
   return (
     <div className='signIn common-section'>
       <div className="container">

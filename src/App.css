@@ -30,8 +30,9 @@ a{text-decoration: none;}
 .sign-in button a{
   color: black;
 }
-.signIn button{
-  
+.UserImg{
+  width: 50px;
+  border-radius: 50%;
 }
 .signIn button img{
   width: 40px;
