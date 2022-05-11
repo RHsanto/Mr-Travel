@@ -1,19 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import signIn from '../../images/log-in.png'
 import { FaFacebookF } from 'react-icons/fa';
+import signIn from '../../images/log-in.png'
+import google from '../../images/gmail.png'
 
 const SignIn = () => {
   return (
     <div className='signIn common-section'>
       <div className="container">
         <div className="row g-5">
-         <div className="col-lg-6 mt-5">
+         <div className="col-lg-6 logIn">
           <div className="logIn-form w-75 p-5 mx-auto shadow bg-light d-none d-lg-block">
-          <div className="btn-group my-4 d-flex gap-4 justify-content-between px-1 ">
+          <div className="btn-group mb-5 mt-4 d-flex gap-4 justify-content-between px-1 ">
           <button className='w-50 fb-btn'><FaFacebookF className='fb'/> Facebook</button>
-          <button className='w-50 google-btn'>Google</button>
+          <button className='w-50 flex-btn p-0 d-flex justify-content-between'>
+            <img src={google} alt="" srcset="" />
+            <button className=' google-btn bg-primary w-100'> Google</button></button>
           </div>
           <div class="form-floating mb-3">
              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
@@ -27,7 +30,7 @@ const SignIn = () => {
              <p ><input type="checkbox" name="" id="" /> Remember me </p>
              <p className='text-primary'>Forget Password?</p>
            </div>
-           <div className="log-btn w-25 mt-2 mx-auto">
+           <div className="log-btn w-25 mt-3  mx-auto">
              <button>LOGIN</button>
            </div>
         {/* signup link */}
@@ -36,9 +39,11 @@ const SignIn = () => {
 
            {/* for mobile */}
           <div className="logIn-form  px-4 py-5 mx-auto shadow bg-light d-block d-lg-none">
-          <div className="btn-group mb-4 d-flex gap-4 justify-content-between px-1">
-          <button className='w-50 fb-btn'>Facebook</button>
-          <button className='w-50 google-btn'>Google</button>
+          <div className="btn-group mb-5 mt-4 d-flex gap-4 justify-content-between px-1 ">
+          <button className='w-50 fb-btn'><FaFacebookF className='fb'/> Facebook</button>
+          <button className='w-50 flex-btn p-0 d-flex justify-content-between'>
+            <img src={google} alt="" srcset="" />
+            <button className=' google-btn bg-primary w-100'> Google</button></button>
           </div>
           <div class="form-floating mb-3">
              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
