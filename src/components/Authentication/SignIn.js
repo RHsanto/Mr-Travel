@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom';
 import { FaFacebookF } from 'react-icons/fa';
 import signIn from '../../images/log-in.png'
 import google from '../../images/gmail.png'
+import useFirebase from '../../hooks/useFirebase';
 
 const SignIn = () => {
+  const{signInUsingGoogle,logOut,user,error}=useFirebase();
+  const handleGoogle=(e)=>{
+    signInUsingGoogle();
+  }
   return (
     <div className='signIn common-section'>
       <div className="container">
@@ -14,7 +19,7 @@ const SignIn = () => {
           <div className="logIn-form w-75 p-5 mx-auto shadow bg-light d-none d-lg-block">
           <div className="btn-group mb-5 mt-4 d-flex gap-4 justify-content-between px-1 ">
           <button className='w-50 fb-btn'><FaFacebookF className='fb'/> Facebook</button>
-          <button className='w-50 flex-btn p-0 d-flex justify-content-between'>
+          <button onClick={handleGoogle} className='w-50 flex-btn p-0 d-flex justify-content-between'>
             <img src={google} alt="" srcset="" />
             <button className=' google-btn bg-primary w-100'> Google</button></button>
           </div>
