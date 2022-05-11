@@ -6,7 +6,7 @@
   color:#074B9E;
   font-size: 30px;
 }
-.select button{
+.select button, .log-btn button{
 border: 0;
 background-color: #0B1C80;
 padding:8px 10px ;
@@ -27,4 +27,27 @@ border: 1px solid ;
 padding: 5px 15px;
 border-radius: 5px;
 color: #0B1C80;
+}
+
+/* log-in & sign-in */
+.log-btn button{
+  background-color: #112dcc;
+  width: 100px;
+}
+
+.google-btn, .fb-btn{
+border: 0;
+padding: 10px;
+border-radius: 3px;
+color: white;
+}
+.fb-btn{
+  background-color: #074B9E;
+}
+.fb{
+  margin-top: -5px;
+  font-size: 20px;
+}
+.google-btn{
+  background-color: #4A84EF;
 }

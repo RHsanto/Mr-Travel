@@ -10,6 +10,7 @@ import HotelSearch from './components/AllSearch/HotelSearch';
 import TourSearch from './components/AllSearch/TourSearch';
 import BusSearch from './components/AllSearch/BusSearch';
 import SignIn from './components/Authentication/SignIn';
+import SignUp from './components/Authentication/SignUp';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
           <Route path='/tour' element={<TourSearch />} />
           <Route path='/bus' element={<BusSearch />} />
           <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/sign-up' element={<SignUp />} />
 
         </Routes>
       </BrowserRouter>
