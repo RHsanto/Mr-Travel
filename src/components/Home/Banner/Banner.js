@@ -15,7 +15,7 @@ const Banner = () => {
 
 {/* here use login functionality */}
    <div>
-   {user?.email ?
+   {user.email ?
      <>
       <img className="UserImg" src={user.photoURL} alt="" />
             {/* <span className='user-name'>{user.displayName} </span> */}   

@@ -5,7 +5,9 @@ import signup from '../../images/sign-up-removebg-preview.png'
 import google from '../../images/gmail.png'
 import useFirebase from '../../hooks/useFirebase';
 const SignUp = () => {
-  const{signInUsingGoogle}=useFirebase();
+  const{signInUsingGoogle,displayName,logOut,
+    user,error,setUser,setError,creatNewUserWithEmail,
+    signInWithEmail,email,password,handleEmailChange,handleNameChange,handlePasswordChange}=useFirebase();
   const location = useLocation();
   const navigate = useNavigate();
   const redirect_uri = location.state?.from || '/';
@@ -16,6 +18,21 @@ const SignUp = () => {
       navigate( redirect_uri);
       console.log(result);
         })
+  }
+
+  const newUserWithEmail=(e)=>{
+    e.preventDefault();
+    creatNewUserWithEmail(email,password)
+    .then((userCredential) => {
+    const user = userCredential.user;
+    setError("")
+    navigate( redirect_uri);
+    console.log(user);
+    })
+    .catch((error) => {
+      setError(error.message)
+    });
+  
   }
   return (
     <div className='signIn common-section'>
@@ -30,17 +47,18 @@ const SignUp = () => {
           <img src={google} alt="" srcset="" />
           <button className=' google-btn bg-primary w-100'> Google</button></button>
         </div>
-        <div class="form-floating mb-3">
-           <input type="text" class="form-control" id="floatingInput" placeholder="name"/>
+       <form  onSubmit={newUserWithEmail}>
+       <div class="form-floating mb-3">
+           <input type="text" onBlur={handleNameChange} class="form-control" id="floatingInput" placeholder="name"/>
            <label for="floatingInput">Username</label>
            
        </div>
         <div class="form-floating mb-3">
-           <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+           <input type="email" onBlur={handleEmailChange} class="form-control" id="floatingInput" placeholder="name@example.com"/>
            <label for="floatingInput">Email</label>
        </div>
         <div class="form-floating mb-3">
-           <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+           <input type="password" onBlur={handlePasswordChange} class="form-control" id="floatingPassword" placeholder="Password"/>
            <label for="floatingPassword">Password</label>
         </div>
         <div class="form-floating">
@@ -48,8 +66,9 @@ const SignUp = () => {
            <label for="floatingPassword">Confirm Password</label>
         </div>
          <div className="log-btn w-25 mt-5  mx-auto">
-           <button>LOGIN</button>
+           <button type='submit'>LOGIN</button>
          </div>
+       </form>
       {/* signup link */}
         <p className="text-center mt-4">I'm already a member?
          <Link to='/sign-in'> Sign in</Link></p>
