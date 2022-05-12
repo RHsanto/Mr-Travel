@@ -17,6 +17,7 @@ const SignIn = () => {
      signInUsingGoogle()
      .then(result=>{
       navigate( redirect_uri);
+      console.log(result);
         })
   }
 

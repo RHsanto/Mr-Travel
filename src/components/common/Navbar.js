@@ -29,10 +29,8 @@ const Navbar = () => {
    <div>
    {user?.email ?
      <>
-      <img className="UserImg" src={user.photoURL} alt="" />
+      <img className="UserImg" src={user?.photoURL} alt="" />
             {/* <span className='user-name'>{user.displayName} </span> */}   
-           {user.emailVerified? <></>:
-            <span className='user-name'>{user.email} </span>}
             <button className='btn btn-danger ms-3' onClick={logOut}>
                Log-out</button> </>
      :  <div className="sign-in">
