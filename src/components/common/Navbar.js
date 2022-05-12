@@ -37,7 +37,7 @@ const Navbar = () => {
                Log-out</button> </>
      :  <div className="sign-in">
      <Link to='/sign-in'> <button button className='rounded '>Sign-in</button></Link>
-     </div>
+     </div> 
      }
    </div>
    </div>
