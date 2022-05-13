@@ -15,19 +15,27 @@ const Banner = () => {
 
 {/* here use login functionality */}
    <div>
-   {user.email ?
+   {/* {user.email ?
      <>
       <img className="UserImg" src={user.photoURL} alt="" />
-            {/* <span className='user-name'>{user.displayName} </span> */}   
-           {/* {user.emailVerified? <></>:
-            <span className='user-name'>{user.email} </span>} */}
+            <span className='user-name text-light ms-2'>{user.displayName} </span>   
+           {user.emailVerified? <></>:
+            <span className='user-name'>{user.email} </span>}
             <button className='btn btn-danger ms-3' onClick={logOut}>
                Log-out</button> </>
      :  <div className="sign-in">
      <Link to='/sign-in'><button className='rounded '> Sign-in</button> </Link>
      </div>
+     } */}
+      {user.email ?
+     
+      <img className="UserImg" src={user.photoURL} alt="" />
+       : <></>    
      }
    </div>
+
+   {/* user login info */}
+   
     
     </div>
      
