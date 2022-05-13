@@ -11,10 +11,20 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user, registerUser, error, isLoading,setError } = useFirebase();
-
+  const { user, registerUser, error, isLoading,setError,signInUsingGoogle } = useFirebase();
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirect_uri = location.state?.from || '/';
 
+// google authentication
+
+const handleGoogle=(e)=>{
+  signInUsingGoogle()
+  .then(result=>{
+   navigate( redirect_uri);
+   console.log(result);
+     })
+}
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -27,8 +37,8 @@ const SignUp = () => {
     setPassword(e.target.value);
   };
 
-  const handleLoginSubmit = (e) => {
-    registerUser(name, email, password, navigate);
+  const handleSignUpSubmit = (e) => {
+    registerUser(name, email, password);
     e.preventDefault();
   
   };
@@ -44,12 +54,12 @@ const SignUp = () => {
           {/* here use button group */}
         <div className="btn-group mb-5 mt-4 d-flex gap-4 justify-content-between px-1 ">
         <button className='w-50 fb-btn'><FaFacebookF className='fb'/> Facebook</button>
-        <button  className='w-50 flex-btn p-0 d-flex justify-content-between'>
+        <button onClick={handleGoogle} className='w-50 flex-btn p-0 d-flex justify-content-between'>
           <img src={google} alt="" srcset="" />
           <button className=' google-btn bg-primary w-100'> Google</button></button>
         </div>
         {/* here start sign up form  */}
-           <form   onSubmit={handleLoginSubmit}>
+           <form   onSubmit={handleSignUpSubmit}>
            <div class="form-floating mb-3">
                <input type="text"  onBlur={handleNameChange} class="form-control" id="floatingInput" placeholder="name"/>
                <label for="floatingInput">Username</label>

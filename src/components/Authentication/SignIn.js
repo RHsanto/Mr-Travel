@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaFacebookF } from 'react-icons/fa';
 import signIn from '../../images/log-in.png'
@@ -8,11 +8,14 @@ import useFirebase from '../../hooks/useFirebase';
 
 const SignIn = () => {
 
-  const{signInUsingGoogle}=useFirebase();
+  const{signInUsingGoogle,loginUser,error}=useFirebase();
   const location = useLocation();
   const navigate = useNavigate();
   const redirect_uri = location.state?.from || '/';
- 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
   const handleGoogle=(e)=>{
      signInUsingGoogle()
      .then(result=>{
@@ -21,6 +24,20 @@ const SignIn = () => {
         })
   }
 
+  // login information
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSignIn = (e) => {
+    loginUser(email, password, location);
+
+    e.preventDefault();
+  };
   return (
     <div className='signIn common-section'>
       <div className="container">
@@ -33,12 +50,13 @@ const SignIn = () => {
             <img src={google} alt="" srcset="" />
             <button className=' google-btn bg-primary w-100'> Google</button></button>
           </div>
-          <div class="form-floating mb-3">
-             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-             <label for="floatingInput">Username</label>
+      <form onSubmit={handleSignIn}>
+      <div class="form-floating mb-3">
+             <input type="email" onBlur={handleEmailChange} class="form-control" id="floatingInput" placeholder="name@example.com"/>
+             <label for="floatingInput">Email</label>
          </div>
           <div class="form-floating">
-             <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+             <input type="password" onBlur={handlePasswordChange} class="form-control" id="floatingPassword" placeholder="Password"/>
              <label for="floatingPassword">Password</label>
           </div>
            <div className="d-flex justify-content-between mt-3 px-2">
@@ -46,8 +64,11 @@ const SignIn = () => {
              <p className='text-primary'>Forget Password?</p>
            </div>
            <div className="log-btn w-25 mt-3  mx-auto">
-             <button>LOGIN</button>
+           <button type='submit'>LOGIN</button>
            </div>
+      </form>
+
+      <div className='text-center mt-4 text-danger'> {error}</div>
         {/* signup link */}
           <p className="text-center mt-4"> Not a member? <Link to='/sign-up'> Signup now</Link></p>
          </div>
