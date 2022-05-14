@@ -10,7 +10,7 @@ const TourSearch = () => {
   const[tours,setTours]=useState([]);
 
   useEffect(()=>{
-   fetch('./tour.json')
+   fetch('http://localhost:8000/tourInfo')
    .then(response=>response.json())
    .then(data=>setTours(data))
   },[])

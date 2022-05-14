@@ -7,7 +7,7 @@ import '../AllSearch/Allcss.css'
 const FlightSearch = () => {
   const[flights,setFlights]=useState([]);
   useEffect(()=>{
-    fetch('./flight.json')
+    fetch('http://localhost:8000/flightInfo')
     .then(response=>response.json())
     .then(data=>setFlights(data))
 

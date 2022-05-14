@@ -10,7 +10,7 @@ const BusSearch = () => {
   const [busData,setBusData]=useState([]);
 
   useEffect(()=>{
-    fetch('./bus.json')
+    fetch('http://localhost:8000/busInfo')
     .then(res=>res.json())
     .then(data=>setBusData(data))
   },[])

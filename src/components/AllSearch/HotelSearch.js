@@ -11,7 +11,7 @@ const HotelSearch = () => {
   const [hotels,setHotels]=useState([]);
 
   useEffect(()=>{
-    fetch('./hotel.json')
+    fetch('http://localhost:8000/hotelInfo')
     .then(response=>response.json())
     .then(data=>setHotels(data))
   },[])
