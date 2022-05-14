@@ -11,6 +11,7 @@ import TourSearch from './components/AllSearch/TourSearch';
 import BusSearch from './components/AllSearch/BusSearch';
 import SignIn from './components/Authentication/SignIn';
 import SignUp from './components/Authentication/SignUp';
+import MyBooking from './components/DashBoard/MyBooking';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
           <Route path='/bus' element={<BusSearch />} />
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/my-booking' element={<MyBooking />} />
 
         </Routes>
       </BrowserRouter>

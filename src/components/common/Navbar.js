@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import useFirebase from '../../hooks/useFirebase';
 import { Link } from 'react-router-dom';
 import { GiCommercialAirplane ,GiPalmTree} from "react-icons/gi";
 import { RiHotelFill } from "react-icons/ri";
-import { FaBus } from "react-icons/fa";
-import useFirebase from '../../hooks/useFirebase';
-
+import { IoIosArrowDown } from "react-icons/io";
+import { FiLogOut } from "react-icons/fi";
+import { FaUserCircle, FaBus } from "react-icons/fa";
 const Navbar = () => {
   const{user,logOut}=useFirebase();
   return (
@@ -26,17 +27,31 @@ const Navbar = () => {
        </nav>
       </div>
      {/* here use login functionality */}
-   <div>
-   {user?.email ?
-     <>
-      <img className="UserImg" src={user?.photoURL} alt="" />
-            {/* <span className='user-name'>{user.displayName} </span> */}   
-            <button className='btn btn-danger ms-3' onClick={logOut}>
-               Log-out</button> </>
-     :  <div className="sign-in">
-     <Link to='/sign-in'> <button button className='rounded '>Sign-in</button></Link>
+{/* here use login functionality */}
+<div className='d-flex align-items-center'>
+      {user.email ?
+      <> 
+     {user.photoURL ? <img className="UserImg" src={user.photoURL} alt="" />
+     : <><FaUserCircle className='text-light fs-1'/></>
+    }
+     <div class="dropdown">
+     <div className='text-dark ms-2'  type="button" id="dropdownMenuButton1"
+      data-bs-toggle="dropdown" aria-expanded="false">
+      <IoIosArrowDown className=' fw-bold fs-5'/>
+     </div>
+     <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+     <span className='dropdown-item'>Profile </span>  
+     <span class="dropdown-item "><Link to='/my-booking' className='text-dark'>My Booking</Link>  </span>  
+     <a><span className='dropdown-item w-100' onClick={logOut}>
+      <FiLogOut/>   Sign-out</span></a>
+     </ul>
+     </div>
+     </> :
+     <div className="sign-in">
+     <Link to='/sign-in'><button className='rounded '> Sign-in</button> </Link>
      </div> 
-     }
+      }
+      
    </div>
    </div>
     </div>

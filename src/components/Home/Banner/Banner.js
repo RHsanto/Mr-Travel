@@ -19,18 +19,6 @@ const Banner = () => {
 
 {/* here use login functionality */}
    <div className='d-flex align-items-center'>
-   {/* {user.email ?
-     <>
-      <img className="UserImg" src={user.photoURL} alt="" />
-            <span className='user-name text-light ms-2'>{user.displayName} </span>   
-           {user.emailVerified? <></>:
-            <span className='user-name'>{user.email} </span>}
-            <button className='btn btn-danger ms-3' onClick={logOut}>
-               Log-out</button> </>
-     :  <div className="sign-in">
-     <Link to='/sign-in'><button className='rounded '> Sign-in</button> </Link>
-     </div>
-     } */}
       {user.email ?
       <> 
      {user.photoURL ? <img className="UserImg" src={user.photoURL} alt="" />
@@ -43,7 +31,7 @@ const Banner = () => {
      </div>
      <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
      <span className='dropdown-item'>Profile </span>  
-     <span class="dropdown-item">My Booking </span>  
+     <span class="dropdown-item "><Link to='/my-booking' className='text-dark'>My Booking</Link>  </span>  
      <a><span className='dropdown-item w-100' onClick={logOut}>
       <FiLogOut/>   Sign-out</span></a>
      </ul>
@@ -53,12 +41,8 @@ const Banner = () => {
      <Link to='/sign-in'><button className='rounded '> Sign-in</button> </Link>
      </div> 
       }
-     
-   
-   
+      
    </div>
-
-   {/* user login info */}
    
     
     </div>
