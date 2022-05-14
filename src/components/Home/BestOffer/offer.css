@@ -1,0 +1,32 @@
+.img-box button, .single-info button{
+  border: 0;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: #274BFF;
+  color: white;
+  margin-bottom: 20px;
+  border: 1px solid;
+}
+.img-box img{
+width: 100%;
+height: 450px;
+object-fit: cover;
+}
+
+.re-icons ul li{
+ list-style: none;
+}
+.info-icons li{
+  list-style: none;
+  margin: 15px 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid;
+}
+.info-icons span{
+  color: #274BFF;
+  font-size: 20px;
+}
+.single-info button:hover{
+ color: #274BFF;
+ background: white;
+}

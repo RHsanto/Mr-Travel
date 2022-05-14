@@ -4,6 +4,7 @@ import icon1 from '../../../images/icons-1.webp'
 import icon2 from '../../../images/icons-2.webp'
 import icon3 from '../../../images/icon-3.webp'
 import icon4 from '../../../images/icons-4.webp'
+import { Link } from 'react-router-dom';
 
 const BestOffer = () => {
   const [offers,setOffers]=useState([])
@@ -47,7 +48,7 @@ const BestOffer = () => {
                         <li><img src={icon3} alt="" /></li>
                         <li><img src={icon4} alt="" /></li>
                       </div>
-                    <button className='read'>READ MORE</button>
+                   <Link to={`/offers/${offer?._id}`}> <button className='read'>READ MORE</button></Link>
                 </div>
               </div>
             </div>
