@@ -40,6 +40,10 @@ a{text-decoration: none;}
 .signIn button img{
   width: 40px;
 }
+::selection{
+  background-color: #0B1C80;
+  color: white;
+}
 /* nav section */
 .nav-sections{
   box-shadow: 0 1px 5px rgb(51 65 80 / 25%);

@@ -35,7 +35,8 @@ const BestOffer = () => {
                     </div>
                     <p className='ms-2'>per night</p>
                     </div>
-                    <p className='text-start py-3'> Starting from BDT 999++ per person. Enjoy Srimongal- the tea capital of Bangladesh, is famous for its nature, forests and wildlife.</p>
+                    <p className='text-start py-3'> Starting from BDT 999++ per person. Enjoy Srimongal- the tea capital of Bangladesh,
+                     is famous for its nature, forests and wildlife.</p>
                       <div className="offer-icons d-flex gap-4">
                         <li><img src={icon1} alt="" /></li>
                         <li><img src={icon2} alt="" /></li>
