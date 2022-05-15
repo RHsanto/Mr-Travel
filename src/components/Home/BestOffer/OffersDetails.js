@@ -12,7 +12,6 @@ import OfferImgSlider from './OfferImgSlider';
 
 const OffersDetails = () => {
   const {id}=useParams();
-  console.log(id);
   const [offer,setOffer]=useState([])
 
   useEffect(()=>{

@@ -26,12 +26,12 @@ const Navbar = () => {
          </ul>
        </nav>
       </div>
-     {/* here use login functionality */}
+   
 {/* here use login functionality */}
 <div className='d-flex align-items-center'>
       {user.email ?
       <> 
-     {user.photoURL ? <img className="UserImg" src={user.photoURL} alt="" />
+     {user.photoURL ? <img className="UserImg mb-2" src={user.photoURL} alt="" />
      : <><FaUserCircle className='text-light fs-1'/></>
     }
      <div class="dropdown">
