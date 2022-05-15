@@ -8,6 +8,7 @@ import { AiOutlineFieldTime ,AiOutlineStar,AiFillStar} from "react-icons/ai";
 import Navbar from '../../common/Navbar';
 import Rating from 'react-rating';
 import './offer.css'
+import OfferImgSlider from './OfferImgSlider';
 
 const OffersDetails = () => {
   const {id}=useParams();
@@ -42,7 +43,8 @@ const OffersDetails = () => {
             </Rating>
             </div>
          </div>
-       <img src={offer?.img} className='border' alt="" />
+       {/* <img src={offer?.img} className='border' alt="" /> */}
+       <OfferImgSlider/>
        <p className='mt-4 lh-lg'>{offer?.description}</p></div>
         </div>
         <div className="col-lg-4">
