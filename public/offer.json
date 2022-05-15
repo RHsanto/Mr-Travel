@@ -3,24 +3,28 @@
    "img" : "https://i.ibb.co/yffbKx1/offer-1.jpg",
    "price":"70",
    "description":" Starting from BDT 999++ per person. Enjoy Srimongal- the tea capital of Bangladesh, is famous for its nature, forests and wildlife.",
-    "rating":"5"
+    "rating":"5",
+    "type":"Resort Hotel"
   },
   {"hotelName":"Renaissance Gulshan Hotel",
    "img" : "https://i.ibb.co/4ZhqHBc/rena-1.webp",
    "price":"80",
    "description":" Welcome to RENAISSANCE DHAKA GULSHAN HOTEL Step into stylish rooms at our luxury hotel in Gulshan Dhaka",
-   "rating":"4.5"
+   "rating":"4.5",
+   "type":" Hotel"
   },
   {"hotelName":"Sea Pearl Beach Resort",
    "img" : "https://i.ibb.co/KGCmxfJ/sea-5.jpg",
    "price":"100",
    "description":"Get special offers from Sea Pearl Beach Resort & Spa Emerald Honeymoon Package (3 DAYS & 2 NIGHT PACKAGE)",
-  "rating":"4.5"
+  "rating":"4.5",
+  "type":"Resort Hotel"
   },
   {"hotelName":"Sea Pearl Beach Resort",
    "img" : "https://i.ibb.co/WynhhQp/sea-4.jpg",
    "price":"70",
    "description":" Get special offers from Sea Pearl Beach Resort & Spa SEA PEARL FULL BOARD PACKAGE (2 DAYS & 1 NIGHT PACKAGE)",
-   "rating":"5"
+   "rating":"5",
+   "type":"Resort Hotel"
   }
 ]
