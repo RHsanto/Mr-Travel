@@ -27,7 +27,7 @@ const OffersDetails = () => {
       <div className="row d-flex  align-items-center">
         <div className="col-lg-6 ">
        <div className="img-box px-3">
-         <button>{offer?.type}</button>
+         <button className='type-btn'>{offer?.type}</button>
         
          <div className="d-flex justify-content-between align-items-center mb-3">
            <div >
