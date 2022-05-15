@@ -3,7 +3,7 @@
   border: 0;
   padding: 8px 20px;
   border-radius: 5px;
-  background-color: #274BFF;
+  background-color: #0A58CA;
   color: white;
   margin-bottom: 20px;
   border: 1px solid;
@@ -14,8 +14,8 @@ height: 450px;
 object-fit: cover;
 }
 
-.re-icons ul li{
- list-style: none;
+.re-icons {
+color:#0A58CA ;
 }
 .info-icons li{
   list-style: none;
@@ -24,7 +24,7 @@ object-fit: cover;
   border-bottom: 1px solid;
 }
 .info-icons span{
-  color: #274BFF;
+  color: #0A58CA;
   font-size: 20px;
 }
 .single-info button:hover{

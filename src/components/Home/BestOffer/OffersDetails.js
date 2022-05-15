@@ -26,21 +26,21 @@ const OffersDetails = () => {
       <div className="row d-flex  align-items-center">
         <div className="col-lg-6 ">
        <div className="img-box px-3">
-         <button className='type-btn'>{offer?.type}</button>
-        
-         <div className="d-flex justify-content-between align-items-center mb-3">
-           <div >
-           <h3>{offer?.hotelName}</h3>
-           </div>
-           <div className='re-icons  '>
-           <Rating className='ms-2  mt-1 text-warning'
+         <button className='type-btn '>{offer?.type}</button>
+         <Rating className='ms-4  mt-1 re-icons'
                    emptySymbol={<AiOutlineStar className='fs-4 '/>}
                    fullSymbol={<AiFillStar className='fs-4 '/>}
                    readonly
                   initialRating={offer?.rating}
                   > 
-            </Rating>
-            </div>
+          </Rating>
+         <div className=" mb-3">
+           <div >
+           <h3>{offer?.hotelName}</h3>
+           </div>
+           {/* <div className='re-icons  '>
+          
+            </div> */}
          </div>
        {/* <img src={offer?.img} className='border' alt="" /> */}
        <OfferImgSlider/>
