@@ -27,9 +27,34 @@ color:#0A58CA ;
   color: #0A58CA;
   font-size: 20px;
 }
+.single-info{
+  padding: 40px;
+}
 .single-info button:hover{
  color: #274BFF;
  background: white;
+ 
 }
 
 
+
+/*  Disability Friendly 
+  Airport Shuttle
+ Indoor Games Parking 
+ Swimming Pool
+ Outdoor Activities */
+
+ /* 1 King Bed, City View, Guest Room
+ROOM DETAILS
+Check in: Friday, May 27, 2022
+Check out: Saturday, May 28, 2022
+Room(s): 1
+Guest(s) per room: 2
+EDIT */
+
+/* 152.00
+USD / night
+ + 44.65
+USD Taxes and fees
+ 196.65
+USD Subtotal */
