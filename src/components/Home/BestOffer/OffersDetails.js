@@ -9,7 +9,7 @@ import OfferImgSlider from './OfferImgSlider';
 const OffersDetails = () => {
   const {id}=useParams();
   const [offer,setOffer]=useState([])
-
+  const sum = (parseFloat(offer?.price) + parseFloat(offer?.service) + parseFloat(offer?.tax))
   useEffect(()=>{
     fetch(`http://localhost:8000/offers/${id}`)
     .then(response=>response.json())
@@ -50,28 +50,68 @@ const OffersDetails = () => {
             <li><b>Room(s) :</b> 1</li>
             <li><b>Guest(s) per room :</b> 2</li> 
           </div>
-          <button className='mx-2 mt-4'>Booking Now</button> 
+          <div className="d-flex justify-content-between align-items-center px-2 py-3">
+            <h3>${sum}</h3>
+          <button className=''>Booking Now</button> 
+          </div>
          </div>
         </div>
       </div>
       <div className="row ps-4 pe-3">
         <div className="col-lg-10  shadow">
-            {/* accordian */}
+            {/* accordion */}
             <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
       <div class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
      <h4 className='fw-bold'> Summary of Charges</h4>
+    <span className=' subtotal'><><h5 className='fw-bold'>{sum}</h5> </>USD Subtotal</span>
     
       </div>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+      <div class="accordion-body">
+       <h6 className='fw-bold'>Member Flexible Rate</h6>
+       <h6 className='re-icons fw-bold'>RATE DETAILS</h6>
+       <div className="charge-info mt-5">
+         <div className="d-flex justify-content-between border-bottom border-1">
+          <div>
+            <p><b>1 room for 1 night</b></p>
+            <p> {offer?.checkIn}</p>
+          </div>
+          <div>
+            <p>Price in USD</p>
+            <p className='ms-3 fw-bold'>{offer?.price}</p>
+          </div>
+         </div>
+         <div className="d-flex justify-content-between border-bottom border-1 mt-3">
+          <div>
+            <p>Total cash rate</p>
+            <p> Service Charge</p>
+            <p>Estimated government taxes and fees</p>
+          </div>
+          <div className='me-5 fw-bold'>
+            <p>{offer?.price}</p>
+            <p>{offer?.service}</p>
+            <p>{offer?.tax}</p>
+          </div>
+         </div>
+         <div className="d-flex justify-content-between  mt-3">
+          <div>
+            <p>Total pay</p>
+           
+          </div>
+          <div className='me-5 fw-bold'>
+            <p>{sum}</p>
+          </div>
+         </div>
+       </div>
+     </div>
     </div>
   </div>
 </div>
 
-          {/* accordian */}
+     {/* accordion */}
         </div>
       </div>
     </div>
