@@ -10,7 +10,7 @@ const BusSearch = () => {
   const [busData,setBusData]=useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:8000/busInfo')
+    fetch('https://desolate-oasis-91427.herokuapp.com/busInfo')
     .then(res=>res.json())
     .then(data=>setBusData(data))
   },[])

@@ -7,7 +7,7 @@ import '../AllSearch/Allcss.css'
 const FlightSearch = () => {
   const[flights,setFlights]=useState([]);
   useEffect(()=>{
-    fetch('http://localhost:8000/flightInfo')
+    fetch('https://desolate-oasis-91427.herokuapp.com/flightInfo')
     .then(response=>response.json())
     .then(data=>setFlights(data))
 

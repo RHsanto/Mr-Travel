@@ -11,7 +11,7 @@ const HotelSearch = () => {
   const [hotels,setHotels]=useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:8000/hotelInfo')
+    fetch('https://desolate-oasis-91427.herokuapp.com/hotelInfo')
     .then(response=>response.json())
     .then(data=>setHotels(data))
   },[])

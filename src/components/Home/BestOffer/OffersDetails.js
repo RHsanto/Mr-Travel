@@ -11,7 +11,7 @@ const OffersDetails = () => {
   const [offer,setOffer]=useState([])
   const sum = (parseFloat(offer?.price) + parseFloat(offer?.service) + parseFloat(offer?.tax))
   useEffect(()=>{
-    fetch(`http://localhost:8000/offers/${id}`)
+    fetch(`https://desolate-oasis-91427.herokuapp.com/offers/${id}`)
     .then(response=>response.json())
     .then(data=>setOffer(data))
   })
