@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { RiArrowLeftRightFill ,RiArrowRightLine} from "react-icons/ri";
+import {RiArrowRightLine} from "react-icons/ri";
+import {AiOutlineSwap} from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import Navbar from '../common/Navbar';
 import ModifyFlight from '../ModifySearch/ModifyFlight';
@@ -42,7 +43,7 @@ const FlightSearch = () => {
               <h6 class="card-title fw-bold">{flight?.from}</h6>
               <h6 class="card-title"><small>{flight?.startDate}</small></h6>
               </div>
-               <h6  className='mx-5 arrow'><RiArrowLeftRightFill/></h6>
+               <h6  className='mx-5 arrow'><AiOutlineSwap/></h6>
                <div>
                <h6 class="card-title fw-bold">{flight?.to}</h6>
                <h6 class="card-title"><small>{flight?.endDate}</small></h6>
