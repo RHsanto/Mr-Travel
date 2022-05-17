@@ -12,7 +12,7 @@ const BestOffer = () => {
   useEffect(()=>{
     fetch('https://desolate-oasis-91427.herokuapp.com/offersInfo')
     .then(response=>response.json())
-    .then(data=>setOffers(data))
+    .then(data=>setOffers(data.slice(0,4)))
   })
   return (
     <div className='offer-section '>

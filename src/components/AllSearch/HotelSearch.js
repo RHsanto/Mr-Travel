@@ -6,7 +6,7 @@ import {RiArrowRightLine} from "react-icons/ri";
 import {MdLocationPin} from "react-icons/md";
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";
 import Rating from 'react-rating';
-
+import { Link } from 'react-router-dom';
 const HotelSearch = () => {
   const [hotels,setHotels]=useState([]);
 
@@ -58,7 +58,9 @@ const HotelSearch = () => {
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select'>
-              <button>Booking <RiArrowRightLine className='ms-2 fs-5'/></button> 
+              <Link to={`/offers/${hotel?._id}`}>
+              <button>Booking <RiArrowRightLine className='ms-2 fs-5'/></button>
+              </Link>
               </div>
               </div>
             </div>
