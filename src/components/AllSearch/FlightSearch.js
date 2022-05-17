@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { RiArrowLeftRightFill ,RiArrowRightLine} from "react-icons/ri";
+import { Link } from 'react-router-dom';
 import Navbar from '../common/Navbar';
 import ModifyFlight from '../ModifySearch/ModifyFlight';
 import '../AllSearch/Allcss.css'
@@ -56,8 +57,9 @@ const FlightSearch = () => {
               <h5 className='ms-1 fw-bold'>BDT {flight?.price}</h5>
                <s className='ms-3 text-secondary'>{flight?.oldPrice}</s>
               </div>
-              <div className='select'>
-              <button>Booking  <RiArrowRightLine className='ms-5 fs-5'/></button> 
+              <div className='select flights'>
+                <Link to={`/flights/${flight?._id}`}> 
+                <button>Booking  <RiArrowRightLine className='ms-5 fs-5'/></button> </Link>
               </div>
               </div>
             </div>
