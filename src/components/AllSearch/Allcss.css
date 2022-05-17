@@ -31,6 +31,16 @@ color: #0A58CA;
 .star-color{
  color: #0A58CA;
 }
+
+.flight .card{
+
+}
+.flight .card img{
+height: 100%;
+object-fit: cover;
+object-position:  center;
+padding: 50px;
+}
 /* log-in & sign-in */
 .log-btn button{
   background-color: #112dcc;
