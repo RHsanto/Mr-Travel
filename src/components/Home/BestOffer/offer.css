@@ -32,6 +32,7 @@ color:#0A58CA ;
 .single-info{
   padding: 40px;
   background-color: white;
+  margin-top: 50px;
 }
 .single-info button:hover{
  color: #0A58CA;
