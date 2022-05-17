@@ -1,4 +1,6 @@
-
+.offersDetails{
+  background-color: #EBF0F4;
+}
 .img-box .type-btn, .single-info button{
   border: 0;
   padding: 8px 20px;
@@ -29,13 +31,12 @@ color:#0A58CA ;
 }
 .single-info{
   padding: 40px;
+  background-color: white;
 }
 .single-info button:hover{
  color: #0A58CA;
  background: white;
- 
 }
-
 .subtotal{
  position: absolute;
  right: 100px;

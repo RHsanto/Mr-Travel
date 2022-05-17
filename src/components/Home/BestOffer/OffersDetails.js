@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {AiOutlineStar,AiFillStar} from "react-icons/ai";
+import {BsGlobe} from "react-icons/bs";
+import {HiCurrencyDollar} from "react-icons/hi";
 import Navbar from '../../common/Navbar';
 import Rating from 'react-rating';
 import './offer.css'
@@ -16,9 +18,10 @@ const OffersDetails = () => {
     .then(data=>setOffer(data))
   })
   return (
-    <div>
+    <div >
       <Navbar/>
-    <div className="container my-5">
+   <div className='offersDetails'>
+   <div className="container py-5">
       <div className="row mb-3 d-flex  align-items-center">
         <div className="col-lg-6 ">
        <div className="img-box px-3">
@@ -64,11 +67,11 @@ const OffersDetails = () => {
 </div>
     </div>
       {/* sliders */}
-       <p className='py-4 lh-lg'>{offer?.description}</p>
+      
        </div>
         </div>
         <div className="col-lg-4">
-         <div className="single-info shadow ">
+         <div className="single-info shadow">
           <div className='info-icons'>
             <h3>{offer?.hotelName}</h3>
             <p className='re-icons'><b>ROOM DETAILS</b></p>
@@ -84,19 +87,36 @@ const OffersDetails = () => {
          </div>
         </div>
       </div>
-      <div className="row ps-4 pe-3">
-        <div className="col-lg-10  shadow">
-            {/* accordion */}
-            <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div className="row ps-4 pe-3 mt-5">
+        <div className="col-lg-10 p-0 shadow">
+{/* accordion */}
+  <div class="accordion accordion-flush bg-light border-bottom border-1" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
       <div class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-     <h4 className='fw-bold'> Summary of Charges</h4>
+     <h5 className='re-icons'><BsGlobe/> Overview</h5>  
+      </div>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+      <p className=' lh-lg'>{offer?.description}</p>
+     </div>
+    </div>
+  </div>
+  </div>
+
+  {/* accordion 3 */}
+  <div class="accordion accordion-flush bg-light" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <div class="accordion-button collapsed " type="button"
+       data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne">
+     <h5 className='re-icons'><HiCurrencyDollar/> Summary of Charges</h5>
     <span className=' subtotal'><><h5 className='fw-bold'>{sum}</h5> </>USD Subtotal</span>
     
       </div>
     </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
        <h6 className='fw-bold'>Member Flexible Rate</h6>
        <h6 className='re-icons fw-bold'>RATE DETAILS</h6>
@@ -136,12 +156,13 @@ const OffersDetails = () => {
      </div>
     </div>
   </div>
-</div>
+  </div>
 
      {/* accordion */}
         </div>
       </div>
     </div>
+   </div>
    </div>
   );
 };
