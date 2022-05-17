@@ -41,20 +41,20 @@ const HotelSearch = () => {
              <div class="card-body color">
                <div className="d-flex hotel ">
                <p className='hotel'>{hotel?.type}</p>
-               <Rating className='ms-2  mt-1'
+               <Rating className='ms-2  mt-1 star-color'
                    emptySymbol={<AiOutlineStar className='fs-5 '/>}
                    fullSymbol={<AiFillStar className='fs-5 '/>}
                    readonly
-                  initialRating={hotel?.ratings}
-                  > 
-            </Rating>
+                  initialRating={hotel?.rating}
+                  /> 
+         
                </div>
              <h5 class="card-title fw-bold">{hotel?.hotelName}</h5>
-              <h6><MdLocationPin/> {hotel?.area}, Bangladesh</h6>
+              <h6><MdLocationPin/> {hotel?.location}, Bangladesh</h6>
 
               <div className="d-flex justify-content-between align-items-center mt-5">
               <div className="d-flex">
-              <h6 className='mx-1'><b>BDT {hotel?.price}</b></h6>
+              <h6 className='mx-1'><b>$ {hotel?.price}</b></h6>
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select'>

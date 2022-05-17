@@ -42,7 +42,7 @@ a{text-decoration: none;}
   width: 40px;
 }
 ::selection{
-  background-color: #0B1C80;
+  background-color: #0A58CA;
   color: white;
 }
 /* nav section */
@@ -69,7 +69,7 @@ nav ul li a{
   margin-left: 10px;
   padding: 0 30px;
   border-radius: 5px;
-  background: #0B1C80;
+  background: #0A58CA;
   color: #ffffff;
   
   line-height: normal;

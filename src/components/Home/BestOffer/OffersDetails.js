@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {AiOutlineStar,AiFillStar} from "react-icons/ai";
-import {BsGlobe} from "react-icons/bs";
+import {BsGlobe,BsGeoAltFill} from "react-icons/bs";
 import {HiCurrencyDollar} from "react-icons/hi";
 import Navbar from '../../common/Navbar';
 import Rating from 'react-rating';
@@ -100,6 +100,24 @@ const OffersDetails = () => {
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
       <p className=' lh-lg'>{offer?.description}</p>
+     </div>
+    </div>
+  </div>
+  </div>
+  {/* accordion 2*/}
+  <div class="accordion accordion-flush bg-light border-bottom border-1" 
+  id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <div class="accordion-button collapsed " type="button"
+       data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" 
+       aria-expanded="false" aria-controls="flush-collapseThree">
+     <h5 className='re-icons'><BsGeoAltFill/> Location</h5>  
+      </div>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+      <p className=' lh-lg'>{offer?.location}</p>
      </div>
     </div>
   </div>

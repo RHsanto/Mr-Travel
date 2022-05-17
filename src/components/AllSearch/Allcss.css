@@ -8,7 +8,7 @@
 }
 .select button, .log-btn button{
 border: 0;
-background-color: #0B1C80;
+background-color: #0A58CA;
 padding:8px 10px ;
 color: white;
 border-radius: 5px;
@@ -23,12 +23,14 @@ width: 100%;
 .card{font-family: 'Poppins', sans-serif;}
 
 .hotel p{
-border: 1px solid ;
+border: 2px solid ;
 padding: 5px 15px;
 border-radius: 5px;
-color: #0B1C80;
+color: #0A58CA;
 }
-
+.star-color{
+ color: #0A58CA;
+}
 /* log-in & sign-in */
 .log-btn button{
   background-color: #112dcc;
