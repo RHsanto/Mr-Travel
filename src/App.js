@@ -13,6 +13,7 @@ import SignIn from './components/Authentication/SignIn';
 import SignUp from './components/Authentication/SignUp';
 import MyBooking from './components/DashBoard/MyBooking';
 import OffersDetails from './components/Home/BestOffer/OffersDetails';
+import TourDetails from './components/AllDetails/TourDetails';
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/my-booking' element={<MyBooking />} />
           <Route path='/offers/:id' element={<OffersDetails />} />
+          <Route path='/tours/:id' element={<TourDetails/>} />
 
         </Routes>
       </BrowserRouter>
