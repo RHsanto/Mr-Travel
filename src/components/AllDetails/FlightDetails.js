@@ -61,23 +61,32 @@ const FlightDetails = () => {
          <label for="floatingInput">First Name</label>
        </div>
         <div class="form-floating mb-3 w-100">
-         <input type="text" class="form-control" id="floatingInput" placeholder="lasttName"/>
+         <input type="text" class="form-control" id="floatingInput" placeholder="lastName"/>
          <label for="floatingInput">Last Name</label>
        </div>
         </div>
         <div className="d-flex justify-content-between ">
         <div class="form-floating mb-3 w-100 me-lg-3 me-0">
-         <input type="email" class="form-control" id="floatingInput" placeholder="firstName"/>
+         <input type="email" class="form-control" id="floatingInput" placeholder="Email"/>
          <label for="floatingInput">Email</label>
        </div>
         <div class="form-floating mb-3 w-100">
          <input type="tel" class="form-control" id="phone" placeholder="Number"/>
          <label for="floatingInput">Phone Number</label>
         
-        
        </div>
         </div>
-
+           {/*  */}
+     <div class="form-floating">
+      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <label for="floatingSelectGrid">Works with selects</label>
+    </div>
+           {/*  */}
       </div>
     </div>
        </div>
