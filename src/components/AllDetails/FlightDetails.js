@@ -13,6 +13,9 @@ const FlightDetails = () => {
     .then(response=>response.json())
     .then(data=>setFlight(data))
   })
+
+  // button1
+
   return (
     <div>
       <Navbar/>
@@ -54,9 +57,9 @@ const FlightDetails = () => {
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <h5>Passenger Details</h5>
+        <h5>Personal Details</h5>
         <div className="d-flex justify-content-between mt-5">
-        <div class="form-floating mb-3 w-100 me-lg-3 me-0">
+        <div class="form-floating mb-3 w-100 me-lg-3 me-2">
          <input type="text" class="form-control" id="floatingInput" placeholder="firstName"/>
          <label for="floatingInput">First Name</label>
        </div>
@@ -66,7 +69,7 @@ const FlightDetails = () => {
        </div>
         </div>
         <div className="d-flex justify-content-between ">
-        <div class="form-floating mb-3 w-100 me-lg-3 me-0">
+        <div class="form-floating mb-3 w-100 me-lg-3 me-2">
          <input type="email" class="form-control" id="floatingInput" placeholder="Email"/>
          <label for="floatingInput">Email</label>
        </div>
@@ -79,12 +82,11 @@ const FlightDetails = () => {
            {/*  */}
      <div class="form-floating">
       <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option selected> Select Total Member </option>
+        <option  value="1">One</option>
+        <option  value="2">Two</option>
+        <option  value="3">Three</option>
       </select>
-      <label for="floatingSelectGrid">Works with selects</label>
     </div>
            {/*  */}
       </div>
