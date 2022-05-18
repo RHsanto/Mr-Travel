@@ -116,17 +116,17 @@ const FlightDetails = () => {
        </div>
        <div className='ms-1 mt-3 '>
          <button type='submit'  className='confirm w-100'>Confirm Booking</button>
-        <ToastContainer
-         position="top-center"
-         autoClose={5000}
-         hideProgressBar={false}
-         newestOnTop={false}
-         closeOnClick
-         rtl={false}
-         pauseOnFocusLoss
-         draggable
-         pauseOnHover
-         />
+         <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+/>
         
         </div>
        </form>
