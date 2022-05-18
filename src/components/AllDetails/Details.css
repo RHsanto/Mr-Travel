@@ -9,3 +9,10 @@ background-color: #EBF0F4;
 .fd-img{
   width: 300px;
  }
+.confirm{
+  background-color: #1E40AF;
+  border: 0;
+  color: white;
+  border-radius: 5px;
+  padding: 15px 30px;
+}

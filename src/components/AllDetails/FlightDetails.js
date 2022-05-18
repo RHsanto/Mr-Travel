@@ -14,8 +14,6 @@ const FlightDetails = () => {
     .then(data=>setFlight(data))
   })
 
-  // button1
-
   return (
     <div>
       <Navbar/>
@@ -36,7 +34,6 @@ const FlightDetails = () => {
           </div>
           <div className=''>
               <h6>({flight?.class})</h6>
-              
           </div>
           </div>
           <div className="d-flex justify-content-between">
@@ -46,10 +43,11 @@ const FlightDetails = () => {
              </div>
            <p><small>({flight?.totalTime})</small></p>
           </div>
-         <h4 className='mt-0 mt-lg-5'>BDT {flight?.price}</h4>
+          <h4 className='mt-0 mt-lg-5'>BDT {flight?.price}</h4>
           </div>  
           </div>
-          <div class="accordion-item bg shadow mt-4 mx-1 ">
+          {/* accordion */}
+       <div class="accordion-item bg shadow mt-4 mx-1 ">
        <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         <h5>Enter Traveler Details</h5>
@@ -79,19 +77,12 @@ const FlightDetails = () => {
         
        </div>
         </div>
-           {/*  */}
-     <div class="form-floating">
-      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-        <option selected> Select Total Member </option>
-        <option  value="1">One</option>
-        <option  value="2">Two</option>
-        <option  value="3">Three</option>
-      </select>
-    </div>
-           {/*  */}
+      
       </div>
     </div>
        </div>
+       <div className='ms-1 mt-3 '><button className='confirm w-100'>Confirm Booking</button></div>
+       
          </div>
         </div>
       </div>
