@@ -49,12 +49,35 @@ const FlightDetails = () => {
           <div class="accordion-item bg shadow mt-4 mx-1 ">
        <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <h5>Enter Traveller Details</h5>
+        <h5>Enter Traveler Details</h5>
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        <h5>Passenger Details</h5>
+        <div className="d-flex justify-content-between mt-5">
+        <div class="form-floating mb-3 w-100 me-lg-3 me-0">
+         <input type="text" class="form-control" id="floatingInput" placeholder="firstName"/>
+         <label for="floatingInput">First Name</label>
+       </div>
+        <div class="form-floating mb-3 w-100">
+         <input type="text" class="form-control" id="floatingInput" placeholder="lasttName"/>
+         <label for="floatingInput">Last Name</label>
+       </div>
+        </div>
+        <div className="d-flex justify-content-between ">
+        <div class="form-floating mb-3 w-100 me-lg-3 me-0">
+         <input type="email" class="form-control" id="floatingInput" placeholder="firstName"/>
+         <label for="floatingInput">Email</label>
+       </div>
+        <div class="form-floating mb-3 w-100">
+         <input type="tel" class="form-control" id="phone" placeholder="Number"/>
+         <label for="floatingInput">Phone Number</label>
+        
+        
+       </div>
+        </div>
+
       </div>
     </div>
        </div>
