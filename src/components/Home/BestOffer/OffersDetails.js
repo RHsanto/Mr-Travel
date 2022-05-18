@@ -130,7 +130,7 @@ const OffersDetails = () => {
       <div class="accordion-button collapsed " type="button"
        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne">
      <h5 className='re-icons'><HiCurrencyDollar/> Summary of Charges</h5>
-    <span className=' subtotal'><><h5 className='fw-bold'>{sum}</h5> </>USD Subtotal</span>
+    <span className=' subtotal d-none d-lg-block'><><h5 className='fw-bold'>{sum}</h5> </>USD Subtotal</span>
     
       </div>
     </h2>
