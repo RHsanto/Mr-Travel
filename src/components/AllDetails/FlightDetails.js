@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AiOutlineSwapRight,AiOutlineSmallDash} from "react-icons/ai";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../../components/common/Navbar'
 import './Details.css'
 const FlightDetails = () => {
@@ -13,7 +15,15 @@ const FlightDetails = () => {
     .then(response=>response.json())
     .then(data=>setFlight(data))
   })
-
+  const notify = () =>toast.success('Booking Successful', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });;
   return (
     <div>
       <Navbar/>
@@ -81,7 +91,20 @@ const FlightDetails = () => {
       </div>
     </div>
        </div>
-       <div className='ms-1 mt-3 '><button className='confirm w-100'>Confirm Booking</button></div>
+       <div className='ms-1 mt-3 '>
+         <button onClick={notify} className='confirm w-100'>Confirm Booking</button>
+         <ToastContainer
+           position="top-center"
+           autoClose={5000}
+           hideProgressBar={false}
+           newestOnTop={false}
+           closeOnClick
+           rtl={false}
+           pauseOnFocusLoss
+           draggable
+           pauseOnHover
+           />
+         </div>
        
          </div>
         </div>
