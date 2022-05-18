@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React from 'react';
 import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -7,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import Navbar from '../../components/common/Navbar'
 import 'react-toastify/dist/ReactToastify.css';
 import './Details.css'
+import axios from 'axios';
 const FlightDetails = () => {
   const {id}=useParams()
   const [flight,setFlight]=useState([])
@@ -16,38 +18,30 @@ const FlightDetails = () => {
     .then(response=>response.json())
     .then(data=>setFlight(data))
   })
-
-//   let required ;
-//   const notify = () =>
-//   {if(required == true){
-//     toast.error('Please Fill The Form!', {
-//       position: "top-center",
-//       autoClose: 5000,
-//       hideProgressBar: false,
-//       closeOnClick: true,
-//       pauseOnHover: true,
-//       draggable: true,
-//       progress: undefined,
-//       });
-//   }
-
-//   else{
-//     toast.success('Booking Successful', {
-//       position: "top-center",
-//       autoClose: 5000,
-//       hideProgressBar: false,
-//       closeOnClick: true,
-//       pauseOnHover: true,
-//       draggable: true,
-//       progress: undefined,
-//       });
-//   }
-// }
+  // react hook form
+  const { register, handleSubmit ,reset} = useForm();
+  const onSubmit = data => {
+    console.log(data)
+    axios.post('https://desolate-oasis-91427.herokuapp.com/users',data)
+    .then(res =>{
+      if(res.data.insertedId){
+        toast.success('Booking Successful', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+        reset();
+      }
+    
+    })
+  
+  };
  
- 
-    // react hook form
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+
   return (
     <div>
       <Navbar/>
@@ -98,19 +92,19 @@ const FlightDetails = () => {
          <label for="floatingInput">First Name</label>
        </div>
         <div class="form-floating mb-3 w-100">
-         <input type="text" {...register("lastName")}
+         <input type="text" required {...register("lastName")}
          class="form-control" id="floatingInput" placeholder="lastName"/>
          <label for="floatingInput">Last Name</label>
        </div>
         </div>
         <div className="d-flex justify-content-between ">
         <div class="form-floating mb-3 w-100 me-lg-3 me-2">
-         <input type="email" {...register("email")}
+         <input type="email" required {...register("email")}
          class="form-control" id="floatingInput" placeholder="Email"/>
          <label for="floatingInput">Email</label>
        </div>
         <div class="form-floating mb-3 w-100">
-         <input type="tel" {...register("PhoneNumber")}
+         <input type="tel" required {...register("PhoneNumber")}
          class="form-control" id="phone" placeholder="Number"/>
          <label for="floatingInput">Phone Number</label>
         
@@ -121,8 +115,8 @@ const FlightDetails = () => {
     </div>
        </div>
        <div className='ms-1 mt-3 '>
-         <button type='submit' className='confirm w-100'>Confirm Booking</button>
-        {/* <ToastContainer
+         <button type='submit'  className='confirm w-100'>Confirm Booking</button>
+        <ToastContainer
          position="top-center"
          autoClose={5000}
          hideProgressBar={false}
@@ -132,7 +126,7 @@ const FlightDetails = () => {
          pauseOnFocusLoss
          draggable
          pauseOnHover
-         /> */}
+         />
         
         </div>
        </form>
