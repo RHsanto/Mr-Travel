@@ -21,7 +21,7 @@ const FlightDetails = () => {
         <div className="row">
           <h5 className='ms-1 pb-3'>Review Your Booking</h5>
          <div className="col-lg-8 ">
-           <div className="row shadow d-flex p-4 mx-1">
+           <div className="row shadow bg-light d-flex p-4 mx-1">
             <div className="col-lg-5">
             <img src={flight?.img} className='fd-img p-5' alt="" />
             </div>
@@ -44,50 +44,12 @@ const FlightDetails = () => {
            <p><small>({flight?.totalTime})</small></p>
           </div>
          <h4 className='mt-0 mt-lg-5'>BDT {flight?.price}</h4>
+          </div>  
           </div>
-          
-          
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-          </div>
-          <div class="accordion-item shadow mt-4 mx-1">
-     <h2 class="accordion-header" id="headingTwo">
+          <div class="accordion-item shadow mt-4 mx-1 ">
+       <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Flight Details
+        <h5>Enter Traveller Details</h5>
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
