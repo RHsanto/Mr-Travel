@@ -3,8 +3,9 @@ import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AiOutlineSwapRight,AiOutlineSmallDash} from "react-icons/ai";
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useForm } from 'react-hook-form';
 import Navbar from '../../components/common/Navbar'
+import 'react-toastify/dist/ReactToastify.css';
 import './Details.css'
 const FlightDetails = () => {
   const {id}=useParams()
@@ -15,15 +16,38 @@ const FlightDetails = () => {
     .then(response=>response.json())
     .then(data=>setFlight(data))
   })
-  const notify = () =>toast.success('Booking Successful', {
-    position: "top-center",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    });;
+
+//   let required ;
+//   const notify = () =>
+//   {if(required == true){
+//     toast.error('Please Fill The Form!', {
+//       position: "top-center",
+//       autoClose: 5000,
+//       hideProgressBar: false,
+//       closeOnClick: true,
+//       pauseOnHover: true,
+//       draggable: true,
+//       progress: undefined,
+//       });
+//   }
+
+//   else{
+//     toast.success('Booking Successful', {
+//       position: "top-center",
+//       autoClose: 5000,
+//       hideProgressBar: false,
+//       closeOnClick: true,
+//       pauseOnHover: true,
+//       draggable: true,
+//       progress: undefined,
+//       });
+//   }
+// }
+ 
+ 
+    // react hook form
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
   return (
     <div>
       <Navbar/>
@@ -57,6 +81,7 @@ const FlightDetails = () => {
           </div>  
           </div>
           {/* accordion */}
+       <form onSubmit={handleSubmit(onSubmit)}>
        <div class="accordion-item bg shadow mt-4 mx-1 ">
        <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -68,21 +93,25 @@ const FlightDetails = () => {
         <h5>Personal Details</h5>
         <div className="d-flex justify-content-between mt-5">
         <div class="form-floating mb-3 w-100 me-lg-3 me-2">
-         <input type="text" class="form-control" id="floatingInput" placeholder="firstName"/>
+         <input type="text" required {...register("firstName")} 
+         class="form-control" id="floatingInput" placeholder="firstName"/>
          <label for="floatingInput">First Name</label>
        </div>
         <div class="form-floating mb-3 w-100">
-         <input type="text" class="form-control" id="floatingInput" placeholder="lastName"/>
+         <input type="text" {...register("lastName")}
+         class="form-control" id="floatingInput" placeholder="lastName"/>
          <label for="floatingInput">Last Name</label>
        </div>
         </div>
         <div className="d-flex justify-content-between ">
         <div class="form-floating mb-3 w-100 me-lg-3 me-2">
-         <input type="email" class="form-control" id="floatingInput" placeholder="Email"/>
+         <input type="email" {...register("email")}
+         class="form-control" id="floatingInput" placeholder="Email"/>
          <label for="floatingInput">Email</label>
        </div>
         <div class="form-floating mb-3 w-100">
-         <input type="tel" class="form-control" id="phone" placeholder="Number"/>
+         <input type="tel" {...register("PhoneNumber")}
+         class="form-control" id="phone" placeholder="Number"/>
          <label for="floatingInput">Phone Number</label>
         
        </div>
@@ -92,19 +121,21 @@ const FlightDetails = () => {
     </div>
        </div>
        <div className='ms-1 mt-3 '>
-         <button onClick={notify} className='confirm w-100'>Confirm Booking</button>
-         <ToastContainer
-           position="top-center"
-           autoClose={5000}
-           hideProgressBar={false}
-           newestOnTop={false}
-           closeOnClick
-           rtl={false}
-           pauseOnFocusLoss
-           draggable
-           pauseOnHover
-           />
-         </div>
+         <button type='submit' className='confirm w-100'>Confirm Booking</button>
+        {/* <ToastContainer
+         position="top-center"
+         autoClose={5000}
+         hideProgressBar={false}
+         newestOnTop={false}
+         closeOnClick
+         rtl={false}
+         pauseOnFocusLoss
+         draggable
+         pauseOnHover
+         /> */}
+        
+        </div>
+       </form>
        
          </div>
         </div>
