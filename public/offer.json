@@ -14,7 +14,8 @@
    "description":" Starting from BDT 999++ per person. Enjoy Srimongal- the tea capital of Bangladesh, is famous for its nature, forests and wildlife.",
     "rating":"5",
     "type":"Resort Hotel",
-    "location":"Cox bazar, Chattogram"
+    "location":"Cox bazar, Chattogram",
+    "types":"hotel"
   },
   {"hotelName":"Renaissance Gulshan Hotel",
    "img" : "https://i.ibb.co/4ZhqHBc/rena-1.webp",
@@ -31,7 +32,8 @@
    "description":" Welcome to RENAISSANCE DHAKA GULSHAN HOTEL Step into stylish rooms at our luxury hotel in Gulshan Dhaka",
    "rating":"4.5",
    "type":" Hotel",
-   "location":"Cox bazar, Chattogram"
+   "location":"Cox bazar, Chattogram",
+   "types":"hotel"
   },
   {"hotelName":"Sea Pearl Beach Resort",
    "img" : "https://i.ibb.co/KGCmxfJ/sea-5.jpg",
@@ -48,7 +50,8 @@
    "description":"Get special offers from Sea Pearl Beach Resort & Spa Emerald Honeymoon Package (3 DAYS & 2 NIGHT PACKAGE)",
   "rating":"4.5",
   "type":"Resort Hotel",
-  "location":"Ghulshan, Dhaka"
+  "location":"Ghulshan, Dhaka",
+  "types":"hotel"
   },
   {"hotelName":"Sea Pearl Beach Resort",
    "img" : "https://i.ibb.co/WynhhQp/sea-4.jpg",
@@ -65,6 +68,7 @@
    "description":" Get special offers from Sea Pearl Beach Resort & Spa SEA PEARL FULL BOARD PACKAGE (2 DAYS & 1 NIGHT PACKAGE)",
    "rating":"5",
    "type":"Resort Hotel",
-   "location":"Cox bazar, Chattogram"
+   "location":"Cox bazar, Chattogram",
+   "types":"hotel"
   }
 ]

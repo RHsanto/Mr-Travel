@@ -22,6 +22,7 @@ const FlightDetails = () => {
   const { register, handleSubmit ,reset} = useForm();
   const onSubmit = data => {
     console.log(data)
+    data.types=flight.types
     axios.post('https://desolate-oasis-91427.herokuapp.com/users',data)
     .then(res =>{
       if(res.data.insertedId){

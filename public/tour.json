@@ -6,7 +6,8 @@
    "member":"3  to 25",
    "totalTime":"7",
    "price":"780",
-   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/4466f990-b6f6-497a-a762-4048a730827d.png"
+   "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/4466f990-b6f6-497a-a762-4048a730827d.png",
+   "types":"tour"
   },
   {"area":"kumillah",
     "TourName":"Panam City & Sonargaon Tour",
@@ -16,6 +17,7 @@
    "totalTime":"8",
    "price":"358",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/c0e74058-d2dc-4cb9-96e1-e46abddff8c1.png"
+  ,"types":"tour"
   },
   { "area":"Barishal",
     "TourName":"Panam City & Sonargaon Tour",
@@ -25,6 +27,7 @@
    "totalTime":"6",
    "price":"454",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/4466f990-b6f6-497a-a762-4048a730827d.png"
+  ,"types":"tour"
   },
   {"area":"Khulna",
    "TourName":"Panam City & Sonargaon Tour",
@@ -34,6 +37,7 @@
    "totalTime":"4",
    "price":"585",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/tour_management/tour/featured_pictures/e149f05a-c040-4ce5-b42a-fb83d3fb9a86.jpg"
+  ,"types":"tour"
   }
 
 ]

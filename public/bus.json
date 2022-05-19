@@ -10,6 +10,8 @@
    "price":"500",
    "type":"NON-AC",
    "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
+   ,
+   "types":"bus"
   },
   {"from":"Dhaka",
    "to":"sylhet",
@@ -22,6 +24,8 @@
    "price":"1500",
    "type":"AC",
    "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
+   ,
+   "types":"bus"
   },
   {"from":"Dhaka",
    "to":"Cox bazar",
@@ -34,6 +38,8 @@
    "price":"800",
    "type":"NON-AC",
    "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
+   ,
+   "types":"bus"
   },
   {"from":"Dhaka",
    "to":"Khulna",
@@ -46,6 +52,8 @@
    "price":"780",
    "type":"AC",
    "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
+   ,
+   "types":"bus"
   }
 
 ]

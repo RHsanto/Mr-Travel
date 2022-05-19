@@ -11,6 +11,8 @@
    "endDate":"16:20",
    "totalTime":"1h 20m",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_DOMFLY0307.jpg"
+   ,
+   "types":"flight"
   },
   {"from":"Dhaka",
    "to":"sylhet",
@@ -24,6 +26,8 @@
    "endDate":"20:30",
    "totalTime":"2h 30m",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_INTFLY0409.jpg"
+   ,
+   "types":"flight"
   },
   {"from":"Dhaka",
    "to":"kumillah",
@@ -37,6 +41,8 @@
    "endDate":"11:30",
    "totalTime":"1h 30m",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_DOMFLY0307.jpg"
+   ,
+   "types":"flight"
   },
   {"from":"Dhaka",
    "to":"Khulna",
@@ -50,6 +56,8 @@
    "endDate":"20:30",
    "totalTime":"2h 30m",
    "img":"https://gozayaan.sgp1.digitaloceanspaces.com/media/discount_images/campaign_INTFLY0409.jpg"
+   ,
+   "types":"flight"
   }
 
 ]
