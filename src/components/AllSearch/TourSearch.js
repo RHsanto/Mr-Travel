@@ -10,7 +10,7 @@ const TourSearch = () => {
   const[tours,setTours]=useState([]);
 
   useEffect(()=>{
-   fetch('https://desolate-oasis-91427.herokuapp.com/tourInfo')
+   fetch(' https://young-cliffs-75372.herokuapp.com/tourInfo')
    .then(response=>response.json())
    .then(data=>setTours(data))
   },[])

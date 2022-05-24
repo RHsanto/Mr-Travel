@@ -13,7 +13,7 @@ const OffersDetails = () => {
   const [offer,setOffer]=useState([])
   const sum = (parseFloat(offer?.price) + parseFloat(offer?.service) + parseFloat(offer?.tax))
   useEffect(()=>{
-    fetch(`https://desolate-oasis-91427.herokuapp.com/offers/${id}`)
+    fetch(` https://young-cliffs-75372.herokuapp.com/offers/${id}`)
     .then(response=>response.json())
     .then(data=>setOffer(data))
   })
