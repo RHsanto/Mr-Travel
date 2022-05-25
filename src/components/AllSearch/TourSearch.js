@@ -53,7 +53,7 @@ const TourSearch = () => {
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select'>
-              <Link to={`/tours/${tours._id}`}>
+              <Link to={`/tours/${tour._id}`}>
               <button>Booking <RiArrowRightLine className='ms-4 fs-5'/></button> 
               </Link>
               </div>

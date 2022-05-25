@@ -51,12 +51,12 @@ const FlightDetails = () => {
         <div className="row">
           <h4 className='ms-1 pb-3 fw-bold'>Review Your Booking</h4>
          <div className="col-lg-8 ">
-           <div className="row shadow bg d-flex p-4 mx-1">
-            <div className="col-lg-5">
-            <img src={flight?.img} className='fd-img p-5' alt="" />
+           <div className="row  shadow bg d-flex  mx-1">
+            <div className="col-lg-5 px-0">
+            <img src={flight?.img} className='w-100' alt="" />
             </div>
-          <div className="col-lg-7 ">
-          <div className="d-flex justify-content-between">
+          <div className="col-lg-7 p-4">
+          <div className="d-flex justify-content-between ">
           <div className=''>
               <h5>{flight?.from}<AiOutlineSwapRight className='mx-2 '/>{flight?.to}</h5>
                <p>{flight?.planeName}</p>
