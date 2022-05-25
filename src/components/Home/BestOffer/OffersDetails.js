@@ -122,7 +122,6 @@ const OffersDetails = () => {
     </div>
   </div>
   </div>
-
   {/* accordion 3 */}
   <div class="accordion accordion-flush bg-light" id="accordionFlushExample">
   <div class="accordion-item">
