@@ -12,7 +12,7 @@ const BestOffer = () => {
   useEffect(()=>{
     fetch(' https://young-cliffs-75372.herokuapp.com/offersInfo')
     .then(response=>response.json())
-    .then(data=>setOffers(data.slice(0,4)))
+    .then(data=>setOffers(data.slice(4,8)))
   })
   return (
     <div className='offer-section '>
