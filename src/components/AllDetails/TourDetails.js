@@ -2,6 +2,7 @@ import React from 'react';
 import {BsGeoAltFill} from "react-icons/bs";
 
 const TourDetails = () => {
+  
   return (
     <div>
       { /*accordion 2*/}

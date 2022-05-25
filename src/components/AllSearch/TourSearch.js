@@ -5,6 +5,7 @@ import {RiArrowRightLine} from "react-icons/ri";
 import {MdLocationPin} from "react-icons/md";
 import {HiClock} from "react-icons/hi";
 import {FaUsers} from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const TourSearch = () => {
   const[tours,setTours]=useState([]);
@@ -52,7 +53,9 @@ const TourSearch = () => {
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select'>
+              <Link to={`/tours/${tours._id}`}>
               <button>Booking <RiArrowRightLine className='ms-4 fs-5'/></button> 
+              </Link>
               </div>
               </div>
             </div>
