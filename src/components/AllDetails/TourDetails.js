@@ -1,11 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { BsGeoAltFill,BsGlobe} from "react-icons/bs";
 import { AiOutlineFieldTime} from "react-icons/ai";
 import { FaUsers} from "react-icons/fa";
 import { MdTipsAndUpdates,MdPanTool} from "react-icons/md";
-
 import { ToastContainer, toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 import Navbar from '../common/Navbar';
@@ -181,21 +181,23 @@ const TourDetails = () => {
               </div>
             </div>
             {/* booking form */}
-            <div className="col-lg-4 p-2 shadow-lg mt-5 mt-lg-0">
-             <div className="form border p-3">
+            <div className="col-lg-4 p-2 shadow-lg mt-5 mt-lg-0 ">
+             <div className="form border p-3 rounded">
              <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-              <label for="floatingInput">Email address</label>
+              <input type="date" class="form-control"
+               id="floatingInput" placeholder="date"/>
+              <label for="floatingInput">Journey date</label>
            </div>
-           <div class="form-floating mb-3">
-             <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
-             <label for="floatingPassword">Password</label>
-           </div>
-           <div class="form-floating mb-3">
-             <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
-             <label for="floatingPassword">Password</label>
-           </div>
-          <button className='w-100 btn btn-warning'>Continue</button>
+           <div class="form-floating mb-4">
+           <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+             <option value="1"selected>1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+           </select>
+           <label for="floatingSelect">TRAVELER </label>
+             </div>
+             <Link to={`/booking/${tour?._id}`}><button className='w-100 btn btn-warning'>
+               Continue</button></Link>   
              </div>
             </div>
           </div>
