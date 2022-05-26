@@ -21,29 +21,29 @@ const TourDetails = () => {
     .then(data=>setTour(data))
   })
 
-    // // react hook form
-    // const { register, handleSubmit ,reset} = useForm();
-    // const onSubmit = data => {
-    //   console.log(data)
-    //   data.types=tour.types
-    //   axios.post(' https://young-cliffs-75372.herokuapp.com/booking',data)
-    //   .then(res =>{
-    //     if(res.data.insertedId){
-    //       toast.success('Booking Successful', {
-    //         position: "top-center",
-    //         autoClose: 5000,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         });
-    //       reset();
-    //     }
+    // react hook form
+    const { register, handleSubmit ,reset} = useForm();
+    const onSubmit = data => {
+      console.log(data)
+      data.types=tour.types
+      axios.post(' https://young-cliffs-75372.herokuapp.com/booking',data)
+      .then(res =>{
+        if(res.data.insertedId){
+          toast.success('Booking Successful', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+          reset();
+        }
       
-    //   })
+      })
     
-    // };
+    };
   return (
     <div>
       <Navbar/>
@@ -182,23 +182,54 @@ const TourDetails = () => {
             </div>
             {/* booking form */}
             <div className="col-lg-4 p-2 shadow-lg mt-5 mt-lg-0 ">
-             <div className="form border p-3 rounded">
-             <div class="form-floating mb-3">
-              <input type="date" class="form-control"
+            <form onSubmit={handleSubmit(onSubmit)}  >
+            <div className="form border p-3 rounded">
+            <div class="form-floating mb-3">
+              <input type="date" required {...register("date")} class="form-control"
                id="floatingInput" placeholder="date"/>
               <label for="floatingInput">Journey date</label>
            </div>
            <div class="form-floating mb-4">
-           <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+           <select class="form-select" id="floatingSelect"
+            {...register("traveler")} aria-label="Floating label select example">
              <option value="1"selected>1</option>
              <option value="2">2</option>
              <option value="3">3</option>
            </select>
            <label for="floatingSelect">TRAVELER </label>
              </div>
-             <Link to={`/booking/${tour?._id}`}><button className='w-100 btn btn-warning'>
-               Continue</button></Link>   
+            <div class="form-floating mb-3 ">
+             <input type="text" required {...register("firstName")} 
+             class="form-control" id="floatingInput" placeholder="firstName"/>
+             <label for="floatingInput">Enter Name</label>
+            </div>
+            <div class="form-floating mb-3 ">
+           <input type="email" required {...register("email")}
+            class="form-control" id="floatingInput" placeholder="Email"/>
+           <label for="floatingInput">Email</label>
+          </div>
+           <div class="form-floating mb-3 ">
+            <input type="tel" required {...register("PhoneNumber")}
+            class="form-control" id="phone" placeholder="Number"/>
+            <label for="floatingInput">Phone Number</label>
+          </div>
+           
+             <button type='submit' className='w-100 btn btn-warning'>
+               Continue
+               <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            />
+               </button>  
              </div>
+            </form>
             </div>
           </div>
          </div>

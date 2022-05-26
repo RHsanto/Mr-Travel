@@ -62,8 +62,8 @@ const AddBooking = () => {
          <input type="tel" required {...register("PhoneNumber")}
          class="form-control" id="phone" placeholder="Number"/>
          <label for="floatingInput">Phone Number</label>
-        
        </div>
+       
         </div>
       
       </div>
