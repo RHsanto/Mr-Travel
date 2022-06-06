@@ -19,7 +19,6 @@ const [error,setError] = useState("")
 const [email,setEmail]=useState("")
 const [password,setPassword]=useState("")
 const [displayName,setDisplayName]=useState("");
-
 const location = useLocation();
 const navigate = useNavigate();
 const redirect_uri = location.state?.from || '/';
@@ -119,10 +118,7 @@ useEffect(() => {
 };
 
   return{
-signInUsingGoogle,loginUser,registerUser,
-logOut,
-user,error,setUser,setError,
-email,password,displayName,isLoading
+signInUsingGoogle,loginUser,registerUser,logOut,user,error,setUser,setError,email,password,displayName,isLoading
   };
 };
 
