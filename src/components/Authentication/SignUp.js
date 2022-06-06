@@ -120,7 +120,7 @@ const handleGoogle=(e)=>{
          </div>
     {/* signup link */}
     <p className="text-center mt-4"> Not a member? <Link to='/sign-up'> Signup now</Link></p>
-       </div>
+        </div>
      
        </div>
        <div className="col-lg-6">
