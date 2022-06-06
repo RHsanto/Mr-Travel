@@ -55,7 +55,6 @@ const Hotel = () => {
           <div className="row">
             <div className="col-lg-1 mx-auto ">
             <Link to='/hotel'> <button>  Search </button></Link>
-
             </div>
           </div>
         </div>
