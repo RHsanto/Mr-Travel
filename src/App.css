@@ -1,20 +1,16 @@
 
-
 body{
 font-family: 'Poppins', sans-serif;
-box-sizing: border-box;
+box-sizing: border-box;}
 
-}
 a{text-decoration: none;}
 
-.logo, .logos{
-  font-family: 'Faster One', cursive;
-}.logo h1 a{
-  text-decoration: none;color: white;
-}
-.title{
-  font-family: 'Playfair Display', serif;
-}
+.logo, .logos{font-family: 'Faster One', cursive;}
+
+.logo h1 a{text-decoration: none;color: white;}
+
+.title{font-family: 'Playfair Display', serif;}
+
 .banner-section{
   background-image: url('./images/bg-7.avif');
   background-position:top center;
@@ -28,19 +24,15 @@ a{text-decoration: none;}
   color: black;
   padding: 10px 20px;
 }
-.sign-in button a{
-  color: black;
-}
+/* .sign-in button a{color: black;} */
 .UserImg{
   width: 50px;
   border-radius: 50%;
 }
-.dropdown-item{
-  cursor: pointer;
-}
-.signIn button img{
-  width: 40px;
-}
+.dropdown-item{cursor: pointer;}
+
+.signIn button img{width: 40px;}
+
 ::selection{
   background-color: #0A58CA;
   color: white;
@@ -48,7 +40,6 @@ a{text-decoration: none;}
 /* nav section */
 .nav-sections{
   box-shadow: 0 1px 5px rgb(51 65 80 / 25%);
- 
 }
 .logos h1 a{
   text-decoration: none;color: black;
@@ -59,7 +50,6 @@ nav{
 nav ul li{
   display: inline-block;
   padding-left: 50px;
-
 }
 nav ul li a{
   color: #236DB8;
@@ -71,7 +61,6 @@ nav ul li a{
   border-radius: 5px;
   background: #0A58CA;
   color: #ffffff;
-  
   line-height: normal;
 }
 /* search section css */
