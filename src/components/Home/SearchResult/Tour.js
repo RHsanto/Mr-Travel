@@ -14,7 +14,6 @@ const Tour = () => {
           <div className="row">
             <div className="col-lg-1 mx-auto ">
             <Link to='/tour'> <button>  Search </button></Link>
-
             </div>
           </div>
         </div>
