@@ -73,7 +73,7 @@ const TourDetails = () => {
               <p><FaUsers className='color'/> {tour?.member} people</p>
             </div>
             <div className="d-flex align-items-center gap-2">
-            <h3>{tour?.price}</h3> <small>BDT(per person)</small> </div>
+            <h3>Price: {tour?.price}</h3> <small>BDT(per person)</small> </div>
           </div>  
           </div>
           {/* accordion */}
