@@ -25,7 +25,16 @@ const TourDetails = () => {
     const { register, handleSubmit ,reset} = useForm();
     const onSubmit = data => {
       console.log(data)
+
+   // here put booking info
       data.types=tour.types
+      data.img=tour.img
+      data.TourName=tour.TourName
+      data.totalTime=tour.totalTime
+      data.member=tour.member
+      data.price=tour.price
+
+
       axios.post(' https://young-cliffs-75372.herokuapp.com/booking',data)
       .then(res =>{
         if(res.data.insertedId){
@@ -58,12 +67,13 @@ const TourDetails = () => {
             </div>
           <div className="col-lg-4 p-4">     
            <h4>{tour?.TourName}</h4>    
-           <p><BsGeoAltFill className='color'/> {tour?.area}</p>    
-            
+           <p><BsGeoAltFill className='color'/> {tour?.area}</p>      
             <div className="d-flex gap-4 ">
               <p><AiOutlineFieldTime className='color'/> {tour?.totalTime} hours</p>
               <p><FaUsers className='color'/> {tour?.member} people</p>
             </div>
+            <div className="d-flex align-items-center gap-2">
+            <h3>{tour?.price}</h3> <small>BDT(per person)</small> </div>
           </div>  
           </div>
           {/* accordion */}
@@ -214,7 +224,7 @@ const TourDetails = () => {
             <label for="floatingInput">Phone Number</label>
           </div>
            
-            <Link to={`/payment/${tour._id}`}>
+            <>
             <button  type='submit' className='w-100 btn btn-warning'>
                Confirm Booking
                <ToastContainer
@@ -229,7 +239,7 @@ const TourDetails = () => {
             pauseOnHover
             />
               </button> 
-            </Link> 
+            </> 
              </div>
             </form>
             </div>
