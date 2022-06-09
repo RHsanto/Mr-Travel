@@ -30,22 +30,22 @@ const BusSearch = () => {
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {busData.map(bus=>(
          <div className="flight mt-5">
-           <div class="card mb-3 ps-0">
-         <div class="row g-0">
-           <div class="col-md-4">
-             <img src={bus?.img} class="img-fluid  h-100 rounded-start" alt="..."/>
+           <div className="card mb-3 ps-0">
+         <div className="row g-0">
+           <div className="col-md-4">
+             <img src={bus?.img} className="img-fluid  h-100 rounded-start" alt="..."/>
            </div>
-           <div class="col-md-8">
-             <div class="card-body">
+           <div className="col-md-8">
+             <div className="card-body">
             <div className="d-flex align-items-center justify-content-around ">
               <div>
-              <h6 class="card-title fw-bold">{bus?.from}</h6>
-              <h6 class="card-title"><small>{bus?.startDate}</small></h6>
+              <h6 className="card-title fw-bold">{bus?.from}</h6>
+              <h6 className="card-title"><small>{bus?.startDate}</small></h6>
               </div>
                <h6  className='mx-5 arrow'><RiArrowLeftRightFill/></h6>
                <div>
-               <h6 class="card-title fw-bold">{bus?.to}</h6>
-               <h6 class="card-title"><small>{bus?.endDate}</small></h6>
+               <h6 className="card-title fw-bold">{bus?.to}</h6>
+               <h6 className="card-title"><small>{bus?.endDate}</small></h6>
                </div>
                <div className="time ms-5">
                  <h6>{bus?.totalTime}</h6>

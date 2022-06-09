@@ -60,21 +60,21 @@ const handleGoogle=(e)=>{
         </div>
         {/* here start sign up form  */}
            <form   onSubmit={handleSignUpSubmit}>
-           <div class="form-floating mb-3">
-               <input type="text"  onBlur={handleNameChange} class="form-control" id="floatingInput" placeholder="name"/>
+           <div className="form-floating mb-3">
+               <input type="text"  onBlur={handleNameChange} className="form-control" id="floatingInput" placeholder="name"/>
                <label for="floatingInput">Username</label>
                
            </div>
-            <div class="form-floating mb-3">
-               <input type="email"  onBlur={handleEmailChange} class="form-control" id="floatingInput" placeholder="name@example.com"/>
+            <div className="form-floating mb-3">
+               <input type="email"  onBlur={handleEmailChange} className="form-control" id="floatingInput" placeholder="name@example.com"/>
                <label for="floatingInput">Email</label>
            </div>
-            <div class="form-floating mb-3">
-               <input type="password"  onBlur={handlePasswordChange} class="form-control" id="floatingPassword" placeholder="Password"/>
+            <div className="form-floating mb-3">
+               <input type="password"  onBlur={handlePasswordChange} className="form-control" id="floatingPassword" placeholder="Password"/>
                <label for="floatingPassword">Password</label>
             </div>
-            {/* <div class="form-floating">
-               <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+            {/* <div className="form-floating">
+               <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
                <label for="floatingPassword">Confirm Password</label>
             </div> */}
              <div className="log-btn w-25 mt-5  mx-auto">
@@ -99,16 +99,16 @@ const handleGoogle=(e)=>{
           <img src={google} alt="" srcset="" />
           <button className=' google-btn bg-primary w-100'> Google</button></button>
         </div>
-        <div class="form-floating mb-3">
-           <input type="text" class="form-control" id="floatingInput" placeholder="name"/>
+        <div className="form-floating mb-3">
+           <input type="text" className="form-control" id="floatingInput" placeholder="name"/>
            <label for="floatingInput">Username</label>
        </div>
-        <div class="form-floating mb-3">
-           <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+        <div className="form-floating mb-3">
+           <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
            <label for="floatingInput">Email</label>
        </div>
-        <div class="form-floating">
-           <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+        <div className="form-floating">
+           <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
            <label for="floatingPassword">Password</label>
         </div>
         <div className="d-flex justify-content-between mt-3 ">

@@ -41,26 +41,26 @@ const AddBooking = () => {
        <div >
         <h5>Personal Details</h5>
         <div className="d-flex justify-content-between mt-5">
-        <div class="form-floating mb-3 w-100 me-lg-3 me-2">
+        <div className="form-floating mb-3 w-100 me-lg-3 me-2">
          <input type="text" required {...register("firstName")} 
-         class="form-control" id="floatingInput" placeholder="firstName"/>
+         className="form-control" id="floatingInput" placeholder="firstName"/>
          <label for="floatingInput">First Name</label>
        </div>
-        <div class="form-floating mb-3 w-100">
+        <div className="form-floating mb-3 w-100">
          <input type="text" required {...register("lastName")}
-         class="form-control" id="floatingInput" placeholder="lastName"/>
+         className="form-control" id="floatingInput" placeholder="lastName"/>
          <label for="floatingInput">Last Name</label>
        </div>
         </div>
         <div className="d-flex justify-content-between ">
-        <div class="form-floating mb-3 w-100 me-lg-3 me-2">
+        <div className="form-floating mb-3 w-100 me-lg-3 me-2">
          <input type="email" required {...register("email")}
-         class="form-control" id="floatingInput" placeholder="Email"/>
+         className="form-control" id="floatingInput" placeholder="Email"/>
          <label for="floatingInput">Email</label>
        </div>
-        <div class="form-floating mb-3 w-100">
+        <div className="form-floating mb-3 w-100">
          <input type="tel" required {...register("PhoneNumber")}
-         class="form-control" id="phone" placeholder="Number"/>
+         className="form-control" id="phone" placeholder="Number"/>
          <label for="floatingInput">Phone Number</label>
        </div>
        

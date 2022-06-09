@@ -31,22 +31,22 @@ const FlightSearch = () => {
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {flights.map(flight=>(
          <div className="flight mt-5">
-           <div class="card  mb-3 ps-0">
-         <div class="row g-0">
-           <div class="col-md-4">
-             <img src={flight?.img} class="fla-img rounded-start" alt="..."/>
+           <div className="card  mb-3 ps-0">
+         <div className="row g-0">
+           <div className="col-md-4">
+             <img src={flight?.img} className="fla-img rounded-start" alt="..."/>
            </div>
-           <div class="col-md-8">
-             <div class="card-body">
+           <div className="col-md-8">
+             <div className="card-body">
             <div className="d-flex align-items-center justify-content-around mb-5">
               <div>
-              <h6 class="card-title fw-bold">{flight?.from}</h6>
-              <h6 class="card-title"><small>{flight?.startDate}</small></h6>
+              <h6 className="card-title fw-bold">{flight?.from}</h6>
+              <h6 className="card-title"><small>{flight?.startDate}</small></h6>
               </div>
                <h6  className='mx-5 arrow'><AiOutlineSwap/></h6>
                <div>
-               <h6 class="card-title fw-bold">{flight?.to}</h6>
-               <h6 class="card-title"><small>{flight?.endDate}</small></h6>
+               <h6 className="card-title fw-bold">{flight?.to}</h6>
+               <h6 className="card-title"><small>{flight?.endDate}</small></h6>
                </div>
                <div className="time ms-5">
                  <h6>{flight?.totalTime}</h6>

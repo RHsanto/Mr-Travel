@@ -70,15 +70,15 @@ const TourDetails = () => {
           <div className="row mt-5 shadow mx-1 bg">
             <div className="col-lg-8 px-0">
               {/* accordion */}
-              <div class="accordion accordion-flush bg-light border-bottom border-1" id="accordionFlushExample">
-               <div class="accordion-item">
-                 <h2 class="accordion-header" id="flush-headingOne">
-                   <div class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              <div className="accordion accordion-flush bg-light border-bottom border-1" id="accordionFlushExample">
+               <div className="accordion-item">
+                 <h2 className="accordion-header" id="flush-headingOne">
+                   <div className="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                      <h5 ><BsGlobe className='re-icons'/> Description</h5>  
                    </div>
                  </h2>
-               <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">
+               <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                  <div className="accordion-body">
                     <p className=' lh-lg'><>Imagine exploring the tourist spots of the world's largest sea beach, Cox's Bazar in a double-decker tourist bus. Having the wide ocean view on one side and hill view on the other, this tour is an excellent opportunity for you to enjoy an entire day while fulfilling a major portion of your Cox's Bazar checklist. Driving through the iconic marine drive, Aquaholic Tourist Caravan offers you a stoppage at every spot to hop around comfortably. This tour also comes with special meal services, a mini library, washroom and refreshments - all inside the tourist bus! Overall, this unique experience of roaming around and visiting spots in a double-decker tourist bus is definitely going to be one of
                       the activities to cherish with your friends or family in Cox's Bazar.</></p>
                   </div>
@@ -86,38 +86,38 @@ const TourDetails = () => {
                 </div>
               </div>
             {/* accordion 2*/}
-              <div class="accordion accordion-flush bg-light border-bottom border-1" 
+              <div className="accordion accordion-flush bg-light border-bottom border-1" 
                 id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
-                    <div class="accordion-button collapsed " type="button"
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingTwo">
+                    <div className="accordion-button collapsed " type="button"
                      data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" 
                      aria-expanded="false" aria-controls="flush-collapseTwo">
                    <h5 ><BsGeoAltFill className='re-icons'/> Location</h5>  
                     </div>
                   </h2>
-                  <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                  <div id="flush-collapseTwo" className="accordion-collapse collapse"
                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     <p className=' lh-lg'>Pick-up: Ground Floor, Motel Upal, Shaibal Road, Cox's Bazar</p>
                    </div>
                 </div> 
                </div>
              </div>
             {/* accordion 3*/}
-              <div class="accordion accordion-flush bg-light border-bottom border-1" 
+              <div className="accordion accordion-flush bg-light border-bottom border-1" 
                 id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
-                    <div class="accordion-button collapsed " type="button"
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingThree">
+                    <div className="accordion-button collapsed " type="button"
                      data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" 
                      aria-expanded="false" aria-controls="flush-collapseThree">
                    <h5 ><AiOutlineFieldTime className='re-icons'/> Timing</h5>  
                     </div>
                   </h2>
-                  <div id="flush-collapseThree" class="accordion-collapse collapse"
+                  <div id="flush-collapseThree" className="accordion-collapse collapse"
                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                    <>9:00 AM - 6:00 PM</>
                    <p><b>Duration</b> : {tour?.totalTime} hours</p>
                    </div>
@@ -125,19 +125,19 @@ const TourDetails = () => {
                </div>
               </div>
             {/* accordion 4*/}
-              <div class="accordion accordion-flush bg-light border-bottom border-1" 
+              <div className="accordion accordion-flush bg-light border-bottom border-1" 
                 id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFour">
-                    <div class="accordion-button collapsed " type="button"
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingFour">
+                    <div className="accordion-button collapsed " type="button"
                      data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" 
                      aria-expanded="false" aria-controls="flush-collapseFour">
                    <h5 ><MdTipsAndUpdates className='re-icons'/> Travel Tips</h5>  
                     </div>
                   </h2>
-                  <div id="flush-collapseFour" class="accordion-collapse collapse"
+                  <div id="flush-collapseFour" className="accordion-collapse collapse"
                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                      <ul>
                        <li>Carry drinking water. Stay hydrated, travel healthy.</li>
                        <li>It is advised to carry a set of fresh clothes for the beach.</li>
@@ -150,19 +150,19 @@ const TourDetails = () => {
                </div>
               </div>
             {/* accordion 5*/}
-              <div class="accordion accordion-flush bg-light border-bottom border-1" 
+              <div className="accordion accordion-flush bg-light border-bottom border-1" 
                 id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFive">
-                    <div class="accordion-button collapsed " type="button"
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingFive">
+                    <div className="accordion-button collapsed " type="button"
                      data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" 
                      aria-expanded="false" aria-controls="flush-collapseFive">
                    <h5 ><MdPanTool className='re-icons'/> Inclusion & Exclusion</h5>  
                     </div>
                   </h2>
-                  <div id="flush-collapseFive" class="accordion-collapse collapse"
+                  <div id="flush-collapseFive" className="accordion-collapse collapse"
                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                      <div className='list'>
                      <li><span>✔</span> All Entry Tickets of Hopping Destinations</li>
                      <li><span>✔</span> Welcome Breakfast</li>
@@ -184,13 +184,13 @@ const TourDetails = () => {
             <div className="col-lg-4 p-2 shadow-lg mt-5 mt-lg-0 ">
             <form onSubmit={handleSubmit(onSubmit)}  >
             <div className="form border p-3 rounded">
-            <div class="form-floating mb-3">
-              <input type="date" required {...register("date")} class="form-control"
+            <div className="form-floating mb-3">
+              <input type="date" required {...register("date")} className="form-control"
                id="floatingInput" placeholder="date"/>
               <label for="floatingInput">Journey date</label>
            </div>
-           <div class="form-floating mb-4">
-           <select class="form-select" id="floatingSelect"
+           <div className="form-floating mb-4">
+           <select className="form-select" id="floatingSelect"
             {...register("traveler")} aria-label="Floating label select example">
              <option value="1"selected>1</option>
              <option value="2">2</option>
@@ -198,19 +198,19 @@ const TourDetails = () => {
            </select>
            <label for="floatingSelect">TRAVELER </label>
              </div>
-            <div class="form-floating mb-3 ">
+            <div className="form-floating mb-3 ">
              <input type="text" required {...register("firstName")} 
-             class="form-control" id="floatingInput" placeholder="firstName"/>
+             className="form-control" id="floatingInput" placeholder="firstName"/>
              <label for="floatingInput">Enter Name</label>
             </div>
-            <div class="form-floating mb-3 ">
+            <div className="form-floating mb-3 ">
            <input type="email" required {...register("email")}
-            class="form-control" id="floatingInput" placeholder="Email"/>
+            className="form-control" id="floatingInput" placeholder="Email"/>
            <label for="floatingInput">Email</label>
           </div>
-           <div class="form-floating mb-3 ">
+           <div className="form-floating mb-3 ">
             <input type="tel" required {...register("PhoneNumber")}
-            class="form-control" id="phone" placeholder="Number"/>
+            className="form-control" id="phone" placeholder="Number"/>
             <label for="floatingInput">Phone Number</label>
           </div>
            

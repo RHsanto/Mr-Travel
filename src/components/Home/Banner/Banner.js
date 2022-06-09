@@ -24,14 +24,14 @@ const Banner = () => {
      {user.photoURL ? <img className="UserImg" src={user.photoURL} alt="" />
      : <><FaUserCircle className='text-light fs-1'/></>
     }
-     <div class="dropdown">
+     <div className="dropdown">
      <div className='text-light ms-2'  type="button" id="dropdownMenuButton1"
       data-bs-toggle="dropdown" aria-expanded="false">
       <IoIosArrowDown className=' fw-bold fs-5'/>
      </div>
-     <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+     <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
      <span className='dropdown-item'>Profile </span>  
-     <span class="dropdown-item "><Link to='/my-booking' className='text-dark'>My Booking</Link>  </span>  
+     <span className="dropdown-item "><Link to='/my-booking' className='text-dark'>My Booking</Link>  </span>  
      <a><span className='dropdown-item w-100' onClick={logOut}>
       <FiLogOut/>   Sign-out</span></a>
      </ul>

@@ -32,14 +32,14 @@ const TourSearch = () => {
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {tours.map(tour=>(
          <div className="flight mt-5">
-           <div class="card mb-3 ps-0">
-         <div class="row g-0">
-           <div class="col-md-4">
-             <img src={tour?.img} class="img-fluid  h-100 rounded-start" alt="..."/>
+           <div className="card mb-3 ps-0">
+         <div className="row g-0">
+           <div className="col-md-4">
+             <img src={tour?.img} className="img-fluid  h-100 rounded-start" alt="..."/>
            </div>
-           <div class="col-md-8">
-             <div class="card-body color">
-             <h5 class="card-title fw-bold">{tour?.TourName}</h5>
+           <div className="col-md-8">
+             <div className="card-body color">
+             <h5 className="card-title fw-bold">{tour?.TourName}</h5>
               <h6><MdLocationPin/> {tour?.area}, Bangladesh</h6>
 
               <div className="ms-1">

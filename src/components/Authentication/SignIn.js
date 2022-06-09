@@ -51,12 +51,12 @@ const SignIn = () => {
             <button className=' google-btn bg-primary w-100'> Google</button></button>
           </div>
       <form onSubmit={handleSignIn}>
-      <div class="form-floating mb-3">
-             <input type="email" onBlur={handleEmailChange} class="form-control" id="floatingInput" placeholder="name@example.com"/>
+      <div className="form-floating mb-3">
+             <input type="email" onBlur={handleEmailChange} className="form-control" id="floatingInput" placeholder="name@example.com"/>
              <label for="floatingInput">Email</label>
          </div>
-          <div class="form-floating">
-             <input type="password" onBlur={handlePasswordChange} class="form-control" id="floatingPassword" placeholder="Password"/>
+          <div className="form-floating">
+             <input type="password" onBlur={handlePasswordChange} className="form-control" id="floatingPassword" placeholder="Password"/>
              <label for="floatingPassword">Password</label>
           </div>
            <div className="d-flex justify-content-between mt-3 px-2">
@@ -81,12 +81,12 @@ const SignIn = () => {
             <img src={google} alt="" srcset="" />
             <button className=' google-btn bg-primary w-100'> Google</button></button>
           </div>
-          <div class="form-floating mb-3">
-             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+          <div className="form-floating mb-3">
+             <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
              <label for="floatingInput">Username</label>
          </div>
-          <div class="form-floating">
-             <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+          <div className="form-floating">
+             <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
              <label for="floatingPassword">Password</label>
           </div>
           <div className="d-flex justify-content-between mt-3 ">

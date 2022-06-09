@@ -32,13 +32,13 @@ const HotelSearch = () => {
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {hotels.map(hotel=>(
          <div className="flight mt-5">
-           <div class="card mb-3 ps-0">
-         <div class="row g-0">
-           <div class="col-md-4">
-             <img src={hotel?.img} class="img-fluid" alt="..."/>
+           <div className="card mb-3 ps-0">
+         <div className="row g-0">
+           <div className="col-md-4">
+             <img src={hotel?.img} className="img-fluid" alt="..."/>
            </div>
-           <div class="col-md-8">
-             <div class="card-body ">
+           <div className="col-md-8">
+             <div className="card-body ">
                <div className="d-flex hotel ">
                <p className='hotel'>{hotel?.type}</p>
                <Rating className='ms-2  mt-1 star-color'

@@ -40,29 +40,29 @@ const OffersDetails = () => {
          </div>
       {/* sliders */}
       <div>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src={offer?.img} class="d-block w-100" alt="..."/>
+      <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src={offer?.img} className="d-block w-100" alt="..."/>
     </div>
-    <div class="carousel-item ">
-      <img src={offer?.slider1} class="d-block w-100" alt="..."/>
+    <div className="carousel-item ">
+      <img src={offer?.slider1} className="d-block w-100" alt="..."/>
     </div>
-    <div class="carousel-item">
-      <img src={offer?.slider2} class="d-block w-100" alt="..."/>
+    <div className="carousel-item">
+      <img src={offer?.slider2} className="d-block w-100" alt="..."/>
     </div>
-    <div class="carousel-item">
-      <img src={offer?.slider3} class="d-block w-100" alt="..."/>
+    <div className="carousel-item">
+      <img src={offer?.slider3} className="d-block w-100" alt="..."/>
     </div>
    
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
   </button>
 </div>
     </div>
@@ -90,51 +90,51 @@ const OffersDetails = () => {
       <div className="row ps-4 pe-3 mt-5">
         <div className="col-lg-10 p-0 shadow">
 {/* accordion */}
-  <div class="accordion accordion-flush bg-light border-bottom border-1" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <div class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+  <div className="accordion accordion-flush bg-light border-bottom border-1" id="accordionFlushExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingOne">
+      <div className="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
      <h5 className='re-icons'><BsGlobe/> Overview</h5>  
       </div>
     </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
+    <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div className="accordion-body">
       <p className=' lh-lg'>{offer?.description}</p>
      </div>
     </div>
   </div>
   </div>
   {/* accordion 2*/}
-  <div class="accordion accordion-flush bg-light border-bottom border-1" 
+  <div className="accordion accordion-flush bg-light border-bottom border-1" 
   id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <div class="accordion-button collapsed " type="button"
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingThree">
+      <div className="accordion-button collapsed " type="button"
        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" 
        aria-expanded="false" aria-controls="flush-collapseThree">
      <h5 className='re-icons'><BsGeoAltFill/> Location</h5>  
       </div>
     </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
+    <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div className="accordion-body">
       <p className=' lh-lg'>{offer?.location}</p>
      </div>
     </div>
   </div>
   </div>
   {/* accordion 3 */}
-  <div class="accordion accordion-flush bg-light" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingTwo">
-      <div class="accordion-button collapsed " type="button"
+  <div className="accordion accordion-flush bg-light" id="accordionFlushExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingTwo">
+      <div className="accordion-button collapsed " type="button"
        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne">
      <h5 className='re-icons'><HiCurrencyDollar/> Summary of Charges</h5>
     <span className=' subtotal d-none d-lg-block'><><h5 className='fw-bold'>{sum}</h5> </>USD Subtotal</span>
     
       </div>
     </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
+    <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div className="accordion-body">
        <h6 className='fw-bold'>Member Flexible Rate</h6>
        <h6 className='re-icons fw-bold'>RATE DETAILS</h6>
        <div className="charge-info mt-5">

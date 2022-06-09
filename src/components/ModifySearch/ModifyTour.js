@@ -3,8 +3,8 @@ import React from 'react';
 const ModifyTour = () => {
   return (
     <div className='d-flex pb-5'>
-    <div class="form-floating w-100">
-        <input type="text" class="form-control"
+    <div className="form-floating w-100">
+        <input type="text" className="form-control"
             id="floatingInput" placeholder="name@example.com"/>
         <label for="floatingInput">LOCATION / TOUR</label>
     </div>

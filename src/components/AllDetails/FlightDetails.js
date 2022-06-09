@@ -77,36 +77,36 @@ const FlightDetails = () => {
           </div>
           {/* accordion */}
        <form onSubmit={handleSubmit(onSubmit)}>
-       <div class="accordion-item bg shadow mt-4 mx-1 ">
-       <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+       <div className="accordion-item bg shadow mt-4 mx-1 ">
+       <h2 className="accordion-header" id="headingTwo">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         <h5>Enter Traveler Details</h5>
       </button>
     </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
+    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
         <h5>Personal Details</h5>
         <div className="d-flex justify-content-between mt-5">
-        <div class="form-floating mb-3 w-100 me-lg-3 me-2">
+        <div className="form-floating mb-3 w-100 me-lg-3 me-2">
          <input type="text" required {...register("firstName")} 
-         class="form-control" id="floatingInput" placeholder="firstName"/>
+         className="form-control" id="floatingInput" placeholder="firstName"/>
          <label for="floatingInput">First Name</label>
        </div>
-        <div class="form-floating mb-3 w-100">
+        <div className="form-floating mb-3 w-100">
          <input type="text" required {...register("lastName")}
-         class="form-control" id="floatingInput" placeholder="lastName"/>
+         className="form-control" id="floatingInput" placeholder="lastName"/>
          <label for="floatingInput">Last Name</label>
        </div>
         </div>
         <div className="d-flex justify-content-between ">
-        <div class="form-floating mb-3 w-100 me-lg-3 me-2">
+        <div className="form-floating mb-3 w-100 me-lg-3 me-2">
          <input type="email" required {...register("email")}
-         class="form-control" id="floatingInput" placeholder="Email"/>
+         className="form-control" id="floatingInput" placeholder="Email"/>
          <label for="floatingInput">Email</label>
        </div>
-        <div class="form-floating mb-3 w-100">
+        <div className="form-floating mb-3 w-100">
          <input type="tel" required {...register("PhoneNumber")}
-         class="form-control" id="phone" placeholder="Number"/>
+         className="form-control" id="phone" placeholder="Number"/>
          <label for="floatingInput">Phone Number</label>
         
        </div>
