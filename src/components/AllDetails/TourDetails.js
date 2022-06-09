@@ -214,8 +214,9 @@ const TourDetails = () => {
             <label for="floatingInput">Phone Number</label>
           </div>
            
-             <button type='submit' className='w-100 btn btn-warning'>
-               Continue
+            <Link to={`/payment/${tour._id}`}>
+            <button  type='submit' className='w-100 btn btn-warning'>
+               Confirm Booking
                <ToastContainer
             position="top-right"
             autoClose={5000}
@@ -227,7 +228,8 @@ const TourDetails = () => {
             draggable
             pauseOnHover
             />
-               </button>  
+              </button> 
+            </Link> 
              </div>
             </form>
             </div>

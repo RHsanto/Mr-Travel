@@ -36,7 +36,7 @@ function App() {
           <Route path='/flights/:id' element={<FlightDetails/>} />
           <Route path='/bus/:id' element={<BusDetails/>} />
           <Route path='/booking/:id' element={<AddBooking/>} />
-          <Route path='/payment' element={<Payment/>} />
+          <Route path='/payment/:id' element={<Payment/>} />
 
         </Routes>
       </BrowserRouter>
