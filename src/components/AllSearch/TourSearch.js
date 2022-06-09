@@ -38,7 +38,7 @@ const TourSearch = () => {
              <img src={tour?.img} className="img-fluid  h-100 rounded-start" alt="..."/>
            </div>
            <div className="col-md-8">
-             <div className="card-body color">
+             <div className="card-body ">
              <h5 className="card-title fw-bold">{tour?.TourName}</h5>
               <h6><MdLocationPin/> {tour?.area}, Bangladesh</h6>
 
