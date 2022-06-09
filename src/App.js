@@ -17,6 +17,7 @@ import TourDetails from './components/AllDetails/TourDetails';
 import FlightDetails from './components/AllDetails/FlightDetails';
 import BusDetails from './components/AllDetails/BusDetails';
 import AddBooking from './components/AddBookings/AddBooking';
+import Payment from './components/Payment/Payment';
 function App() {
   return (
     <div className="App">
@@ -35,6 +36,7 @@ function App() {
           <Route path='/flights/:id' element={<FlightDetails/>} />
           <Route path='/bus/:id' element={<BusDetails/>} />
           <Route path='/booking/:id' element={<AddBooking/>} />
+          <Route path='/payment' element={<Payment/>} />
 
         </Routes>
       </BrowserRouter>

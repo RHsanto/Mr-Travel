@@ -82,7 +82,7 @@ const OffersDetails = () => {
           </div>
           <div className="d-flex justify-content-between align-items-center px-2 py-3">
             <div className='d-flex'><h3>${sum}</h3><small>(per night)</small></div>
-          <button className=''>Booking Now</button> 
+          <button  className=''>Booking Now</button> 
           </div>
          </div>
         </div>

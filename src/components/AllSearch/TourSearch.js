@@ -59,7 +59,6 @@ const TourSearch = () => {
               </div>
               </div>
             </div>
-
            </div>
          </div>
        </div>
