@@ -38,7 +38,7 @@ const HotelSearch = () => {
              <img src={hotel?.img} class="img-fluid" alt="..."/>
            </div>
            <div class="col-md-8">
-             <div class="card-body color">
+             <div class="card-body ">
                <div className="d-flex hotel ">
                <p className='hotel'>{hotel?.type}</p>
                <Rating className='ms-2  mt-1 star-color'
@@ -49,7 +49,7 @@ const HotelSearch = () => {
                   /> 
          
                </div>
-             <h5 class="card-title fw-bold">{hotel?.hotelName}</h5>
+             <h5 className='fw-bold'>{hotel?.hotelName}</h5>
               <h6><MdLocationPin/> {hotel?.location}, Bangladesh</h6>
 
               <div className="d-flex justify-content-between align-items-center mt-5">
