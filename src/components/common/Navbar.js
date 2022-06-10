@@ -50,8 +50,7 @@ const Navbar = () => {
      <div className="sign-in">
      <Link to='/sign-in'><button className='rounded text-dark'> Sign-in</button> </Link>
      </div> 
-      }
-      
+      }    
    </div>
    </div>
     </div>
