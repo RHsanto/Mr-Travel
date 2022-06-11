@@ -5,11 +5,12 @@ import {BsGlobe,BsGeoAltFill} from "react-icons/bs";
 import {HiCurrencyDollar} from "react-icons/hi";
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
-import Navbar from '../common/Navbar';
+
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import Rating from 'react-rating';
 import './offer.css'
+import Navbar from '../../common/Navbar';
 
 
 const OffersDetails = () => {
