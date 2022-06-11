@@ -23,6 +23,11 @@ const FlightDetails = () => {
   const onSubmit = data => {
     console.log(data)
     data.types=flight.types
+    data.img=flight.img
+    data.TourName=flight.TourName
+    data.totalTime=flight.totalTime
+    data.member=flight.member
+    data.price=flight.price
     axios.post(' https://young-cliffs-75372.herokuapp.com/booking',data)
     .then(res =>{
       if(res.data.insertedId){
