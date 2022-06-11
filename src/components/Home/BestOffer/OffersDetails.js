@@ -218,20 +218,6 @@ const OffersDetails = () => {
          <div className="confirm-form border rounded">
          <form onSubmit={handleSubmit(onSubmit)}  >
             <div className="form border p-3 rounded">
-            <div className="form-floating mb-3">
-              <input type="date" required {...register("date")} className="form-control"
-               id="floatingInput" placeholder="date"/>
-              <label for="floatingInput">Journey date</label>
-           </div>
-           <div className="form-floating mb-4">
-           <select className="form-select" id="floatingSelect"
-            {...register("traveler")} aria-label="Floating label select example">
-             <option value="1"selected>1</option>
-             <option value="2">2</option>
-             <option value="3">3</option>
-           </select>
-           <label for="floatingSelect">TRAVELER </label>
-             </div>
             <div className="form-floating mb-3 ">
              <input type="text" required {...register("firstName")} 
              className="form-control" id="floatingInput" placeholder="firstName"/>
@@ -249,7 +235,7 @@ const OffersDetails = () => {
           </div>
            
             <>
-            <button  type='submit' className='w-100 btn btn-warning'>
+            <button  type='submit' className='w-100 btn confirm-btn text-light'>
                Confirm Booking
                <ToastContainer
             position="top-right"
