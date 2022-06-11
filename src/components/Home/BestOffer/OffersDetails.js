@@ -3,7 +3,11 @@ import { useParams } from 'react-router-dom';
 import {AiOutlineStar,AiFillStar} from "react-icons/ai";
 import {BsGlobe,BsGeoAltFill} from "react-icons/bs";
 import {HiCurrencyDollar} from "react-icons/hi";
-import Navbar from '../../common/Navbar';
+import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import Navbar from '../common/Navbar';
+import axios from 'axios';
+import 'react-toastify/dist/ReactToastify.css';
 import Rating from 'react-rating';
 import './offer.css'
 
@@ -17,6 +21,39 @@ const OffersDetails = () => {
     .then(response=>response.json())
     .then(data=>setOffer(data))
   })
+
+   // react hook form
+   const { register, handleSubmit ,reset} = useForm();
+   const onSubmit = data => {
+     console.log(data)
+
+  // here put booking info
+     data.types=offer.types
+     data.img=offer.img
+     data.hotelName=offer.hotelName
+     data.totalTime=offer.totalTime
+     data.member=offer.member
+     data.price=offer.price
+
+
+     axios.post(' https://young-cliffs-75372.herokuapp.com/booking',data)
+     .then(res =>{
+       if(res.data.insertedId){
+         toast.success('Booking Successful', {
+           position: "top-center",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+           });
+         reset();
+       }
+     
+     })
+   
+   };
   return (
     <div >
       <Navbar/>
@@ -176,8 +213,59 @@ const OffersDetails = () => {
 
      {/* accordion */}
         </div>
-        <div className="col-lg-4 bg shadow">
-        <button  className=''>Booking Now</button> 
+        <div className="col-lg-4 bg shadow p-3">
+         <div className="confirm-form border rounded">
+         <form onSubmit={handleSubmit(onSubmit)}  >
+            <div className="form border p-3 rounded">
+            <div className="form-floating mb-3">
+              <input type="date" required {...register("date")} className="form-control"
+               id="floatingInput" placeholder="date"/>
+              <label for="floatingInput">Journey date</label>
+           </div>
+           <div className="form-floating mb-4">
+           <select className="form-select" id="floatingSelect"
+            {...register("traveler")} aria-label="Floating label select example">
+             <option value="1"selected>1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+           </select>
+           <label for="floatingSelect">TRAVELER </label>
+             </div>
+            <div className="form-floating mb-3 ">
+             <input type="text" required {...register("firstName")} 
+             className="form-control" id="floatingInput" placeholder="firstName"/>
+             <label for="floatingInput">Enter Name</label>
+            </div>
+            <div className="form-floating mb-3 ">
+           <input type="email" required {...register("email")}
+            className="form-control" id="floatingInput" placeholder="Email"/>
+           <label for="floatingInput">Email</label>
+          </div>
+           <div className="form-floating mb-3 ">
+            <input type="tel" required {...register("PhoneNumber")}
+            className="form-control" id="phone" placeholder="Number"/>
+            <label for="floatingInput">Phone Number</label>
+          </div>
+           
+            <>
+            <button  type='submit' className='w-100 btn btn-warning'>
+               Confirm Booking
+               <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            />
+              </button> 
+            </> 
+             </div>
+            </form>
+         </div>
         </div>
       </div>
     </div>
