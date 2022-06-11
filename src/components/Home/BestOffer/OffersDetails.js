@@ -125,7 +125,7 @@ const OffersDetails = () => {
         </div>
       </div>
       <div className="row ps-4 pe-3 mt-5 ">
-        <div className="col-lg-8 p-0 shadow">
+        <div className="col-lg-8 p-0 shadow bg">
 {/* accordion */}
   <div className="accordion accordion-flush bg-light border-bottom border-1" id="accordionFlushExample">
   <div className="accordion-item">
@@ -235,7 +235,7 @@ const OffersDetails = () => {
           </div>
            
             <>
-            <button  type='submit' className='w-100 btn confirm-btn text-light'>
+            <button  type='submit' className='w-100 btn btn-warning'>
                Confirm Booking
                <ToastContainer
             position="top-right"
