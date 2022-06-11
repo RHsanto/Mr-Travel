@@ -1,9 +1,13 @@
 import React from 'react';
+import Navbar from '../common/Navbar';
 
 const MyBooking = () => {
   return (
     <div>
-      <h1>MyBooking</h1>
+      <Navbar/>
+     <div className="container">
+      <h1>Here all order image</h1>
+     </div>
     </div>
   );
 };
