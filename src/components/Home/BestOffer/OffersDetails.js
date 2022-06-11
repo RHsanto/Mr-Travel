@@ -32,9 +32,9 @@ const OffersDetails = () => {
      data.types=offer.types
      data.img=offer.img
      data.hotelName=offer.hotelName
-     data.totalTime=offer.totalTime
-     data.member=offer.member
-     data.price=offer.price
+     data.room=offer.room
+     data.guest=offer.guest
+     data.sum=sum
 
 
      axios.post(' https://young-cliffs-75372.herokuapp.com/booking',data)
