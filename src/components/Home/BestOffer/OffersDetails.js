@@ -177,7 +177,7 @@ const OffersDetails = () => {
      {/* accordion */}
         </div>
         <div className="col-lg-4 bg shadow">
-          sldkhfsdhop
+        <button  className=''>Booking Now</button> 
         </div>
       </div>
     </div>
