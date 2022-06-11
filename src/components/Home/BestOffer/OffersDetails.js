@@ -23,7 +23,7 @@ const OffersDetails = () => {
    <div className='offersDetails'>
    <div className="container py-5">
       <div className="row mb-3 d-flex  align-items-center">
-        <div className="col-lg-6 ">
+        <div className="col-lg-8 ">
        <div className="img-box px-3">
          <button className='type-btn '>{offer?.type}</button>
          <Rating className='ms-4  mt-1 re-icons'
@@ -82,13 +82,12 @@ const OffersDetails = () => {
           </div>
           <div className="d-flex justify-content-between align-items-center px-2 py-3">
             <div className='d-flex'><h3>${sum}</h3><small>(per night)</small></div>
-          <button  className=''>Booking Now</button> 
           </div>
          </div>
         </div>
       </div>
-      <div className="row ps-4 pe-3 mt-5">
-        <div className="col-lg-10 p-0 shadow">
+      <div className="row ps-4 pe-3 mt-5 ">
+        <div className="col-lg-8 p-0 shadow">
 {/* accordion */}
   <div className="accordion accordion-flush bg-light border-bottom border-1" id="accordionFlushExample">
   <div className="accordion-item">
@@ -176,6 +175,9 @@ const OffersDetails = () => {
   </div>
 
      {/* accordion */}
+        </div>
+        <div className="col-lg-4 bg shadow">
+          sldkhfsdhop
         </div>
       </div>
     </div>
