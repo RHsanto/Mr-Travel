@@ -21,7 +21,7 @@ const MyBooking = () => {
      <div className="container">
       <h1>Here all order </h1>
       {/* here show order info */}
-      <div className="common-section ">
+      <div className="">
     <div className="container">
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {booking.map(tour=>(
