@@ -15,7 +15,8 @@ const MyBooking = () => {
     <div>
       <Navbar/>
      <div className="container">
-      <h1>Here all order image</h1>
+      <h1>Here all order </h1>
+      {/* here show order info */}
      </div>
     </div>
   );
