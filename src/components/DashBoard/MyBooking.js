@@ -46,9 +46,7 @@ const MyBooking = () => {
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select'>
-              <Link to={`/tours/${data._id}`}>
-              <button>Booking <RiArrowRightLine className='ms-4 fs-5'/></button> 
-              </Link>
+            
               </div>
               </div>
             </div>
