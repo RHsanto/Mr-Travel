@@ -51,8 +51,9 @@ const MyBooking = () => {
               <h6 className='mx-1'><b> {data?.price} {data?.sum}</b></h6>
                <p><small>(Per Person)</small></p>
               </div>
-              <div className='select'>
-            
+              <div className='select-btn gap-4 d-flex'>
+               <button>Payment</button>
+               <button>Delete</button>
               </div>
               </div>
             </div>
