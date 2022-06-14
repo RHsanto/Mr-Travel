@@ -40,10 +40,11 @@ const Navbar = () => {
       <IoIosArrowDown className=' fw-bold fs-5'/>
      </div>
      <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-     <span className='dropdown-item'>Profile </span>  
+     <span className='dropdown-item '>Profile </span>  
+     <span className='dropdown-item'>{user?.displayName}</span>  
      <span className="dropdown-item "><Link to='/my-booking' className='text-dark'>My Booking</Link>  </span>  
-     <a><span className='dropdown-item w-100' onClick={logOut}>
-      <FiLogOut/>   Sign-out</span></a>
+     <a><span className='dropdown-item w-100 bg-danger text-light' onClick={logOut}>
+      <FiLogOut/>  Sign-out</span></a>
      </ul>
      </div>
      </> :

@@ -40,7 +40,7 @@ const handleGoogle=(e)=>{
   const handleSignUpSubmit = (e) => {
     registerUser(name, email, password);
     e.preventDefault();
-  
+    
   };
  
 
