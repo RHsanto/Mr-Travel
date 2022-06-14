@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import useFirebase from '../../hooks/useFirebase';
-import {RiArrowRightLine} from "react-icons/ri";
+import {AiOutlineSwap} from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import Navbar from '../common/Navbar';
 import { useEffect } from 'react';
@@ -32,17 +32,23 @@ const MyBooking = () => {
            </div>
            <div className="col-md-8">
              <div className="card-body ">
-             <h5 className="card-title fw-bold">{data?.TourName}</h5>
-             <h5 className="card-title fw-bold">{data?.hotelName}</h5>
-             <div className='d-flex gap-5 align-items-center'>
+              
+            
+             <div>
+             {data?.from  ? <div className='d-flex  align-items-center'> 
              <h6 className="card-title fw-bold">{data?.from}</h6>
-             <h6 className="card-title fw-bold">{data?.to}</h6>
+             <h6  className='arrow mx-5'><AiOutlineSwap/></h6>
+             <h6 className="card-title fw-bold">{data?.to}</h6></div> : <>
+             <h5 className="card-title fw-bold">{data?.TourName}</h5>
+             <h5 className="card-title fw-bold">{data?.hotelName}</h5></>
+              }
+            
              </div>
              <h6>Types: {data?.types}</h6>
 
               <div className="d-flex justify-content-between align-items-center mt-5">
               <div className="d-flex">
-              <h6 className='mx-1'><b>BDT {data?.price}</b></h6>
+              <h6 className='mx-1'><b> {data?.price} {data?.sum}</b></h6>
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select'>
