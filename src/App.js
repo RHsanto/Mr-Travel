@@ -17,7 +17,8 @@ import TourDetails from './components/AllDetails/TourDetails';
 import FlightDetails from './components/AllDetails/FlightDetails';
 import BusDetails from './components/AllDetails/BusDetails';
 import AddBooking from './components/AddBookings/AddBooking';
-import Payment from './components/Payment/Payment';
+import Payment from './components/DashBoard/Payment/Payment';
+
 function App() {
   return (
     <div className="App">

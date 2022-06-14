@@ -56,7 +56,7 @@ const MyBooking = () => {
                <p><small>(Per Person)</small></p>
               </div>
               <div className='select-btn gap-2 d-flex'>
-              <Link to='/'> <button className='btn btn-success '><SiFampay/> Payment</button></Link>
+              <Link to={`/payment/${data?._id}`}> <button className='btn btn-success '><SiFampay/> Payment</button></Link>
                <button className='btn btn-danger'><MdDelete/> Delete</button>
               </div>
               </div>
