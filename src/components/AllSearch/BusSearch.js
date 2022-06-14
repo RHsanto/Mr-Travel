@@ -29,7 +29,7 @@ const BusSearch = () => {
     <div className="container">
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {busData.map(bus=>(
-         <div className="flight mt-5">
+         <div key={bus._id} className="flight mt-5">
            <div className="card mb-3 ps-0">
          <div className="row g-0">
            <div className="col-md-4">
