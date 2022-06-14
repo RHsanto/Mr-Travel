@@ -1,19 +1,23 @@
 import React from 'react';
 import { useState } from 'react';
-import useFirebase from '../../hooks/useFirebase';
 import {AiOutlineSwap} from "react-icons/ai";
-import { Link } from 'react-router-dom';
-import Navbar from '../common/Navbar';
+import { SiFampay} from "react-icons/si";
+import { MdDelete} from "react-icons/md";
 import { useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
+import Navbar from '../common/Navbar';
+import './dashboard.css'
 const MyBooking = () => {
   const{user}=useFirebase();
   const [booking,setBooking]=useState([]);
+
   useEffect(()=>{
   fetch(`https://young-cliffs-75372.herokuapp.com/booking/${user?.email}`)
   .then(res=>res.json())
   .then(data=>setBooking(data))
-  },[user])
+  })
+
   return (
     <div>
       <Navbar/>
@@ -24,7 +28,7 @@ const MyBooking = () => {
     <div className="container">
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {booking.map(data=>(
-         <div className="flight mt-5">
+         <div className="flight mt-5" key={data._id}>
            <div className="card mb-3 ps-0">
          <div className="row g-0">
            <div className="col-md-4">
@@ -51,9 +55,9 @@ const MyBooking = () => {
               <h6 className='mx-1'><b> {data?.price} {data?.sum}</b></h6>
                <p><small>(Per Person)</small></p>
               </div>
-              <div className='select-btn gap-4 d-flex'>
-               <button>Payment</button>
-               <button>Delete</button>
+              <div className='select-btn gap-2 d-flex'>
+              <Link to='/'> <button className='btn btn-success '><SiFampay/> Payment</button></Link>
+               <button className='btn btn-danger'><MdDelete/> Delete</button>
               </div>
               </div>
             </div>
