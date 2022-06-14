@@ -7,21 +7,23 @@ import {HiClock} from "react-icons/hi";
 import {FaUsers} from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Navbar from '../common/Navbar';
+import { useEffect } from 'react';
 
 const MyBooking = () => {
   const{user}=useFirebase();
   const [booking,setBooking]=useState([]);
-  console.log(user?.email);
+  useEffect(()=>{
   fetch(`https://young-cliffs-75372.herokuapp.com/booking/${user?.email}`)
   .then(res=>res.json())
   .then(data=>setBooking(data))
+  },[user])
   return (
     <div>
       <Navbar/>
      <div className="container">
-      <h1>Here all order </h1>
+      <h1 className='mt-3'>Here all order </h1>
       {/* here show order info */}
-      <div className="">
+      <div className="my-5">
     <div className="container">
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {booking.map(tour=>(
