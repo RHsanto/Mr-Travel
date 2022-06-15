@@ -32,7 +32,7 @@ const Navbar = () => {
       {user.email ?
       <> 
      {user.photoURL ? <img className="UserImg mb-2" src={user.photoURL} alt="" />
-     : <><FaUserCircle className='text-dark fs-1'/></>
+     : <><FaUserCircle className='text-blue fs-1'/></>
     }
      <div className="dropdown">
      <div className='text-dark ms-2'  type="button" id="dropdownMenuButton1"

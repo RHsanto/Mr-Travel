@@ -37,6 +37,9 @@ a{text-decoration: none;}
   background-color: #0A58CA;
   color: white;
 }
+.text-blue{
+  color: #0A58CA;
+}
 /* nav section */
 .nav-sections{
   box-shadow: 0 1px 5px rgb(51 65 80 / 25%);
@@ -52,7 +55,8 @@ nav ul li{
   padding-left: 50px;
 }
 nav ul li a{
-  color: #236DB8;
+  color: #0A58CA;
+  font-size: 17px;
 }
 .modify-btn{
   border: 0;
