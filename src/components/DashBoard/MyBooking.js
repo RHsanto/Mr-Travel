@@ -36,8 +36,6 @@ const MyBooking = () => {
            </div>
            <div className="col-md-8">
              <div className="card-body ">
-              
-            
              <div>
              {data?.from  ? <div className='d-flex  align-items-center'> 
              <h6 className="card-title fw-bold">{data?.from}</h6>
@@ -46,7 +44,6 @@ const MyBooking = () => {
              <h5 className="card-title fw-bold">{data?.TourName}</h5>
              <h5 className="card-title fw-bold">{data?.hotelName}</h5></>
               }
-            
              </div>
              <h6>Types: {data?.types}</h6>
 
