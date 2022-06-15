@@ -30,7 +30,7 @@ const Banner = () => {
       <IoIosArrowDown className=' fw-bold fs-5'/>
      </div>
      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-     <span className='ms-3 '>{user?.displayName}</span>  
+     <span className='ms-3'>{user?.displayName}</span>  
      <span className="dropdown-item "><Link to='/my-booking' className='text-dark'>My Booking</Link>  </span>  
      <a><span className='dropdown-item w-100 bg-danger text-light' onClick={logOut}>
       <FiLogOut/>   Sign-out</span></a>

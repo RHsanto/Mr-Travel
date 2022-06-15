@@ -59,7 +59,9 @@ nav ul li a{
   font-size: 17px;
 }
 
-
+.dropdown-item{
+  padding: 12px ;
+}
 .modify-btn{
   border: 0;
   margin-left: 10px;
