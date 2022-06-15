@@ -7,7 +7,9 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
 import Navbar from '../common/Navbar';
-import './dashboard.css'
+import './dashboard.css';
+import oops from '../../images/opps-1.jpg'
+
 const MyBooking = () => {
   const{user}=useFirebase();
   const [booking,setBooking]=useState([]);
@@ -22,16 +24,19 @@ const MyBooking = () => {
     <div>
       <Navbar/>
      <div className="container">
-      <h1 className='mt-3'>Here all order </h1>
       {/* here show order info */}
       <div className="my-5">
     <div className="container">
-      <div className="row row-cols-1 row-cols-md-2 g-4">
-        {booking?.length===0 ? <>Empty</> :
+      <div>
+        {booking?.length===0 ? <div className='text-center'>
+          <h1 className='mb-4'>You made no order</h1>
+          <img className='w-100' src={oops} alt="" />
+        </div> :
         
-       <>
+       <div className="row row-cols-1 row-cols-md-2 g-4">
         {booking.map(data=>(
           <div className="flight mt-5" key={data._id}>
+
             <div className="card mb-3 ps-0">
           <div className="row g-0">
             <div className="col-md-4">
@@ -65,7 +70,7 @@ const MyBooking = () => {
           </div>
         </div>
           </div>
-         ))}</>
+         ))}</div>
         
         }
         

@@ -58,6 +58,8 @@ nav ul li a{
   color: #0A58CA;
   font-size: 17px;
 }
+
+
 .modify-btn{
   border: 0;
   margin-left: 10px;
@@ -250,4 +252,4 @@ list-style: none;
   border-radius: 5px;
 }
 
-/* authentication */
+
