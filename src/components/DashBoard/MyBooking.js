@@ -28,12 +28,12 @@ const MyBooking = () => {
       <div className="my-5">
     <div className="container">
       <div>
-        {booking?.length===0 ? <div className='text-center'>
+        {/* {booking?.length===0 ? <div className='text-center'>
           <h1 className='mb-4'>You made no order</h1>
           <img className='w-100' src={oops} alt="" />
         </div> :
-        
-       <div className="row row-cols-1 row-cols-md-2 g-4">
+        } */}
+         <div className="row row-cols-1 row-cols-md-2 g-4">
         {booking.map(data=>(
           <div className="flight mt-5" key={data._id}>
 
@@ -71,9 +71,6 @@ const MyBooking = () => {
         </div>
           </div>
          ))}</div>
-        
-        }
-        
       </div>
      </div>
     </div>
