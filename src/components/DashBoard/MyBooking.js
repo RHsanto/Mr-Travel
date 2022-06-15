@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
 import Navbar from '../common/Navbar';
 import './dashboard.css';
-import oops from '../../images/opps-1.jpg'
+// import oops from '../../images/opps-1.jpg'
 
 const MyBooking = () => {
   const{user}=useFirebase();
