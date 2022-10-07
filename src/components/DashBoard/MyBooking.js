@@ -26,7 +26,7 @@ const MyBooking = () => {
      <div className="container">
       {/* here show order info */}
       <div className="my-5">
-    <div className="container">
+    <div className="container ">
       <div>
         {/* {booking?.length===0 ? <div className='text-center'>
           <h1 className='mb-4'>You made no order</h1>
@@ -35,7 +35,7 @@ const MyBooking = () => {
         } */}
          <div className="row row-cols-1 row-cols-md-2 g-4">
         {booking.map(data=>(
-          <div className="flight mt-5" key={data._id}>
+          <div className="flight mt-3" key={data._id}>
 
             <div className="card mb-3 ps-0">
           <div className="row g-0">
@@ -61,7 +61,9 @@ const MyBooking = () => {
                 <p><small>(Per Person)</small></p>
                </div>
                <div className='select-btn gap-2 d-flex'>
-               <Link to={`/payment/${data?._id}`}> <button className='btn btn-success '><SiFampay/> Payment</button></Link>
+               <Link to={`/payment/${data?._id}`}>
+               <button className='btn payment-btn'><SiFampay/> Payment</button>
+               </Link>
                 <button className='btn btn-danger'><MdDelete/> Delete</button>
                </div>
                </div>
