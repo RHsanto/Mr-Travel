@@ -5,6 +5,7 @@ import Navbar from '../common/Navbar';
 import ModifyBus from '../ModifySearch/ModifyBus';
 import { RiArrowLeftRightFill ,RiArrowRightLine} from "react-icons/ri";
 import { SiAirplayaudio} from "react-icons/si";
+import { Link } from 'react-router-dom';
 
 const BusSearch = () => {
   const [busData,setBusData]=useState([]);
@@ -59,7 +60,7 @@ const BusSearch = () => {
               <small>(per person)</small>
               </div>
               <div className='select'>
-              <button>view sites  <RiArrowRightLine className='ms-4 fs-5'/></button> 
+             <Link to={`/bus/${bus._id}`} > <button>view sites  <RiArrowRightLine className='ms-4 fs-5'/></button> </Link>
               </div>
               </div>
             </div>
