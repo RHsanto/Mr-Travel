@@ -53,7 +53,7 @@ const MyBooking = () => {
               <h5 className="card-title fw-bold">{data?.hotelName}</h5></>
                }
               </div>
-              <h6>Types: {data?.types}</h6>
+              <h6>booking of {data?.types}</h6>
  
                <div className="d-flex justify-content-between align-items-center mt-5">
                <div className="d-flex">
