@@ -8,4 +8,4 @@ const BusDetails = () => {
   );
 };
 
-export default BusDetails;
+export default BusDetails;  
