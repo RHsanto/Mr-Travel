@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import BusResults from './ModifyResult/BusResults';
 
 const ModifyBus = () => {
   const [from, setFrom] = useState([]);
@@ -78,6 +79,7 @@ const ModifyBus = () => {
 
   <button onClick={handleResults} className='modify-btn mt-md-0 mt-3 py-3 py-lg-0'>Modify Search</button>
   </div>
+  <BusResults searchValue={searchTo} />
  </div>
   );
 };
