@@ -11,7 +11,7 @@ const TourSearch = () => {
   const [tours, setTours] = useState([]);
 
   useEffect(() => {
-    fetch(" https://young-cliffs-75372.herokuapp.com/tourInfo")
+    fetch(" http://localhost:8000/tourInfo")
       .then(response => response.json())
       .then(data => setTours(data));
   }, []);

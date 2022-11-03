@@ -11,7 +11,7 @@ const BusSearch = () => {
   const [busData, setBusData] = useState([]);
 
   useEffect(() => {
-    fetch(" https://young-cliffs-75372.herokuapp.com/busInfo")
+    fetch(" http://localhost:8000/busInfo")
       .then(res => res.json())
       .then(data => setBusData(data));
   }, []);

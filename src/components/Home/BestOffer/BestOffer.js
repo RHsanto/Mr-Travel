@@ -10,7 +10,7 @@ const BestOffer = () => {
   const [offers,setOffers]=useState([])
 
   useEffect(()=>{
-    fetch(' https://young-cliffs-75372.herokuapp.com/offersInfo')
+    fetch(' http://localhost:8000/offersInfo')
     .then(response=>response.json())
     .then(data=>setOffers(data.slice(4,8)))
   })

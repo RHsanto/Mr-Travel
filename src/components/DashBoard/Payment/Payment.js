@@ -10,7 +10,7 @@ const Payment = () => {
   const [payment, setPayment] = useState([]);
 
   useEffect(() => {
-    fetch(`https://young-cliffs-75372.herokuapp.com/booked/${id}`)
+    fetch(`http://localhost:8000/booked/${id}`)
       .then(res => res.json())
       .then(data => setPayment(data));
   });

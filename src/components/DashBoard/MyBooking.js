@@ -15,7 +15,7 @@ const MyBooking = () => {
   const [booking, setBooking] = useState([]);
 
   useEffect(() => {
-    fetch(`https://young-cliffs-75372.herokuapp.com/booking/${user?.email}`)
+    fetch(`http://localhost:8000/booking/${user?.email}`)
       .then(res => res.json())
       .then(data => setBooking(data));
   });

@@ -16,7 +16,7 @@ const TourDetails = () => {
   const { id } = useParams();
   const [tour, setTour] = useState([]);
   useEffect(() => {
-    fetch(`https://young-cliffs-75372.herokuapp.com/tours/${id}`)
+    fetch(`http://localhost:8000/tours/${id}`)
       .then(res => res.json())
       .then(data => setTour(data));
   });
@@ -34,7 +34,7 @@ const TourDetails = () => {
     data.member = tour.member;
     data.price = tour.price;
 
-    axios.post(" https://young-cliffs-75372.herokuapp.com/booking", data).then(res => {
+    axios.post(" http://localhost:8000/booking", data).then(res => {
       if (res.data.insertedId) {
         toast.success("Booking Successful", {
           position: "top-center",

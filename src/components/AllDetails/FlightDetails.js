@@ -14,7 +14,7 @@ const FlightDetails = () => {
   const [flight, setFlight] = useState([]);
 
   useEffect(() => {
-    fetch(` https://young-cliffs-75372.herokuapp.com/flights/${id}`)
+    fetch(` http://localhost:8000/flights/${id}`)
       .then(response => response.json())
       .then(data => setFlight(data));
   });
@@ -31,7 +31,7 @@ const FlightDetails = () => {
     data.class = flight.class;
     data.price = flight.price;
 
-    axios.post(" https://young-cliffs-75372.herokuapp.com/booking", data).then(res => {
+    axios.post(" http://localhost:8000/booking", data).then(res => {
       if (res.data.insertedId) {
         toast.success("Booking Successful", {
           position: "top-center",
