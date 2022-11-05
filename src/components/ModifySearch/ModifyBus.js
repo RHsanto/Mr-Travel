@@ -33,6 +33,7 @@ const ModifyBus = () => {
       }
     });
     setSearchTo(searchResults);
+    // console.log(searchResults);
   };
 
   return (
@@ -51,7 +52,6 @@ const ModifyBus = () => {
                 <option value={tours?.from}>{tours?.from}</option>
               ))}
             </select>
-
             <label for="floatingSelect">FROM</label>
           </div>
           <div className="form-floating w-50 ms-2 ">
@@ -90,11 +90,12 @@ const ModifyBus = () => {
           <label for="floatingInput">JOURNEY DATE</label>
         </div>
 
-        <button onClick={handleResults} className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">
+        <button onClick={handleResults} className="modify-btn mt-md-0 mt-3 py-3py-lg-0">
           Modify Search
         </button>
       </div>
-      <BusResults searchValue={searchTo} />
+      {searchTo.map(data=>
+        <li>{data?.from}</li>)}
     </div>
   );
 };
