@@ -1,6 +1,7 @@
+/* eslint-disable array-callback-return */
 import React, { useState } from "react";
 import { useEffect } from "react";
-import BusResults from "./ModifyResult/BusResults";
+// import BusResults from "./ModifyResult/BusResults";
 
 const ModifyBus = () => {
   const [from, setFrom] = useState([]);
