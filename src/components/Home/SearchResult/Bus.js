@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Bus = () => {
+  const [updatedValues, setUpdatedValues] = useState();
+  const[busInfo,setBusInfo]=useState([]);
+
+  // here fetch data
+
   return (
     <div>
       <div className="d-block  d-md-flex  gap-3">

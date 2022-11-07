@@ -17,7 +17,8 @@ const BusSearch = () => {
   }, []);
   return (
     <div>
-      <Navbar /> {/* here search input */}
+      <Navbar /> 
+  {/* here search input */}
       <div className=" all-inputs">
         <div className=" rounded  pt-5 pb-3 px-4">
           <div className="container">
@@ -25,10 +26,10 @@ const BusSearch = () => {
           </div>
         </div>
       </div>
-      {/* here result */}
+   {/* here result */}
       <div className="common-section ">
         <div className="container">
-          <div className="row row-cols-1 row-cols-md-2 g-4">
+          {/* <div className="row row-cols-1 row-cols-md-2 g-4">
             {busData.map(bus => (
               <div key={bus._id} className="flight mt-5">
                 <div className="card mb-3 ps-0">
@@ -82,7 +83,7 @@ const BusSearch = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
