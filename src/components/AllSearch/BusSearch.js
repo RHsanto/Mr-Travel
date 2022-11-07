@@ -6,7 +6,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../common/Navbar";
-// import ModifyBus from "../ModifySearch/ModifyBus";
+
 import { RiArrowLeftRightFill, RiArrowRightLine } from "react-icons/ri";
 import { SiAirplayaudio } from "react-icons/si";
 import { Link } from "react-router-dom";

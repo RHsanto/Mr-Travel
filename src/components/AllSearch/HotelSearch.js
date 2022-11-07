@@ -4,7 +4,7 @@
 /* eslint-disable eqeqeq */
 import React, { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
-// import ModifyHotel from "../ModifySearch/ModifyHotel";
+
 import { RiArrowRightLine } from "react-icons/ri";
 import { MdLocationPin } from "react-icons/md";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
