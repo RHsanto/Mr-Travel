@@ -13,6 +13,17 @@ const Bus = () => {
     .then(data=>setBusInfo(data))
   },[])
 
+
+  // get input items when selected 
+  const handleFrom = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    const newUpdatedValues = { ...updatedValues };
+    newUpdatedValues[name] = value;
+    setUpdatedValues(newUpdatedValues);
+    localStorage.setItem('busData', JSON.stringify(newUpdatedValues))
+ 
+  };
   return (
     <div>
       <div className="d-block  d-md-flex  gap-3">
@@ -20,6 +31,8 @@ const Bus = () => {
           {/* from data input  */}
           <div className="form-floating w-50 ms-2 ">
             <select
+              onChange={handleFrom}
+              name="from"
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
@@ -33,6 +46,8 @@ const Bus = () => {
           {/* to data input */}
           <div className="form-floating w-50 ms-2 ">
             <select
+              onChange={handleFrom}
+              name="to"
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
@@ -46,6 +61,7 @@ const Bus = () => {
         </div>
         <div className="form-floating  mt-3 mt-md-0 w-50 d-none d-md-block">
           <input
+            name="date"
             type="date"
             className="form-control"
             id="floatingInput"
@@ -53,7 +69,8 @@ const Bus = () => {
           />
           <label for="floatingInput">JOURNEY DATE</label>
         </div>
-        {/* for mobile */}
+
+        {/* for mobile device*/}
         <div className="form-floating  mt-3 mt-md-0  d-block d-md-none">
           <input
             type="date"

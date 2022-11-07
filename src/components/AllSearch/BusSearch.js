@@ -1,3 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable array-callback-return */
+/* eslint-disable eqeqeq */
+
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -8,13 +12,34 @@ import { SiAirplayaudio } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 const BusSearch = () => {
+  // here get local storage items
+  const results = localStorage.getItem("busData");
   const [busData, setBusData] = useState([]);
+  const[searchResults,setSearResult] =useState([])
 
+  // here data parsed
+  let parsed 
+  if(results != undefined)
+  {parsed = JSON.parse(results);}
+  console.log(parsed);
+
+  // here fetch api
   useEffect(() => {
     fetch(" http://localhost:8000/busInfo")
       .then(res => res.json())
       .then(data => setBusData(data));
   }, []);
+
+// here get data and fetch data filter
+useEffect(()=>{
+  const searchResults = busData.filter((items)=>{
+    if( parsed?.from || parsed?.to ==  items?.from || items?.to ){
+      return (items)
+    }
+  })
+  setSearResult(searchResults)
+},[busData])
+
   return (
     <div>
       <Navbar /> 
@@ -29,8 +54,8 @@ const BusSearch = () => {
    {/* here result */}
       <div className="common-section ">
         <div className="container">
-          {/* <div className="row row-cols-1 row-cols-md-2 g-4">
-            {busData.map(bus => (
+           <div className="row row-cols-1 row-cols-md-2 g-4">
+            {searchResults.map(bus => (
               <div key={bus._id} className="flight mt-5">
                 <div className="card mb-3 ps-0">
                   <div className="row g-0">
@@ -83,7 +108,7 @@ const BusSearch = () => {
                 </div>
               </div>
             ))}
-          </div> */}
+          </div> 
         </div>
       </div>
     </div>
