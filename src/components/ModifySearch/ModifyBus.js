@@ -43,6 +43,7 @@ const ModifyBus = () => {
         <div className="d-flex  w-100">
           <div className="form-floating w-50 ms-2 ">
             <select
+            name="from"
               onChange={handleFrom}
               className="form-select"
               id="floatingSelect"
@@ -57,6 +58,7 @@ const ModifyBus = () => {
           </div>
           <div className="form-floating w-50 ms-2 ">
             <select
+            name="to"
               onChange={handleFrom}
               className="form-select"
               id="floatingSelect"
@@ -72,6 +74,7 @@ const ModifyBus = () => {
         </div>
         <div className="form-floating  mt-3 mt-md-0 w-50 d-none d-md-block">
           <input
+          name="date"
             onChange={handleFrom}
             type="date"
             className="form-control"
