@@ -14,8 +14,8 @@ import { Link } from "react-router-dom";
 const BusSearch = () => {
   // here get local storage items
   const results = localStorage.getItem("busData");
-  const [busData, setBusData] = useState([]);
   const[searchResults,setSearResult] =useState([])
+  const [busData, setBusData] = useState([]);
 
   // here data parsed
   let parsed 

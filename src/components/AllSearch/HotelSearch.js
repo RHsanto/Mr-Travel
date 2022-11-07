@@ -8,17 +8,39 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 const HotelSearch = () => {
+  const results = localStorage.getItem("hotelData");
   const [hotels, setHotels] = useState([]);
+  const[searchResults,setSearResult] =useState([])
+   // here data parsed
+   let parsed 
+   if(results != undefined)
+   {parsed = JSON.parse(results);}
+  //  console.log(parsed?.hotelName);
 
+  // here fetch data
   useEffect(() => {
     fetch("http://localhost:8000/hotelInfo")
       .then(response => response.json())
       .then(data => setHotels(data));
   }, []);
+
+// here get data and fetch data filter
+useEffect(()=>{
+  const searchResults = hotels.filter((items)=>{
+    if( parsed?.hotelName ===  items?.hotelName){
+      return (items)
+      
+    }
+    // console.log(items);
+  })
+  setSearResult(searchResults)
+},[hotels])
+
+
   return (
     <div>
       <Navbar />
-      {/* here search input */}
+ {/* here search input */}
       {/* <div className=" all-inputs">
         <div className=" rounded  pt-5 pb-3 px-4">
           <div className="container">
@@ -26,11 +48,15 @@ const HotelSearch = () => {
           </div>
         </div>
       </div> */}
-      {/* here result */}
+
+
+
+ {/* here result */}
       <div className="common-section ">
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
-            {hotels.map(hotel => (
+            
+            {searchResults.map(hotel => (
               <div className="flight mt-5">
                 <div className="card mb-3 ps-0">
                   <div className="row g-0">
