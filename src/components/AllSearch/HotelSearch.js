@@ -1,4 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable array-callback-return */
+/* eslint-disable eqeqeq */
 import React, { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
 // import ModifyHotel from "../ModifySearch/ModifyHotel";
