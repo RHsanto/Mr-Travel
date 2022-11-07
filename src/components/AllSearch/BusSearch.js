@@ -6,7 +6,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../common/Navbar";
-import ModifyBus from "../ModifySearch/ModifyBus";
+// import ModifyBus from "../ModifySearch/ModifyBus";
 import { RiArrowLeftRightFill, RiArrowRightLine } from "react-icons/ri";
 import { SiAirplayaudio } from "react-icons/si";
 import { Link } from "react-router-dom";
@@ -33,7 +33,7 @@ const BusSearch = () => {
 // here get data and fetch data filter
 useEffect(()=>{
   const searchResults = busData.filter((items)=>{
-    if( parsed?.from || parsed?.to ==  items?.from || items?.to ){
+    if( parsed?.from || parsed?.to || parsed?.price ==  items?.from || items?.to || items?.price){
       return (items)
     }
   })
@@ -44,13 +44,15 @@ useEffect(()=>{
     <div>
       <Navbar /> 
   {/* here search input */}
-      <div className=" all-inputs">
+
+      {/* <div className=" all-inputs">
         <div className=" rounded  pt-5 pb-3 px-4">
           <div className="container">
             <ModifyBus />
           </div>
         </div>
-      </div>
+      </div> */}
+
    {/* here result */}
       <div className="common-section ">
         <div className="container">
