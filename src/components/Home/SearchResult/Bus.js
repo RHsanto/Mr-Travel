@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Bus = () => {
@@ -6,32 +7,39 @@ const Bus = () => {
   const[busInfo,setBusInfo]=useState([]);
 
   // here fetch data
+  useEffect(()=>{
+    fetch('http://localhost:8000/busInfo')
+    .then(res=>res.json())
+    .then(data=>setBusInfo(data))
+  },[])
 
   return (
     <div>
       <div className="d-block  d-md-flex  gap-3">
         <div className="d-flex  w-100">
+          {/* from data input  */}
           <div className="form-floating w-50 ms-2 ">
             <select
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
             >
-              <option selected>Dhaka</option>
-              <option value="Economic">Economic</option>
-              <option value="Business">Business</option>
+              {busInfo.map(busData=>(
+                <option key={busData?.id} value={busData?.from}>{busData?.from}</option>
+              ))}
             </select>
             <label for="floatingSelect">FROM</label>
           </div>
+          {/* to data input */}
           <div className="form-floating w-50 ms-2 ">
             <select
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
             >
-              <option selected>Chittagong</option>
-              <option value="Economic">Economic</option>
-              <option value="Business">Business</option>
+             {busInfo.map(busData=>(
+                <option key={busData?.id} value={busData?.to}>{busData?.to}</option>
+              ))}
             </select>
             <label for="floatingSelect">TO</label>
           </div>
