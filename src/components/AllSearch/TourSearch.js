@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
-import ModifyTour from "../ModifySearch/ModifyTour";
+// import ModifyTour from "../ModifySearch/ModifyTour";
 import { RiArrowRightLine } from "react-icons/ri";
 import { MdLocationPin } from "react-icons/md";
 import { HiClock } from "react-icons/hi";
@@ -19,13 +19,13 @@ const TourSearch = () => {
     <div>
       <Navbar />
       {/* here search input */}
-      <div className=" all-inputs">
+      {/* <div className=" all-inputs">
         <div className=" rounded  pt-5 pb-3 px-4">
           <div className="container">
             <ModifyTour />
           </div>
         </div>
-      </div>
+      </div> */}
       {/* here result */}
       <div className="common-section ">
         <div className="container">

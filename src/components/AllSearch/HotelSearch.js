@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
-import ModifyHotel from "../ModifySearch/ModifyHotel";
+// import ModifyHotel from "../ModifySearch/ModifyHotel";
 import { RiArrowRightLine } from "react-icons/ri";
 import { MdLocationPin } from "react-icons/md";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
@@ -19,13 +19,13 @@ const HotelSearch = () => {
     <div>
       <Navbar />
       {/* here search input */}
-      <div className=" all-inputs">
+      {/* <div className=" all-inputs">
         <div className=" rounded  pt-5 pb-3 px-4">
           <div className="container">
             <ModifyHotel />
           </div>
         </div>
-      </div>
+      </div> */}
       {/* here result */}
       <div className="common-section ">
         <div className="container">

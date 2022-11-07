@@ -4,7 +4,7 @@ import { RiArrowRightLine } from "react-icons/ri";
 import { AiOutlineSwap } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Navbar from "../common/Navbar";
-import ModifyFlight from "../ModifySearch/ModifyFlight";
+// import ModifyFlight from "../ModifySearch/ModifyFlight";
 import "../AllSearch/Allcss.css";
 const FlightSearch = () => {
   const [flights, setFlights] = useState([]);
@@ -17,13 +17,13 @@ const FlightSearch = () => {
     <div>
       <Navbar />
       {/* here search input */}
-      <div className=" all-inputs">
+      {/* <div className=" all-inputs">
         <div className=" rounded  pt-5 pb-3 px-4">
           <div className="container">
             <ModifyFlight />
           </div>
         </div>
-      </div>
+      </div> */}
       {/* here input result */}
       <div className="common-section ">
         <div className="container">
