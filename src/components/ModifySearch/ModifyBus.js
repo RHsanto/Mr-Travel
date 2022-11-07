@@ -5,9 +5,9 @@ import { useEffect } from "react";
 
 const ModifyBus = () => {
   const [from, setFrom] = useState([]);
-  const [results, setResults] = useState([]);
   const [searchTo, setSearchTo] = useState([]);
   const [updatedValues, setUpdatedValues] = useState();
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8000/busInfo")
@@ -26,7 +26,7 @@ const ModifyBus = () => {
     setUpdatedValues(newUpdatedValues);
     localStorage.setItem('busData', JSON.stringify(newUpdatedValues))
   };
-  // console.log(updatedValues);
+  console.log(updatedValues);
 
   const handleResults = e => {
     const searchResults = results.filter(items => {
@@ -95,12 +95,12 @@ const ModifyBus = () => {
           <label for="floatingInput">JOURNEY DATE</label>
         </div>
 
-        <button  className="modify-btn mt-md-0 mt-3 py-3py-lg-0">
+        <button onClick={handleResults} className="modify-btn mt-md-0 mt-3 py-3py-lg-0">
           Modify Search
         </button>
       </div>
-      {/* {searchTo.map(data=>
-        <li>{data?.from}</li>)} */}
+      {searchTo.map(data=>
+        <li>{data?.from}</li>)}
     </div>
   );
 };

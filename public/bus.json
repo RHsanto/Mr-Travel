@@ -41,7 +41,53 @@
    ,
    "types":"bus"
   },
+  
   {"from":"Dhaka",
+   "to":"Khulna",
+   "journeyDate":"22-may-2022",
+   "returnDate":"30-may-2022",
+   "class":"Business",
+   "startDate":"12:00",
+   "endDate":"23:20",
+   "totalTime":"11 20m",
+   "price":"780",
+   "type":"AC",
+   "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
+   ,
+   "types":"bus"
+  }
+,
+  {"from":"Sylhet",
+   "to":"Khulna",
+   "journeyDate":"22-may-2022",
+   "returnDate":"30-may-2022",
+   "class":"Business",
+   "startDate":"12:00",
+   "endDate":"23:20",
+   "totalTime":"11 20m",
+   "price":"780",
+   "type":"AC",
+   "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
+   ,
+   "types":"bus"
+  }
+,
+  {"from":"Kumilla",
+   "to":"Khulna",
+   "journeyDate":"22-may-2022",
+   "returnDate":"30-may-2022",
+   "class":"Business",
+   "startDate":"12:00",
+   "endDate":"23:20",
+   "totalTime":"11 20m",
+   "price":"780",
+   "type":"AC",
+   "img":"https://www.sustainable-bus.com/wp-content/uploads/2019/12/scania-bus4.jpg"
+   ,
+   "types":"bus"
+  }
+,
+  {"from":"Borishal",
    "to":"Khulna",
    "journeyDate":"22-may-2022",
    "returnDate":"30-may-2022",

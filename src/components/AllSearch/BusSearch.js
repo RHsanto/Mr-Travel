@@ -6,7 +6,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../common/Navbar";
-
+import ModifyBus from "../ModifySearch/ModifyBus";
 import { RiArrowLeftRightFill, RiArrowRightLine } from "react-icons/ri";
 import { SiAirplayaudio } from "react-icons/si";
 import { Link } from "react-router-dom";
@@ -14,28 +14,31 @@ import { Link } from "react-router-dom";
 const BusSearch = () => {
   // here get local storage items
   const results = localStorage.getItem("busData");
-  const[searchResults,setSearResult] =useState([])
   const [busData, setBusData] = useState([]);
+  const[searchResults,setSearResult] =useState([])
 
   // here data parsed
   let parsed 
   if(results != undefined)
   {parsed = JSON.parse(results);}
-  console.log(parsed);
+  // console.log( parsed?.from);
 
   // here fetch api
   useEffect(() => {
     fetch(" http://localhost:8000/busInfo")
       .then(res => res.json())
-      .then(data => setBusData(data));
+      .then(data => {
+        setBusData(data)
+        ;});
   }, []);
 
 // here get data and fetch data filter
 useEffect(()=>{
   const searchResults = busData.filter((items)=>{
-    if( parsed?.from || parsed?.to || parsed?.price ==  items?.from || items?.to || items?.price){
+    if( parsed?.from   ===  items?.from ){
       return (items)
     }
+    // console.log(items);
   })
   setSearResult(searchResults)
 },[busData])
@@ -44,7 +47,6 @@ useEffect(()=>{
     <div>
       <Navbar /> 
   {/* here search input */}
-
       {/* <div className=" all-inputs">
         <div className=" rounded  pt-5 pb-3 px-4">
           <div className="container">
@@ -52,7 +54,6 @@ useEffect(()=>{
           </div>
         </div>
       </div> */}
-
    {/* here result */}
       <div className="common-section ">
         <div className="container">
