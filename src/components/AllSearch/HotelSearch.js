@@ -14,13 +14,14 @@ const HotelSearch = () => {
   const results = localStorage.getItem("hotelData");
   const [hotels, setHotels] = useState([]);
   const[searchResults,setSearResult] =useState([])
-   // here data parsed
+// here data parsed
    let parsed 
    if(results != undefined)
    {parsed = JSON.parse(results);}
   //  console.log(parsed?.hotelName);
 
-  // here fetch data
+ 
+// here fetch data
   useEffect(() => {
     fetch("http://localhost:8000/hotelInfo")
       .then(response => response.json())
