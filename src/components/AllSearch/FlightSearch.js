@@ -28,6 +28,7 @@ const FlightSearch = () => {
       .then(data => setFlights(data));
   }, []);
 
+    // get modify input data
   const handleFrom = e => {
     const name = e.target.name;
     const value = e.target.value;
