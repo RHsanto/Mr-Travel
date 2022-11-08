@@ -20,7 +20,7 @@ const FlightSearch = () => {
   if (results != undefined) {
     parsed = JSON.parse(results);
   }
-  console.log(parsed);
+  // console.log(parsed);
 
   useEffect(() => {
     fetch(" http://localhost:8000/flightInfo")
@@ -62,9 +62,8 @@ const FlightSearch = () => {
     <div>
       <Navbar />
       {/* here search input */}
-      <div className="modify-flight-section">
+      <div className="modify-flight-section p-5">
         <div className="container">
-          <div className="flight-modify">
             <div className="d-block  d-md-flex  justify-content-center ">
               <div className="d-flex w-100 ">
                 <div className="form-floating w-100">
@@ -167,7 +166,6 @@ const FlightSearch = () => {
                 Modify Search
               </button>
             </div>
-          </div>
         </div>
       </div>
       {/* here input result */}
