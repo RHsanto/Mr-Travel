@@ -1,34 +1,180 @@
-import React, { useState } from "react";
+
+/* eslint-disable array-callback-return */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable eqeqeq */import React, { useState } from "react";
 import { useEffect } from "react";
 import { RiArrowRightLine } from "react-icons/ri";
 import { AiOutlineSwap } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Navbar from "../common/Navbar";
-// import ModifyFlight from "../ModifySearch/ModifyFlight";
 import "../AllSearch/Allcss.css";
+
 const FlightSearch = () => {
+  // here get local storage items
+  const results = localStorage.getItem("flightData");
   const [flights, setFlights] = useState([]);
+  const [searchResults, setSearResult] = useState([]);
+  const [updatedValues, setUpdatedValues] = useState();
+  // here data parsed
+  let parsed;
+  if (results != undefined) {
+    parsed = JSON.parse(results);
+  }
+  console.log(parsed);
+
   useEffect(() => {
     fetch(" http://localhost:8000/flightInfo")
       .then(response => response.json())
       .then(data => setFlights(data));
   }, []);
+
+  const handleFrom = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    const newUpdatedValues = { ...updatedValues };
+    newUpdatedValues[name] = value;
+    setUpdatedValues(newUpdatedValues);
+    localStorage.setItem("flightData", JSON.stringify(newUpdatedValues));
+  };
+  // console.log(updatedValues);
+
+  // here get data and fetch data filter
+  useEffect(() => {
+    const searchResults = flights.filter(items => {
+      if (parsed?.from === items?.from) {
+        return items;
+      }
+    });
+    setSearResult(searchResults);
+  }, [flights]);
+
+  const handleResults = e => {
+    const searchResults = flights.filter(items => {
+      if (updatedValues?.from === items?.from) {
+        return items;
+      }
+    });
+    setSearResult(searchResults);
+    // console.log(searchResults);
+  };
+
   return (
     <div>
       <Navbar />
       {/* here search input */}
-      {/* <div className=" all-inputs">
-        <div className=" rounded  pt-5 pb-3 px-4">
-          <div className="container">
-            <ModifyFlight />
+      <div className="modify-flight-section">
+        <div className="container">
+          <div className="flight-modify">
+            <div className="d-block  d-md-flex  justify-content-center ">
+              <div className="d-flex w-100 ">
+                <div className="form-floating w-100">
+                  <input
+                    onChange={handleFrom}
+                    name="from"
+                    type="text"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="From"
+                  />
+                  <label for="floatingInput">FROM</label>
+                </div>
+                <div className="form-floating ms-2 w-100">
+                  <input
+                     onChange={handleFrom}
+                     name="to"
+                     type="text" 
+                     className="form-control"
+                     id="floatingInput"
+                     placeholder="To" />
+                  <label for="floatingInput">TO</label>
+                </div>
+              </div>
+              <div className="d-none d-lg-flex date w-75  ms-0 ms-lg-3 my-4 my-lg-0">
+                <div className="form-floating w-100">
+                  <input
+                    onChange={handleFrom}
+                    name="journey-date"
+                    type="date"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInput">JOURNEY DATE</label>
+                </div>
+                <div className="form-floating w-100">
+                  <input
+                    onChange={handleFrom}
+                    name="return-date"
+                    type="date"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInput">RETURN DATE</label>
+                </div>
+              </div>
+            
+              <div className="form-floating w-50 ms-2 d-none d-lg-block">
+                <select
+                  className="form-select"
+                  id="floatingSelect"
+                  aria-label="Floating label select example"
+                >
+                  <option selected>Open this select class</option>
+                  <option value="Economic">Economic</option>
+                  <option value="Business">Business</option>
+                </select>
+                <label for="floatingSelect">TRAVELER CLASS</label>
+              </div>
+               {/* for mobile */}
+               <div className="d-block d-lg-none date w-100 d-flex ms-0 ms-lg-3 my-4 my-lg-0">
+                <div className="form-floating w-100">
+                  <input
+                    onChange={handleFrom}
+                    name="journey-date"
+                    type="date"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInput">JOURNEY DATE</label>
+                </div>
+                <div className="form-floating w-100">
+                  <input
+                    onChange={handleFrom}
+                    name="journey-date"
+                    type="date"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInput">RETURN DATE</label>
+                </div>
+              </div>
+              <div className="form-floating w-100 ms-2 d-block d-lg-none">
+                <select
+                  className="form-select"
+                  id="floatingSelect"
+                  aria-label="Floating label select example"
+                >
+                  <option selected>Open this select class</option>
+                  <option value="Economic">Economic</option>
+                  <option value="Business">Business</option>
+                </select>
+                <label for="floatingSelect">TRAVELER CLASS</label>
+              </div>
+              <button onClick={handleResults}  className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">
+                Modify Search
+              </button>
+            </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* here input result */}
       <div className="common-section ">
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
-            {flights.map(flight => (
+            {searchResults.map(flight => (
               <div className="flight mt-5">
                 <div className="card  mb-3 ps-0">
                   <div className="row g-0">

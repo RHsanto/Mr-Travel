@@ -2,7 +2,7 @@ import React from 'react';
 
 const ModifyFlight = () => {
   return (
-    <div className='pb-5'>
+    <div className='flight-modify'>
        <div className="d-block  d-md-flex  justify-content-center ">
        <div className="d-flex w-100 ">
        <div className="form-floating w-100">
