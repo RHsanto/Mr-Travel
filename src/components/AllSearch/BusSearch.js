@@ -63,14 +63,6 @@ const BusSearch = () => {
   return (
     <div>
       <Navbar />
-      {/* here search input */}
-      {/* <div className=" all-inputs">
-        <div className=" rounded  pt-5 pb-3 px-4">
-          <div className="container">
-            <ModifyBus />
-          </div>
-        </div>
-      </div> */}
 
   {/*here main results section  */}
       <div className="results-section">

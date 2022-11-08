@@ -4,62 +4,151 @@
 /* eslint-disable eqeqeq */
 import React, { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
-
 import { RiArrowRightLine } from "react-icons/ri";
 import { MdLocationPin } from "react-icons/md";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+
 const HotelSearch = () => {
   const results = localStorage.getItem("hotelData");
   const [hotels, setHotels] = useState([]);
-  const[searchResults,setSearResult] =useState([])
-// here data parsed
-   let parsed 
-   if(results != undefined)
-   {parsed = JSON.parse(results);}
-  //  console.log(parsed?.hotelName);
+  const [searchResults, setSearResult] = useState([]);
+  const [updatedValues, setUpdatedValues] = useState();
+  // here data parsed
+  let parsed;
+  if (results != undefined) {
+    parsed = JSON.parse(results);
+  }
 
- 
-// here fetch data
+  // here fetch data
   useEffect(() => {
     fetch("http://localhost:8000/hotelInfo")
       .then(response => response.json())
       .then(data => setHotels(data));
   }, []);
 
-// here get data and fetch data filter
-useEffect(()=>{
-  const searchResults = hotels.filter((items)=>{
-    if( parsed?.hotelName ===  items?.hotelName){
-      return (items)
-      
-    }
-    // console.log(items);
-  })
-  setSearResult(searchResults)
-},[hotels])
+  // get modify input data
+  const handleFrom = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    const newUpdatedValues = { ...updatedValues };
+    newUpdatedValues[name] = value;
+    setUpdatedValues(newUpdatedValues);
+    localStorage.setItem("hotelData", JSON.stringify(newUpdatedValues));
+  };
 
+  // here get data and fetch data filter
+  useEffect(() => {
+    const searchResults = hotels.filter(items => {
+      if (parsed?.hotelName === items?.hotelName) {
+        return items;
+      }
+    });
+    setSearResult(searchResults);
+  }, [hotels]);
+
+  // here click modify
+  const handleResults = e => {
+    const searchResults = hotels.filter(items => {
+      if (updatedValues?.hotelName === items?.hotelName) {
+        return items;
+      }
+    });
+    setSearResult(searchResults);
+    // console.log(searchResults);
+  };
 
   return (
     <div>
       <Navbar />
- {/* here search input */}
-      {/* <div className=" all-inputs">
-        <div className=" rounded  pt-5 pb-3 px-4">
-          <div className="container">
-            <ModifyHotel />
+      {/* here modify input section */}
+
+      <div className="modify-hotel-input p-5">
+        <div className="container">
+          <div className="input-section">
+            <div className="d-block  d-md-flex justify-content-center ">
+              <div className="form-floating w-50 d-none d-md-block">
+                <input
+                  onChange={handleFrom}
+                  name="hotelName"
+                  type="text"
+                  className="form-control"
+                  id="floatingInput"
+                  placeholder="From"
+                />
+                <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
+              </div>
+
+              <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-flex">
+                <div className="form-floating ">
+                  <input
+                    onChange={handleFrom}
+                    name="check-in"
+                    type="date"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInput">CHECK IN</label>
+                </div>
+                <div className="form-floating ms-2">
+                  <input
+                    onChange={handleFrom}
+                    name="check-out"
+                    type="date"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInput">CHECK OUT</label>
+                </div>
+              </div>
+              <div className="form-floating w-25 d-none d-lg-block  ms-0 ms-lg-3">
+                <select
+                  className="form-select"
+                  id="floatingSelect"
+                  aria-label="Floating label select example"
+                >
+                  <option selected>1 Room, 2 Guests</option>
+                  <option value="1 Room, 3 Guests">1 Room, 3 Guests</option>
+                  <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
+                  <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
+                </select>
+                <label for="floatingSelect">ROOMS & GUESTS</label>
+              </div>
+              {/* for mobile device input */}
+              <div className="form-floating  d-block d-md-none">
+                <input type="text" className="form-control" id="floatingInput" placeholder="From" />
+                <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
+              </div>
+              <div className="form-floating w-100 d-block d-lg-none  ms-0 ms-lg-3">
+                <select
+                  className="form-select"
+                  id="floatingSelect"
+                  aria-label="Floating label select example"
+                >
+                  <option selected>1 Room, 2 Guests</option>
+                  <option value="1 Room, 3 Guests">1 Room, 3 Guests</option>
+                  <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
+                  <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
+                </select>
+                <label for="floatingSelect">ROOMS & GUESTS</label>
+              </div>
+
+              <button onChange={handleResults} className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">
+                Modify Search
+              </button>
+            </div>
           </div>
         </div>
-      </div> */}
+        
+      </div>
 
-
-
- {/* here result */}
+      {/* here result */}
       <div className="common-section ">
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
-            
             {searchResults.map(hotel => (
               <div className="flight mt-5">
                 <div className="card mb-3 ps-0">
