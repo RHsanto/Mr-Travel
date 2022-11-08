@@ -28,8 +28,8 @@ const Hotel = () => {
           <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
         </div>
 
-        <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-flex">
-          <div className="form-floating ">
+        <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-block d-lg-flex">
+          <div className="form-floating mb-3">
             <input
               onChange={handleInput}
               name="check-in"
@@ -40,7 +40,7 @@ const Hotel = () => {
             />
             <label for="floatingInput">CHECK IN</label>
           </div>
-          <div className="form-floating ms-2">
+          <div className="form-floating ">
             <input
               onChange={handleInput}
               name="check-out"
@@ -67,12 +67,13 @@ const Hotel = () => {
           </select>
           <label for="floatingSelect">ROOMS & GUESTS</label>
         </div>
-        {/* for mobile device input */}
-        <div className="form-floating  d-block d-md-none">
+
+ {/* for mobile device input */}
+        <div className="form-floating  d-block d-md-none mb-3">
           <input type="text" className="form-control" id="floatingInput" placeholder="From" />
           <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
         </div>
-        <div className="form-floating w-100 d-block d-lg-none  ms-0 ms-lg-3">
+         <div className="form-floating w-100 d-block d-lg-none  ms-0 ms-lg-3">
           <select
             className="form-select"
             id="floatingSelect"
