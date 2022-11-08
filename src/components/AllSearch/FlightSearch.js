@@ -41,7 +41,7 @@ const FlightSearch = () => {
   // here get data and fetch data filter
   useEffect(() => {
     const searchResults = flights.filter(items => {
-      if (parsed?.from === items?.from) {
+      if (parsed?.to === items?.to) {
         return items;
       }
     });
@@ -50,7 +50,7 @@ const FlightSearch = () => {
 
   const handleResults = e => {
     const searchResults = flights.filter(items => {
-      if (updatedValues?.from === items?.from) {
+      if (updatedValues?.to === items?.to) {
         return items;
       }
     });
