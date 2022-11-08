@@ -22,22 +22,22 @@ const Navbar = () => {
             <nav>
               <ul className="">
                 <li>
-                  <Link to="/bus">
+                  <Link to="/">
                     <FaBus /> Bus
                   </Link>
                 </li>
                 <li>
-                  <Link to="/flight">
+                  <Link to="/">
                     <GiCommercialAirplane /> Flight
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tour">
+                  <Link to="/">
                     <GiPalmTree /> Tour
                   </Link>
                 </li>
                 <li>
-                  <Link to="/hotel">
+                  <Link to="/">
                     <RiHotelFill /> Hotel
                   </Link>
                 </li>
