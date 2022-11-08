@@ -37,6 +37,7 @@ const Bus = () => {
               id="floatingSelect"
               aria-label="Floating label select example"
             >
+              <option >--Select From Destination--</option>
               {busInfo.map(busData=>(
                 <option key={busData?.id} value={busData?.from}>{busData?.from}</option>
               ))}
@@ -52,6 +53,7 @@ const Bus = () => {
               id="floatingSelect"
               aria-label="Floating label select example"
             >
+            <option >--Select To Destination--</option>
              {busInfo.map(busData=>(
                 <option key={busData?.id} value={busData?.to}>{busData?.to}</option>
               ))}
