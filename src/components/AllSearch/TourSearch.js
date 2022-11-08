@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable eqeqeq */
 import React, { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
 // import ModifyTour from "../ModifySearch/ModifyTour";
@@ -8,29 +10,90 @@ import { FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const TourSearch = () => {
-  const [tours, setTours] = useState([]);
+  // here get local storage items
+  const results = localStorage.getItem("tourData");
+ const [tours, setTours] = useState([]);
+ const [searchResults, setSearResult] = useState([]);
+ const [updatedValues, setUpdatedValues] = useState();
+ // here data parsed
+ let parsed;
+ if (results != undefined) {
+   parsed = JSON.parse(results);
+ }
 
   useEffect(() => {
     fetch(" http://localhost:8000/tourInfo")
       .then(response => response.json())
       .then(data => setTours(data));
   }, []);
+
+  const handleFrom = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    const newUpdatedValues = { ...updatedValues };
+    newUpdatedValues[name] = value;
+    setUpdatedValues(newUpdatedValues);
+    localStorage.setItem("tourData", JSON.stringify(newUpdatedValues));
+  };
+
+  
+  // here get data and fetch data filter
+  useEffect(() => {
+    const searchResults = tours.filter(items => {
+      if (parsed?.TourName === items?.TourName) {
+        return items;
+      }
+    });
+    setSearResult(searchResults);
+  }, [parsed?.TourName, tours]);
+
+  const handleResults = e => {
+    const searchResults = tours.filter(items => {
+      if (updatedValues?.TourName === items?.TourName) {
+        return items;
+      }
+    });
+    setSearResult(searchResults);
+  };
+
+
+
+
   return (
     <div>
       <Navbar />
-      {/* here search input */}
-      {/* <div className=" all-inputs">
-        <div className=" rounded  pt-5 pb-3 px-4">
-          <div className="container">
-            <ModifyTour />
-          </div>
-        </div>
-      </div> */}
-      {/* here result */}
+    <div className="modify-tour-data p-5">
+      <div className="container">
+         <div className="d-flex ">
+         <div className="form-floating w-100">
+        <select
+          onChange={handleFrom}
+          name="TourName"
+          className="form-select"
+          id="floatingSelect"
+          aria-label="Floating label select example"
+        >
+          <option>--Select Tour Destination--</option>
+          {tours.map(tourData => (
+            <option key={tourData?.id} value={tourData?.TourName}>
+              {tourData?.TourName}
+            </option>
+          ))}
+        </select>
+        <label for="floatingInput">LOCATION / TOUR</label>
+      </div>
+      <button onClick={handleResults}
+       className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">Modify Search
+       </button>
+       
+    </div>
+      </div>
+    </div>
+   {/* here result */}
       <div className="common-section ">
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
-            {tours.map(tour => (
+            {searchResults.map(tour => (
               <div className="flight mt-5">
                 <div className="card mb-3 ps-0">
                   <div className="row g-0">

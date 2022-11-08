@@ -26,7 +26,7 @@ const Tour = () => {
       <div className="form-floating w-100">
         <select
           onChange={handleFrom}
-          name="location"
+          name="TourName"
           className="form-select"
           id="floatingSelect"
           aria-label="Floating label select example"
