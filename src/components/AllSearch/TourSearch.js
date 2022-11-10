@@ -72,6 +72,7 @@ const TourSearch = () => {
           className="form-select"
           id="floatingSelect"
           aria-label="Floating label select example"
+          required
         >
           <option>--Select Tour Destination--</option>
           {tours.map(tourData => (
