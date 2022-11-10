@@ -127,8 +127,8 @@ const FlightSearch = () => {
                 <label for="floatingSelect">TRAVELER CLASS</label>
               </div>
                {/* for mobile */}
-               <div className="d-block d-lg-none date w-100 d-flex ms-0 ms-lg-3 my-4 my-lg-0">
-                <div className="form-floating w-100">
+               <div className="d-block d-lg-none date w-100  my-3">
+                <div className="form-floating w-100 mb-3">
                   <input
                     onChange={handleFrom}
                     name="journey-date"
@@ -151,7 +151,7 @@ const FlightSearch = () => {
                   <label for="floatingInput">RETURN DATE</label>
                 </div>
               </div>
-              <div className="form-floating w-100 ms-2 d-block d-lg-none">
+              <div className="form-floating w-100  d-block d-lg-none">
                 <select
                   className="form-select"
                   id="floatingSelect"

@@ -79,8 +79,12 @@ const HotelSearch = () => {
                 />
                 <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
               </div>
-
-              <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-flex">
+              {/* for mobile */}
+              <div className="form-floating  d-block d-md-none">
+                <input type="text" className="form-control" id="floatingInput" placeholder="From" />
+                <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
+              </div>
+              <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-lg-flex d-block">
                 <div className="form-floating ">
                   <input
                     onChange={handleFrom}
@@ -92,7 +96,7 @@ const HotelSearch = () => {
                   />
                   <label for="floatingInput">CHECK IN</label>
                 </div>
-                <div className="form-floating ms-2">
+                <div className="form-floating mt-3 ms-0 ms-lg-2">
                   <input
                     onChange={handleFrom}
                     name="check-out"
@@ -104,6 +108,7 @@ const HotelSearch = () => {
                   <label for="floatingInput">CHECK OUT</label>
                 </div>
               </div>
+
               <div className="form-floating w-25 d-none d-lg-block  ms-0 ms-lg-3">
                 <select
                   className="form-select"
@@ -118,10 +123,7 @@ const HotelSearch = () => {
                 <label for="floatingSelect">ROOMS & GUESTS</label>
               </div>
               {/* for mobile device input */}
-              <div className="form-floating  d-block d-md-none">
-                <input type="text" className="form-control" id="floatingInput" placeholder="From" />
-                <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
-              </div>
+            
               <div className="form-floating w-100 d-block d-lg-none  ms-0 ms-lg-3">
                 <select
                   className="form-select"
