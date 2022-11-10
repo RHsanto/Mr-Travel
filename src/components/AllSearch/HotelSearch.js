@@ -76,12 +76,21 @@ const HotelSearch = () => {
                   className="form-control"
                   id="floatingInput"
                   placeholder="From"
+                  required
                 />
                 <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
               </div>
               {/* for mobile */}
               <div className="form-floating  d-block d-md-none">
-                <input type="text" className="form-control" id="floatingInput" placeholder="From" />
+                <input
+                  onChange={handleFrom}
+                  name="hotelName"
+                  type="text"
+                  className="form-control"
+                  id="floatingInput"
+                  placeholder="From"
+                  required
+                />
                 <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
               </div>
               <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-lg-flex d-block">
