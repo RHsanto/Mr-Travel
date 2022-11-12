@@ -25,7 +25,7 @@ const BusSearch = () => {
 
   // here fetch api
   useEffect(() => {
-    fetch(" http://localhost:8000/busInfo")
+    fetch("  https://mr-trav-el-servers-n8cl.vercel.app/busInfo")
       .then(res => res.json())
       .then(data => setBusData(data));
   }, []);

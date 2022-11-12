@@ -7,7 +7,7 @@ const Tour = () => {
 
   // here fetch data
   useEffect(() => {
-    fetch(" http://localhost:8000/tourInfo")
+    fetch("  https://mr-trav-el-servers-n8cl.vercel.app/tourInfo")
       .then(res => res.json())
       .then(data => setTourInfo(data));
   }, []);

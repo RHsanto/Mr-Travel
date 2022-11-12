@@ -22,7 +22,7 @@ const TourSearch = () => {
  }
 
   useEffect(() => {
-    fetch(" http://localhost:8000/tourInfo")
+    fetch("  https://mr-trav-el-servers-n8cl.vercel.app/tourInfo")
       .then(response => response.json())
       .then(data => setTours(data));
   }, []);

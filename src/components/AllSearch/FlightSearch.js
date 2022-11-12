@@ -23,7 +23,7 @@ const FlightSearch = () => {
   // console.log(parsed);
 
   useEffect(() => {
-    fetch(" http://localhost:8000/flightInfo")
+    fetch("  https://mr-trav-el-servers-n8cl.vercel.app/flightInfo")
       .then(response => response.json())
       .then(data => setFlights(data));
   }, []);

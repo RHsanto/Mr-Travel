@@ -15,7 +15,7 @@ const MyBooking = () => {
   const [booking, setBooking] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/booking/${user?.email}`)
+    fetch(` https://mr-trav-el-servers-n8cl.vercel.app/booking/${user?.email}`)
       .then(res => res.json())
       .then(data => setBooking(data));
   });
