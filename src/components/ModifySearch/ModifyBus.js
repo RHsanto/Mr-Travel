@@ -10,7 +10,7 @@ const ModifyBus = () => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    fetch(" https://mr-trav-el-servers-n8cl.vercel.app/busInfo")
+    fetch(" http://localhost:8000/busInfo")
       .then(res => res.json())
       .then(data => {
         setResults(data);

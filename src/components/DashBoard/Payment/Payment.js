@@ -10,7 +10,7 @@ const Payment = () => {
   const [payment, setPayment] = useState([]);
 
   useEffect(() => {
-    fetch(` https://mr-trav-el-servers-n8cl.vercel.app/booked/${id}`)
+    fetch(` http://localhost:8000/booked/${id}`)
       .then(res => res.json())
       .then(data => setPayment(data));
   });

@@ -8,7 +8,7 @@ const Bus = () => {
 
   // here fetch data
   useEffect(()=>{
-    fetch(' https://mr-trav-el-servers-n8cl.vercel.app/busInfo')
+    fetch(' http://localhost:8000/busInfo')
     .then(res=>res.json())
     .then(data=>setBusInfo(data))
   },[])

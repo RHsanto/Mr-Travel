@@ -18,7 +18,7 @@ const OffersDetails = () => {
   const [offer,setOffer]=useState([])
   const sum = (parseFloat(offer?.price) + parseFloat(offer?.service) + parseFloat(offer?.tax))
   useEffect(()=>{
-    fetch(`  https://mr-trav-el-servers-n8cl.vercel.app/offers/${id}`)
+    fetch(`  http://localhost:8000/offers/${id}`)
     .then(response=>response.json())
     .then(data=>setOffer(data))
   })
@@ -37,7 +37,7 @@ const OffersDetails = () => {
      data.sum=sum
 
 
-     axios.post('  https://mr-trav-el-servers-n8cl.vercel.app/booking',data)
+     axios.post('  http://localhost:8000/booking',data)
      .then(res =>{
        if(res.data.insertedId){
          toast.success('Booking Successful', {

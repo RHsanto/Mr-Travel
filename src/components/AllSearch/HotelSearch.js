@@ -23,7 +23,7 @@ const HotelSearch = () => {
 
   // here fetch data
   useEffect(() => {
-    fetch("https://mr-trav-el-servers-n8cl.vercel.app/hotelInfo")
+    fetch("http://localhost:8000/hotelInfo")
       .then(response => response.json())
       .then(data => setHotels(data));
   }, []);
