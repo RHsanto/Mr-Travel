@@ -33,12 +33,12 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link to="/">
-                    <GiPalmTree /> Tour
+                  <RiHotelFill /> Hotel
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
-                    <RiHotelFill /> Hotel
+                    <GiPalmTree /> Tour
                   </Link>
                 </li>
               </ul>
