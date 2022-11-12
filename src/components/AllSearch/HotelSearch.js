@@ -23,7 +23,7 @@ const HotelSearch = () => {
 
   // here fetch data
   useEffect(() => {
-    fetch(" https://mr-trav-el-servers-n8cl.vercel.app/hotelInfo")
+    fetch("https://mr-trav-el-servers-n8cl.vercel.app/hotelInfo")
       .then(response => response.json())
       .then(data => setHotels(data));
   }, []);
@@ -54,9 +54,11 @@ const HotelSearch = () => {
       if (updatedValues?.hotelName === items?.hotelName) {
         return items;
       }
+    
     });
     setSearResult(searchResults);
     // console.log(searchResults);
+   
   };
 
   return (
@@ -147,7 +149,7 @@ const HotelSearch = () => {
                 <label for="floatingSelect">ROOMS & GUESTS</label>
               </div>
 
-              <button onChange={handleResults} className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">
+              <button onClick={handleResults} className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">
                 Modify Search
               </button>
             </div>

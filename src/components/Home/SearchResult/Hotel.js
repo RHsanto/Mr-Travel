@@ -5,7 +5,7 @@ const Hotel = () => {
   const [updatedValues, setUpdatedValues] = useState();
 
   // get input items when selected
-  const handleInput = e => {
+  const handleFrom = e => {
     const name = e.target.name;
     const value = e.target.value;
     const newUpdatedValues = { ...updatedValues };
@@ -18,7 +18,7 @@ const Hotel = () => {
       <div className="d-block  d-md-flex justify-content-center ">
         <div className="form-floating w-50 d-none d-md-block">
           <input
-            onChange={handleInput}
+            onChange={handleFrom}
             name="hotelName"
             type="text"
             className="form-control"
@@ -29,13 +29,18 @@ const Hotel = () => {
         </div>
         {/* for mobile */}
         <div className="form-floating  d-block d-md-none mb-3">
-          <input type="text" className="form-control" id="floatingInput" placeholder="From" />
+          <input 
+          onChange={handleFrom}
+          type="text"
+          className="form-control"
+          id="floatingInput"
+          placeholder="From" />
           <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
         </div>
         <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-block d-lg-flex">
           <div className="form-floating mb-3">
             <input
-              onChange={handleInput}
+              onChange={handleFrom}
               name="check-in"
               type="date"
               className="form-control"
@@ -46,7 +51,7 @@ const Hotel = () => {
           </div>
           <div className="form-floating ">
             <input
-              onChange={handleInput}
+              onChange={handleFrom}
               name="check-out"
               type="date"
               className="form-control"
@@ -58,7 +63,7 @@ const Hotel = () => {
         </div>
         <div className="form-floating w-25 d-none d-lg-block  ms-0 ms-lg-3">
           <select
-            onChange={handleInput}
+            onChange={handleFrom}
             name="room"
             className="form-select"
             id="floatingSelect"
