@@ -10,7 +10,7 @@ const BestOffer = () => {
   const [offers,setOffers]=useState([])
 
   useEffect(()=>{
-    fetch('  https://mr-trav-el-servers-n8cl.vercel.app/offersInfo')
+    fetch('https://mr-trav-el-servers-n8cl.vercel.app/offersInfo')
     .then(response=>response.json())
     .then(data=>setOffers(data.slice(4,8)))
   })
