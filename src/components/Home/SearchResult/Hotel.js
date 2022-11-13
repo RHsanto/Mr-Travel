@@ -69,7 +69,7 @@ const Hotel = () => {
             id="floatingSelect"
             aria-label="Floating label select example"
           >
-            <option selected>--Select Room & Guests--</option>
+            <option >--Select Room & Guests--</option>
             <option value="1 Room, 3 Guests">1 Room, 3 Guests</option>
             <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
             <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
@@ -85,7 +85,7 @@ const Hotel = () => {
             id="floatingSelect"
             aria-label="Floating label select example"
           >
-            <option selected>1 Room, 2 Guests</option>
+            <option >1 Room, 2 Guests</option>
             <option value="1 Room, 3 Guests">1 Room, 3 Guests</option>
             <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
             <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>

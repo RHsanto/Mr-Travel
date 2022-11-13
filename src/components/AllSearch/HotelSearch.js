@@ -127,7 +127,7 @@ const HotelSearch = () => {
                   id="floatingSelect"
                   aria-label="Floating label select example"
                 >
-                  <option selected>1 Room, 2 Guests</option>
+                  <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
                   <option value="1 Room, 3 Guests">1 Room, 3 Guests</option>
                   <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
                   <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
@@ -142,7 +142,7 @@ const HotelSearch = () => {
                   id="floatingSelect"
                   aria-label="Floating label select example"
                 >
-                  <option selected>1 Room, 2 Guests</option>
+                  <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
                   <option value="1 Room, 3 Guests">1 Room, 3 Guests</option>
                   <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
                   <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
@@ -163,7 +163,7 @@ const HotelSearch = () => {
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
             {searchResults.map(hotel => (
-              <div className="flight mt-5">
+              <div key={hotel._id} className="flight mt-5">
                 <div className="card mb-3 ps-0">
                   <div className="row g-0">
                     <div className="col-md-4">
