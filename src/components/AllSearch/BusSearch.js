@@ -21,7 +21,7 @@ const BusSearch = () => {
   if (results != undefined) {
     parsed = JSON.parse(results);
   }
-  console.log(parsed);
+  // console.log(parsed);
 
   // here fetch api
   useEffect(() => {
@@ -82,7 +82,7 @@ const BusSearch = () => {
                   >
                     <option>--Select From Destination--</option>
                     {busData.map(tours => (
-                      <option value={tours?.from}>{tours?.from}</option>
+                      <option key={tours._id} value={tours?.from}>{tours?.from}</option>
                     ))}
                   </select>
                   <label htmlFor="floatingSelect">FROM</label>
@@ -97,7 +97,7 @@ const BusSearch = () => {
                   >
                     <option>--Select To Destination--</option>
                     {busData.map(tours => (
-                      <option value={tours?.to}>{tours?.to}</option>
+                      <option key={tours._id} value={tours?.to}>{tours?.to}</option>
                     ))}
                   </select>
                   <label htmlFor="floatingSelect">TO</label>
