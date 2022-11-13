@@ -76,7 +76,7 @@ const TourSearch = () => {
         >
           <option>--Select Tour Destination--</option>
           {tours.map(tourData => (
-            <option key={tourData?.id} value={tourData?.TourName}>
+            <option key={tourData?._id} value={tourData?.TourName}>
               {tourData?.TourName}
             </option>
           ))}
@@ -95,7 +95,7 @@ const TourSearch = () => {
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
             {searchResults.map(tour => (
-              <div className="flight mt-5">
+              <div key={tour?._id} className="flight mt-5">
                 <div className="card mb-3 ps-0">
                   <div className="row g-0">
                     <div className="col-md-4">
