@@ -71,7 +71,7 @@ const Flight = () => {
             id="floatingSelect"
             aria-label="Floating label select example"
           >
-            <option selected>Open this select class</option>
+            <option value="">Open this select class</option>
             <option value="Economic">Economic</option>
             <option value="Business">Business</option>
           </select>
@@ -109,7 +109,7 @@ const Flight = () => {
             id="floatingSelect"
             aria-label="Floating label select example"
           >
-            <option selected>Open this select class</option>
+            <option value="">Open this select class</option>
             <option value="Economic">Economic</option>
             <option value="Business">Business</option>
           </select>

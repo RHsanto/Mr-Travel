@@ -120,7 +120,7 @@ const FlightSearch = () => {
                   id="floatingSelect"
                   aria-label="Floating label select example"
                 >
-                  <option selected>Open this select class</option>
+                  <option >Open this select class</option>
                   <option value="Economic">Economic</option>
                   <option value="Business">Business</option>
                 </select>
@@ -157,7 +157,7 @@ const FlightSearch = () => {
                   id="floatingSelect"
                   aria-label="Floating label select example"
                 >
-                  <option selected>Open this select class</option>
+                  <option >Open this select class</option>
                   <option value="Economic">Economic</option>
                   <option value="Business">Business</option>
                 </select>
@@ -174,7 +174,7 @@ const FlightSearch = () => {
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
             {searchResults.map(flight => (
-              <div className="flight mt-5">
+              <div key={flight?._id} className="flight mt-5">
                 <div className="card  mb-3 ps-0">
                   <div className="row g-0">
                     <div className="col-md-4">
