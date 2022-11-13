@@ -42,7 +42,7 @@ const Bus = () => {
                 <option key={busData?.id} value={busData?.from}>{busData?.from}</option>
               ))}
             </select>
-            <label for="floatingSelect">FROM</label>
+            <label htmlFor="floatingSelect">FROM</label>
           </div>
           {/* to data input */}
           <div className="form-floating w-50 ms-2 ">
@@ -58,7 +58,7 @@ const Bus = () => {
                 <option key={busData?.id} value={busData?.to}>{busData?.to}</option>
               ))}
             </select>
-            <label for="floatingSelect">TO</label>
+            <label htmlFor="floatingSelect">TO</label>
           </div>
         </div>
         <div className="form-floating  mt-3 mt-md-0 w-50 d-none d-md-block">
@@ -69,7 +69,7 @@ const Bus = () => {
             id="floatingInput"
             placeholder="name@example.com"
           />
-          <label for="floatingInput">JOURNEY DATE</label>
+          <label htmlFor="floatingInput">JOURNEY DATE</label>
         </div>
 
         {/* for mobile device*/}
@@ -80,7 +80,7 @@ const Bus = () => {
             id="floatingInput"
             placeholder="name@example.com"
           />
-          <label for="floatingInput">JOURNEY DATE</label>
+          <label htmlFor="floatingInput">JOURNEY DATE</label>
         </div>
       </div>
       <div className="search-btn">

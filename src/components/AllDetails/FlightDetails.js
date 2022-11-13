@@ -125,7 +125,7 @@ const FlightDetails = () => {
                             id="floatingInput"
                             placeholder="firstName"
                           />
-                          <label for="floatingInput">First Name</label>
+                          <label htmlFor="floatingInput">First Name</label>
                         </div>
                         <div className="form-floating mb-3 w-100">
                           <input
@@ -136,7 +136,7 @@ const FlightDetails = () => {
                             id="floatingInput"
                             placeholder="lastName"
                           />
-                          <label for="floatingInput">Last Name</label>
+                          <label htmlFor="floatingInput">Last Name</label>
                         </div>
                       </div>
                       <div className="d-flex justify-content-between ">
@@ -149,7 +149,7 @@ const FlightDetails = () => {
                             id="floatingInput"
                             placeholder="Email"
                           />
-                          <label for="floatingInput">Email</label>
+                          <label htmlFor="floatingInput">Email</label>
                         </div>
                         <div className="form-floating mb-3 w-100">
                           <input
@@ -160,7 +160,7 @@ const FlightDetails = () => {
                             id="phone"
                             placeholder="Number"
                           />
-                          <label for="floatingInput">Phone Number</label>
+                          <label htmlFor="floatingInput">Phone Number</label>
                         </div>
                       </div>
                     </div>

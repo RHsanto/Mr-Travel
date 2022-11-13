@@ -16,7 +16,7 @@ const TourDetails = () => {
   const { id } = useParams();
   const [tour, setTour] = useState([]);
   useEffect(() => {
-    fetch(` https://mr-travel-server.onrender.com/tours/${id}`)
+    fetch(` http://localhost:8000/tours/${id}`)
       .then(res => res.json())
       .then(data => setTour(data));
   });
@@ -34,7 +34,7 @@ const TourDetails = () => {
     data.member = tour.member;
     data.price = tour.price;
 
-    axios.post("  https://mr-travel-server.onrender.com/booking", data).then(res => {
+    axios.post("  http://localhost:8000/booking", data).then(res => {
       if (res.data.insertedId) {
         toast.success("Booking Successful", {
           position: "top-center",
@@ -315,7 +315,7 @@ const TourDetails = () => {
                           id="floatingInput"
                           placeholder="date"
                         />
-                        <label for="floatingInput">Journey date</label>
+                        <label htmlFor="floatingInput">Journey date</label>
                       </div>
                       <div className="form-floating mb-4">
                         <select
@@ -330,7 +330,7 @@ const TourDetails = () => {
                           <option value="2">2</option>
                           <option value="3">3</option>
                         </select>
-                        <label for="floatingSelect">TRAVELER </label>
+                        <label htmlFor="floatingSelect">TRAVELER </label>
                       </div>
                       <div className="form-floating mb-3 ">
                         <input
@@ -341,7 +341,7 @@ const TourDetails = () => {
                           id="floatingInput"
                           placeholder="firstName"
                         />
-                        <label for="floatingInput">Enter Name</label>
+                        <label htmlFor="floatingInput">Enter Name</label>
                       </div>
                       <div className="form-floating mb-3 ">
                         <input
@@ -352,7 +352,7 @@ const TourDetails = () => {
                           id="floatingInput"
                           placeholder="Email"
                         />
-                        <label for="floatingInput">Email</label>
+                        <label htmlFor="floatingInput">Email</label>
                       </div>
                       <div className="form-floating mb-3 ">
                         <input
@@ -363,7 +363,7 @@ const TourDetails = () => {
                           id="phone"
                           placeholder="Number"
                         />
-                        <label for="floatingInput">Phone Number</label>
+                        <label htmlFor="floatingInput">Phone Number</label>
                       </div>
 
                       <>
