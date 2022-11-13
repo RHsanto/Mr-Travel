@@ -65,8 +65,8 @@ const HotelSearch = () => {
   return (
     <div>
       <Navbar />
-      {/* here modify input section */}
 
+  {/* here modify input section */}
       <div className="modify-hotel-input p-5">
         <div className="container">
           <div className="input-section">
