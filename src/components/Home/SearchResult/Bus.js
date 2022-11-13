@@ -39,7 +39,7 @@ const Bus = () => {
             >
               <option >--Select From Destination--</option>
               {busInfo.map(busData=>(
-                <option key={busData?.id} value={busData?.from}>{busData?.from}</option>
+                <option key={busData?._id} value={busData?.from}>{busData?.from}</option>
               ))}
             </select>
             <label htmlFor="floatingSelect">FROM</label>
@@ -55,7 +55,7 @@ const Bus = () => {
             >
             <option >--Select To Destination--</option>
              {busInfo.map(busData=>(
-                <option key={busData?.id} value={busData?.to}>{busData?.to}</option>
+                <option key={busData?._id} value={busData?.to}>{busData?.to}</option>
               ))}
             </select>
             <label htmlFor="floatingSelect">TO</label>

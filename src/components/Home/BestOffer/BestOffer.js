@@ -20,7 +20,7 @@ const BestOffer = () => {
       <div className="container">
         <div className="row row-cols-1 row-cols-md-2 g-5 m-0">
          {offers.map(offer=>(
-            <div className="col-lg-6 ">
+            <div key={offer?._id} className="col-lg-6 ">
             <div className="row ">
               <div className="col-lg-6 offer-img">
                 <img className='border' src={offer?.img} alt="" />
