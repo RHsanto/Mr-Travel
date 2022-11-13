@@ -16,7 +16,7 @@ const TourDetails = () => {
   const { id } = useParams();
   const [tour, setTour] = useState([]);
   useEffect(() => {
-    fetch(` http://localhost:8000/tours/${id}`)
+    fetch(` https://mr-travel-server.onrender.com/tours/${id}`)
       .then(res => res.json())
       .then(data => setTour(data));
   });
@@ -324,7 +324,7 @@ const TourDetails = () => {
                           {...register("traveler")}
                           aria-label="Floating label select example"
                         >
-                          <option value="1" selected>
+                          <option value="1" >
                             1
                           </option>
                           <option value="2">2</option>

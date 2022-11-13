@@ -221,17 +221,17 @@ const OffersDetails = () => {
             <div className="form-floating mb-3 ">
              <input type="text" required {...register("firstName")} 
              className="form-control" id="floatingInput" placeholder="firstName"/>
-             <label for="floatingInput">Enter Name</label>
+             <label htmlFor="floatingInput">Enter Name</label>
             </div>
             <div className="form-floating mb-3 ">
            <input type="email" required {...register("email")}
             className="form-control" id="floatingInput" placeholder="Email"/>
-           <label for="floatingInput">Email</label>
+           <label htmlFor="floatingInput">Email</label>
           </div>
            <div className="form-floating mb-3 ">
             <input type="tel" required {...register("PhoneNumber")}
             className="form-control" id="phone" placeholder="Number"/>
-            <label for="floatingInput">Phone Number</label>
+            <label htmlFor="floatingInput">Phone Number</label>
           </div>
            
             <>
