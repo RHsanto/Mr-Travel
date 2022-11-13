@@ -26,7 +26,7 @@ const OffersDetails = () => {
    // react hook form
    const { register, handleSubmit ,reset} = useForm();
    const onSubmit = data => {
-     console.log(data)
+    //  console.log(data)
 
   // here put booking info
      data.types=offer.types
