@@ -10,7 +10,7 @@ const ModifyTour = () => {
           id="floatingInput"
           placeholder="name@example.com"
         />
-        <label for="floatingInput">LOCATION / TOUR</label>
+        <label htmlFor="floatingInput">LOCATION / TOUR</label>
       </div>
       <button className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">Modify Search</button>
     </div>

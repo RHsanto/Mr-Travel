@@ -25,7 +25,7 @@ const Hotel = () => {
             id="floatingInput"
             placeholder="From"
           />
-          <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
+          <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label>
         </div>
         {/* for mobile */}
         <div className="form-floating  d-block d-md-none mb-3">
@@ -35,7 +35,7 @@ const Hotel = () => {
           className="form-control"
           id="floatingInput"
           placeholder="From" />
-          <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
+          <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label>
         </div>
         <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-block d-lg-flex">
           <div className="form-floating mb-3">
@@ -47,7 +47,7 @@ const Hotel = () => {
               id="floatingInput"
               placeholder="name@example.com"
             />
-            <label for="floatingInput">CHECK IN</label>
+            <label htmlFor="floatingInput">CHECK IN</label>
           </div>
           <div className="form-floating ">
             <input
@@ -58,7 +58,7 @@ const Hotel = () => {
               id="floatingInput"
               placeholder="name@example.com"
             />
-            <label for="floatingInput">CHECK OUT</label>
+            <label htmlFor="floatingInput">CHECK OUT</label>
           </div>
         </div>
         <div className="form-floating w-25 d-none d-lg-block  ms-0 ms-lg-3">
@@ -74,7 +74,7 @@ const Hotel = () => {
             <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
             <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
           </select>
-          <label for="floatingSelect">ROOMS & GUESTS</label>
+          <label htmlFor="floatingSelect">ROOMS & GUESTS</label>
         </div>
 
         {/* for mobile device input */}
@@ -90,7 +90,7 @@ const Hotel = () => {
             <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
             <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
           </select>
-          <label for="floatingSelect">ROOMS & GUESTS</label>
+          <label htmlFor="floatingSelect">ROOMS & GUESTS</label>
         </div>
       </div>
 

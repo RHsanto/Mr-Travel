@@ -38,7 +38,7 @@ const Tour = () => {
             </option>
           ))}
         </select>
-        <label for="floatingInput">LOCATION / TOUR</label>
+        <label htmlFor="floatingInput">LOCATION / TOUR</label>
       </div>
       <div className="search-btn">
         <div className="container">
