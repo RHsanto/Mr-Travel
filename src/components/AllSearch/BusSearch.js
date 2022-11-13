@@ -55,6 +55,7 @@ const BusSearch = () => {
       if (updatedValues?.from === items?.from) {
         return items;
       }
+   
     });
     setSearResult(searchResults);
     // console.log(searchResults);

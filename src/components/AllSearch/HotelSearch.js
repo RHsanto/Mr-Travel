@@ -54,7 +54,8 @@ const HotelSearch = () => {
       if (updatedValues?.hotelName === items?.hotelName) {
         return items;
       }
-    
+   
+      
     });
     setSearResult(searchResults);
     // console.log(searchResults);
