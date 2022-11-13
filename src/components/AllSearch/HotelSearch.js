@@ -81,7 +81,7 @@ const HotelSearch = () => {
                   placeholder="From"
                   required
                 />
-                <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
+                <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label>
               </div>
               {/* for mobile */}
               <div className="form-floating  d-block d-md-none">
@@ -94,7 +94,7 @@ const HotelSearch = () => {
                   placeholder="From"
                   required
                 />
-                <label for="floatingInput">CITY/HOTEL/RESORT/AREA</label>
+                <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label>
               </div>
               <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-lg-flex d-block">
                 <div className="form-floating ">
@@ -106,7 +106,7 @@ const HotelSearch = () => {
                     id="floatingInput"
                     required
                   />
-                  <label for="floatingInput">CHECK IN</label>
+                  <label htmlFor="floatingInput">CHECK IN</label>
                 </div>
                 <div className="form-floating mt-2 mt-lg-0 ms-0 ms-lg-2">
                   <input
@@ -117,7 +117,7 @@ const HotelSearch = () => {
                     id="floatingInput"
                     required
                   />
-                  <label for="floatingInput">CHECK OUT</label>
+                  <label htmlFor="floatingInput">CHECK OUT</label>
                 </div>
               </div>
 
@@ -132,7 +132,7 @@ const HotelSearch = () => {
                   <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
                   <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
                 </select>
-                <label for="floatingSelect">ROOMS & GUESTS</label>
+                <label htmlFor="floatingSelect">ROOMS & GUESTS</label>
               </div>
               {/* for mobile device input */}
 
@@ -147,7 +147,7 @@ const HotelSearch = () => {
                   <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
                   <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
                 </select>
-                <label for="floatingSelect">ROOMS & GUESTS</label>
+                <label htmlFor="floatingSelect">ROOMS & GUESTS</label>
               </div>
 
               <button onClick={handleResults} className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">

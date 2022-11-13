@@ -85,7 +85,7 @@ const BusSearch = () => {
                       <option value={tours?.from}>{tours?.from}</option>
                     ))}
                   </select>
-                  <label for="floatingSelect">FROM</label>
+                  <label htmlFor="floatingSelect">FROM</label>
                 </div>
                 <div className="form-floating w-50 ms-2 ">
                   <select
@@ -100,7 +100,7 @@ const BusSearch = () => {
                       <option value={tours?.to}>{tours?.to}</option>
                     ))}
                   </select>
-                  <label for="floatingSelect">TO</label>
+                  <label htmlFor="floatingSelect">TO</label>
                 </div>
               </div>
               <div className="form-floating  mt-3 mt-md-0 w-50 d-none d-md-block">
@@ -112,7 +112,7 @@ const BusSearch = () => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">JOURNEY DATE</label>
+                <label htmlFor="floatingInput">JOURNEY DATE</label>
               </div>
               {/* for mobile */}
               <div className="form-floating  mt-3 mt-md-0  d-block d-md-none">
@@ -122,7 +122,7 @@ const BusSearch = () => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">JOURNEY DATE</label>
+                <label htmlFor="floatingInput">JOURNEY DATE</label>
               </div>
 
               <button onClick={handleResults} 

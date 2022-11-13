@@ -81,7 +81,7 @@ const TourSearch = () => {
             </option>
           ))}
         </select>
-        <label for="floatingInput">LOCATION / TOUR</label>
+        <label htmlFor="floatingInput">LOCATION / TOUR</label>
       </div>
       <button onClick={handleResults}
        className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">Modify Search
