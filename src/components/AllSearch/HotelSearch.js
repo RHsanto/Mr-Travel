@@ -23,7 +23,7 @@ const HotelSearch = () => {
 
   // here fetch data
   useEffect(() => {
-    fetch("http://localhost:8000/hotelInfo")
+    fetch("https://mr-travel-server.onrender.com/hotelInfo")
       .then(response => response.json())
       .then(data => setHotels(data));
   }, []);

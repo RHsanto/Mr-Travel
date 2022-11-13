@@ -23,7 +23,7 @@ const FlightSearch = () => {
   // console.log(parsed);
 
   useEffect(() => {
-    fetch("  http://localhost:8000/flightInfo")
+    fetch("  https://mr-travel-server.onrender.com/flightInfo")
       .then(response => response.json())
       .then(data => setFlights(data));
   }, []);

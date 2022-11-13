@@ -10,7 +10,7 @@ const BestOffer = () => {
   const [offers,setOffers]=useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:8000/offersInfo')
+    fetch('https://mr-travel-server.onrender.com/offersInfo')
     .then(response=>response.json())
     .then(data=>setOffers(data.slice(4,8)))
   })

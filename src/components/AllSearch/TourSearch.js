@@ -22,7 +22,7 @@ const TourSearch = () => {
  }
 
   useEffect(() => {
-    fetch("  http://localhost:8000/tourInfo")
+    fetch("  https://mr-travel-server.onrender.com/tourInfo")
       .then(response => response.json())
       .then(data => setTours(data));
   }, []);

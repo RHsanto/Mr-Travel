@@ -18,7 +18,7 @@ const OffersDetails = () => {
   const [offer,setOffer]=useState([])
   const sum = (parseFloat(offer?.price) + parseFloat(offer?.service) + parseFloat(offer?.tax))
   useEffect(()=>{
-    fetch(`  http://localhost:8000/offers/${id}`)
+    fetch(`  https://mr-travel-server.onrender.com/offers/${id}`)
     .then(response=>response.json())
     .then(data=>setOffer(data))
   })
@@ -37,7 +37,7 @@ const OffersDetails = () => {
      data.sum=sum
 
 
-     axios.post('  http://localhost:8000/booking',data)
+     axios.post('  https://mr-travel-server.onrender.com/booking',data)
      .then(res =>{
        if(res.data.insertedId){
          toast.success('Booking Successful', {
