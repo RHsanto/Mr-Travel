@@ -15,7 +15,7 @@ const Banner = () => {
     <div className="container pt-3  d-flex justify-content-between align-items-center">
       <div className="logo">
          <Link to='/'>
-          <div className='d-flex align-items-center'>
+          <div className='d-flex '>
             <img src={logos} alt="img" className='logo-image' />
             <h1 className='text-white ms-3'> Mr.Travel </h1>
           </div>
