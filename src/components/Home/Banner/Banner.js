@@ -16,8 +16,8 @@ const Banner = () => {
       <div className="logo">
          <Link to='/'>
           <div className='d-flex align-items-center'>
-          <img src={logos} alt="img" className='logo-image' />
-          <h1 className='text-white ms-3'> Mr.Travel </h1>
+            <img src={logos} alt="img" className='logo-image' />
+            <h1 className='text-white ms-3'> Mr.Travel </h1>
           </div>
          
           </Link>
