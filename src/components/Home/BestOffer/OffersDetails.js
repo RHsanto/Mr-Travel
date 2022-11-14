@@ -35,8 +35,7 @@ const OffersDetails = () => {
      data.room=offer.room
      data.guest=offer.guest
      data.sum=sum
-
-
+     
      axios.post('  https://mr-travel-server.onrender.com/booking',data)
      .then(res =>{
        if(res.data.insertedId){
