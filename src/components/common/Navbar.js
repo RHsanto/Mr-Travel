@@ -7,6 +7,7 @@ import { RiHotelFill } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import { FaUserCircle, FaBus } from "react-icons/fa";
+import logos from '../../images/t-logo.png'
 const Navbar = () => {
   const { user, logOut } = useFirebase();
   return (
@@ -14,9 +15,12 @@ const Navbar = () => {
       <div className="nav-sections ">
         <div className="container  pt-3 px-5 px-lg-0  d-flex justify-content-between align-items-center">
           <div className="logos">
-            <h1>
-              <Link to="/"> Mr.Travel</Link>
-            </h1>
+              <Link to="/">
+              <div className='d-flex '>
+                <img src={logos} alt="img" className='logo-image' />
+                <h1 className='text-dark ms-3'> Mr.Travel </h1>
+             </div>
+              </Link>     
           </div>
           <div className="d-none d-lg-block">
             <nav>

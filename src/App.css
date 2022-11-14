@@ -8,6 +8,7 @@ a{text-decoration: none;}
 .logo-image{
   width: 40px;
   height: 40px;
+  margin-top: 5px;
 }
 .logo, .logos{font-family: 'Faster One', cursive;}
 
@@ -42,7 +43,8 @@ a{text-decoration: none;}
 .text-blue{
   color: #0A58CA;
 }
-/* nav section */
+
+/* nav section  css*/
 .nav-sections{
   box-shadow: 0 1px 5px rgb(51 65 80 / 25%);
 }
@@ -73,6 +75,7 @@ nav ul li a{
   color: #ffffff;
   line-height: normal;
 }
+
 /* search section css */
 .search-section {
   padding: 150px 0px 100px 0px;
