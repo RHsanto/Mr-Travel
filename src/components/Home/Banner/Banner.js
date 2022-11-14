@@ -6,15 +6,23 @@ import useFirebase from '../../../hooks/useFirebase';
 import { IoIosArrowDown } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
-
+import logos from '../../../images/t-logo.png'
 const Banner = () => {
   const{user,logOut}=useFirebase();
   return (
     <div className='banner-section'>
   <header >
     <div className="container pt-3  d-flex justify-content-between align-items-center">
-      <div className="logo  text-white">
-      <h1><Link to='/'>  Mr.Travel</Link></h1>
+      <div className="logo">
+         <Link to='/'>
+          <div className='d-flex align-items-center'>
+          <img src={logos} alt="img" className='logo-image' />
+          <h1 className='text-white ms-3'> Mr.Travel </h1>
+          </div>
+         
+          </Link>
+       
+  
      </div>
 
 {/* here use login functionality */}
