@@ -5,11 +5,11 @@ const Reviews = () => {
 
   var settings = {
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: true,
+    autoplay: false ,
     autoplaySpeed: 2000,
     responsive: [
       {
