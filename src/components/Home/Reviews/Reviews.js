@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 import Slider from "react-slick";
 const Reviews = () => {
 
+  const [reviews,setReviews] =useState([])
+
+  useEffect(()=>{
+   fetch("https://mr-travel-server.onrender.com/reviews")
+   .then(res=>res.json())
+   .then(data=>setReviews(data))
+
+  },[])
   var settings = {
     infinite: true,
     speed: 1000,
@@ -45,130 +53,26 @@ const Reviews = () => {
   return (
     <div className='review-section '>
       <div className="reviews">
-      <h1 className='text-center'>Reviews</h1>
+      <h1 className='text-center title mb-5'> Clients Reviews</h1>
       <div className="container ">
        <div className="row sliders">
        <Slider  {...settings}>
-         <div className="col-lg-4">
-           <div className="card bg-light p-3 
-           align-items-center rounded-3 d-block d-lg-flex gap-4">
-            <div className="review-img">
-              <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/user-img-5.png" alt="" />
-            </div>
-            <div className="review-info">
-             <h4><b>Cox Bazars</b></h4>
-             <div className="d-flex review-icon ">
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiOutlineStar/></li>
-             </div>
-             <p>Lorem ipsum, dolor sit amet  iste ipsam ea rerum eius voluptatem voluptate.</p>
-              <h6><b>Rakibul Hasan</b></h6>
-            </div>
-           </div>
+        {reviews.map(data=>
+        <div key={data?._id} className="col-lg-4">
+        <div className="card p-4 m-4">
+         <div className="review-img">
+           <img src={data?.client_image} alt="" />
          </div>
-         <div className="col-lg-4 ">
-           <div className="review-card  bg-light p-3
-            align-items-center rounded-3 d-block d-lg-flex gap-4">
-            <div className="review-img">
-              <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/user-img-5.png" alt="" />
-            </div>
-            <div className="review-info">
-             <h4><b>Cox Bazars</b></h4>
-             <div className="d-flex review-icon ">
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiOutlineStar/></li>
-             </div>
-             <p>Lorem ipsum, dolor sit amet  iste ipsam ea rerum eius voluptatem voluptate.</p>
-              <h6><b>Rakibul Hasan</b></h6>
-            </div>
-           </div>
+         <div className="review-info">
+          <h3>{data?.client}</h3>
+          <p>{data?.description}</p>
+           <h6>{data?.client}</h6>
          </div>
-         <div className="col-lg-4 ">
-           <div className=" review-card bg-light
-            p-3 align-items-center rounded-3 d-block d-lg-flex gap-4">
-            <div className="review-img">
-              <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/user-img-5.png" alt="" />
-            </div>
-            <div className="review-info">
-             <h4><b>Cox Bazars</b></h4>
-             <div className="d-flex review-icon ">
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiOutlineStar/></li>
-             </div>
-             <p>Lorem ipsum, dolor sit amet  iste ipsam ea rerum eius voluptatem voluptate.</p>
-              <h6><b>Rakibul Hasan</b></h6>
-            </div>
-           </div>
-         </div>
-         <div className="col-lg-4 ">
-           <div className="  review-card bg-light p-3
-            align-items-center rounded-3 d-block d-lg-flex gap-4">
-            <div className="review-img">
-              <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/user-img-5.png" alt="" />
-            </div>
-            <div className="review-info">
-             <h4><b>Cox Bazars</b></h4>
-             <div className="d-flex review-icon ">
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiOutlineStar/></li>
-             </div>
-             <p>Lorem ipsum, dolor sit amet  iste ipsam ea rerum eius voluptatem voluptate.</p>
-              <h6><b>Rakibul Hasan</b></h6>
-            </div>
-           </div>
-         </div>
-         <div className="col-lg-4 ">
-           <div className=" review-card bg-light p-3
-            align-items-center rounded-3 d-block d-lg-flex gap-4">
-            <div className="review-img">
-              <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/user-img-5.png" alt="" />
-            </div>
-            <div className="review-info">
-             <h4><b>Cox Bazars</b></h4>
-             <div className="d-flex review-icon ">
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiOutlineStar/></li>
-             </div>
-             <p>Lorem ipsum, dolor sit amet  iste ipsam ea rerum eius voluptatem voluptate.</p>
-              <h6><b>Rakibul Hasan</b></h6>
-            </div>
-           </div>
-         </div>
-         <div className="col-lg-4 ">
-           <div className=" review-card bg-light p-3
-            align-items-center rounded-3 d-block d-lg-flex gap-4">
-            <div className="review-img">
-              <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/user-img-5.png" alt="" />
-            </div>
-            <div className="review-info">
-             <h4><b>Cox Bazars</b></h4>
-             <div className="d-flex review-icon ">
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiTwotoneStar/></li>
-                     <li><AiOutlineStar/></li>
-             </div>
-             <p>Lorem ipsum, dolor sit amet  iste ipsam ea rerum eius voluptatem voluptate.</p>
-              <h6><b>Rakibul Hasan</b></h6>
-            </div>
-           </div>
-         </div>
+        </div>
+      </div>
+          )}
+         
+       
         
         </Slider>
        </div>

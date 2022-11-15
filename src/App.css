@@ -192,15 +192,8 @@ list-style: none;
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgb(0 0 0 / 10%); */
 }
-.review-icon li{
-list-style: none;
-color: #FA9E1B;
-}
 
 
-.review-card{
-  margin: 10px;
-}
 
 /* footer section css */
 
