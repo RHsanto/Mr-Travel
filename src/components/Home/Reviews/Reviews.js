@@ -13,11 +13,11 @@ const Reviews = () => {
   },[])
   var settings = {
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: false ,
+    autoplay: true ,
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -59,13 +59,11 @@ const Reviews = () => {
        <Slider  {...settings}>
         {reviews.map(data=>
         <div key={data?._id} className="col-lg-4">
-        <div className="card p-4 m-4">
-         <div className="review-img">
-           <img src={data?.client_image} alt="" />
-         </div>
-         <div className="review-info">
-          <h3>{data?.client}</h3>
-          <p>{data?.description}</p>
+        <div className="card p-3 m-4">
+           <img className="card-img-top" src={data?.client_image} alt="" />
+         <div className="card-body">
+           <h3>{data?.client}</h3>
+            <p className='card-text'>{data?.description}</p>
            <h6>{data?.client}</h6>
          </div>
         </div>
