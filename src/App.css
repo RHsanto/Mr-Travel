@@ -234,26 +234,51 @@ list-style: none;
   background-color: #1C96E8;
 }
 /* adds */
-.testi{
+.ratings{
+  color: #0A58CA;
+  margin-top: 20px;
+}
+.clients{
+  font-weight: bold;
+  color: #0A58CA;
+  margin-top: 30px;
+}
+.reviews-section{
   padding: 50px 0;
 }
-.testi-item{
+.testi-text p{
+  font-family: Georgia,serif;
+  font-style: italic;
+}
+.review-item{
   background: #F5F6FA;
   border: 1px solid #eee;
   border-radius: 10px;
   transition: all .3s ease-in-out;
+  position: relative;
 }
-.testi-text{
-  padding:25px;
-  text-align: center;
+
+.review-item::before{
+  content: "\f10e";
+  top: 20px;
+  left: 25px;
+  color: #4DB7FE;
+  position: absolute;
+}
+.review-item::after{
+  content: "\f10e";
+  bottom: 20px;
+  right: 25px;
+  color: #4DB7FE;
+  position: absolute;
 
 }
-.testi-avatar{
+.reviewer{
   display: flex;
   justify-content: center;
   margin-top: -30px;
 }
-.testi-avatar img {
+.reviewer img {
   width: 90px;
   height: 90px;
   border-radius: 100%;
