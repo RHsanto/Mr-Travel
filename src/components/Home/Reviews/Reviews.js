@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Slider from "react-slick";
 const Reviews = () => {
 
@@ -60,11 +60,18 @@ const Reviews = () => {
         {reviews.map(data=>
         <div key={data?._id} className="col-lg-4">
         <div className="card p-3 m-4">
-           <img className="card-img-top" src={data?.client_image} alt="" />
+           <img className="card-img" src={data?.client_image} alt="" />
          <div className="card-body">
            <h3>{data?.client}</h3>
             <p className='card-text'>{data?.description}</p>
-           <h6>{data?.client}</h6>
+             <div className="ratings">
+              <li><FaStar/></li>
+              <li><FaStar/></li>
+              <li><FaStar/></li>
+              <li><FaStar/></li>
+              <li><FaStarHalfAlt/></li>
+             </div>             
+              
          </div>
         </div>
       </div>

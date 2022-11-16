@@ -185,7 +185,10 @@ list-style: none;
 }
 /* review-section */
 
-
+.ratings li{
+  list-style: none;
+  display: inline-block
+}
 
 /* footer section css */
 
