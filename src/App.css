@@ -246,8 +246,9 @@ list-style: none;
   color: #0A58CA;
   margin-top: 30px;
 }
-.reviews-section{
-  padding: 50px 0;
+.review-section{
+  padding: 100px 0px;
+  position: relative;
 }
 
 .review-text p{
@@ -280,7 +281,7 @@ list-style: none;
 .reviewer{
   display: flex;
   justify-content: center;
-  margin-top: -30px;
+ 
 }
 .reviewer img {
   width: 90px;
@@ -288,6 +289,7 @@ list-style: none;
   border-radius: 100%;
   border: 6px solid #fff;
   box-shadow: 0 9px 26px rgb(58 87 135 / 10%);
+ 
  
 
 }

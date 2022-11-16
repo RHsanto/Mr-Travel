@@ -54,9 +54,9 @@ const Reviews = () => {
     ]
   };
   return (
-    <div className='review-section '>
+    <div className='review-section'>
       <h1 className='text-center title mb-5'> Traveler Experience</h1>
-      <div className="container-fluid ">
+      <div className="container">
        <div className="row ">
        <Slider  {...settings}>
         {reviews.map(data=>
@@ -64,8 +64,8 @@ const Reviews = () => {
         <div className="review-item m-2 ">
           <div className="reviewer">
             <img
-              src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/user-img-5.png"
-              alt=""
+              src={data?.client_image}
+              alt="img"
             />
           </div>
           <div className=" d-flex justify-content-center ratings">
@@ -76,12 +76,8 @@ const Reviews = () => {
             <FaStarHalfAlt />
           </div>
           <div className="review-text p-4 text-center">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel maxime amet mollitia
-              nulla, fugit eum magni? Esse, culpa ex. Animi, ut quod! Unde vel repudiandae esse
-              velit architecto quos quaerat!
-            </p>
-            <h5 className="clients">Husaain jaif</h5>
+            <p> {data?.description}</p>
+            <h5 className="clients">{data?.client}</h5>
             <small>Travelers</small>
           </div>
         </div>
