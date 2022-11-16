@@ -193,6 +193,8 @@ list-style: none;
   font-size: large;
 }
 
+/* add  */
+
 /* footer section css */
 
 footer{
@@ -232,12 +234,38 @@ list-style: none;
   background-color: #1C96E8;
 }
 /* adds */
+.testi{
+  padding: 50px 0;
+}
+.testi-item{
+  background: #F5F6FA;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+}
+.testi-text{
+  padding:25px;
+  text-align: center;
 
-.adds img{
+}
+.testi-avatar{
+  display: flex;
+  justify-content: center;
+  margin-top: -30px;
+}
+.testi-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  border: 6px solid #fff;
+  box-shadow: 0 9px 26px rgb(58 87 135 / 10%);
+}
+
+/* .adds img{
   width: 250px;
   object-fit: cover;
  
-}
+} */
 .read{
   border: 0;
   background-color: #0B1C80;
