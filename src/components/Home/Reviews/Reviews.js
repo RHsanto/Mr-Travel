@@ -17,8 +17,11 @@ const Reviews = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: false ,
-    autoplaySpeed: 2000,
+    className: "center",
+    centerMode: true,
+    
+   
+   
     responsive: [
       {
         breakpoint: 1024,
@@ -52,27 +55,35 @@ const Reviews = () => {
   };
   return (
     <div className='review-section '>
-      <div className="reviews">
       <h1 className='text-center title mb-5'> Traveler Experience</h1>
-      <div className="container ">
-       <div className="row sliders">
+      <div className="container-fluid ">
+       <div className="row ">
        <Slider  {...settings}>
         {reviews.map(data=>
-        <div key={data?._id} className="col-lg-4">
-        <div className="card p-3 m-4">
-           <img className="card-img" src={data?.client_image} alt="" />
-         <div className="card-body">
-           <h3>{data?.client}</h3>
-             <div className="ratings">
-              <li><FaStar/></li>
-              <li><FaStar/></li>
-              <li><FaStar/></li>
-              <li><FaStar/></li>
-              <li><FaStarHalfAlt/></li>
-             </div>             
-            <p className='card-text mt-2'>{data?.description}</p>
-              
-         </div>
+        <div className="col-lg-4 ">
+        <div className="review-item m-2 ">
+          <div className="reviewer">
+            <img
+              src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/user-img-5.png"
+              alt=""
+            />
+          </div>
+          <div className=" d-flex justify-content-center ratings">
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStarHalfAlt />
+          </div>
+          <div className="review-text p-4 text-center">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel maxime amet mollitia
+              nulla, fugit eum magni? Esse, culpa ex. Animi, ut quod! Unde vel repudiandae esse
+              velit architecto quos quaerat!
+            </p>
+            <h5 className="clients">Husaain jaif</h5>
+            <small>Travelers</small>
+          </div>
         </div>
       </div>
           )}
@@ -81,8 +92,7 @@ const Reviews = () => {
         
         </Slider>
        </div>
-     </div></div>  
-     
+     </div> 
     </div>
   );
 };
