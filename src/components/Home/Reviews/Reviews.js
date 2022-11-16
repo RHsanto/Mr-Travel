@@ -63,7 +63,6 @@ const Reviews = () => {
            <img className="card-img" src={data?.client_image} alt="" />
          <div className="card-body">
            <h3>{data?.client}</h3>
-            <p className='card-text'>{data?.description}</p>
              <div className="ratings">
               <li><FaStar/></li>
               <li><FaStar/></li>
@@ -71,6 +70,7 @@ const Reviews = () => {
               <li><FaStar/></li>
               <li><FaStarHalfAlt/></li>
              </div>             
+            <p className='card-text mt-2'>{data?.description}</p>
               
          </div>
         </div>
