@@ -17,7 +17,7 @@ const Reviews = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: true ,
+    autoplay: false ,
     autoplaySpeed: 2000,
     responsive: [
       {

@@ -187,7 +187,10 @@ list-style: none;
 
 .ratings li{
   list-style: none;
-  display: inline-block
+  display: inline-block;
+  margin-right: 5px;
+  color: #FA9E1B;
+  font-size: large;
 }
 
 /* footer section css */
