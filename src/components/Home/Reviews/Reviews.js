@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Slider from "react-slick";
+import './Reviews.css'
 const Reviews = () => {
 
   const [reviews,setReviews] =useState([])
