@@ -278,6 +278,7 @@ list-style: none;
   position: absolute;
 
 }
+
 .reviewer{
   display: flex;
   justify-content: center;
@@ -289,7 +290,7 @@ list-style: none;
   border-radius: 100%;
   border: 6px solid #fff;
   box-shadow: 0 9px 26px rgb(58 87 135 / 10%);
- 
+
  
 
 }
