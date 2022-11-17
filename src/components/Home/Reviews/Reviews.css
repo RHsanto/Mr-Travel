@@ -1,6 +1,6 @@
 /* review-section */
 .ratings{
-  color: #0A58CA;
+  color: #ffc60a;
   margin-top: 20px;
 }
 .clients{
@@ -26,19 +26,19 @@
 }
 
 .review-item::before{
-  content: "\f10e";
-  top: 20px;
-  left: 25px;
-  color: #4DB7FE;
+  content: "❝ ";
+  top: 10px;
+  left: 15px;
   position: absolute;
+  font-size: 50px;
+  
 }
 .review-item::after{
-  content: "\f10e";
-  bottom: 20px;
-  right: 25px;
-  color: #4DB7FE;
+  content: " ❞ ";
+  bottom: 0px;
+  right: 15px;
   position: absolute;
-
+  font-size: 50px;
 }
 
 .reviewer{
@@ -51,5 +51,6 @@
   height: 90px;
   border-radius: 100%;
   border: 6px solid #fff;
-  box-shadow: 0 9px 26px rgb(58 87 135 / 10%)
+  box-shadow: 0 9px 26px rgb(58 87 135 / 10%);
+  
 }
