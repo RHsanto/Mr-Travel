@@ -187,16 +187,60 @@ list-style: none;
   margin-top: 80px;
 }
 /* review-section */
-
-.ratings li{
-  list-style: none;
-  display: inline-block;
-  margin-right: 5px;
-  color: #FA9E1B;
-  font-size: large;
+.ratings{
+  color: #0A58CA;
+  margin-top: 20px;
+}
+.clients{
+  font-weight: bold;
+  color: #0A58CA;
+  margin-top: 30px;
+}
+.review-section{
+  padding: 0px 0px 100px 0px;
+  position: relative;
 }
 
-/* add  */
+.review-text p{
+  font-family: Georgia,serif;
+  font-style: italic;
+}
+.review-item{
+  background: #F5F6FA;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+  position: relative;
+}
+
+.review-item::before{
+  content: "\f10e";
+  top: 20px;
+  left: 25px;
+  color: #4DB7FE;
+  position: absolute;
+}
+.review-item::after{
+  content: "\f10e";
+  bottom: 20px;
+  right: 25px;
+  color: #4DB7FE;
+  position: absolute;
+
+}
+
+.reviewer{
+  display: flex;
+  justify-content: center;
+  margin-top: -30px;
+}
+.reviewer img{
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  border: 6px solid #fff;
+  box-shadow: 0 9px 26px rgb(58 87 135 / 10%)
+}
 
 /* footer section css */
 
@@ -236,70 +280,7 @@ list-style: none;
 .footer-icons li:nth-child(4){
   background-color: #1C96E8;
 }
-/* adds */
-.ratings{
-  color: #0A58CA;
-  margin-top: 20px;
-}
-.clients{
-  font-weight: bold;
-  color: #0A58CA;
-  margin-top: 30px;
-}
-.review-section{
-  padding: 100px 0px;
-  position: relative;
-}
 
-.review-text p{
-  font-family: Georgia,serif;
-  font-style: italic;
-}
-.review-item{
-  background: #F5F6FA;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  transition: all .3s ease-in-out;
-  position: relative;
-}
-
-.review-item::before{
-  content: "\f10e";
-  top: 20px;
-  left: 25px;
-  color: #4DB7FE;
-  position: absolute;
-}
-.review-item::after{
-  content: "\f10e";
-  bottom: 20px;
-  right: 25px;
-  color: #4DB7FE;
-  position: absolute;
-
-}
-
-.reviewer{
-  display: flex;
-  justify-content: center;
- 
-}
-.reviewer img {
-  width: 90px;
-  height: 90px;
-  border-radius: 100%;
-  border: 6px solid #fff;
-  box-shadow: 0 9px 26px rgb(58 87 135 / 10%);
-
- 
-
-}
-
-/* .adds img{
-  width: 250px;
-  object-fit: cover;
- 
-} */
 .read{
   border: 0;
   background-color: #0B1C80;
