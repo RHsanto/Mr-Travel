@@ -54,6 +54,9 @@ const Reviews = () => {
   return (
     <div className="review-section">
       <h1 className="text-center title mb-5"> Traveler Experience</h1>
+      <div className="sub">
+
+      </div>
       <div className="container">
         <div className="row ">
           <Slider {...settings}>
