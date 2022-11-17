@@ -60,7 +60,7 @@ const Reviews = () => {
        <div className="row ">
        <Slider  {...settings}>
         {reviews.map(data=>
-        <div className="col-lg-4 ">
+        <div key={data?._id} className="col-lg-4 ">
         <div className="review-item m-2 ">
           <div className="reviewer">
             <img
