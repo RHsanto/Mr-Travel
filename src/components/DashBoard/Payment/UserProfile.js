@@ -11,8 +11,8 @@ const UserProfile = () => {
           <div className="col-lg-8 ">
             <div className="card">
               <h3 className='text-center profile-title'>User Profile</h3>
-             <div className="p-4">
-             <p className='mb-5'>Personal Information :</p>
+             <div className="p-4 card-item">
+             <h5 className='mb-4'>Personal Information :</h5>
               <div className="user-image-item">
                 <div className="user-img">
                   <img  src="https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png" alt="" />
