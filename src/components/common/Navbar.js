@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { GiCommercialAirplane, GiPalmTree } from "react-icons/gi";
 import { RiHotelFill } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
-import { FiLogOut } from "react-icons/fi";
-import { FaUserCircle, FaBus } from "react-icons/fa";
+import { FiLogIn, FiLogOut } from "react-icons/fi";
+import { FaUserCircle, FaBus, FaUserAlt, FaTags } from "react-icons/fa";
 import logos from '../../images/t-logo.png'
 const Navbar = () => {
   const { user, logOut } = useFirebase();
@@ -52,43 +52,42 @@ const Navbar = () => {
           {/* here use login functionality */}
           <div className="d-flex align-items-center">
             {user.email ? (
-              <>
-                {user.photoURL ? (
-                  <img className="UserImg mb-2" src={user.photoURL} alt="" />
-                ) : (
-                  <>
-                    <FaUserCircle className="text-blue fs-1" />
-                  </>
-                )}
-                <div className="dropdown">
-                  <div
-                    className="text-dark ms-2"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <IoIosArrowDown className=" fw-bold fs-5" />
-                  </div>
-                  <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-                    <span className="ms-3 py-3">{user?.displayName}</span>
-                    <span className="dropdown-item ">
-                      <Link to="/my-booking" className="text-dark">
-                        My Booking
-                      </Link>{" "}
-                    </span>
-                    <a>
-                      <span className="dropdown-item w-100 bg-danger text-light" onClick={logOut}>
-                        <FiLogOut /> Sign-out
-                      </span>
-                    </a>
-                  </ul>
-                </div>
-              </>
+             <>
+             <FaUserCircle className=" fs-1" />
+             <div className="dropdown">
+               <div
+                 className=" ms-2"
+                 type="button"
+                 id="dropdownMenuButton1"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false"
+               >
+                 <IoIosArrowDown className=" fw-bold fs-5" />
+               </div>
+               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                 <span>
+                   <Link to="/user-profile"  className=" dropdown-item">
+                     <FaUserAlt className="me-1" /> Profile
+                   </Link>
+                 </span>
+                 <span>
+                   <Link to="/my-booking" className="dropdown-item ">
+                     <FaTags className="me-1" /> My Booking
+                   </Link>
+                 </span>
+                 <span className="dropdown-item w-100" onClick={logOut}>
+                   <FiLogOut className="me-1" /> Sign-out
+                 </span>
+               </ul>
+             </div>
+           </>
             ) : (
               <div className="sign-in">
                 <Link to="/sign-in">
-                  <button className="rounded text-dark"> Sign-in</button>{" "}
+                  <button className="rounded ">
+                    {" "}
+                    <FiLogIn /> Sign-in
+                  </button>{" "}
                 </Link>
               </div>
             )}

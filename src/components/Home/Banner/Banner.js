@@ -38,8 +38,10 @@ const Banner = () => {
                     <IoIosArrowDown className=" fw-bold fs-5" />
                   </div>
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <span className=" dropdown-item">
-                      <FaUserAlt className="me-1" /> Profile
+                    <span>
+                      <Link to="/user-profile"  className=" dropdown-item">
+                        <FaUserAlt className="me-1" /> Profile
+                      </Link>
                     </span>
                     <span>
                       <Link to="/my-booking" className="dropdown-item ">
