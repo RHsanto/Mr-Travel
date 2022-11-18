@@ -5,3 +5,14 @@
   background-color: #1680dd;
   color: white;
 }
+
+/* user Profile section */
+.profile-title{
+  background-color: #396CF0;
+  color: white;
+  padding: 15px;
+}
+.user-img img{
+  width: 100px;
+  height: 100px;
+}
