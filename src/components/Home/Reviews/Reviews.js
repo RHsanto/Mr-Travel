@@ -53,7 +53,7 @@ const Reviews = () => {
   };
   return (
     <div className="review-section">
-      <h1 className="text-center title mb-5"> Traveler Experience</h1>
+      <h1 className="text-center title py-5"> Traveler Experience</h1>
       <div className="sub">
 
       </div>
