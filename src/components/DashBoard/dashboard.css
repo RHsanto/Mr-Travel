@@ -8,11 +8,28 @@
 
 /* user Profile section */
 .profile-title{
-  background-color: #0A58CA;
+  background-color: #396cf0;
   color: white;
   padding: 15px;
 }
 .user-img img{
   width: 100px;
   height: 100px;
+}
+.upload-btn{
+  color: white;
+  border: 0;
+  margin-right: 15px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #396cf0;
+}
+.remove-btn{
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+  background-color: rgba(57,108,240,.1)!important;
+  border: 1px solid rgba(57,108,240,.1)!important;
+  color: #396cf0!important;
 }

@@ -13,9 +13,15 @@ const UserProfile = () => {
               <h3 className='text-center profile-title'>User Profile</h3>
              <div className="p-4 card-item">
              <h5 className='mb-4'>Personal Information :</h5>
-              <div className="user-image-item">
-                <div className="user-img">
+              <div className="user-image-item  d-flex justify-content-between ">
+                <div className="user-img ">
                   <img  src="https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png" alt="" />
+                 
+                </div>
+                <div className="upload-btn-item">
+                  <p>Upload your picture</p>
+                  <button className='upload-btn'>Upload</button>
+                  <button className='remove-btn '>Remove</button>
                 </div>
               </div>
              </div>
