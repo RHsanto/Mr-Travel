@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import useFirebase from "../../hooks/useFirebase";
 import Navbar from "../common/Navbar";
 import "./dashboard.css";
-// import oops from '../../images/opps-1.jpg'
 
 const MyBooking = () => {
   const { user } = useFirebase();
@@ -28,11 +27,11 @@ const MyBooking = () => {
         <div className="my-5">
           <div className="container ">
             <div>
-              {/* {booking?.length===0 ? <div className='text-center'>
-          <h1 className='mb-4'>You made no order</h1>
-          <img className='w-100' src={oops} alt="" />
-        </div> :
-        } */}
+              {booking?.length===0 ? <div className='text-center'>
+                  <h3 className='mb-5'>Ooops. It's Empty </h3>
+                <img className='' src="https://ouch-cdn2.icons8.com/8ly2UKxjmBZ-vzfWTtRw0InBYa56IV277LHx1cSi5kI/rs:fit:256:256/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNTEw/L2ExNGNhNjM0LWMy/NTMtNDExMC05MmU5/LTY5Mzk3YzJkNzE4/Yy5zdmc.png" alt="" />
+            </div> :
+        
               <div className="row row-cols-1 row-cols-md-2 g-4">
                 {booking.map(data => (
                   <div className="flight mt-3" key={data._id}>
@@ -94,7 +93,7 @@ const MyBooking = () => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div>}
             </div>
           </div>
         </div>

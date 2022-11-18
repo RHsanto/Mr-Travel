@@ -5,8 +5,7 @@ const UserProfile = () => {
   return (
     <div>
       <Navbar/>
-      <h1>UserProfile
-UserProfile</h1>
+      <h1>UserProfile</h1>
     </div>
   );
 };
