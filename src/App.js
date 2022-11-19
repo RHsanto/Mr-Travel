@@ -17,7 +17,8 @@ import FlightDetails from "./components/AllDetails/FlightDetails";
 import BusDetails from "./components/AllDetails/BusDetails";
 import AddBooking from "./components/AddBookings/AddBooking";
 import Payment from "./components/DashBoard/Payment/Payment";
-import UserProfile from "./components/DashBoard/Payment/UserProfile";
+import UserProfile from "./components/DashBoard/UserProfile/UserProfile";
+
 
 function App() {
   return (

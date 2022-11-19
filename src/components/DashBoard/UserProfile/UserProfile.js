@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineLogout, AiTwotoneSetting } from "react-icons/ai";
-import { FaUserAlt } from "react-icons/fa";
+import {  FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Navbar from "../../common/Navbar";
 
@@ -23,20 +23,20 @@ const UserProfile = () => {
                   <hr />
                   <div className="edit-item mt-3">
                     <li>
-                      {" "}
+                    
                       <Link to="/#" className=" dropdown-item">
                         <FaUserAlt className="me-2" /> <span>Personal Info</span>
                       </Link>
                     </li>
                     <li>
-                      {" "}
+                   
                       <Link to="/#" className=" dropdown-item">
                         <AiTwotoneSetting className="me-2" />
                         <span>Edit Profile</span>
                       </Link>
                     </li>
                     <li>
-                      {" "}
+                    
                       <Link to="/#" className=" dropdown-item">
                         <AiOutlineLogout className="me-2" />
                         <span>Log Out</span>
@@ -135,13 +135,13 @@ const UserProfile = () => {
                       <div className="from-three w-50">
                         <div class="mb-4 ">
                           <label for="exampleFormControlInput2" class="form-label">
-                            National ID
+                            National ID 
                           </label>
                           <input
                             type="number"
                             class="form-control"
                             id="exampleFormControlInput2"
-                            placeholder="Your Email :"
+                            placeholder="National ID"
                           />
                         </div>
                         <div className="mb-4">
@@ -158,13 +158,13 @@ const UserProfile = () => {
                       <div className="from-four w-50 ms-4">
                         <div class="mb-4 ">
                           <label for="exampleFormControlInput4" class="form-label">
-                            Passport Number
+                            Passport Number 
                           </label>
                           <input
                             type="number"
                             class="form-control"
                             id="exampleFormControlInput4"
-                            placeholder="Your Email :"
+                            placeholder=" Passport Number"
                           />
                         </div>
 
