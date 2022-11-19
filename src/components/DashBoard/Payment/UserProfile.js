@@ -5,12 +5,19 @@ const UserProfile = () => {
   return (
     <div>
       <Navbar />
-      <div className="user-profile-section my-5">
+      <div className="user-profile-section  ">
         <div className="container">
           <div className="row d-flex justify-content-center">
             <div className="col-lg-4">
               <div className="card">
-                <h5>Profile</h5>
+                <div className="profile-info">
+                <div className="user-img ">
+                      <img
+                        src="https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png"
+                        alt=""
+                      />
+                    </div>
+                </div>
               </div>
             </div>
             <div className="col-lg-8 ">
