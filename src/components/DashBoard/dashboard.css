@@ -38,3 +38,9 @@
   background-color: #EBF0F4;
   padding: 50px 0px;
 }
+.edit-item{
+  padding: 15px;
+}
+.edit-item li{
+  list-style: none;
+}

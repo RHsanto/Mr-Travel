@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../common/Navbar";
 
 const UserProfile = () => {
@@ -17,8 +18,10 @@ const UserProfile = () => {
                         alt=""
                       />
                 </div>
-                <span>Personal Info</span>
-                <span>Edit Profile</span>
+                  <div className="edit-item">
+                   <li> <Link to="/#"> <span>Personal Info</span></Link></li>
+                   <li> <Link to="/#"><span>Edit Profile</span></Link></li>
+                  </div>
                 </div>
               </div>
             </div>
