@@ -34,24 +34,16 @@ const SearchResult = () => {
               <div className="all-category rounded shadow-lg">
                 <ul className="d-flex  ps-0 justify-content-between align-items-center ">
                   <li onClick={handleBus} className="active">
-                    <a>
-                      <FaBus /> Bus
-                    </a>
+                    <FaBus /> Bus
                   </li>
                   <li onClick={handleFlight}>
-                    <a>
-                      <GiCommercialAirplane /> Flight
-                    </a>
+                    <GiCommercialAirplane /> Flight
                   </li>
                   <li onClick={handleHotel}>
-                    <a>
-                      <RiHotelFill /> Hotel
-                    </a>
+                    <RiHotelFill /> Hotel
                   </li>
                   <li onClick={handleTour}>
-                    <a>
-                      <GiPalmTree /> Tour
-                    </a>
+                    <GiPalmTree /> Tour
                   </li>
                 </ul>
               </div>
