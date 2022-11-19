@@ -8,6 +8,11 @@ const UserProfile = () => {
       <div className="user-profile-section my-5">
         <div className="container">
           <div className="row d-flex justify-content-center">
+            <div className="col-lg-4">
+              <div className="card">
+                <h5>Profile</h5>
+              </div>
+            </div>
             <div className="col-lg-8 ">
               <div className="card">
                 <h3 className="text-center profile-title">User Profile</h3>
@@ -26,7 +31,7 @@ const UserProfile = () => {
                       <button className="remove-btn ">Remove</button>
                     </div>
                   </div>
-                  {/* form */}
+        {/* form */}
                   {/*Basic Info  */}
                  <div className="edit-form">
                  <h5 className="mb-5 fw-bold">Basic Info :</h5>
@@ -166,8 +171,8 @@ const UserProfile = () => {
                   </div>
 
                   <div className="btn-group mt-5">
-                    <button>Close</button>
-                    <button>Done</button>
+                      <button className="remove-btn me-3">Close</button>
+                    <button className="upload-btn">Save</button>
                   </div>
                  </div>
                 </div>
