@@ -20,6 +20,7 @@ const UserProfile = () => {
                         alt=""
                       />
                 </div>
+                <hr />
                   <div className="edit-item mt-3">
                    <li > <Link to="/#"  className=" dropdown-item"><FaUserAlt className="me-2"/> <span >Personal Info</span></Link></li>
                    <li> <Link to="/#"  className=" dropdown-item"><AiTwotoneSetting className="me-2"/><span>Edit Profile</span></Link></li>
