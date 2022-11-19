@@ -7,16 +7,18 @@ const UserProfile = () => {
       <Navbar />
       <div className="user-profile-section  ">
         <div className="container">
-          <div className="row d-flex justify-content-center">
-            <div className="col-lg-4">
+          <div className="row g-4 d-flex justify-content-center">
+            <div className="col-lg-3">
               <div className="card">
-                <div className="profile-info">
-                <div className="user-img ">
+                <div className="profile-info py-4">
+                <div className="user-img d-flex justify-content-center">
                       <img
                         src="https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png"
                         alt=""
                       />
-                    </div>
+                </div>
+                <span>Personal Info</span>
+                <span>Edit Profile</span>
                 </div>
               </div>
             </div>
