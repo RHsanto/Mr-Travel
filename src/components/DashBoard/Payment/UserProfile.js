@@ -1,4 +1,6 @@
 import React from "react";
+import { AiOutlineLogout, AiTwotoneSetting } from "react-icons/ai";
+import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Navbar from "../../common/Navbar";
 
@@ -12,15 +14,16 @@ const UserProfile = () => {
             <div className="col-lg-3">
               <div className="card">
                 <div className="profile-info py-4">
-                <div className="user-img d-flex justify-content-center">
+                <div className="user-img-two  d-flex justify-content-center">
                       <img
                         src="https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png"
                         alt=""
                       />
                 </div>
-                  <div className="edit-item">
-                   <li> <Link to="/#"> <span>Personal Info</span></Link></li>
-                   <li> <Link to="/#"><span>Edit Profile</span></Link></li>
+                  <div className="edit-item mt-3">
+                   <li > <Link to="/#"  className=" dropdown-item"><FaUserAlt className="me-2"/> <span >Personal Info</span></Link></li>
+                   <li> <Link to="/#"  className=" dropdown-item"><AiTwotoneSetting className="me-2"/><span>Edit Profile</span></Link></li>
+                   <li> <Link to="/#"  className=" dropdown-item"><AiOutlineLogout className="me-2"/><span>Log Out</span></Link></li>
                   </div>
                 </div>
               </div>
