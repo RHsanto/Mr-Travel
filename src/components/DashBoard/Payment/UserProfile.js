@@ -28,7 +28,8 @@ const UserProfile = () => {
                   </div>
                   {/* form */}
                   {/*Basic Info  */}
-                  <h5 className="mb-5 fw-bold">Basic Info :</h5>
+                 <div className="edit-form">
+                 <h5 className="mb-5 fw-bold">Basic Info :</h5>
                   <div className="d-flex">
                     <div className="from-one w-50">
                       <div class="mb-4 ">
@@ -163,6 +164,12 @@ const UserProfile = () => {
                       </div>
                     </div>
                   </div>
+
+                  <div className="btn-group mt-5">
+                    <button>Close</button>
+                    <button>Done</button>
+                  </div>
+                 </div>
                 </div>
               </div>
             </div>
