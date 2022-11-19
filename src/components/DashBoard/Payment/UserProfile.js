@@ -61,7 +61,7 @@ const UserProfile = () => {
                           type="text"
                           class="form-control"
                           id="exampleFormControlInput1"
-                          placeholder="Your Email :"
+                          placeholder="First Name"
                         />
                       </div>
                       <div class="mb-4 ">
@@ -72,20 +72,21 @@ const UserProfile = () => {
                           type="email"
                           class="form-control"
                           id="exampleFormControlInput2"
-                          placeholder="Your Email :"
+                          placeholder="Your Email"
                         />
                       </div>
                       <div class="mb-4 ">
                         <label for="exampleFormControlInput2" class="form-label">
-                          National ID
+                        Phone
                         </label>
                         <input
                           type="number"
                           class="form-control"
                           id="exampleFormControlInput2"
-                          placeholder="Your Email :"
+                          placeholder="Phone"
                         />
                       </div>
+                    
                     </div>
                     <div className="from-two w-50 ms-4">
                       <div class="mb-4 ">
@@ -96,7 +97,7 @@ const UserProfile = () => {
                           type="text"
                           class="form-control"
                           id="exampleFormControlInput4"
-                          placeholder="Your Email :"
+                          placeholder="Last Name"
                         />
                       </div>
                       <div class="mb-4 ">
@@ -107,37 +108,17 @@ const UserProfile = () => {
                           type="text"
                           class="form-control"
                           id="exampleFormControlInput5"
-                          placeholder="Your Email :"
+                          placeholder="Address"
                         />
                       </div>
 
-                      <div className="mb-4">
-                        <label for="exampleFormControlInput3" class="form-label">
-                          Marital Status
-                        </label>
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Select </option>
-                          <option value="Single">Single</option>
-                          <option value="Married">Married</option>
-                        </select>
-                      </div>
+                     
                     </div>
                   </div>
                   {/* others info */}
                   <h5 className="my-5 fw-bold">Others Info :</h5>
                   <div className="d-flex">
                     <div className="from-three w-50">
-                      <div class="mb-4 ">
-                        <label for="exampleFormControlInput5" class="form-label">
-                          Address
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="exampleFormControlInput5"
-                          placeholder="Your Email :"
-                        />
-                      </div>
                       <div class="mb-4 ">
                         <label for="exampleFormControlInput2" class="form-label">
                           National ID
