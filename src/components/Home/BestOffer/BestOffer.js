@@ -10,10 +10,15 @@ const BestOffer = () => {
   const [offers,setOffers]=useState([])
 
   useEffect(()=>{
-    fetch('https://mr-travel-server.onrender.com/offersInfo')
-    .then(response=>response.json())
-    .then(data=>setOffers(data.slice(4,8)))
-  })
+    const fetchData = async ()=>{
+      const res = await fetch('https://mr-travel-server.onrender.com/offersInfo')
+      const data =await res.json()
+      setOffers(data.slice(4,8))
+    }
+    fetchData()
+  },[])
+
+
   return (
     <div className='offer-section '>
       <h2 className='text-center title'><b>THE BEST OFFERS WITH ROOMS</b></h2>
