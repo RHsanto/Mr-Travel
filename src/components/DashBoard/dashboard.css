@@ -59,6 +59,7 @@
 .all-item{
   display: flex;
   align-items: center;
+  
   text-align: start;
   margin-bottom: 20px;
 }

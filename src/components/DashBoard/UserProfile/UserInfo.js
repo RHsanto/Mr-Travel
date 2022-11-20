@@ -7,7 +7,7 @@ const UserInfo = () => {
     <div className="user-info-section">
       <div className="card">
         <div className="card-item p-4">
-          <h5 className="mb-5">Personal Info</h5>
+          <h5 className="mb-5">Personal Info :</h5>
           <div className="all-item ps-3">
             <div className="personal-item ">
               <p>Name </p>
@@ -19,7 +19,7 @@ const UserInfo = () => {
               <p>National ID </p>   
             </div>
 
-          <div className="personal-item-result ms-5 fw-bold">
+          <div className="personal-item-result fw-bold ms-5 w-75">
              <p className="item-result">{user?.displayName}</p>
               <p className="item-result">{user?.email}</p>
               <p className="item-result">N/A</p>
