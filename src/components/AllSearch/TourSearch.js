@@ -8,23 +8,26 @@ import { MdLocationPin } from "react-icons/md";
 import { HiClock } from "react-icons/hi";
 import { FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const TourSearch = () => {
   // here get local storage items
   const results = localStorage.getItem("tourData");
- const [tours, setTours] = useState([]);
- const [searchResults, setSearResult] = useState([]);
- const [updatedValues, setUpdatedValues] = useState();
- // here data parsed
- let parsed;
- if (results != undefined) {
-   parsed = JSON.parse(results);
- }
+  const [tours, setTours] = useState([]);
+  const [searchResults, setSearResult] = useState([]);
+  const [updatedValues, setUpdatedValues] = useState();
+  // here data parsed
+  let parsed;
+  if (results != undefined) {
+    parsed = JSON.parse(results);
+  }
 
   useEffect(() => {
-    fetch("  https://mr-travel-server.onrender.com/tourInfo")
-      .then(response => response.json())
-      .then(data => setTours(data));
+      const fetchData = async () => {
+      const res = await axios.get("https://mr-travel-server.onrender.com/tourInfo");
+      setTours(res.data);
+    };
+    fetchData();
   }, []);
 
   const handleFrom = e => {
@@ -36,7 +39,6 @@ const TourSearch = () => {
     localStorage.setItem("tourData", JSON.stringify(newUpdatedValues));
   };
 
-  
   // here get data and fetch data filter
   useEffect(() => {
     const searchResults = tours.filter(items => {
@@ -56,41 +58,37 @@ const TourSearch = () => {
     setSearResult(searchResults);
   };
 
-
-
-
   return (
     <div>
       <Navbar />
-    <div className="modify-tour-data p-5">
-      <div className="container">
-         <div className="d-flex ">
-         <div className="form-floating w-100">
-        <select
-          onChange={handleFrom}
-          name="TourName"
-          className="form-select"
-          id="floatingSelect"
-          aria-label="Floating label select example"
-          required
-        >
-          <option>--Select Tour Destination--</option>
-          {tours.map(tourData => (
-            <option key={tourData?._id} value={tourData?.TourName}>
-              {tourData?.TourName}
-            </option>
-          ))}
-        </select>
-        <label htmlFor="floatingInput">LOCATION / TOUR</label>
+      <div className="modify-tour-data p-5">
+        <div className="container">
+          <div className="d-flex ">
+            <div className="form-floating w-100">
+              <select
+                onChange={handleFrom}
+                name="TourName"
+                className="form-select"
+                id="floatingSelect"
+                aria-label="Floating label select example"
+                required
+              >
+                <option>--Select Tour Destination--</option>
+                {tours.map(tourData => (
+                  <option key={tourData?._id} value={tourData?.TourName}>
+                    {tourData?.TourName}
+                  </option>
+                ))}
+              </select>
+              <label htmlFor="floatingInput">LOCATION / TOUR</label>
+            </div>
+            <button onClick={handleResults} className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">
+              Modify Search
+            </button>
+          </div>
+        </div>
       </div>
-      <button onClick={handleResults}
-       className="modify-btn mt-md-0 mt-3 py-3 py-lg-0">Modify Search
-       </button>
-       
-    </div>
-      </div>
-    </div>
-   {/* here result */}
+      {/* here result */}
       <div className="common-section ">
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
