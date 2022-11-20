@@ -27,7 +27,7 @@ const EditProfile = () => {
                     <div className="d-flex">
                       <div className="from-one w-50">
                         <div class="mb-4 ">
-                          <label for="exampleFormControlInput1" class="form-label">
+                          <label htmlFor="exampleFormControlInput1" class="form-label">
                             First Name
                           </label>
                           <input
@@ -38,7 +38,7 @@ const EditProfile = () => {
                           />
                         </div>
                         <div class="mb-4 ">
-                          <label for="exampleFormControlInput2" class="form-label">
+                          <label htmlFor="exampleFormControlInput2" class="form-label">
                             Your email
                           </label>
                           <input
@@ -49,7 +49,7 @@ const EditProfile = () => {
                           />
                         </div>
                         <div class="mb-4 ">
-                          <label for="exampleFormControlInput2" class="form-label">
+                          <label htmlFor="exampleFormControlInput2" class="form-label">
                             Phone
                           </label>
                           <input
@@ -62,7 +62,7 @@ const EditProfile = () => {
                       </div>
                       <div className="from-two w-50 ms-4">
                         <div class="mb-4 ">
-                          <label for="exampleFormControlInput4" class="form-label">
+                          <label htmlFor="exampleFormControlInput4" class="form-label">
                             Last Name
                           </label>
                           <input
@@ -73,7 +73,7 @@ const EditProfile = () => {
                           />
                         </div>
                         <div class="mb-4 ">
-                          <label for="exampleFormControlInput5" class="form-label">
+                          <label htmlFor="exampleFormControlInput5" class="form-label">
                             Address
                           </label>
                           <input
@@ -90,7 +90,7 @@ const EditProfile = () => {
                     <div className="d-flex">
                       <div className="from-three w-50">
                         <div class="mb-4 ">
-                          <label for="exampleFormControlInput2" class="form-label">
+                          <label htmlFor="exampleFormControlInput2" class="form-label">
                             National ID 
                           </label>
                           <input
@@ -101,7 +101,7 @@ const EditProfile = () => {
                           />
                         </div>
                         <div className="mb-4">
-                          <label for="exampleFormControlInput3" class="form-label">
+                          <label htmlFor="exampleFormControlInput3" class="form-label">
                             Gender
                           </label>
                           <select class="form-select" aria-label="Default select example">
@@ -113,7 +113,7 @@ const EditProfile = () => {
                       </div>
                       <div className="from-four w-50 ms-4">
                         <div class="mb-4 ">
-                          <label for="exampleFormControlInput4" class="form-label">
+                          <label htmlFor="exampleFormControlInput4" class="form-label">
                             Passport Number 
                           </label>
                           <input
@@ -125,7 +125,7 @@ const EditProfile = () => {
                         </div>
 
                         <div className="mb-4">
-                          <label for="exampleFormControlInput3" class="form-label">
+                          <label htmlFor="exampleFormControlInput3" class="form-label">
                             Marital Status
                           </label>
                           <select class="form-select" aria-label="Default select example">
