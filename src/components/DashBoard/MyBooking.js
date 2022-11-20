@@ -13,11 +13,12 @@ const MyBooking = () => {
   const { user } = useFirebase();
   const [booking, setBooking] = useState([]);
 
-  useEffect(() => {
+
+   useEffect(() => {
     fetch(` https://mr-travel-server.onrender.com/booking/${user?.email}`)
-      .then(res => res.json())
-      .then(data => setBooking(data));
-  });
+    .then(res => res.json())
+    .then(data => setBooking(data));
+   });
 
   return (
     <div>
