@@ -1,13 +1,16 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
 import useFirebase from "../../../hooks/useFirebase";
 
+
 const UserInfo = () => {
   const {user}=useFirebase();
+  
   return (
     <div className="user-info-section">
       <div className="card">
-        <div className="card-item p-4">
-          <h5 className="mb-5">Personal Info :</h5>
+         <h4 className=" profile-title text-center">Personal Info </h4>
+        <div className="card-item p-4 mt-5">
           <div className="all-item ps-3">
             <div className="personal-item ">
               <p>Name </p>
