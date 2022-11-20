@@ -9,6 +9,7 @@ import { MdLocationPin } from "react-icons/md";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const HotelSearch = () => {
   const results = localStorage.getItem("hotelData");
@@ -24,9 +25,8 @@ const HotelSearch = () => {
   // here fetch data
   useEffect(()=>{
     const fetchData = async ()=>{
-      const res = await fetch("https://mr-travel-server.onrender.com/hotelInfo")
-      const data =await res.json()
-      setHotels(data)
+      const res = await axios.get("https://mr-travel-server.onrender.com/hotelInfo")
+      setHotels(res.data)
     }
     fetchData()
   },[])

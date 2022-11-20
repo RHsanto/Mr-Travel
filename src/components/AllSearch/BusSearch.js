@@ -9,6 +9,7 @@ import Navbar from "../common/Navbar";
 import { RiArrowLeftRightFill, RiArrowRightLine } from "react-icons/ri";
 import { SiAirplayaudio } from "react-icons/si";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const BusSearch = () => {
   // here get local storage items
@@ -23,12 +24,11 @@ const BusSearch = () => {
   }
   // console.log(parsed);
 
-  
+
   useEffect(()=>{
     const fetchData = async ()=>{
-      const res = await fetch("https://mr-travel-server.onrender.com/busInfo")
-      const data =await res.json()
-      setBusData(data)
+      const res = await axios.get("https://mr-travel-server.onrender.com/busInfo")
+      setBusData(res.data)
     }
     fetchData()
   },[])

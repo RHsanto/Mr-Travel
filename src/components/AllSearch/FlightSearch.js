@@ -8,6 +8,7 @@ import { AiOutlineSwap } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Navbar from "../common/Navbar";
 import "../AllSearch/Allcss.css";
+import axios from "axios";
 
 const FlightSearch = () => {
   // here get local storage items
@@ -23,9 +24,8 @@ const FlightSearch = () => {
 
   useEffect(()=>{
     const fetchData = async ()=>{
-      const res = await fetch("https://mr-travel-server.onrender.com/flightInfo")
-      const data =await res.json()
-      setFlights(data)
+      const res = await axios.get("https://mr-travel-server.onrender.com/flightInfo")
+      setFlights(res.data)
     }
     fetchData()
   },[])
