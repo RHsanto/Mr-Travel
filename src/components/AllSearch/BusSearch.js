@@ -23,12 +23,16 @@ const BusSearch = () => {
   }
   // console.log(parsed);
 
-  // here fetch api
-  useEffect(() => {
-    fetch("  https://mr-travel-server.onrender.com/busInfo")
-      .then(res => res.json())
-      .then(data => setBusData(data));
-  }, []);
+  
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      const res = await fetch("https://mr-travel-server.onrender.com/busInfo")
+      const data =await res.json()
+      setBusData(data)
+    }
+    fetchData()
+  },[])
+
 
   const handleFrom = e => {
     const name = e.target.name;

@@ -20,13 +20,15 @@ const FlightSearch = () => {
   if (results != undefined) {
     parsed = JSON.parse(results);
   }
-  // console.log(parsed);
 
-  useEffect(() => {
-    fetch("  https://mr-travel-server.onrender.com/flightInfo")
-      .then(response => response.json())
-      .then(data => setFlights(data));
-  }, []);
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      const res = await fetch("https://mr-travel-server.onrender.com/flightInfo")
+      const data =await res.json()
+      setFlights(data)
+    }
+    fetchData()
+  },[])
 
     // get modify input data
   const handleFrom = e => {
