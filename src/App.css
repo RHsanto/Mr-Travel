@@ -39,9 +39,6 @@ a {
   width: 50px;
   border-radius: 50%;
 }
-.dropdown-item {
-  cursor: pointer;
-}
 
 .signIn button img {
   width: 40px;
@@ -53,6 +50,10 @@ a {
 }
 .text-blue {
   color: #0a58ca;
+}
+.dropdown-item {
+  padding: 12px;
+  cursor: pointer;
 }
 .dropdown-item:hover{
   background-color: #0a58ca;
@@ -78,9 +79,8 @@ nav ul li a {
   font-size: 17px;
 }
 
-.dropdown-item {
-  padding: 12px;
-}
+
+
 .modify-btn {
   border: 0;
   margin-left: 10px;
