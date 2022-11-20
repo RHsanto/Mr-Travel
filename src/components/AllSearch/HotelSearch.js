@@ -22,11 +22,15 @@ const HotelSearch = () => {
   }
 
   // here fetch data
-  useEffect(() => {
-    fetch("https://mr-travel-server.onrender.com/hotelInfo")
-      .then(response => response.json())
-      .then(data => setHotels(data));
-  }, []);
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      const res = await fetch("https://mr-travel-server.onrender.com/hotelInfo")
+      const data =await res.json()
+      setHotels(data)
+    }
+    fetchData()
+  },[])
+
 
   // get modify input data
   const handleFrom = e => {
