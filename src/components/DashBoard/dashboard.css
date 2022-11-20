@@ -53,11 +53,16 @@
   background-color: #EBF0F4;
   padding: 50px 0px;
 }
-.edit-item{
 
+/* personal-item */
+
+.all-item{
+  display: flex;
+  align-items: center;
+  text-align: start;
+  margin-bottom: 20px;
 }
-.edit-item li{
-  list-style: none;
- 
-  
+.all-item p{
+  border-bottom: 1px solid #959697;
+  padding: 10px 0px;
 }
