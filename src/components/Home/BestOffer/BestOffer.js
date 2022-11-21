@@ -5,15 +5,15 @@ import icon2 from '../../../images/icons-2.webp'
 import icon3 from '../../../images/icon-3.webp'
 import icon4 from '../../../images/icons-4.webp'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const BestOffer = () => {
   const [offers,setOffers]=useState([])
 
   useEffect(()=>{
     const fetchData = async ()=>{
-      const res = await fetch('https://mr-travel-server.onrender.com/offersInfo')
-      const data =await res.json()
-      setOffers(data.slice(4,8))
+      const res = await axios.get('https://mr-travel-server.onrender.com/offersInfo')
+      setOffers(res.data.slice(4,8))
     }
     fetchData()
   },[])
