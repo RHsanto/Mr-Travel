@@ -8,17 +8,20 @@ import { Link } from "react-router-dom";
 import useFirebase from "../../hooks/useFirebase";
 import Navbar from "../common/Navbar";
 import "./dashboard.css";
+import axios from "axios";
 
 const MyBooking = () => {
   const { user } = useFirebase();
   const [booking, setBooking] = useState([]);
 
+   useEffect(()=>{
+    const fetchData = async ()=>{
+      const res = await axios.get(` https://mr-travel-server.onrender.com/booking/${user?.email}`)
+      setBooking(res.data)
+    }
+    fetchData()
+  },[user?.email])
 
-   useEffect(() => {
-    fetch(` https://mr-travel-server.onrender.com/booking/${user?.email}`)
-    .then(res => res.json())
-    .then(data => setBooking(data));
-   });
 
   return (
     <div>
