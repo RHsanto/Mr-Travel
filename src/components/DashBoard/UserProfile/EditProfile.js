@@ -11,7 +11,7 @@ const EditProfile = () => {
           <FiEdit className="me-2" />
           Edit Profile
         </h4>
-        <div className="p-4 card-item">
+        <div className="p-5 card-item">
           <h5 className="mb-4">Personal Information :</h5>
           <div className="user-image-item mb-5 d-flex justify-content-between ">
             <div className="user-img ">
@@ -107,7 +107,7 @@ const EditProfile = () => {
                     placeholder="National ID"
                   />
                 </div>
-                <div className="mb-4">
+                <div className="mb-5">
                   <label htmlFor="exampleFormControlInput3" class="form-label">
                     Gender
                   </label>
