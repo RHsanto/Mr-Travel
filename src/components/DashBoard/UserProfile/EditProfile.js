@@ -33,59 +33,59 @@ const EditProfile = () => {
             <h5 className="mb-5 fw-bold">Basic Info :</h5>
             <div className="d-flex">
               <div className="from-one w-50">
-                <div class="mb-4 ">
-                  <label htmlFor="exampleFormControlInput1" class="form-label">
+                <div className="mb-4 ">
+                  <label htmlFor="exampleFormControlInput1" className="form-label">
                     First Name
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="exampleFormControlInput1"
                     placeholder="First Name"
                   />
                 </div>
-                <div class="mb-4 ">
-                  <label htmlFor="exampleFormControlInput2" class="form-label">
+                <div className="mb-4 ">
+                  <label htmlFor="exampleFormControlInput2" className="form-label">
                     Your email
                   </label>
                   <input
                     type="email"
-                    class="form-control"
+                    className="form-control"
                     id="exampleFormControlInput2"
                     placeholder="Your Email"
                   />
                 </div>
-                <div class="mb-4 ">
-                  <label htmlFor="exampleFormControlInput2" class="form-label">
+                <div className="mb-4 ">
+                  <label htmlFor="exampleFormControlInput2" className="form-label">
                     Phone
                   </label>
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="exampleFormControlInput2"
                     placeholder="Phone"
                   />
                 </div>
               </div>
               <div className="from-two w-50 ms-4">
-                <div class="mb-4 ">
-                  <label htmlFor="exampleFormControlInput4" class="form-label">
+                <div className="mb-4 ">
+                  <label htmlFor="exampleFormControlInput4" className="form-label">
                     Last Name
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="exampleFormControlInput4"
                     placeholder="Last Name"
                   />
                 </div>
-                <div class="mb-4 ">
-                  <label htmlFor="exampleFormControlInput5" class="form-label">
+                <div className="mb-4 ">
+                  <label htmlFor="exampleFormControlInput5" className="form-label">
                     Address
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="exampleFormControlInput5"
                     placeholder="Address"
                   />
@@ -96,22 +96,22 @@ const EditProfile = () => {
             <h5 className="my-5 fw-bold">Others Info :</h5>
             <div className="d-flex">
               <div className="from-three w-50">
-                <div class="mb-4 ">
-                  <label htmlFor="exampleFormControlInput2" class="form-label">
+                <div className="mb-4 ">
+                  <label htmlFor="exampleFormControlInput2" className="form-label">
                     National ID
                   </label>
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="exampleFormControlInput2"
                     placeholder="National ID"
                   />
                 </div>
                 <div className="mb-5">
-                  <label htmlFor="exampleFormControlInput3" class="form-label">
+                  <label htmlFor="exampleFormControlInput3" className="form-label">
                     Gender
                   </label>
-                  <select class="form-select" aria-label="Default select example">
+                  <select className="form-select" aria-label="Default select example">
                     <option selected>Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -119,23 +119,23 @@ const EditProfile = () => {
                 </div>
               </div>
               <div className="from-four w-50 ms-4">
-                <div class="mb-4 ">
-                  <label htmlFor="exampleFormControlInput4" class="form-label">
+                <div className="mb-4 ">
+                  <label htmlFor="exampleFormControlInput4" className="form-label">
                     Passport Number
                   </label>
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="exampleFormControlInput4"
                     placeholder=" Passport Number"
                   />
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="exampleFormControlInput3" class="form-label">
+                  <label htmlFor="exampleFormControlInput3" className="form-label">
                     Marital Status
                   </label>
-                  <select class="form-select" aria-label="Default select example">
+                  <select className="form-select" aria-label="Default select example">
                     <option selected>Select </option>
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
