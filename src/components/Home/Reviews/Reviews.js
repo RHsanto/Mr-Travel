@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Slider from "react-slick";
@@ -5,11 +6,19 @@ import "./Reviews.css";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    fetch("https://mr-travel-server.onrender.com/reviews")
-      .then(res => res.json())
-      .then(data => setReviews(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://mr-travel-server.onrender.com/reviews")
+  //     .then(res => res.json())
+  //     .then(data => setReviews(data));
+  // }, []);
+
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      const res = await axios.get('https://mr-travel-server.onrender.com/reviews')
+      setReviews(res.data)
+    }
+    fetchData()
+  },[])
   // here slider settings
   var settings = {
     infinite: true,
