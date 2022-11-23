@@ -50,7 +50,7 @@ const MyBooking = () => {
                             <img
                               src={data?.img}
                               className="img-fluid  h-100 rounded-start"
-                              alt="..."
+                              alt="img"
                             />
                           </div>
                           <div className="col-md-8">
