@@ -1,5 +1,6 @@
 import React from "react";
 import { FiEdit } from "react-icons/fi";
+import { BsCloudUploadFill, BsSaveFill } from "react-icons/bs";
 
 const EditProfile = () => {
   return (
@@ -21,7 +22,9 @@ const EditProfile = () => {
             </div>
             <div className="upload-btn-item">
               <p className="fw-bold">Upload your picture</p>
-              <button className="upload-btn">Upload</button>
+              <button className="upload-btn">
+                <BsCloudUploadFill /> Upload
+              </button>
             </div>
           </div>
           {/* form */}
@@ -141,7 +144,9 @@ const EditProfile = () => {
               </div>
             </div>
 
-            <button className="upload-btn mt-5">Save</button>
+            <button className="upload-btn mt-5">
+              <BsSaveFill /> Save
+            </button>
           </div>
         </div>
       </div>
