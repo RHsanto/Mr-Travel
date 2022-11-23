@@ -14,14 +14,13 @@ const MyBooking = () => {
   const { user } = useFirebase();
   const [booking, setBooking] = useState([]);
 
-   useEffect(()=>{
-    const fetchData = async ()=>{
-      const res = await axios.get(` https://mr-travel-server.onrender.com/booking/${user?.email}`)
-      setBooking(res.data)
-    }
-    fetchData()
-  },[user?.email])
-
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get(` https://mr-travel-server.onrender.com/booking/${user?.email}`);
+      setBooking(res.data);
+    };
+    fetchData();
+  }, [user?.email]);
 
   return (
     <div>
@@ -44,6 +43,7 @@ const MyBooking = () => {
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                   {booking.map(data => (
                     <div className="flight mt-3" key={data._id}>
+                      {/* <h1>{data?.role}</h1> */}
                       <div className="card mb-3 ps-0">
                         <div className="row g-0">
                           <div className="col-md-4">
