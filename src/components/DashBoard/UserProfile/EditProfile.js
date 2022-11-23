@@ -20,9 +20,8 @@ const EditProfile = () => {
               />
             </div>
             <div className="upload-btn-item">
-              <p>Upload your picture</p>
+              <p className="fw-bold">Upload your picture</p>
               <button className="upload-btn">Upload</button>
-              <button className="remove-btn ">Remove</button>
             </div>
           </div>
           {/* form */}
