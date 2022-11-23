@@ -18,6 +18,7 @@ import BusDetails from "./components/AllDetails/BusDetails";
 import AddBooking from "./components/AddBookings/AddBooking";
 import Payment from "./components/DashBoard/Payment/Payment";
 import UserProfile from "./components/DashBoard/UserProfile/UserProfile";
+import AdminDash from "./components/DashBoard/AdminDashboard/AdminDash";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/my-booking" element={<MyBooking />} />
+          <Route path="/admin-dash" element={<AdminDash />} />
           <Route path="/User-Profile" element={<UserProfile />} />
           <Route path="/offers/:id" element={<OffersDetails />} />
           <Route path="/tours/:id" element={<TourDetails />} />
