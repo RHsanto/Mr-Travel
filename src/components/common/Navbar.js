@@ -68,6 +68,11 @@ const Navbar = () => {
                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               
                  <span>
+                   <Link to="/#"  className=" dropdown-item">
+                     <FaUserAlt className="me-1" /> Admin Dashboard
+                   </Link>
+                 </span>
+                 <span>
                    <Link to="/user-profile"  className=" dropdown-item">
                      <FaUserAlt className="me-1" /> Profile
                    </Link>
