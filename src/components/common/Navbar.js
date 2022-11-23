@@ -55,6 +55,7 @@ const Navbar = () => {
              <>
              <FaUserCircle className=" fs-1" />
              <div className="dropdown">
+              
                <div
                  className=" ms-2"
                  type="button"
@@ -65,6 +66,7 @@ const Navbar = () => {
                  <IoIosArrowDown className=" fw-bold fs-5" />
                </div>
                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              
                  <span>
                    <Link to="/user-profile"  className=" dropdown-item">
                      <FaUserAlt className="me-1" /> Profile
