@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { AiFillStar, AiOutlineStar,} from "react-icons/ai";
+import Rating from "react-rating";
 import Slider from "react-slick";
 import "./Reviews.css";
 const Reviews = () => {
@@ -75,13 +76,13 @@ const Reviews = () => {
                   <div className="reviewer">
                     <img src={data?.client_image} alt="img" />
                   </div>
-                  <div className=" d-flex justify-content-center ratings">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStarHalfAlt />
-                  </div>
+                  <Rating
+                            className=" mt-3 star-color d-flex justify-content-center"
+                            emptySymbol={<AiOutlineStar className="fs-5 " />}
+                            fullSymbol={<AiFillStar className="fs-5 " />}
+                            readonly
+                            initialRating={data?.ratings}
+                          />
                   <div className="review-text p-4 text-center">
                     <p> {data?.description}</p>
                     <h5 className="clients">{data?.client}</h5>

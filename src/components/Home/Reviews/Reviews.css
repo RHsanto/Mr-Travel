@@ -13,10 +13,7 @@
   position: relative;
 }
 
-.review-text p{
-  font-family: Georgia,serif;
-  font-style: italic;
-}
+
 .review-item{
   background: #F5F6FA;
   border: 1px solid #eee;
