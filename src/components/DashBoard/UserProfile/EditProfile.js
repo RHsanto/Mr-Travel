@@ -1,11 +1,37 @@
 import React from "react";
 import { FiEdit } from "react-icons/fi";
 import { BsSaveFill } from "react-icons/bs";
+import { useState } from "react";
+import axios from "axios";
 
 const EditProfile = () => {
-  const handleImgUpload=(e)=>{
-    console.log("Clicked");
+  const [userInfo,setUserInfo]=useState({
+    file:[]
+  })
+
+  const handleImgUpload = (event) => {
+   setUserInfo({
+    ...userInfo,
+    file:event.target.files[0]
+   })
+
+  };
+
+
+// KEY 4f9a1e842c0ad62bee31271b88c19c9f
+
+  const submit = async()=>{
+    const formdata = new FormData();
+    formdata.append('image',userInfo.file);
+    axios.post("https://api.imgbb.com/1/upload?expiration=600&key=4f9a1e842c0ad62bee31271b88c19c9f",formdata,{
+      headers:{"Content-Type":"application/json"}
+    })
+    .then(res=>{
+      console.log(res.data?.data?.display_url);
+    })
+    console.log("Click");
   }
+
   return (
     <div>
       <div className="card">
@@ -23,12 +49,19 @@ const EditProfile = () => {
                 alt=""
               />
             </div>
-            <div className="upload-item ms-5">
-              <p className="fw-bold">Upload your picture</p>
-              <input 
-              onChange={handleImgUpload} 
-              type="file"
-              name="upload-img" id="" />
+            <div className="upload-items d-flex align-items-center ms-5">
+              <div>
+                <label className="mb-2 fw-bold"> Upload your picture</label> <br />
+                <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
+              </div>
+              <div>
+              <button 
+              onClick={()=>submit()}
+              type="submit" 
+              className="save-btn ">
+              <BsSaveFill /> Save
+            </button>
+              </div>
             </div>
           </div>
           {/* form */}
