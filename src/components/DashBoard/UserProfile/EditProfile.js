@@ -1,8 +1,11 @@
 import React from "react";
 import { FiEdit } from "react-icons/fi";
-import { BsCloudUploadFill, BsSaveFill } from "react-icons/bs";
+import { BsSaveFill } from "react-icons/bs";
 
 const EditProfile = () => {
+  const handleImgUpload=(e)=>{
+    console.log("Clicked");
+  }
   return (
     <div>
       <div className="card">
@@ -20,11 +23,12 @@ const EditProfile = () => {
                 alt=""
               />
             </div>
-            <div className="upload-btn-item">
+            <div className="upload-item ms-5">
               <p className="fw-bold">Upload your picture</p>
-              <button className="upload-btn">
-                <BsCloudUploadFill /> Upload
-              </button>
+              <input 
+              onChange={handleImgUpload} 
+              type="file"
+              name="upload-img" id="" />
             </div>
           </div>
           {/* form */}
@@ -144,7 +148,7 @@ const EditProfile = () => {
               </div>
             </div>
 
-            <button className="upload-btn mt-5">
+            <button className="save-btn mt-5">
               <BsSaveFill /> Save
             </button>
           </div>
