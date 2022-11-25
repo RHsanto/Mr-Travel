@@ -5,22 +5,35 @@ import { useState } from "react";
 import axios from "axios";
 
 const EditProfile = () => {
-  const [image, setImage] = useState("");
+  const[images,setImages]=useState('https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png')
+  const [userInfo,setUserInfo]=useState({
+    file:[]
+  })
 
-  const handleImgUpload = event => {
-    setImage(event.target.files[0]);
+  const handleImgUpload = (event) => {
+   setUserInfo({
+    ...userInfo,
+    file:event.target.files[0]
+   })
+
   };
 
-  // KEY 4f9a1e842c0ad62bee31271b88c19c9f
-  // ekhan theky start
-  const submit = () => {
-    const url = "http://localhost:8000/imgupload";
-    const formData = new FormData();
-    formData.append("image", image);
-    axios.post(url, formData).then(res => {
-      console.log(res.data);
-    });
-  };
+
+// KEY 4f9a1e842c0ad62bee31271b88c19c9f
+
+  const submit = async()=>{
+    const formdata = new FormData();
+    formdata.append('image',userInfo.file);
+    axios.post("https://api.imgbb.com/1/upload?expiration=600&key=4f9a1e842c0ad62bee31271b88c19c9f",formdata,{
+      headers:{"Content-Type":"application/json"}
+    })
+    .then(res=>{
+      const imageLink = (res.data?.data?.display_url)
+      setImages(imageLink);
+      axios.post("http://localhost:8000/imgupload", {imageLink: imageLink})
+    })
+    console.log("Click");
+  }
 
   return (
     <div>
@@ -30,26 +43,28 @@ const EditProfile = () => {
           <FiEdit className="me-2" />
           Edit Profile
         </h4>
-        <h5 className="py-3 text-center"> Upload your picture</h5>
         <div className="p-5 card-item">
-          {/* <h5 className="mb-4">Personal Information :</h5> */}
-          <div
-            className="user-image-item mb-5 d-block 
-              d-lg-flex justify-content-between "
-          >
+          <h5 className="mb-4">Personal Information :</h5>
+          <div className="user-image-item mb-5 d-flex justify-content-between ">
             <div className="user-img ">
               <img
-                className="shadow"
-                src={image === "" ? "" : URL.createObjectURL(image)}
+                src={images}
                 alt="img"
               />
             </div>
-
-            <div className="border mt-5  mt-lg-0 p-3">
-              <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
-              <button onClick={() => submit()} type="submit" className="save-btn ">
-                <BsSaveFill /> Save
-              </button>
+            <div className="upload-items d-flex align-items-center ms-5">
+              <div>
+                <label className="mb-2 fw-bold"> Upload your picture</label> <br />
+                <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
+              </div>
+              <div>
+              <button 
+              onClick={()=>submit()}
+              type="submit" 
+              className="save-btn ">
+              <BsSaveFill /> Save
+            </button>
+              </div>
             </div>
           </div>
           {/* form */}
@@ -137,7 +152,7 @@ const EditProfile = () => {
                     Gender
                   </label>
                   <select className="form-select" aria-label="Default select example">
-                    <option value>Select Gender</option>
+                    <option selected>Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                   </select>
@@ -161,7 +176,7 @@ const EditProfile = () => {
                     Marital Status
                   </label>
                   <select className="form-select" aria-label="Default select example">
-                    <option value>Select </option>
+                    <option selected>Select </option>
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
                   </select>
