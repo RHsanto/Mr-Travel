@@ -22,9 +22,9 @@ const EditProfile = () => {
 // KEY 4f9a1e842c0ad62bee31271b88c19c9f
 
   const submit = async()=>{
-    const formdata = new FormData();
-    formdata.append('image',userInfo.file);
-    axios.post("https://api.imgbb.com/1/upload?expiration=600&key=4f9a1e842c0ad62bee31271b88c19c9f",formdata,{
+    const formData = new FormData();
+    formData.append('image',userInfo.file);
+    axios.post("https://api.imgbb.com/1/upload?expiration=600&key=4f9a1e842c0ad62bee31271b88c19c9f",formData,{
       headers:{"Content-Type":"application/json"}
     })
     .then(res=>{
