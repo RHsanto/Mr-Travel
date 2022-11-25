@@ -34,6 +34,7 @@ const EditProfile = () => {
           <FiEdit className="me-2" />
           Edit Profile
         </h4>
+        <h5 className="py-3 text-center"> Upload your picture</h5> 
         <div className="p-5 card-item">
           {/* <h5 className="mb-4">Personal Information :</h5> */}
           <div className="user-image-item mb-5 d-flex justify-content-between ">
@@ -43,9 +44,10 @@ const EditProfile = () => {
                 alt="img"
               />
             </div>
-            <div className="upload-items d-flex align-items-center ms-5">
+           
+            <div className="border p-2 upload-items d-flex align-items-center justify-content-center ms-5">
+
               <div>
-                <label className="mb-2 fw-bold"> Upload your picture</label> <br />
                 <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
