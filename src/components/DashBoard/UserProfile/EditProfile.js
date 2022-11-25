@@ -30,7 +30,7 @@ const EditProfile = () => {
     .then(res=>{
       const imageLink = (res.data?.data?.display_url)
       setImages(imageLink);
-      axios.post("http://localhost:8000/imgupload", {imageLink: imageLink})
+      axios.post("https://mr-travel-server.onrender.com/imgupload", {imageLink: imageLink})
     })
     console.log("Click");
   }
@@ -43,18 +43,18 @@ const EditProfile = () => {
           <FiEdit className="me-2" />
           Edit Profile
         </h4>
-        <div className="p-5 card-item">
-          <h5 className="mb-4">Personal Information :</h5>
-          <div className="user-image-item mb-5 d-flex justify-content-between ">
+        <div className="p-4 p-lg-5 card-item">
+          <h5 className="mb-5">Personal Information :</h5>
+          <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
               <img
                 src={images}
                 alt="img"
               />
             </div>
-            <div className="upload-items d-flex align-items-center ms-5">
+            <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center  border p-3">
               <div>
-                <label className="mb-2 fw-bold"> Upload your picture</label> <br />
+                
                 <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
