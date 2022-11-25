@@ -3,34 +3,35 @@ import { FiEdit } from "react-icons/fi";
 import { BsSaveFill } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
+import FileUpload from "../FileUpload";
 
 const EditProfile = () => {
-  const [userInfo,setUserInfo]=useState({
-    file:[]
-  })
+  // const [userInfo,setUserInfo]=useState({
+  //   file:[]
+  // })
 
-  const handleImgUpload = (event) => {
-   setUserInfo({
-    ...userInfo,
-    file:event.target.files[0]
-   })
+  // const handleImgUpload = (event) => {
+  //  setUserInfo({
+  //   ...userInfo,
+  //   file:event.target.files[0]
+  //  })
 
-  };
+  // };
 
 
 // KEY 4f9a1e842c0ad62bee31271b88c19c9f
 // ekhan theky start
-  const submit = async()=>{
-    const formdata = new FormData();
-    formdata.append('image',userInfo.file);
-    axios.post("https://api.imgbb.com/1/upload?expiration=600&key=4f9a1e842c0ad62bee31271b88c19c9f",formdata,{
-      headers:{"Content-Type":"application/json"}
-    })
-    .then(res=>{
-      console.log(res.data?.data?.display_url);
-    })
-    console.log("Click");
-  }
+  // const submit = async()=>{
+  //   const formdata = new FormData();
+  //   formdata.append('image',userInfo.file);
+  //   axios.post("https://api.imgbb.com/1/upload?expiration=600&key=4f9a1e842c0ad62bee31271b88c19c9f",formdata,{
+  //     headers:{"Content-Type":"application/json"}
+  //   })
+  //   .then(res=>{
+  //     console.log(res.data?.data?.display_url);
+  //   })
+  //   console.log("Click");
+  // }
 
   return (
     <div>
@@ -49,7 +50,7 @@ const EditProfile = () => {
                 alt=""
               />
             </div>
-            <div className="upload-items d-flex align-items-center ms-5">
+            {/* <div className="upload-items d-flex align-items-center ms-5">
               <div>
                 <label className="mb-2 fw-bold"> Upload your picture</label> <br />
                 <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
@@ -62,6 +63,9 @@ const EditProfile = () => {
               <BsSaveFill /> Save
             </button>
               </div>
+            </div> */}
+            <div>
+              <FileUpload/>
             </div>
           </div>
           {/* form */}
