@@ -3,35 +3,28 @@ import { FiEdit } from "react-icons/fi";
 import { BsSaveFill } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
-import FileUpload from "../FileUpload";
 
 const EditProfile = () => {
-  // const [userInfo,setUserInfo]=useState({
-  //   file:[]
-  // })
+ const [image,setImage]=useState('')
 
-  // const handleImgUpload = (event) => {
-  //  setUserInfo({
-  //   ...userInfo,
-  //   file:event.target.files[0]
-  //  })
+  const handleImgUpload = (event) => {
+   setImage(event.target.files[0])
 
-  // };
+  };
 
 
 // KEY 4f9a1e842c0ad62bee31271b88c19c9f
 // ekhan theky start
-  // const submit = async()=>{
-  //   const formdata = new FormData();
-  //   formdata.append('image',userInfo.file);
-  //   axios.post("https://api.imgbb.com/1/upload?expiration=600&key=4f9a1e842c0ad62bee31271b88c19c9f",formdata,{
-  //     headers:{"Content-Type":"application/json"}
-  //   })
-  //   .then(res=>{
-  //     console.log(res.data?.data?.display_url);
-  //   })
-  //   console.log("Click");
-  // }
+  const submit = ()=>{
+    const url = "http://localhost:8000/imgupload"
+    const formData = new FormData();
+    formData.append('image',image);
+    axios.post(url,formData)
+    .then(res=>{
+      console.log(res.data);
+    })
+
+  }
 
   return (
     <div>
@@ -42,15 +35,15 @@ const EditProfile = () => {
           Edit Profile
         </h4>
         <div className="p-5 card-item">
-          <h5 className="mb-4">Personal Information :</h5>
+          {/* <h5 className="mb-4">Personal Information :</h5> */}
           <div className="user-image-item mb-5 d-flex justify-content-between ">
             <div className="user-img ">
               <img
-                src="https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png"
-                alt=""
+                src={URL.createObjectURL(image)}
+                alt="img"
               />
             </div>
-            {/* <div className="upload-items d-flex align-items-center ms-5">
+            <div className="upload-items d-flex align-items-center ms-5">
               <div>
                 <label className="mb-2 fw-bold"> Upload your picture</label> <br />
                 <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
@@ -63,9 +56,6 @@ const EditProfile = () => {
               <BsSaveFill /> Save
             </button>
               </div>
-            </div> */}
-            <div>
-              <FileUpload/>
             </div>
           </div>
           {/* form */}
@@ -153,7 +143,7 @@ const EditProfile = () => {
                     Gender
                   </label>
                   <select className="form-select" aria-label="Default select example">
-                    <option selected>Select Gender</option>
+                    <option value>Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                   </select>
@@ -177,7 +167,7 @@ const EditProfile = () => {
                     Marital Status
                   </label>
                   <select className="form-select" aria-label="Default select example">
-                    <option selected>Select </option>
+                    <option value>Select </option>
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
                   </select>

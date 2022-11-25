@@ -50,7 +50,7 @@ const FileUpload = () => {
             maxFiles={5}
             inputContent="Drop A File"
             styles={{
-                dropzone: { width: 600, height: 400 },
+                dropzone: { width: 400, height: 200 },
                 dropzoneActive: { borderColor: 'green' },
             }}            
         />
