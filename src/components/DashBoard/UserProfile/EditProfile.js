@@ -62,7 +62,7 @@ const EditProfile = () => {
               onClick={()=>submit()}
               type="submit" 
               className="save-btn ">
-              <BsSaveFill /> Save
+              <BsSaveFill />Upload
             </button>
               </div>
             </div>
