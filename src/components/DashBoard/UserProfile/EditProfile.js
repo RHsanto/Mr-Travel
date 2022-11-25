@@ -5,26 +5,22 @@ import { useState } from "react";
 import axios from "axios";
 
 const EditProfile = () => {
- const [image,setImage]=useState('')
+  const [image, setImage] = useState("");
 
-  const handleImgUpload = (event) => {
-   setImage(event.target.files[0])
-
+  const handleImgUpload = event => {
+    setImage(event.target.files[0]);
   };
 
-
-// KEY 4f9a1e842c0ad62bee31271b88c19c9f
-// ekhan theky start
-  const submit = ()=>{
-    const url = "http://localhost:8000/imgupload"
+  // KEY 4f9a1e842c0ad62bee31271b88c19c9f
+  // ekhan theky start
+  const submit = () => {
+    const url = "http://localhost:8000/imgupload";
     const formData = new FormData();
-    formData.append('image',image);
-    axios.post(url,formData)
-    .then(res=>{
+    formData.append("image", image);
+    axios.post(url, formData).then(res => {
       console.log(res.data);
-    })
-
-  }
+    });
+  };
 
   return (
     <div>
@@ -34,30 +30,26 @@ const EditProfile = () => {
           <FiEdit className="me-2" />
           Edit Profile
         </h4>
-        <h5 className="py-3 text-center"> Upload your picture</h5> 
+        <h5 className="py-3 text-center"> Upload your picture</h5>
         <div className="p-5 card-item">
           {/* <h5 className="mb-4">Personal Information :</h5> */}
-          <div className="user-image-item mb-5 d-flex justify-content-between ">
+          <div
+            className="user-image-item mb-5 d-block 
+              d-lg-flex justify-content-between "
+          >
             <div className="user-img ">
               <img
-                src={URL.createObjectURL(image)}
+                className="shadow"
+                src={image === "" ? "" : URL.createObjectURL(image)}
                 alt="img"
               />
             </div>
-           
-            <div className="border p-2 upload-items d-flex align-items-center justify-content-center ms-5">
 
-              <div>
-                <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
-              </div>
-              <div>
-              <button 
-              onClick={()=>submit()}
-              type="submit" 
-              className="save-btn ">
-              <BsSaveFill /> Save
-            </button>
-              </div>
+            <div className="border mt-5  mt-lg-0 p-3">
+              <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
+              <button onClick={() => submit()} type="submit" className="save-btn ">
+                <BsSaveFill /> Save
+              </button>
             </div>
           </div>
           {/* form */}
