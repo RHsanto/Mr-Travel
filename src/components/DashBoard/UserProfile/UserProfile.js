@@ -9,7 +9,13 @@ import UserInfo from "./UserInfo";
 const UserProfile = () => {
   const { logOut } = useFirebase();
   const [userInfo, setUserInfo] = useState(<UserInfo />);
+  // const results = localStorage.getItem("imgLink");
+  // let parsed;
+  // if (results != undefined) {
+  //   parsed = JSON.parse(results);
+  // }
 
+  // console.log(parsed);
   const handlePersonalInfo = e => {
     setUserInfo(<UserInfo />);
   };
@@ -29,7 +35,7 @@ const UserProfile = () => {
                   <div className="user-img-two  d-flex justify-content-center">
                     <img
                       src="https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png"
-                      alt=""
+                      alt="img"
                     />
                   </div>
                   <hr />
