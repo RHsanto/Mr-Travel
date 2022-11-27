@@ -17,7 +17,7 @@ const SignIn = () => {
   const handleGoogle = e => {
     signInUsingGoogle().then(result => {
       navigate(redirect_uri);
-      console.log(result);
+      // console.log(result);
     });
   };
 
@@ -49,7 +49,7 @@ const SignIn = () => {
                   onClick={handleGoogle}
                   className="w-50 flex-btn p-0 d-flex justify-content-between"
                 >
-                  <img src={google} alt="" srcset="" />
+                  <img src={google} alt="" srcSet="" />
                   <button className=" google-btn bg-primary w-100"> Google</button>
                 </button>
               </div>
@@ -62,7 +62,7 @@ const SignIn = () => {
                     id="floatingInput"
                     placeholder="name@example.com"
                   />
-                  <label for="floatingInput">Email</label>
+                  <label htmlFor="floatingInput">Email</label>
                 </div>
                 <div className="form-floating">
                   <input
@@ -72,7 +72,7 @@ const SignIn = () => {
                     id="floatingPassword"
                     placeholder="Password"
                   />
-                  <label for="floatingPassword">Password</label>
+                  <label htmlFor="floatingPassword">Password</label>
                 </div>
                 <div className="d-flex justify-content-between mt-3 px-2">
                   <p>
@@ -100,7 +100,7 @@ const SignIn = () => {
                   <FaFacebookF className="fb" /> Facebook
                 </button>
                 <button className="w-50 flex-btn p-0 d-flex justify-content-between">
-                  <img src={google} alt="" srcset="" />
+                  <img src={google} alt="" srcSet="" />
                   <button className=" google-btn bg-primary w-100"> Google</button>
                 </button>
               </div>
@@ -111,7 +111,7 @@ const SignIn = () => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Username</label>
+                <label htmlFor="floatingInput">Username</label>
               </div>
               <div className="form-floating">
                 <input
@@ -120,7 +120,7 @@ const SignIn = () => {
                   id="floatingPassword"
                   placeholder="Password"
                 />
-                <label for="floatingPassword">Password</label>
+                <label htmlFor="floatingPassword">Password</label>
               </div>
               <div className="d-flex justify-content-between mt-3 ">
                 <p>

@@ -32,7 +32,7 @@ const EditProfile = () => {
       setImages(imageLink);
       axios.post("https://mr-travel-server.onrender.com/imgupload", {imageLink: imageLink})
     })
-    console.log("Click");
+    // console.log("Click");
   }
 
   return (

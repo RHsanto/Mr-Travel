@@ -21,7 +21,7 @@ const SignUp = () => {
   const handleGoogle = e => {
     signInUsingGoogle().then(result => {
       navigate(redirect_uri);
-      console.log(result);
+      // console.log(result);
     });
   };
   const handleNameChange = e => {
@@ -57,7 +57,7 @@ const SignUp = () => {
                   onClick={handleGoogle}
                   className="w-50 flex-btn p-0 d-flex justify-content-between"
                 >
-                  <img src={google} alt="" srcset="" />
+                  <img src={google} alt="" srcSet="" />
                   <button className=" google-btn bg-primary w-100"> Google</button>
                 </button>
               </div>
@@ -71,7 +71,7 @@ const SignUp = () => {
                     id="floatingInput"
                     placeholder="name"
                   />
-                  <label for="floatingInput">Username</label>
+                  <label htmlFor="floatingInput">Username</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
@@ -81,7 +81,7 @@ const SignUp = () => {
                     id="floatingInput"
                     placeholder="name@example.com"
                   />
-                  <label for="floatingInput">Email</label>
+                  <label htmlFor="floatingInput">Email</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
@@ -91,11 +91,11 @@ const SignUp = () => {
                     id="floatingPassword"
                     placeholder="Password"
                   />
-                  <label for="floatingPassword">Password</label>
+                  <label htmlFor="floatingPassword">Password</label>
                 </div>
                 {/* <div className="form-floating">
                <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
-               <label for="floatingPassword">Confirm Password</label>
+               <label htmlFor="floatingPassword">Confirm Password</label>
             </div> */}
                 <div className="log-btn w-25 mt-5  mx-auto">
                   <button type="submit">LOGIN</button>
@@ -119,13 +119,13 @@ const SignUp = () => {
                   <FaFacebookF className="fb" /> Facebook
                 </button>
                 <button className="w-50 flex-btn p-0 d-flex justify-content-between">
-                  <img src={google} alt="" srcset="" />
+                  <img src={google} alt="" srcSet="" />
                   <button className=" google-btn bg-primary w-100"> Google</button>
                 </button>
               </div>
               <div className="form-floating mb-3">
                 <input type="text" className="form-control" id="floatingInput" placeholder="name" />
-                <label for="floatingInput">Username</label>
+                <label htmlFor="floatingInput">Username</label>
               </div>
               <div className="form-floating mb-3">
                 <input
@@ -134,7 +134,7 @@ const SignUp = () => {
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
-                <label for="floatingInput">Email</label>
+                <label htmlFor="floatingInput">Email</label>
               </div>
               <div className="form-floating">
                 <input
@@ -143,7 +143,7 @@ const SignUp = () => {
                   id="floatingPassword"
                   placeholder="Password"
                 />
-                <label for="floatingPassword">Password</label>
+                <label htmlFor="floatingPassword">Password</label>
               </div>
               <div className="d-flex justify-content-between mt-3 ">
                 <p>
