@@ -32,7 +32,7 @@ const EditProfile = () => {
     .then(res=>{
       const imageLink = (res.data?.data?.display_url)
       setImages(imageLink);
-      axios.post("http://localhost:8000/imgupload", {imageLink: imageLink,email:user.email})
+      axios.post("http://localhost:8000/profile-edit", {imageLink: imageLink,email:user.email})
     })
     // console.log("Click");
   }
