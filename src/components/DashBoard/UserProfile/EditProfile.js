@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from "react";
 import { FiEdit } from "react-icons/fi";
 import { BsSaveFill } from "react-icons/bs";
@@ -6,8 +7,15 @@ import axios from "axios";
 import useFirebase from "../../../hooks/useFirebase";
 
 const EditProfile = () => {
+  const results = localStorage.getItem("image");
+  let parsed;
+  if (results != undefined) {
+    parsed = JSON.parse(results);
+  }
+  // console.log(parsed);
+
   const{user}=useFirebase();
-  const[images,setImages]=useState('https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png')
+  const[images,setImages]=useState('')
   const [userInfo,setUserInfo]=useState({
     file:[]
   })
@@ -32,6 +40,7 @@ const EditProfile = () => {
     .then(res=>{
       const imageLink = (res.data?.data?.display_url)
       setImages(imageLink);
+      localStorage.setItem("image", JSON.stringify(imageLink));
       axios.post("http://localhost:8000/profile-edit", {imageLink: imageLink,email:user.email})
     })
     // console.log("Click");
@@ -50,7 +59,7 @@ const EditProfile = () => {
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
               <img
-                src={images}
+                src={parsed || images}
                 alt="img"
               />
             </div>
