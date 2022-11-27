@@ -9,13 +9,6 @@ import UserInfo from "./UserInfo";
 const UserProfile = () => {
   const { logOut } = useFirebase();
   const [userInfo, setUserInfo] = useState(<UserInfo />);
-  // const results = localStorage.getItem("imgLink");
-  // let parsed;
-  // if (results != undefined) {
-  //   parsed = JSON.parse(results);
-  // }
-
-  // console.log(parsed);
   const handlePersonalInfo = e => {
     setUserInfo(<UserInfo />);
   };
