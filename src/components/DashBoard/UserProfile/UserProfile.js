@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { AiOutlineLogout, AiTwotoneSetting } from "react-icons/ai";
 import { FaUserAlt } from "react-icons/fa";
 import useFirebase from "../../../hooks/useFirebase";
@@ -7,7 +8,9 @@ import EditProfile from "./EditProfile";
 import UserInfo from "./UserInfo";
 
 const UserProfile = () => {
-  const { logOut } = useFirebase();
+  const { logOut,user } = useFirebase();
+  const [users,setUsers]=useState([])
+
   const [userInfo, setUserInfo] = useState(<UserInfo />);
   const handlePersonalInfo = e => {
     setUserInfo(<UserInfo />);
@@ -16,6 +19,17 @@ const UserProfile = () => {
     setUserInfo(<EditProfile />);
   };
 
+  // here fetch user data
+
+useEffect(() => {
+  const fetchData = async () => {
+  const res = await axios.get(`http://localhost:8000/user/${user.email}`);
+  setUsers(res.data);
+};
+fetchData();
+}, [user.email]);
+
+// console.log(users[0]?.imageLink);
   return (
     <div>
       <Navbar />
@@ -27,7 +41,7 @@ const UserProfile = () => {
                 <div className="profile-info py-4">
                   <div className="user-img-two  d-flex justify-content-center">
                     <img
-                      src="https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png"
+                      src={users[0]?.imageLink}
                       alt="img"
                     />
                   </div>
