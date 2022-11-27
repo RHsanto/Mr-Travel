@@ -49,7 +49,7 @@ const useFirebase = () => {
         const newUser = { email, displayName: name };
         setUser(newUser);
         //save user to database
-        saveUser(email, name);
+        emailUser(email, name);
         //send name to firebase
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -108,10 +108,23 @@ const useFirebase = () => {
   }, [auth]);
 
   //save user info to database
-  const saveUser = (email, displayName) => {
+  const emailUser = (email, displayName) => {
     const user = { email, displayName };
     fetch("http://localhost:8000/users", {
       method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }).then();
+  };
+
+  // save google user info to database
+
+  const GoogleUser = (email, displayName) => {
+    const user = { email, displayName };
+    fetch("http://localhost:8000/users", {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -132,6 +145,7 @@ const useFirebase = () => {
     password,
     displayName,
     isLoading,
+    GoogleUser
   };
 };
 

@@ -3,8 +3,10 @@ import { FiEdit } from "react-icons/fi";
 import { BsSaveFill } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
+import useFirebase from "../../../hooks/useFirebase";
 
 const EditProfile = () => {
+  const{user}=useFirebase();
   const[images,setImages]=useState('https://gozayaan.sgp1.digitaloceanspaces.com/media/profile_picture/user_587885df-462a-4ebf-8753-61be1498b64e/re-1.png')
   const [userInfo,setUserInfo]=useState({
     file:[]
@@ -30,7 +32,7 @@ const EditProfile = () => {
     .then(res=>{
       const imageLink = (res.data?.data?.display_url)
       setImages(imageLink);
-      axios.post("https://mr-travel-server.onrender.com/imgupload", {imageLink: imageLink})
+      axios.post("http://localhost:8000/imgupload", {imageLink: imageLink,email:user.email})
     })
     // console.log("Click");
   }
