@@ -10,11 +10,11 @@ import logos from "../../../images/t-logo.png";
 import useSWR from "swr";
 
 //  use useSwr fetcher
-const fetcher = (...args) => fetch(...args).then(res => res.json())
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const Banner = () => {
   const { user, logOut } = useFirebase();
-  const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
+  const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
   return (
     <div className="banner-section">
@@ -33,14 +33,13 @@ const Banner = () => {
           <div className="d-flex align-items-center">
             {user.email ? (
               <>
-                 <>
-               { data?.[0]?.imageLink ? 
-                    <img className="nav-img"
-                      src={ data?.[0]?.imageLink}
-                      alt="img"
-                    /> 
-                    : <FaUserCircle className="fs-1 text-light"/>}
-                </>  
+                <>
+                  {data?.[0]?.imageLink ? (
+                    <img className="nav-img" src={data?.[0]?.imageLink} alt="img" />
+                  ) : (
+                    <FaUserCircle className="fs-1 text-light" />
+                  )}
+                </>
                 <div className="dropdown">
                   <div
                     className="text-light ms-2"
@@ -52,13 +51,13 @@ const Banner = () => {
                     <IoIosArrowDown className=" fw-bold fs-5" />
                   </div>
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <span>
-                   <Link to="/admin-dash"  className=" dropdown-item">
-                     <FaUserAlt className="me-1" /> Admin Dashboard
-                   </Link>
-                 </span>
                     <span>
-                      <Link to="/user-profile"  className=" dropdown-item">
+                      <Link to="/admin-dash" className=" dropdown-item">
+                        <FaUserAlt className="me-1" /> Admin Dashboard
+                      </Link>
+                    </span>
+                    <span>
+                      <Link to="/user-profile" className=" dropdown-item">
                         <FaUserAlt className="me-1" /> Profile
                       </Link>
                     </span>
