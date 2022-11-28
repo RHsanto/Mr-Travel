@@ -11,11 +11,11 @@ import logos from "../../images/t-logo.png";
 import useSWR from "swr";
 
 //  use useSwr fetcher
-const fetcher = (...args) => fetch(...args).then(res => res.json())
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const Navbar = () => {
   const { user, logOut } = useFirebase();
-  const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
+  const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
   return (
     <div className="nav-sections ">
@@ -59,14 +59,13 @@ const Navbar = () => {
         <div className="d-flex align-items-center">
           {user.email ? (
             <>
-                <>
-               { data[0]?.imageLink ? 
-                    <img className="nav-img"
-                      src={ data?.[0]?.imageLink}
-                      alt="img"
-                    /> 
-                    : <FaUserCircle className="fs-1"/>}
-                </>  
+              <>
+                {data[0]?.imageLink ? (
+                  <img className="nav-img" src={data?.[0]?.imageLink} alt="img" />
+                ) : (
+                  <FaUserCircle className="fs-1" />
+                )}
+              </>
               <div className="dropdown">
                 <div
                   className=" ms-2"
