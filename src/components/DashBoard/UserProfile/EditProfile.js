@@ -9,15 +9,15 @@ import { useSWRConfig } from "swr";
 
 const EditProfile = () => {
   const { mutate } = useSWRConfig();
-  const results = localStorage.getItem("image");
-  let parsed;
-  if (results != undefined) {
-    parsed = JSON.parse(results);
-  }
-  // console.log(parsed);
+  // const results = localStorage.getItem("image");
+  // let parsed;
+  // if (results != undefined) {
+  //   parsed = JSON.parse(results);
+  // }
+  // // console.log(parsed);
 
   const { user } = useFirebase();
-  const [images, setImages] = useState("");
+  const [images, setImages] = useState("https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png");
   const [userInfo, setUserInfo] = useState({
     file: [],
   });
@@ -69,7 +69,7 @@ const EditProfile = () => {
           <h5 className="mb-5">Personal Information :</h5>
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
-              <img src={parsed || images} alt="img" />
+              <img src={images} alt="img" />
             </div>
             <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center border p-3">
               <div>

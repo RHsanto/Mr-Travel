@@ -108,7 +108,7 @@ const useFirebase = () => {
   //save user info to database
   const emailUser = (email, displayName) => {
     const user = { email, displayName };
-    fetch("http://localhost:8000/users", {
+    fetch("https://mr-travel-server.onrender.com/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -121,7 +121,7 @@ const useFirebase = () => {
 
   const GoogleUser = (email, displayName) => {
     const user = { email, displayName };
-    fetch("http://localhost:8000/users", {
+    fetch("https://mr-travel-server.onrender.com/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
