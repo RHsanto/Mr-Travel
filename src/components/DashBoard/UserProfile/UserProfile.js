@@ -13,14 +13,16 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const UserProfile = () => {
   const { logOut,user } = useFirebase();
+  const [userInfo, setUserInfo] = useState(<UserInfo />);
+  
   // here use useSwr methods
   const { data, error } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
 
-  const [userInfo, setUserInfo] = useState(<UserInfo />);
-  const handlePersonalInfo = e => {
+
+  const handlePersonalInfo = () => {
     setUserInfo(<UserInfo />);
   };
-  const handleUserEdit = e => {
+  const handleUserEdit = () => {
     setUserInfo(<EditProfile />);
   };
 

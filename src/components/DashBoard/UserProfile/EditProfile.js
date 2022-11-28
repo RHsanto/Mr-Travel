@@ -66,9 +66,8 @@ const EditProfile = () => {
                 alt="img"
               />
             </div>
-            <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center  border p-3">
-              <div>
-                
+            <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center border p-3">
+              <div>  
                 <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
