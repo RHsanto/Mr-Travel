@@ -7,8 +7,15 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FiLogOut, FiLogIn } from "react-icons/fi";
 import { FaUserCircle, FaTags, FaUserAlt } from "react-icons/fa";
 import logos from "../../../images/t-logo.png";
+import useSWR from "swr";
+
+//  use useSwr fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json())
+
 const Banner = () => {
   const { user, logOut } = useFirebase();
+  const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
+
   return (
     <div className="banner-section">
       <header>
@@ -26,7 +33,14 @@ const Banner = () => {
           <div className="d-flex align-items-center">
             {user.email ? (
               <>
-                <FaUserCircle className="text-light fs-1" />
+                 <>
+               { data?.[0]?.imageLink ? 
+                    <img className="nav-img"
+                      src={ data?.[0]?.imageLink}
+                      alt="img"
+                    /> 
+                    : <FaUserCircle className="fs-1 text-light"/>}
+                </>  
                 <div className="dropdown">
                   <div
                     className="text-light ms-2"

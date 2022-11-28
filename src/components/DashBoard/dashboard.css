@@ -7,6 +7,9 @@
 }
 
 /* user Profile section */
+.user-icon{
+  font-size: 90px;
+}
 .profile-title{
   background-color: #396cf0;
   color: white;
