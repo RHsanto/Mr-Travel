@@ -16,7 +16,7 @@ const UserProfile = () => {
   const [userInfo, setUserInfo] = useState(<UserInfo />);
   
   // here use useSwr methods
-  const { data, error } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
+  const { data,error} = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
 
 
   const handlePersonalInfo = () => {
@@ -27,9 +27,11 @@ const UserProfile = () => {
   };
 
 
-if (error) return <div>failed to load</div>
-if (!data) return <div>loading...</div>
-// console.log(data);
+  if(!data && !error)
+  {return <div>Loading</div>}
+
+console.log(data);
+
   return (
     <div>
       <Navbar />
@@ -41,7 +43,7 @@ if (!data) return <div>loading...</div>
                 <div className="profile-info py-4">
                   <div className="user-img-two  d-flex justify-content-center">
                     <img
-                      src={ data[0]?.imageLink}
+                      src={ data?.[0]?.imageLink}
                       alt="img"
                     /> 
                    

@@ -31,20 +31,22 @@ const EditProfile = () => {
   };
 
 
-// KEY 4f9a1e842c0ad62bee31271b88c19c9f
+
 
   const submit = async()=>{
     const formData = new FormData();
     formData.append('image',userInfo.file);
-    axios.post("https://api.imgbb.com/1/upload?expiration=600&key=4f9a1e842c0ad62bee31271b88c19c9f",formData,{
+    axios.post("https://api.imgbb.com/1/upload?expiration=600&key=573a29fff78ba91d05a36baad90b31d9",formData,{
       headers:{"Content-Type":"application/json"}
     })
     .then(res=>{
       const imageLink = (res.data?.data?.display_url)
       setImages(imageLink);
       localStorage.setItem("image", JSON.stringify(imageLink));
-      axios.post("https://mr-travel-server.onrender.com/profile-edit", {imageLink: imageLink,email:user.email},
-      mutate(`https://mr-travel-server.onrender.com/user/${user.email}`))
+      axios.post("https://mr-travel-server.onrender.com/profile-edit", {imageLink: imageLink,email:user.email})
+      .then(()=>{
+        mutate(`https://mr-travel-server.onrender.com/user/${user.email}`)
+      })
     })
     // console.log("Click");
   }
