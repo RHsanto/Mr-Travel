@@ -6,10 +6,16 @@ import useFirebase from "../../../hooks/useFirebase";
 import Navbar from "../../common/Navbar";
 import EditProfile from "./EditProfile";
 import UserInfo from "./UserInfo";
+import useSWR from 'swr'
+
+//  use useSwr fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const UserProfile = () => {
   const { logOut,user } = useFirebase();
   const [users,setUsers]=useState([])
+
+  const { data, error } = useSWR(`http://localhost:8000/user/${user.email}`, fetcher)
 
   const [userInfo, setUserInfo] = useState(<UserInfo />);
   const handlePersonalInfo = e => {
@@ -29,7 +35,9 @@ useEffect(() => {
 fetchData();
 }, [user.email]);
 
-// console.log(users[0]?.imageLink);
+if (error) return <div>failed to load</div>
+if (!data) return <div>loading...</div>
+// console.log(data);
   return (
     <div>
       <Navbar />
@@ -41,7 +49,7 @@ fetchData();
                 <div className="profile-info py-4">
                   <div className="user-img-two  d-flex justify-content-center">
                     <img
-                      src={users[0]?.imageLink}
+                      src={data[0]?.imageLink}
                       alt="img"
                     />
                   </div>
@@ -49,6 +57,7 @@ fetchData();
                   <div className="edit-item mt-3">
                     <li onClick={handlePersonalInfo} className=" dropdown-item">
                       <FaUserAlt className="me-2" />
+
                       <span>Personal Info</span>
                     </li>
 

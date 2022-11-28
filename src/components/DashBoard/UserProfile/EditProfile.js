@@ -5,8 +5,10 @@ import { BsSaveFill } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
 import useFirebase from "../../../hooks/useFirebase";
+import { useSWRConfig } from "swr";
 
 const EditProfile = () => {
+  const { mutate } = useSWRConfig()
   const results = localStorage.getItem("image");
   let parsed;
   if (results != undefined) {
@@ -41,7 +43,8 @@ const EditProfile = () => {
       const imageLink = (res.data?.data?.display_url)
       setImages(imageLink);
       localStorage.setItem("image", JSON.stringify(imageLink));
-      axios.post("http://localhost:8000/profile-edit", {imageLink: imageLink,email:user.email})
+      axios.post("http://localhost:8000/profile-edit", {imageLink: imageLink,email:user.email},
+      mutate(`http://localhost:8000/user/${user.email}`))
     })
     // console.log("Click");
   }
