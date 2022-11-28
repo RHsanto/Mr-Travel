@@ -23,8 +23,6 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const redirect_uri = location.state?.from || "/";
@@ -142,8 +140,6 @@ const useFirebase = () => {
     setUser,
     setError,
     email,
-    password,
-    displayName,
     isLoading,
     GoogleUser
   };

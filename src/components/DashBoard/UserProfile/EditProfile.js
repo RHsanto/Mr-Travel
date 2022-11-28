@@ -50,6 +50,7 @@ const EditProfile = () => {
             email: user.email,
           })
           .then(() => {
+            // here use useSWR methods
             mutate(`https://mr-travel-server.onrender.com/user/${user.email}`);
           });
       });
