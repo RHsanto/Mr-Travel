@@ -81,7 +81,7 @@ const EditProfile = () => {
               </div>
             </div>
           </div>
-          {/* form */}
+  {/*edit form */}
           {/*Basic Info  */}
           <div className="edit-form">
             <h5 className="mb-5 fw-bold">Basic Info :</h5>

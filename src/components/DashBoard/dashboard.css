@@ -20,9 +20,8 @@
 .user-img-two img{
   width: 90px;
   height: 90px;
-  border: 5px solid #1680dd;
   border-radius: 50%;
-  box-shadow: 0 9px 26px rgb(58 87 135 / 10%);
+  
 }
 .save-btn{
   color: white;
@@ -49,7 +48,6 @@
 .all-item{
   display: flex;
   align-items: center;
-  
   text-align: start;
   margin-bottom: 20px;
 }
