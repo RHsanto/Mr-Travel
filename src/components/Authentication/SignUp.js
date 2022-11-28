@@ -11,7 +11,8 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user, registerUser, error, isLoading,GoogleUser, setError, signInUsingGoogle } = useFirebase();
+  const { user, registerUser, error, isLoading, GoogleUser, setError, signInUsingGoogle } =
+    useFirebase();
   const navigate = useNavigate();
   const location = useLocation();
   const redirect_uri = location.state?.from || "/";
@@ -21,8 +22,8 @@ const SignUp = () => {
   const handleGoogle = e => {
     signInUsingGoogle().then(result => {
       const user = result.user;
-      GoogleUser(user.email,user.displayName);
-      navigate( redirect_uri);
+      GoogleUser(user.email, user.displayName);
+      navigate(redirect_uri);
     });
   };
   const handleNameChange = e => {
