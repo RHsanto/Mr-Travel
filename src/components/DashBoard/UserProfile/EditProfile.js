@@ -14,7 +14,8 @@ const EditProfile = () => {
   
   const { mutate } = useSWRConfig();
   const { user } = useFirebase();
-  const [images, setImages] = useState("https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png");
+  const[loading,setLoading]=useState(false)
+  const[imglink,setImglink]=useState("")
   const [userInfo, setUserInfo] = useState({
     file: [],
   });
@@ -28,32 +29,44 @@ const EditProfile = () => {
   };
 
   const submit = async () => {
+    setLoading(true)
     const formData = new FormData();
     formData.append("image", userInfo.file);
-    axios
-      .post(
-        "https://api.imgbb.com/1/upload?expiration=600&key=573a29fff78ba91d05a36baad90b31d9",
+    axios.post("https://api.imgbb.com/1/upload?key=573a29fff78ba91d05a36baad90b31d9",
         formData,
         {
           headers: { "Content-Type": "application/json" },
         }
       )
       .then(res => {
+        console.log(res.data);
         const imageLink = res.data?.data?.display_url;
-        setImages(imageLink);
-        localStorage.setItem("image", JSON.stringify(imageLink));
+        setImglink(imageLink)
         axios
           .post("https://mr-travel-server.onrender.com/profile-edit", {
             imageLink: imageLink,
             email: user.email,
           })
+      
           .then(() => {
             // here use useSWR methods
             mutate(`https://mr-travel-server.onrender.com/user/${user.email}`);
-          });
-      });
+          })
+          .catch(err=>{
+            console.log(err);
+            setLoading(false)
+          })
+      })
+      .catch(err=>{
+        console.log(err);
+        setLoading(false)
+      })
+      .finally(()=>{
+        setLoading(false)
+      })
     // console.log("Click");
   };
+
 
   return (
     <div>
@@ -68,21 +81,22 @@ const EditProfile = () => {
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
             <>
-                {data[0]?.imageLink ? (
-                  <img  src={data?.[0]?.imageLink} alt="img" />
+                {imglink || data[0]?.imageLink ? (
+                  <img  src={imglink ? imglink :  data?.[0]?.imageLink } alt="img" />
                 ) : (
                   <FaUserCircle className="fs-1" />
                 )}
               </>
+              {/* <img src={imglink} alt="" /> */}
             </div>
             <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center border p-3">
               <div>
                 <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
-                <button onClick={() => submit()} type="submit" className="save-btn ">
+               {!loading ?  <button disabled={loading} onClick={() => submit()} type="submit" className="save-btn ">
                   <BsSaveFill /> Upload
-                </button>
+                </button>: <>Loading....</>}
               </div>
             </div>
           </div>
