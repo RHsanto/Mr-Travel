@@ -1,5 +1,5 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
+import React, {  useState } from "react";
 import { AiOutlineLogout, AiTwotoneSetting } from "react-icons/ai";
 import { FaUserAlt } from "react-icons/fa";
 import useFirebase from "../../../hooks/useFirebase";
@@ -13,9 +13,8 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const UserProfile = () => {
   const { logOut,user } = useFirebase();
-  const [users,setUsers]=useState([])
-
-  const { data, error } = useSWR(`http://localhost:8000/user/${user.email}`, fetcher)
+  // here use useSwr methods
+  const { data, error } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
 
   const [userInfo, setUserInfo] = useState(<UserInfo />);
   const handlePersonalInfo = e => {
@@ -25,15 +24,6 @@ const UserProfile = () => {
     setUserInfo(<EditProfile />);
   };
 
-  // here fetch user data
-
-useEffect(() => {
-  const fetchData = async () => {
-  const res = await axios.get(`http://localhost:8000/user/${user.email}`);
-  setUsers(res.data);
-};
-fetchData();
-}, [user.email]);
 
 if (error) return <div>failed to load</div>
 if (!data) return <div>loading...</div>
@@ -49,9 +39,10 @@ if (!data) return <div>loading...</div>
                 <div className="profile-info py-4">
                   <div className="user-img-two  d-flex justify-content-center">
                     <img
-                      src={data[0]?.imageLink}
+                      src={ data[0]?.imageLink}
                       alt="img"
-                    />
+                    /> 
+                   
                   </div>
                   <hr />
                   <div className="edit-item mt-3">

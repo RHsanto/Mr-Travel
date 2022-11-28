@@ -43,8 +43,8 @@ const EditProfile = () => {
       const imageLink = (res.data?.data?.display_url)
       setImages(imageLink);
       localStorage.setItem("image", JSON.stringify(imageLink));
-      axios.post("http://localhost:8000/profile-edit", {imageLink: imageLink,email:user.email},
-      mutate(`http://localhost:8000/user/${user.email}`))
+      axios.post("https://mr-travel-server.onrender.com/profile-edit", {imageLink: imageLink,email:user.email},
+      mutate(`https://mr-travel-server.onrender.com/user/${user.email}`))
     })
     // console.log("Click");
   }
