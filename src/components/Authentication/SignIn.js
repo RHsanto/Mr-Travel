@@ -7,7 +7,7 @@ import google from "../../images/gmail.png";
 import useFirebase from "../../hooks/useFirebase";
 
 const SignIn = () => {
-  const { signInUsingGoogle, loginUser, error,GoogleUser } = useFirebase();
+  const { signInUsingGoogle, loginUser, error, GoogleUser } = useFirebase();
   const location = useLocation();
   const navigate = useNavigate();
   const redirect_uri = location.state?.from || "/";
@@ -17,9 +17,8 @@ const SignIn = () => {
   const handleGoogle = e => {
     signInUsingGoogle().then(result => {
       const user = result.user;
-      GoogleUser(user.email,user.displayName);
-      navigate( redirect_uri);
-      
+      GoogleUser(user.email, user.displayName);
+      navigate(redirect_uri);
     });
   };
 
