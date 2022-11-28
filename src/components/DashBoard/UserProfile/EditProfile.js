@@ -5,22 +5,20 @@ import { BsSaveFill } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
 import useFirebase from "../../../hooks/useFirebase";
-import { useSWRConfig } from "swr";
+import useSWR, { useSWRConfig } from "swr";
+import { FaUserCircle } from "react-icons/fa";
+
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const EditProfile = () => {
+  
   const { mutate } = useSWRConfig();
-  // const results = localStorage.getItem("image");
-  // let parsed;
-  // if (results != undefined) {
-  //   parsed = JSON.parse(results);
-  // }
-  // // console.log(parsed);
-
   const { user } = useFirebase();
   const [images, setImages] = useState("https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png");
   const [userInfo, setUserInfo] = useState({
     file: [],
   });
+  const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
   const handleImgUpload = event => {
     setUserInfo({
@@ -69,7 +67,13 @@ const EditProfile = () => {
           <h5 className="mb-5">Personal Information :</h5>
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
-              <img src={images} alt="img" />
+            <>
+                {data[0]?.imageLink ? (
+                  <img  src={data?.[0]?.imageLink} alt="img" />
+                ) : (
+                  <FaUserCircle className="fs-1" />
+                )}
+              </>
             </div>
             <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center border p-3">
               <div>
