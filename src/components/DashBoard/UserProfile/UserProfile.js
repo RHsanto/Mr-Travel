@@ -1,23 +1,24 @@
-
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineLogout, AiTwotoneSetting } from "react-icons/ai";
 import { FaUserAlt, FaUserCircle } from "react-icons/fa";
 import useFirebase from "../../../hooks/useFirebase";
 import Navbar from "../../common/Navbar";
 import EditProfile from "./EditProfile";
 import UserInfo from "./UserInfo";
-import useSWR from 'swr'
+import useSWR from "swr";
 
 //  use useSwr fetcher
-const fetcher = (...args) => fetch(...args).then(res => res.json())
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const UserProfile = () => {
-  const { logOut,user } = useFirebase();
+  const { logOut, user } = useFirebase();
   const [userInfo, setUserInfo] = useState(<UserInfo />);
-  
-  // here use useSwr methods
-  const { data,error} = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
 
+  // here use useSwr methods
+  const { data, error } = useSWR(
+    `https://mr-travel-server.onrender.com/user/${user.email}`,
+    fetcher
+  );
 
   const handlePersonalInfo = () => {
     setUserInfo(<UserInfo />);
@@ -26,11 +27,9 @@ const UserProfile = () => {
     setUserInfo(<EditProfile />);
   };
 
-
-  if(!data && !error)
-  {return <div>Loading</div>}
-
-
+  if (!data && !error) {
+    return <div>Loading</div>;
+  }
 
   return (
     <div>
@@ -42,12 +41,11 @@ const UserProfile = () => {
               <div className="card">
                 <div className="profile-info py-4">
                   <div className="user-img-two  d-flex justify-content-center">
-                  { data[0]?.imageLink ? 
-                    <img className="nav-img"
-                      src={ data?.[0]?.imageLink}
-                      alt="img"
-                    /> 
-                    : <FaUserCircle className="user-icon"/>}
+                    {data[0]?.imageLink ? (
+                      <img className="nav-img" src={data?.[0]?.imageLink} alt="img" />
+                    ) : (
+                      <FaUserCircle className="user-icon" />
+                    )}
                   </div>
                   <hr />
                   <div className="edit-item mt-3">
