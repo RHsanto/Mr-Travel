@@ -57,10 +57,10 @@ const Navbar = () => {
 
         {/* here use login functionality */}
         <div className="d-flex align-items-center">
-          {user.email ? (
+          {user?.email ? (
             <>
               <>
-                {data[0]?.imageLink ? (
+                {data?.[0]?.imageLink ? (
                   <img className="nav-img" src={data?.[0]?.imageLink} alt="img" />
                 ) : (
                   <FaUserCircle className="fs-1" />

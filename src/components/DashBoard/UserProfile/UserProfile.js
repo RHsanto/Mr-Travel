@@ -42,7 +42,7 @@ const UserProfile = () => {
               <div className="card">
                 <div className="profile-info py-4">
                   <div className="user-img-two  d-flex justify-content-center">
-                  { data[0]?.imageLink ? 
+                  { data?.[0]?.imageLink ? 
                     <img className="nav-img"
                       src={ data?.[0]?.imageLink}
                       alt="img"
