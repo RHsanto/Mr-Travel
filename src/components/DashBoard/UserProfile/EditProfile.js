@@ -7,16 +7,15 @@ import axios from "axios";
 import useFirebase from "../../../hooks/useFirebase";
 import useSWR, { useSWRConfig } from "swr";
 import { FaUserCircle } from "react-icons/fa";
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const EditProfile = () => {
-  
   const { mutate } = useSWRConfig();
   const { user } = useFirebase();
-  const[loading,setLoading]=useState(false)
-  const[userImg,setUserImg]=useState("")
+  const [loading, setLoading] = useState(false);
+  const [userImg, setUserImg] = useState("");
   const [userInfo, setUserInfo] = useState({
     file: [],
   });
@@ -30,44 +29,41 @@ const EditProfile = () => {
   };
 
   const submit = async () => {
-    setLoading(true)
+    setLoading(true);
     const formData = new FormData();
     formData.append("image", userInfo.file);
-    axios.post("https://api.imgbb.com/1/upload?key=573a29fff78ba91d05a36baad90b31d9",
-        formData,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      )
+    axios
+      .post("https://api.imgbb.com/1/upload?key=573a29fff78ba91d05a36baad90b31d9", formData, {
+        headers: { "Content-Type": "application/json" },
+      })
       .then(res => {
         // console.log(res.data);
         const imageLink = res.data?.data?.display_url;
-        setUserImg(imageLink)
+        setUserImg(imageLink);
         axios
           .post("https://mr-travel-server.onrender.com/profile-edit", {
             imageLink: imageLink,
             email: user.email,
           })
-      
+
           .then(() => {
             // here use useSWR methods
             mutate(`https://mr-travel-server.onrender.com/user/${user.email}`);
           })
-          .catch(err=>{
+          .catch(err => {
             console.log(err);
-            setLoading(false)
-          })
+            setLoading(false);
+          });
       })
-      .catch(err=>{
+      .catch(err => {
         console.log(err);
-        setLoading(false)
+        setLoading(false);
       })
-      .finally(()=>{
-        setLoading(false)
-      })
+      .finally(() => {
+        setLoading(false);
+      });
     // console.log("Click");
   };
-
 
   return (
     <div>
@@ -81,35 +77,37 @@ const EditProfile = () => {
           <h5 className="mb-5">Personal Information :</h5>
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
-            <>
-            {/* here use loading animation */}
-            {!loading ?
-              <>{userImg || data[0]?.imageLink ? (
-              <img  src={userImg ? userImg :  data?.[0]?.imageLink } alt="img" />
-            ) : (
-              <FaUserCircle className="fs-1" />
-            )}
-            </>
-             : 
-             <Box sx={{ display: 'flex' }}>
-               <CircularProgress />
-             </Box>
-          }
-                
+              <>
+         {/* here use loading animation */}
+                {!loading ? (
+                  <>
+                    {userImg || data[0]?.imageLink ? (
+                      <img src={userImg ? userImg : data?.[0]?.imageLink} alt="img" />
+                    ) : (
+                      <FaUserCircle className="fs-1" />
+                    )}
+                  </>
+                ) : (
+                  <Box sx={{ display: "flex" }}>
+                    <CircularProgress />
+                  </Box>
+                )}
               </>
-             
             </div>
             <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center border p-3">
-             
               <div>
-              
                 <input required onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
-              <button disabled={loading} onClick={() => submit()} type="submit" className="save-btn ">
+                <button
+                  disabled={loading}
+                  onClick={() => submit()}
+                  type="submit"
+                  className="save-btn "
+                >
                   <BsSaveFill /> Upload
-               </button>
-               {/* {!loading ?  <button disabled={loading} onClick={() => submit()} type="submit" className="save-btn ">
+                </button>
+                {/* {!loading ?  <button disabled={loading} onClick={() => submit()} type="submit" className="save-btn ">
                   <BsSaveFill /> Upload
                 </button>: 
                 <div className="spinner-border" role="status">
