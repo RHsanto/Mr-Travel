@@ -15,7 +15,7 @@ const EditProfile = () => {
   const { mutate } = useSWRConfig();
   const { user } = useFirebase();
   const[loading,setLoading]=useState(false)
-  const[imglink,setImglink]=useState("")
+  const[userImg,setUserImg]=useState("")
   const [userInfo, setUserInfo] = useState({
     file: [],
   });
@@ -41,7 +41,7 @@ const EditProfile = () => {
       .then(res => {
         console.log(res.data);
         const imageLink = res.data?.data?.display_url;
-        setImglink(imageLink)
+        setUserImg(imageLink)
         axios
           .post("https://mr-travel-server.onrender.com/profile-edit", {
             imageLink: imageLink,
@@ -81,8 +81,8 @@ const EditProfile = () => {
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
             <>
-                {imglink || data[0]?.imageLink ? (
-                  <img  src={imglink ? imglink :  data?.[0]?.imageLink } alt="img" />
+                {userImg || data[0]?.imageLink ? (
+                  <img  src={userImg ? userImg :  data?.[0]?.imageLink } alt="img" />
                 ) : (
                   <FaUserCircle className="fs-1" />
                 )}
