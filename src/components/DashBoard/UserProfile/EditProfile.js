@@ -18,17 +18,28 @@ const EditProfile = () => {
   const { user } = useFirebase();
   const [loading, setLoading] = useState(false);
   const [userImg, setUserImg] = useState("");
-  const [userInfo, setUserInfo] = useState({file: [],});
-  
+  const [userInfo, setUserInfo] = useState({ file: [] });
+
   //here react hook from
-  const { register, handleSubmit, reset  } = useForm();
-  const onSubmit = data =>{ 
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = data => {
     // // data.email=user.email
     // console.log(data)
-    axios.post(`http://localhost:8000/edit-user/${user.email}` ,data,{
-
-    }).then(res => {
+    axios.post(`http://localhost:8000/edit-user/${user.email}`, data, {}).then(res => {
       // console.log(res.data);
+      if (!res?.data?.success) {
+        toast.error("🦄 Wow so easy!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+
       if (res?.data?.success) {
         toast.success("Edit Profile Successful", {
           position: "top-center",
@@ -43,8 +54,8 @@ const EditProfile = () => {
       }
     });
   };
-  
-//  useSwr fetching
+
+  //  useSwr fetching
   const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
   const handleImgUpload = event => {
@@ -104,7 +115,7 @@ const EditProfile = () => {
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
               <>
-         {/* here use loading animation */}
+                {/* here use loading animation */}
                 {!loading ? (
                   <>
                     {userImg || data?.[0]?.imageLink ? (
@@ -114,15 +125,14 @@ const EditProfile = () => {
                     )}
                   </>
                 ) : (
-                //  loading spinner
-                    <CircularProgress />
-                 
+                  //  loading spinner
+                  <CircularProgress />
                 )}
               </>
             </div>
             <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center border p-3">
               <div>
-                <input  onChange={handleImgUpload} type="file" name="upload-img" id="" />
+                <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
                 <button
@@ -136,9 +146,9 @@ const EditProfile = () => {
               </div>
             </div>
           </div>
-  {/*edit form */}
-      {/*Basic Info  */}
-      <form onSubmit={handleSubmit(onSubmit)} className="edit-form">
+          {/*edit form */}
+          {/*Basic Info  */}
+          <form onSubmit={handleSubmit(onSubmit)} className="edit-form">
             <h5 className="mb-5 fw-bold">Basic Info :</h5>
             <div className="d-flex">
               <div className="from-one w-50">
@@ -147,7 +157,7 @@ const EditProfile = () => {
                     First Name
                   </label>
                   <input
-                  {...register("FirstName")}
+                    {...register("FirstName")}
                     type="text"
                     className="form-control"
                     id="exampleFormControlInput1"
@@ -159,7 +169,7 @@ const EditProfile = () => {
                     Your email
                   </label>
                   <input
-                  {...register("NewEmail")}
+                    {...register("NewEmail")}
                     type="email"
                     className="form-control"
                     id="exampleFormControlInput2"
@@ -171,7 +181,7 @@ const EditProfile = () => {
                     Phone
                   </label>
                   <input
-                  {...register("PhoneNumber")}
+                    {...register("PhoneNumber")}
                     type="number"
                     className="form-control"
                     id="exampleFormControlInput2"
@@ -185,7 +195,7 @@ const EditProfile = () => {
                     Last Name
                   </label>
                   <input
-                  {...register("LastName")}
+                    {...register("LastName")}
                     type="text"
                     className="form-control"
                     id="exampleFormControlInput4"
@@ -197,7 +207,7 @@ const EditProfile = () => {
                     Address
                   </label>
                   <input
-                  {...register("Address")}
+                    {...register("Address")}
                     type="text"
                     className="form-control"
                     id="exampleFormControlInput5"
@@ -215,7 +225,7 @@ const EditProfile = () => {
                     National ID
                   </label>
                   <input
-                   {...register("NationalID")}
+                    {...register("NationalID")}
                     type="number"
                     className="form-control"
                     id="exampleFormControlInput2"
@@ -226,7 +236,11 @@ const EditProfile = () => {
                   <label htmlFor="exampleFormControlInput3" className="form-label">
                     Gender
                   </label>
-                  <select  {...register("Gender")} className="form-select" aria-label="Default select example">
+                  <select
+                    {...register("Gender")}
+                    className="form-select"
+                    aria-label="Default select example"
+                  >
                     <option value>Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -239,7 +253,7 @@ const EditProfile = () => {
                     Passport Number
                   </label>
                   <input
-                  {...register("PassportNo")}
+                    {...register("PassportNo")}
                     type="text"
                     className="form-control"
                     id="exampleFormControlInput4"
@@ -251,7 +265,11 @@ const EditProfile = () => {
                   <label htmlFor="exampleFormControlInput3" className="form-label">
                     Marital Status
                   </label>
-                  <select  {...register("MaritalStatus")} className="form-select" aria-label="Default select example">
+                  <select
+                    {...register("MaritalStatus")}
+                    className="form-select"
+                    aria-label="Default select example"
+                  >
                     <option value="Single">Select </option>
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
@@ -261,17 +279,29 @@ const EditProfile = () => {
             </div>
 
             <button type="submit" className="save-btn mt-5">
-            <ToastContainer
-                          position="top-right"
-                          autoClose={5000}
-                          hideProgressBar={false}
-                          newestOnTop={false}
-                          closeOnClick
-                          rtl={false}
-                          pauseOnFocusLoss
-                          draggable
-                          pauseOnHover
-                        />
+              <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+              />
+              <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+              />
               <BsSaveFill /> Save
             </button>
           </form>
