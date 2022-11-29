@@ -124,7 +124,7 @@ const EditProfile = () => {
                     {userImg || data?.[0]?.imageLink ? (
                       <img src={userImg ? userImg : data?.[0]?.imageLink} alt="img" />
                     ) : (
-                      <FaUserCircle className="fs-1" />
+                      <FaUserCircle className="user-icons" />
                     )}
                   </>
                 ) : (
@@ -139,7 +139,7 @@ const EditProfile = () => {
               </div>
               <div>
                 <button
-                  disabled={loading || !userInfo.file?.length}
+                  // disabled={loading || !userInfo.file?.length}
                   onClick={() => submit()}
                   type="submit"
                   className="save-btn "

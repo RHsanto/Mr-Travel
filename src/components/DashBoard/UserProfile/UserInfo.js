@@ -17,7 +17,7 @@ const UserInfo = () => {
    fetchData();
   },[user.email]) 
 
-  console.log(userInfo?.[0]);
+  // console.log(userInfo?.[0]);
 
   return (
     <div className="user-info-section">
