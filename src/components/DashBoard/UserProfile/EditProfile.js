@@ -3,10 +3,10 @@ import React from "react";
 import { FiEdit } from "react-icons/fi";
 import { BsSaveFill } from "react-icons/bs";
 import { useState } from "react";
+import { FaUserCircle } from "react-icons/fa";
 import axios from "axios";
 import useFirebase from "../../../hooks/useFirebase";
 import useSWR, { useSWRConfig } from "swr";
-import { FaUserCircle } from "react-icons/fa";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -74,7 +74,7 @@ const EditProfile = () => {
           Edit Profile
         </h4>
         <div className="p-4 p-lg-5 card-item">
-          <h5 className="mb-5">Personal Information :</h5>
+          <h5 className="mb-5 fw-bold">Personal Information :</h5>
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
               <>
@@ -96,7 +96,7 @@ const EditProfile = () => {
             </div>
             <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center border p-3">
               <div>
-                <input required onChange={handleImgUpload} type="file" name="upload-img" id="" />
+                <input  onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
                 <button
@@ -107,17 +107,11 @@ const EditProfile = () => {
                 >
                   <BsSaveFill /> Upload
                 </button>
-                {/* {!loading ?  <button disabled={loading} onClick={() => submit()} type="submit" className="save-btn ">
-                  <BsSaveFill /> Upload
-                </button>: 
-                <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                </div>} */}
               </div>
             </div>
           </div>
-          {/*edit form */}
-          {/*Basic Info  */}
+  {/*edit form */}
+      {/*Basic Info  */}
           <div className="edit-form">
             <h5 className="mb-5 fw-bold">Basic Info :</h5>
             <div className="d-flex">
