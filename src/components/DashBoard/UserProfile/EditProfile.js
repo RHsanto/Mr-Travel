@@ -8,7 +8,6 @@ import axios from "axios";
 import useFirebase from "../../../hooks/useFirebase";
 import useSWR, { useSWRConfig } from "swr";
 import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const EditProfile = () => {
@@ -88,9 +87,9 @@ const EditProfile = () => {
                     )}
                   </>
                 ) : (
-                  <Box sx={{ display: "flex" }}>
+                //  loading spinner
                     <CircularProgress />
-                  </Box>
+                 
                 )}
               </>
             </div>
