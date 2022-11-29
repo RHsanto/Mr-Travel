@@ -23,9 +23,9 @@ const EditProfile = () => {
   //here react hook from
   const { register, handleSubmit, reset  } = useForm();
   const onSubmit = data =>{ 
-    // data.email=user.email
-    console.log(data)
-    axios.post(`http://localhost:8000/pro-user/${user.email}` ,data,{
+    // // data.email=user.email
+    // console.log(data)
+    axios.post(`http://localhost:8000/edit-user/${user.email}` ,data,{
 
     }).then(res => {
       // console.log(res.data);
