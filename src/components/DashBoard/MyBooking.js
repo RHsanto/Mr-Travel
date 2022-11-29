@@ -30,7 +30,7 @@ const MyBooking = () => {
         <div className="my-5">
           <div className="container ">
             <div>
-              {booking?.length === 0 ? (
+              {!booking?.length  ? (
                 <div className="text-center">
                   <h3 className="mb-5">Ooops. It's Empty </h3>
                   <img
