@@ -1,9 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import useFirebase from "../../../hooks/useFirebase";
 
 const UserInfo = () => {
   const { user } = useFirebase();
+  const[userInfo,setUserInfo]=useState([])
+
+  // here fetch user data
+  useEffect(()=>{
+   const fetchData = async ()=>{
+    const res = await axios.get(`https://mr-travel-server.onrender.com/user/${user.email}`)
+    setUserInfo(res.data)
+   };
+   fetchData();
+  },[user.email]) 
+
+  console.log(userInfo?.[0]);
 
   return (
     <div className="user-info-section">
@@ -19,16 +33,20 @@ const UserInfo = () => {
               <p>Gender </p>
               <p>Marital Status </p>
               <p>National ID </p>
+              <p>Passport No </p>
             </div>
 
-            <div className="personal-item-result fw-bold ms-5 w-75">
-              <p className="item-result">{user?.displayName}</p>
-              <p className="item-result">{user?.email}</p>
-              <p className="item-result">N/A</p>
-              <p className="item-result">N/A</p>
-              <p className="item-result">N/A</p>
-              <p className="item-result">N/A</p>
-              <p className="item-result">N/A</p>
+            <div className="personal-item-result text-dark ms-5 w-75">
+              <p className="item-result">{userInfo?.[0]?.FirstName ? <>{userInfo?.[0]?.FirstName }{userInfo?.[0]?.LastName }
+              </>:<>{user?.displayName}</>}</p>
+              <p className="item-result">{userInfo?.[0]?.NewEmail ?  userInfo?.[0]?.NewEmail :<>{user?.email}</>}</p>
+               <p className="item-result">{userInfo?.[0]?.Address ? userInfo?.[0]?.Address : "N/A"} </p>
+              <p className="item-result">{userInfo?.[0]?.PhoneNumber ? userInfo?.[0]?.PhoneNumber : "N/A"} </p>
+              <p className="item-result">{userInfo?.[0]?.Gender ? userInfo?.[0]?.Gender : "N/A"} </p>
+              <p className="item-result">{userInfo?.[0]?.MaritalStatus ? userInfo?.[0]?.MaritalStatus : "N/A"} </p>
+              <p className="item-result">{userInfo?.[0]?.NationalID ? userInfo?.[0]?.NationalID : "N/A"} </p>
+              <p className="item-result">{userInfo?.[0]?.PassportNo ? userInfo?.[0]?.PassportNo : "N/A"} </p>
+      
             </div>
           </div>
         </div>

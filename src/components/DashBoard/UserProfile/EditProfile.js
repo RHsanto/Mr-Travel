@@ -244,7 +244,7 @@ const EditProfile = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                    <option value>Select Gender</option>
+                   
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                   </select>
@@ -273,7 +273,7 @@ const EditProfile = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                    <option value="Single">Select </option>
+                    
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
                   </select>

@@ -7,8 +7,8 @@
 }
 
 /* user Profile section */
-.user-icon{
-  font-size: 90px;
+.user-icons{
+  font-size: 100px;
 }
 .profile-title{
   background-color: #396cf0;
@@ -53,6 +53,12 @@
   align-items: center;
   text-align: start;
   margin-bottom: 20px;
+  font-weight: bold;
+  color: #0244eb;
+  
+}
+.personal-item-result p{
+
 }
 .all-item p{
   border-bottom: 1px solid #959697;
