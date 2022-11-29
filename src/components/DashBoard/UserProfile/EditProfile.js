@@ -26,7 +26,7 @@ const EditProfile = () => {
     // // data.email=user.email
     // console.log(data)
     axios.post(`http://localhost:8000/edit-user/${user.email}`, data, {}).then(res => {
-      // console.log(res.data);
+      // here show error msg
       if (!res?.data?.success) {
         toast.error("🦄 Wow so easy!", {
           position: "top-center",
@@ -40,6 +40,7 @@ const EditProfile = () => {
         });
       }
 
+// here show success msg
       if (res?.data?.success) {
         toast.success("Edit Profile Successful", {
           position: "top-center",
@@ -58,6 +59,7 @@ const EditProfile = () => {
   //  useSwr fetching
   const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
+  // here use image upload formula
   const handleImgUpload = event => {
     setUserInfo({
       ...userInfo,
@@ -65,6 +67,7 @@ const EditProfile = () => {
     });
   };
 
+// here img upload button 
   const submit = async () => {
     setLoading(true);
     const formData = new FormData();
@@ -279,6 +282,7 @@ const EditProfile = () => {
             </div>
 
             <button type="submit" className="save-btn mt-5">
+              {/* success animation */}
               <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -290,6 +294,7 @@ const EditProfile = () => {
                 draggable
                 pauseOnHover
               />
+               {/* error animation */}
               <ToastContainer
                 position="top-center"
                 autoClose={5000}
