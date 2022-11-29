@@ -7,7 +7,8 @@ import axios from "axios";
 import useFirebase from "../../../hooks/useFirebase";
 import useSWR, { useSWRConfig } from "swr";
 import { FaUserCircle } from "react-icons/fa";
-
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const EditProfile = () => {
@@ -39,7 +40,7 @@ const EditProfile = () => {
         }
       )
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         const imageLink = res.data?.data?.display_url;
         setUserImg(imageLink)
         axios
@@ -81,22 +82,39 @@ const EditProfile = () => {
           <div className="user-image-item mb-5 d-lg-flex d-block justify-content-between ">
             <div className="user-img ">
             <>
-                {userImg || data[0]?.imageLink ? (
-                  <img  src={userImg ? userImg :  data?.[0]?.imageLink } alt="img" />
-                ) : (
-                  <FaUserCircle className="fs-1" />
-                )}
+            {/* here use loading animation */}
+            {!loading ?
+              <>{userImg || data[0]?.imageLink ? (
+              <img  src={userImg ? userImg :  data?.[0]?.imageLink } alt="img" />
+            ) : (
+              <FaUserCircle className="fs-1" />
+            )}
+            </>
+             : 
+             <Box sx={{ display: 'flex' }}>
+               <CircularProgress />
+             </Box>
+          }
+                
               </>
-              {/* <img src={imglink} alt="" /> */}
+             
             </div>
             <div className="upload-items mt-5 mt-lg-0 d-lg-flex d-block align-items-center border p-3">
+             
               <div>
-                <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
+              
+                <input required onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
-               {!loading ?  <button disabled={loading} onClick={() => submit()} type="submit" className="save-btn ">
+              <button disabled={loading} onClick={() => submit()} type="submit" className="save-btn ">
                   <BsSaveFill /> Upload
-                </button>: <>Loading....</>}
+               </button>
+               {/* {!loading ?  <button disabled={loading} onClick={() => submit()} type="submit" className="save-btn ">
+                  <BsSaveFill /> Upload
+                </button>: 
+                <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                </div>} */}
               </div>
             </div>
           </div>
