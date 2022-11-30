@@ -25,7 +25,7 @@ const UserInfo = () => {
         <h4 className=" profile-title text-center">Personal Info </h4>
         <div className="card-item p-4 mt-5">
           <div className="all-item ps-3">
-            <div className="personal-item ">
+            <div className="personal-item fw-bold">
               <p>Name </p>
               <p>Email </p>
               <p>Address </p>
