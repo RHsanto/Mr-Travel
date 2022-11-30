@@ -18,6 +18,7 @@ const EditProfile = () => {
   const { user } = useFirebase();
   const [loading, setLoading] = useState(false);
   const [userImg, setUserImg] = useState("");
+  const [count, setCount] = useState("");
   const [userInfo, setUserInfo] = useState({ file: [] });
 
   //here react hook from
@@ -65,8 +66,10 @@ const EditProfile = () => {
       ...userInfo,
       file: event.target.files[0],
     });
+    
+    setCount(event.target.files?.length);
   };
-
+console.log(count);
 // here img upload button 
   const submit = async () => {
     setLoading(true);
@@ -139,7 +142,7 @@ const EditProfile = () => {
               </div>
               <div>
                 <button
-                  // disabled={loading || !userInfo.file?.length}
+                  // disabled={(count == 0 ? "disabled": loading )}
                   onClick={() => submit()}
                   type="submit"
                   className="save-btn "
