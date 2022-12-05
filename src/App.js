@@ -21,6 +21,7 @@ import UserProfile from "./components/DashBoard/UserProfile/UserProfile";
 import AdminDash from "./components/DashBoard/AdminDashboard/AdminDash";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Triangle } from "react-loader-spinner";
 
 
 function App() {
@@ -30,12 +31,21 @@ function App() {
     setLoading(true)
     setTimeout(()=>{
       setLoading(false)
-    },2000)
+    },12000)
   },[])
 
   return (
     <div className="App">
-      {loading ? <div>Loading...</div> :
+      {loading ? 
+      <div className="d-flex justify-content-center align-items-center ">
+<Triangle
+  height="1000"
+  width="150"
+  color="#396cf0"
+  ariaLabel="triangle-loading"
+  visible={true}
+/>
+      </div> :
 
       <>
       <BrowserRouter>
