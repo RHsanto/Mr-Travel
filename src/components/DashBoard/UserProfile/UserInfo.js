@@ -36,7 +36,7 @@ const UserInfo = () => {
               <p>Passport No </p>
             </div>
 
-            <div className="personal-item-result text-dark ms-5 w-75">
+            <div className="personal-item-result  text-dark ms-5 w-75">
               <p className="item-result">{userInfo?.[0]?.FirstName ? <>{userInfo?.[0]?.FirstName }{userInfo?.[0]?.LastName }
               </>:<>{user?.displayName}</>}</p>
               <p className="item-result">{userInfo?.[0]?.NewEmail ?  userInfo?.[0]?.NewEmail :<>{user?.email}</>}</p>
