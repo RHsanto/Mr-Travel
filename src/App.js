@@ -19,11 +19,25 @@ import AddBooking from "./components/AddBookings/AddBooking";
 import Payment from "./components/DashBoard/Payment/Payment";
 import UserProfile from "./components/DashBoard/UserProfile/UserProfile";
 import AdminDash from "./components/DashBoard/AdminDashboard/AdminDash";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 function App() {
+  const [loading , setLoading]= useState(false) ;
+
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },2000)
+  },[])
+
   return (
     <div className="App">
+      {loading ? <div>Loading...</div> :
+
+      <>
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
@@ -44,7 +58,9 @@ function App() {
           <Route path="/payment/:id" element={<Payment />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
+      <Footer /></>
+      
+    }
     </div>
   );
 }
