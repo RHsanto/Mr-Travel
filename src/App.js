@@ -23,54 +23,53 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Triangle } from "react-loader-spinner";
 
-
 function App() {
-  const [loading , setLoading]= useState(false) ;
+  const [loading, setLoading] = useState(false);
 
-  useEffect(()=>{
-    setLoading(true)
-    setTimeout(()=>{
-      setLoading(false)
-    },12000)
-  },[])
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 12000);
+  }, []);
 
   return (
     <div className="App">
-      {loading ? 
-      <div className="d-flex justify-content-center align-items-center ">
-<Triangle
-  height="1000"
-  width="150"
-  color="#396cf0"
-  ariaLabel="triangle-loading"
-  visible={true}
-/>
-      </div> :
-
-      <>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/flight" element={<FlightSearch />} />
-          <Route path="/hotel" element={<HotelSearch />} />
-          <Route path="/tour" element={<TourSearch />} />
-          <Route path="/bus" element={<BusSearch />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/my-booking" element={<MyBooking />} />
-          <Route path="/admin-dash" element={<AdminDash />} />
-          <Route path="/User-Profile" element={<UserProfile />} />
-          <Route path="/offers/:id" element={<OffersDetails />} />
-          <Route path="/tours/:id" element={<TourDetails />} />
-          <Route path="/flights/:id" element={<FlightDetails />} />
-          <Route path="/bus/:id" element={<BusDetails />} />
-          <Route path="/booking/:id" element={<AddBooking />} />
-          <Route path="/payment/:id" element={<Payment />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer /></>
-      
-    }
+      {loading ? (
+        <div className="d-flex justify-content-center align-items-center ">
+          <Triangle
+            height="1000"
+            width="150"
+            color="#396cf0"
+            ariaLabel="triangle-loading"
+            visible={true}
+          />
+        </div>
+      ) : (
+        <>
+          <BrowserRouter>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="/flight" element={<FlightSearch />} />
+              <Route path="/hotel" element={<HotelSearch />} />
+              <Route path="/tour" element={<TourSearch />} />
+              <Route path="/bus" element={<BusSearch />} />
+              <Route path="/sign-in" element={<SignIn />} />
+              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/my-booking" element={<MyBooking />} />
+              <Route path="/admin-dash" element={<AdminDash />} />
+              <Route path="/User-Profile" element={<UserProfile />} />
+              <Route path="/offers/:id" element={<OffersDetails />} />
+              <Route path="/tours/:id" element={<TourDetails />} />
+              <Route path="/flights/:id" element={<FlightDetails />} />
+              <Route path="/bus/:id" element={<BusDetails />} />
+              <Route path="/booking/:id" element={<AddBooking />} />
+              <Route path="/payment/:id" element={<Payment />} />
+            </Routes>
+          </BrowserRouter>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
