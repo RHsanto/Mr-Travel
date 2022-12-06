@@ -4,6 +4,7 @@ import useFirebase from "../../hooks/useFirebase";
 import { Link } from "react-router-dom";
 import { GiCommercialAirplane, GiPalmTree } from "react-icons/gi";
 import { RiHotelFill } from "react-icons/ri";
+import { MdAdminPanelSettings } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { FaUserCircle, FaBus, FaUserAlt, FaTags } from "react-icons/fa";
@@ -79,7 +80,7 @@ const Navbar = () => {
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <span>
                     <Link to="/admin-dash" className=" dropdown-item">
-                      <FaUserAlt className="me-1" /> Admin Dashboard
+                      <MdAdminPanelSettings className="me-1" /> Admin Dashboard
                     </Link>
                   </span>
                   <span>

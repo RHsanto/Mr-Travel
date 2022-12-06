@@ -8,6 +8,7 @@ import { FiLogOut, FiLogIn } from "react-icons/fi";
 import { FaUserCircle, FaTags, FaUserAlt } from "react-icons/fa";
 import logos from "../../../images/t-logo.png";
 import useSWR from "swr";
+import { MdAdminPanelSettings } from "react-icons/md";
 
 //  use useSwr fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -18,6 +19,7 @@ const Banner = () => {
 
   return (
     <div className="banner-section">
+      
       <header>
         <div className="container pt-3  d-flex justify-content-between align-items-center">
           <div className="logo">
@@ -50,10 +52,11 @@ const Banner = () => {
                   >
                     <IoIosArrowDown className=" fw-bold fs-5" />
                   </div>
+                  
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <span>
                       <Link to="/admin-dash" className=" dropdown-item">
-                        <FaUserAlt className="me-1" /> Admin Dashboard
+                        <MdAdminPanelSettings className="me-1 fs-4" /> Admin Dashboard
                       </Link>
                     </span>
                     <span>
