@@ -34,7 +34,7 @@ const Banner = () => {
 
           {/* here use login functionality */}
           <div className="d-flex align-items-center">
-            {data?.[0]?.role ? (
+            {user?.email ? (
               <>
                 <>
                   {data?.[0]?.imageLink ? (

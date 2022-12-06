@@ -54,6 +54,8 @@ a {
 .dropdown-item {
   padding: 12px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .dropdown-item:hover{
   background-color: #0a58ca;
