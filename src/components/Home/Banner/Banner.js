@@ -19,7 +19,6 @@ const Banner = () => {
 
   return (
     <div className="banner-section">
-      
       <header>
         <div className="container pt-3  d-flex justify-content-between align-items-center">
           <div className="logo">
@@ -52,7 +51,7 @@ const Banner = () => {
                   >
                     <IoIosArrowDown className=" fw-bold fs-5" />
                   </div>
-                  
+
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <span>
                       <Link to="/admin-dash" className=" dropdown-item">
