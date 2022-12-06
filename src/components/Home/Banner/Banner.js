@@ -15,6 +15,7 @@ const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const Banner = () => {
   const { user, logOut } = useFirebase();
+  
   const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
   return (

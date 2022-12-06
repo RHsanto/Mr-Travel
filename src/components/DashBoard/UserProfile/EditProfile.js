@@ -24,10 +24,8 @@ const EditProfile = () => {
   //here react hook from
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
-    // // data.email=user.email
-    // console.log(data)
-    axios.post(`https://mr-travel-server.onrender.com/edit-user/${user.email}`, data, {}).then(res => {
-      // here show error msg
+    axios.post(`https://mr-travel-server.onrender.com/edit-user/${user.email}`, data).then(res => {
+ // here show error msg
       if (!res?.data?.success) {
         toast.error("🦄 Wow so easy!", {
           position: "top-center",
