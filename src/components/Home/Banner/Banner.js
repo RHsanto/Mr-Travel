@@ -18,6 +18,7 @@ const Banner = () => {
   
   const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
+  // console.log(data?.[0]?.role);
   return (
     <div className="banner-section">
       <header>
@@ -33,7 +34,7 @@ const Banner = () => {
 
           {/* here use login functionality */}
           <div className="d-flex align-items-center">
-            {user.email ? (
+            {data?.[0]?.role ? (
               <>
                 <>
                   {data?.[0]?.imageLink ? (
@@ -54,11 +55,12 @@ const Banner = () => {
                   </div>
 
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    {data?.[0]?.role === 'user' ? "" :
                     <span>
-                      <Link to="/admin-dash" className=" dropdown-item">
-                        <MdAdminPanelSettings className="me-1 fs-4" /> Admin Dashboard
-                      </Link>
-                    </span>
+                    <Link to="/admin-dash" className=" dropdown-item">
+                      <MdAdminPanelSettings className="me-1 fs-4" /> Admin Dashboard
+                    </Link>
+                  </span>}
                     <span>
                       <Link to="/user-profile" className=" dropdown-item">
                         <FaUserAlt className="me-1" /> Profile
@@ -88,12 +90,11 @@ const Banner = () => {
           </div>
         </div>
       </header>
-      {/* add search section */}
-
+ {/* add search section */}
       <SearchResult />
     </div>
   );
 };
 
 export default Banner;
-// https://api.imgbb.com/1/upload?expiration=600&key=573a29fff78ba91d05a36baad90b31d9
+
