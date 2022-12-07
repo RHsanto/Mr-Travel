@@ -3,7 +3,6 @@ import { MdOutlineDashboard } from 'react-icons/md';
 import { BsBookmarkStarFill } from 'react-icons/bs';
 import { RiPaypalFill } from 'react-icons/ri';
 import { FaUsers,FaStarHalfAlt,FaServicestack ,FaLayerGroup} from 'react-icons/fa';
-import  './Admin.css'
 import MainDashboard from './MainDashboard'
 import Categories from './Catergories'
 import Services from './Services'
@@ -11,6 +10,7 @@ import BookingList from './BookingList'
 import Payments from './Payments'
 import Ratings from './Ratings'
 import AllUser from './AllUser'
+import  './Admin.css'
 
 const AdminDash = () => {
   const [dashList,setDashList] = useState(<MainDashboard/>)
