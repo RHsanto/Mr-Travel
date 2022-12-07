@@ -10,16 +10,22 @@ import axios from "axios";
 import Rating from "react-rating";
 import "./offer.css";
 import Navbar from "../../common/Navbar";
+import useFirebase from "../../../hooks/useFirebase";
 
 const OffersDetails = () => {
+  const {user}=useFirebase();
   const { id } = useParams();
   const [offer, setOffer] = useState([]);
   const sum = parseFloat(offer?.price) + parseFloat(offer?.service) + parseFloat(offer?.tax);
+// here pick booking date
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
   useEffect(() => {
     fetch(`  https://mr-travel-server.onrender.com/offers/${id}`)
       .then(response => response.json())
       .then(data => setOffer(data));
-  });
+  },[id]);
 
   // react hook form
   const { register, handleSubmit, reset } = useForm();
@@ -33,6 +39,7 @@ const OffersDetails = () => {
     data.room = offer.room;
     data.guest = offer.guest;
     data.sum = sum;
+    data.bookingDate=date;
 
     axios.post("  https://mr-travel-server.onrender.com/booking", data).then(res => {
       if (res.data.insertedId) {
@@ -305,6 +312,8 @@ const OffersDetails = () => {
                         className="form-control"
                         id="floatingInput"
                         placeholder="Email"
+                        value={user?.email}
+                        disabled
                       />
                       <label htmlFor="floatingInput">Email</label>
                     </div>
