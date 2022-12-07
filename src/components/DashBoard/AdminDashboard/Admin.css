@@ -9,4 +9,16 @@ background-color: #F5F5F5;
   margin-bottom: 5px;
   font-size: 17px;
 }
+/* admin-field css */
+.admin-field{
+  border-radius: 10px;
+}
+/* Main dashboard css */
 
+.dashboard-header{
+  background-color: white;
+  margin: 20px 10px;
+  padding: 10px;
+  border-radius: 10px;
+
+}
