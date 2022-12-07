@@ -13,7 +13,7 @@ const MainDashboard = () => {
   const [booking, setBooking] = useState([]);
 
   useEffect(() => {
-    fetch(` https://mr-travel-server.onrender.com/booking/${user?.email}`)
+    fetch("https://mr-travel-server.onrender.com/booking")
       .then(res => res.json())
       .then(data => setBooking(data));
   }, [user?.email]);
@@ -92,7 +92,7 @@ const MainDashboard = () => {
                   <tbody>
                     {booking.map(data => (
                       <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">{data?.firstName}</th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
