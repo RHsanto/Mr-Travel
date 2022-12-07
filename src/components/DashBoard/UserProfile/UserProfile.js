@@ -53,7 +53,6 @@ const UserProfile = () => {
                   <div className="edit-item mt-3">
                     <li onClick={handlePersonalInfo} className=" dropdown-item">
                       <FaUserAlt className="me-2" />
-
                       <span>Personal Info</span>
                     </li>
 
