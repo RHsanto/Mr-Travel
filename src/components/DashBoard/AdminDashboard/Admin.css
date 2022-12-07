@@ -44,6 +44,7 @@
   padding: 20px 0;
   background-color: white;
   overflow-y: scroll;
+
 }
 .table>:not(:last-child)>:last-child>*, .table>:not(caption)>*>*{
   padding:15px 25px;
