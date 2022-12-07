@@ -22,3 +22,24 @@ background-color: #F5F5F5;
   border-radius: 10px;
 
 }
+
+.admin-card{
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: white;
+border-radius: 10px;
+padding: 24px;
+
+
+}
+
+.admin-icons{
+  width: 75px;
+  height: 75px;
+  padding: 15px;
+  background-color: #0A58CA;
+  color: white;
+  border-radius: 10px;
+ 
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MdOutlineDashboard } from 'react-icons/md';
 import { BsBookmarkStarFill } from 'react-icons/bs';
 import { RiPaypalFill } from 'react-icons/ri';
-import { FaUsers,FaStarHalfAlt,FaServicestack ,FaLayerGroup} from 'react-icons/fa';
+import { FaUsers,FaStarHalfAlt ,FaLayerGroup, FaQrcode} from 'react-icons/fa';
 import MainDashboard from './MainDashboard'
 import Categories from './Catergories'
 import Services from './Services'
@@ -54,7 +54,7 @@ const AdminDash = () => {
             <div className="admin-menu">
               <li onClick={handleDashboard} className='dropdown-item'><MdOutlineDashboard className='me-2'/> Dashboard</li>
               <li onClick={handleCategories} className='dropdown-item'><FaLayerGroup className='me-2'/> Categories</li>
-              <li onClick={handleServices} className='dropdown-item'><FaServicestack className='me-2'/> Services</li>
+              <li onClick={handleServices} className='dropdown-item'><FaQrcode className='me-2'/> Services</li>
               <li onClick={handleBookingList} className='dropdown-item'><BsBookmarkStarFill className='me-2'/> Booking List</li>
               <li onClick={handlePayments} className='dropdown-item'><RiPaypalFill className='me-2'/> Payments</li>
               <li onClick={handleRatings} className='dropdown-item'><FaStarHalfAlt className='me-2'/> Ratings</li>
