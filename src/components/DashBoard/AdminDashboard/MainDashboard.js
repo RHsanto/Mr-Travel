@@ -20,60 +20,102 @@ const MainDashboard = () => {
 
   return (
     <div>
-      <AdminDashHeader/>
+      <AdminDashHeader />
       <div className="p-3">
         <h2>Welcome Admin!</h2>
+        {/* here admin header info */}
         <div className="container-fluid px-0">
-          <div className="row g-4 mt-4">
+          <div className="row g-4 my-4">
             <div className="col-lg-3">
               <div className="admin-card shadow">
-              <div>
-                <FaRegUser className="admin-icons"/>
+                <div>
+                  <FaRegUser className="admin-icons" />
+                </div>
+                <div className="text-end">
+                  <h6>145</h6>
+                  <h4>User</h4>
+                </div>
               </div>
-              <div className="text-end">
-                <h6>145</h6>
-                <h4>User</h4>
-              </div>
-              </div>
-              
             </div>
             <div className="col-lg-3">
               <div className="admin-card shadow">
-              <div>
-                <FaQrcode className="admin-icons"/>
+                <div>
+                  <FaQrcode className="admin-icons" />
+                </div>
+                <div className="text-end">
+                  <h6>145</h6>
+                  <h4>Services</h4>
+                </div>
               </div>
-              <div className="text-end">
-                <h6>145</h6>
-                <h4>Services</h4>
-              </div>
-              </div>
-              
             </div>
             <div className="col-lg-3">
               <div className="admin-card shadow">
-              <div>
-                <BsBookmarkStarFill className="admin-icons"/>
+                <div>
+                  <BsBookmarkStarFill className="admin-icons" />
+                </div>
+                <div className="text-end">
+                  <h6>145</h6>
+                  <h4>Booking</h4>
+                </div>
               </div>
-              <div className="text-end">
-                <h6>145</h6>
-                <h4>Booking</h4>
-              </div>
-              </div>
-              
             </div>
             <div className="col-lg-3">
               <div className="admin-card shadow">
-              <div>
-                <RiPaypalFill className="admin-icons"/>
+                <div>
+                  <RiPaypalFill className="admin-icons" />
+                </div>
+                <div className="text-end">
+                  <h6>145</h6>
+                  <h4>Payment</h4>
+                </div>
               </div>
-              <div className="text-end">
-                <h6>145</h6>
-                <h4>Payment</h4>
-              </div>
-              </div>
-              
             </div>
-           
+          </div>
+        </div>
+        {/* here booking and payment table */}
+        <div className="container-fluid px-1 mt-5">
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="booking-table shadow rounded">
+                <h4 className="table-title ps-4">Recent Booking</h4>
+                <hr />
+                <table className="table ">
+                  <thead >
+                    <tr >
+                      <th scope="col">Clients</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Service</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="payment-table">
+                <h2>hviohioph</h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
