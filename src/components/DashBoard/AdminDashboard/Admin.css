@@ -45,6 +45,7 @@
   background-color: white;
 }
 .table>:not(:last-child)>:last-child>*, .table>:not(caption)>*>*{
-  padding-left: 25px;
+  padding:15px 25px;
+  
 }
 

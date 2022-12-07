@@ -11,6 +11,10 @@ import Rating from "react-rating";
 import "./offer.css";
 import Navbar from "../../common/Navbar";
 import useFirebase from "../../../hooks/useFirebase";
+import useSWR from "swr";
+
+//  use useSwr fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const OffersDetails = () => {
   const {user}=useFirebase();
@@ -20,7 +24,11 @@ const OffersDetails = () => {
 // here pick booking date
   const current = new Date();
   const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+ 
+  // here get user info
+  const { data:userData} = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
+// console.log(userData?.[0]?.imageLink);
   useEffect(() => {
     fetch(`  https://mr-travel-server.onrender.com/offers/${id}`)
       .then(response => response.json())
@@ -40,6 +48,7 @@ const OffersDetails = () => {
     data.guest = offer.guest;
     data.sum = sum;
     data.bookingDate=date;
+    data.userImg= userData?.[0]?.imageLink
 
     axios.post("  https://mr-travel-server.onrender.com/booking", data).then(res => {
       if (res.data.insertedId) {
@@ -312,8 +321,8 @@ const OffersDetails = () => {
                         className="form-control"
                         id="floatingInput"
                         placeholder="Email"
-                        value={user?.email}
-                        disabled
+                        defaultValue={user?.email}
+                      
                       />
                       <label htmlFor="floatingInput">Email</label>
                     </div>

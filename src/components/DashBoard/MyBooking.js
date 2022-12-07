@@ -30,7 +30,7 @@ const MyBooking = () => {
         <div className="my-5">
           <div className="container ">
             <div>
-              {!booking?.length  ? (
+              {/* {!booking?.length  ? (
                 <div className="text-center">
                   <h3 className="mb-5">Ooops. It's Empty </h3>
                   <img
@@ -39,7 +39,7 @@ const MyBooking = () => {
                     alt=""
                   />
                 </div>
-              ) : (
+              ) : ( */}
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                   {booking.map(data => (
                     <div className="flight mt-3" key={data._id}>
@@ -103,7 +103,6 @@ const MyBooking = () => {
                     </div>
                   ))}
                 </div>
-              )}
             </div>
           </div>
         </div>
