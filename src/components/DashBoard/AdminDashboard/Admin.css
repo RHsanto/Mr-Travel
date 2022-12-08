@@ -56,4 +56,16 @@
   padding:15px 25px;
   
 }
+tr:hover{
+background-color: #ececec;
+cursor: pointer;
+}
 
+.view-btn{
+  color: #0570eb;
+  background-color: #0a57ca4b !important;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  width: 79px;
+}
