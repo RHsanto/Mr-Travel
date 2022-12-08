@@ -48,7 +48,8 @@ const OffersDetails = () => {
     data.guest = offer.guest;
     data.sum = sum;
     data.bookingDate=date;
-    data.userImg= userData?.[0]?.imageLink
+    data.userImg= userData?.[0]?.imageLink;
+    data.status ="pending";
 
     axios.post("  https://mr-travel-server.onrender.com/booking", data).then(res => {
       if (res.data.insertedId) {

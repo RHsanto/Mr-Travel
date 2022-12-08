@@ -12,7 +12,14 @@ import Navbar from "../common/Navbar";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import "./Details.css";
+import useFirebase from "../../hooks/useFirebase";
+import useSWR from "swr";
+
+//  use useSwr fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
+
 const TourDetails = () => {
+  const { user } = useFirebase();
   const { id } = useParams();
   const [tour, setTour] = useState([]);
   useEffect(() => {
@@ -20,7 +27,15 @@ const TourDetails = () => {
       .then(res => res.json())
       .then(data => setTour(data));
   });
+  // here pick booking date
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
+  // here get user info
+  const { data: userData } = useSWR(
+    `https://mr-travel-server.onrender.com/user/${user.email}`,
+    fetcher
+  );
   // react hook form
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
@@ -33,6 +48,9 @@ const TourDetails = () => {
     data.totalTime = tour.totalTime;
     data.member = tour.member;
     data.price = tour.price;
+    data.bookingDate = date;
+    data.userImg = userData?.[0]?.imageLink;
+    data.status = "pending";
 
     axios.post("  http://localhost:8000/booking", data).then(res => {
       if (res.data.insertedId) {
@@ -324,9 +342,7 @@ const TourDetails = () => {
                           {...register("traveler")}
                           aria-label="Floating label select example"
                         >
-                          <option value="1" >
-                            1
-                          </option>
+                          <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
                         </select>
