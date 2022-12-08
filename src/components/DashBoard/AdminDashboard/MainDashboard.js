@@ -134,7 +134,7 @@ const MainDashboard = () => {
             <div className="col">
               <div className="booking-table shadow rounded">
                 <h4 className="table-title ps-4">Recent Booking</h4>
-                <hr />
+                <hr  />
                 <table className="table ">
                   <thead>
                     <tr>
@@ -148,7 +148,14 @@ const MainDashboard = () => {
                   <tbody>
                     {bookingData?.map(data => (
                       <tr>
-                        <th scope="row">{data?.firstName}</th>
+                        <th >
+                          {data?.userImg ? 
+                          <img className="dash-img me-2" src={data?.userImg} alt="img" />
+                          :
+                          <FaUserCircle className="fs-1 me-2" />
+                        }
+                          {data?.firstName}
+                          </th>
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <td>{data?.types}</td>
                         <td>${data?.price || data?.sum}</td>
@@ -199,22 +206,29 @@ const MainDashboard = () => {
             <div className="col mt-5">
               <div className="booking-table shadow rounded">
                 <h4 className="table-title ps-4">Payments</h4>
-                <hr />
-                <table className="table ">
+                <hr  />
+                <table className="table">
                   <thead>
                     <tr>
-                      <th scope="col">Date</th>
                       <th scope="col">Clients</th>
+                      <th scope="col">Date</th>
                       <th scope="col">Service</th>
                       <th scope="col">Price</th>
                       <th scope="col">Status</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {bookingData.map(data => (
+                    {bookingData?.map(data => (
                       <tr>
+                          <th>
+                          {data?.userImg ? 
+                          <img className="dash-img me-2" src={data?.userImg} alt="img" />
+                          :
+                          <FaUserCircle className="fs-1 me-2" />
+                        }
+                          {data?.firstName}
+                          </th>
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
-                        <th scope="row">{data?.firstName}</th>
                         <td>{data?.types}</td>
                         <td>${data?.price || data?.sum}</td>
                         <td className="d-flex ">
