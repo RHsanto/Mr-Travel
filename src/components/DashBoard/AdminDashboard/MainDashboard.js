@@ -98,17 +98,25 @@ const MainDashboard = () => {
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <td>{data?.types}</td>
                         <td className="d-flex ">
-                          <h6 className="text-primary mb-3">pending...</h6>
-                          
-                            <button className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded">
+                          {data?.status === "pending" ? (
+                            <>
+                              <h6 className="text-primary mb-3">pending...</h6>
+                              {/* Approved btn */}
+                              <button className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded">
+                                <HiShieldCheck /> Approve
+                              </button>
+                              {/* Delete btn */}
+                              <button className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded">
+                                <AiTwotoneDelete className="me-1" />
+                                Delete
+                              </button>
+                            </>
+                          ) : (
+                            <h6 className="text-success mb-3">
+                              {" "}
                               <HiShieldCheck /> Approved
-                            </button>
-
-                            <button className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded">
-                              <AiTwotoneDelete className="me-1"/>
-                              Delete
-                            </button>
-                        
+                            </h6>
+                          )}
                         </td>
                         <td>${data?.price}</td>
                       </tr>
@@ -139,17 +147,26 @@ const MainDashboard = () => {
                         <td>{data?.types}</td>
                         <td>${data?.price}</td>
                         <td className="d-flex ">
-                          <h6 className="text-primary mb-3">pending...</h6>
-                          
-                            <button className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded">
-                              <HiShieldCheck /> Approved
-                            </button>
+                          {data?.status === "pending" ? (
+                            <>
+                              <h6 className="text-primary mb-3">pending...</h6>
+                              {/* approved btn */}
+                              <button className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded">
+                                <HiShieldCheck /> Approve
+                              </button>
 
-                            <button className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded">
-                              <AiTwotoneDelete className="me-1"/>
-                              Delete
-                            </button>
-                        
+                              {/* delete btn */}
+                              <button className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded">
+                                <AiTwotoneDelete className="me-1" />
+                                Delete
+                              </button>
+                            </>
+                          ) : (
+                            <h6 className="text-success mb-3">
+                              {" "}
+                              <HiShieldCheck /> Approved
+                            </h6>
+                          )}
                         </td>
                       </tr>
                     ))}
