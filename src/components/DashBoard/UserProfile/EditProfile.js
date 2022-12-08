@@ -11,6 +11,8 @@ import useSWR, { useSWRConfig } from "swr";
 import CircularProgress from "@mui/material/CircularProgress";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const EditProfile = () => {

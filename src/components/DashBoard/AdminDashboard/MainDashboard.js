@@ -2,24 +2,66 @@
 import React, { useEffect, useState } from "react";
 import { FaQrcode, FaRegUser, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import useSWR from "swr";
+import useSWR, { useSWRConfig } from "swr";
 import useFirebase from "../../../hooks/useFirebase";
 import AdminDashHeader from "./AdminDashHeader";
 import { BsBookmarkStarFill, BsCheckCircleFill, BsShieldFillCheck } from "react-icons/bs";
 import { RiPaypalFill } from "react-icons/ri";
 import { HiShieldCheck } from "react-icons/hi";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
+
+// useSWR data fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const MainDashboard = () => {
-  const { user } = useFirebase();
-  const [booking, setBooking] = useState([]);
+  const { mutate } = useSWRConfig();
 
-  useEffect(() => {
-    fetch("https://mr-travel-server.onrender.com/booking")
+  //  useSwr fetching
+  const { data: bookingData } = useSWR(`https://mr-travel-server.onrender.com/booking`, fetcher);
+
+  // here orders status update
+  const updateOrders = id => {
+    const url = `https://mr-travel-server.onrender.com/booking/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(bookingData),
+    })
       .then(res => res.json())
-      .then(data => setBooking(data));
-  }, [user?.email]);
-  // console.log(booking);
+      .then(data => {
+        console.log(data);
+        alert("Order Approved");
+        mutate("https://mr-travel-server.onrender.com/booking");
+      });
+  };
+
+  // Here orders delete
+  const handleDelete = id => {
+    const proceed = window.confirm("Are you sure , you want to delete ?");
+    if (proceed) {
+      const url = `https://mr-travel-server.onrender.com/booking/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data?.acknowledged) {
+            toast.success("Delete Successful", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          }
+          mutate("https://mr-travel-server.onrender.com/booking");
+        });
+    }
+  };
+
   return (
     <div>
       <AdminDashHeader />
@@ -92,7 +134,7 @@ const MainDashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {booking.map(data => (
+                    {bookingData?.map(data => (
                       <tr>
                         <th scope="row">{data?.firstName}</th>
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
@@ -102,11 +144,28 @@ const MainDashboard = () => {
                             <>
                               <h6 className="text-primary mb-3">pending...</h6>
                               {/* Approved btn */}
-                              <button className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded">
+                              <button
+                                onClick={() => updateOrders(data?._id)}
+                                className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded"
+                              >
                                 <HiShieldCheck /> Approve
                               </button>
                               {/* Delete btn */}
-                              <button className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded">
+                              <button
+                                onClick={() => handleDelete(data._id)}
+                                className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded"
+                              >
+                                <ToastContainer
+                                  position="top-right"
+                                  autoClose={5000}
+                                  hideProgressBar={false}
+                                  newestOnTop={false}
+                                  closeOnClick
+                                  rtl={false}
+                                  pauseOnFocusLoss
+                                  draggable
+                                  pauseOnHover
+                                />
                                 <AiTwotoneDelete className="me-1" />
                                 Delete
                               </button>
@@ -118,7 +177,7 @@ const MainDashboard = () => {
                             </h6>
                           )}
                         </td>
-                        <td>${data?.price}</td>
+                        <td>${data?.price || data?.sum}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -140,7 +199,7 @@ const MainDashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {booking.map(data => (
+                    {bookingData.map(data => (
                       <tr>
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <th scope="row">{data?.firstName}</th>
@@ -151,12 +210,18 @@ const MainDashboard = () => {
                             <>
                               <h6 className="text-primary mb-3">pending...</h6>
                               {/* approved btn */}
-                              <button className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded">
+                              <button
+                                onClick={() => updateOrders(data?._id)}
+                                className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded"
+                              >
                                 <HiShieldCheck /> Approve
                               </button>
 
                               {/* delete btn */}
-                              <button className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded">
+                              <button
+                                onClick={() => handleDelete(data?._id)}
+                                className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded"
+                              >
                                 <AiTwotoneDelete className="me-1" />
                                 Delete
                               </button>
