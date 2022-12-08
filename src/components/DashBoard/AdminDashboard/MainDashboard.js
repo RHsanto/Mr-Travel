@@ -19,6 +19,8 @@ const MainDashboard = () => {
 
   //  useSwr fetching
   const { data: bookingData } = useSWR(`https://mr-travel-server.onrender.com/booking`, fetcher);
+  const { data: allUserData } = useSWR(`https://mr-travel-server.onrender.com/allUser`, fetcher);
+  const { data: allTravelsData } = useSWR(`https://mr-travel-server.onrender.com/allTravelsData`, fetcher);
 
   // here orders status update
   const updateOrders = id => {
@@ -30,8 +32,18 @@ const MainDashboard = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         alert("Order Approved");
+        if (data?.acknowledged) {
+          toast.success("Booking Approved ", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        }
         mutate("https://mr-travel-server.onrender.com/booking");
       });
   };
@@ -76,7 +88,7 @@ const MainDashboard = () => {
                   <FaRegUser className="admin-icons" />
                 </div>
                 <div className="text-end">
-                  <h6>145</h6>
+                  <h6>{allUserData?.length}</h6>
                   <h4>User</h4>
                 </div>
               </div>
@@ -87,7 +99,7 @@ const MainDashboard = () => {
                   <FaQrcode className="admin-icons" />
                 </div>
                 <div className="text-end">
-                  <h6>145</h6>
+                  <h6>{allTravelsData?.length}</h6>
                   <h4>Services</h4>
                 </div>
               </div>
@@ -98,7 +110,7 @@ const MainDashboard = () => {
                   <BsBookmarkStarFill className="admin-icons" />
                 </div>
                 <div className="text-end">
-                  <h6>145</h6>
+                  <h6>{bookingData?.length}</h6>
                   <h4>Booking</h4>
                 </div>
               </div>
@@ -129,8 +141,8 @@ const MainDashboard = () => {
                       <th scope="col">Clients</th>
                       <th scope="col">Date</th>
                       <th scope="col">Service</th>
-                      <th scope="col">Status</th>
                       <th scope="col">Price</th>
+                      <th scope="col">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -139,6 +151,7 @@ const MainDashboard = () => {
                         <th scope="row">{data?.firstName}</th>
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <td>{data?.types}</td>
+                        <td>${data?.price || data?.sum}</td>
                         <td className="d-flex ">
                           {data?.status === "pending" ? (
                             <>
@@ -177,7 +190,6 @@ const MainDashboard = () => {
                             </h6>
                           )}
                         </td>
-                        <td>${data?.price || data?.sum}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -204,7 +216,7 @@ const MainDashboard = () => {
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <th scope="row">{data?.firstName}</th>
                         <td>{data?.types}</td>
-                        <td>${data?.price}</td>
+                        <td>${data?.price || data?.sum}</td>
                         <td className="d-flex ">
                           {data?.status === "pending" ? (
                             <>
