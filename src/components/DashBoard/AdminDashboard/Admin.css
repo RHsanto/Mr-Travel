@@ -46,21 +46,20 @@
 }
 
 .booking-table {
-  padding: 20px 0;
   background-color: white;
   overflow: scroll;
   height: 600px;
 
 }
 .table>:not(:last-child)>:last-child>*, .table>:not(caption)>*>*{
-  padding:15px 25px;
+  padding:20px 25px;
   
 }
-tr:hover{
-background-color: #ececec;
-cursor: pointer;
-}
 
+tr:hover{
+  background-color: #ececec;
+  cursor: pointer;
+  }
 .view-btn{
   color: #0570eb;
   background-color: #0a57ca4b !important;

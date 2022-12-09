@@ -79,8 +79,8 @@ const MainDashboard = () => {
           <div className="row ">
             <div className="col">
               <div className="booking-table shadow rounded">
-                <h4 className="table-title ps-4">Recent Booking</h4>
-                <hr />
+                <h4 className="table-title p-4 border-bottom">Recent Booking</h4>
+              
                 <table className="table ">
                   <thead>
                     <tr>
@@ -128,11 +128,11 @@ const MainDashboard = () => {
             </div>
             <div className="col mt-5">
               <div className="booking-table shadow rounded">
-                <h4 className="table-title ps-4">Payments</h4>
-                <hr />
+                <h4 className="table-title p-4 border-bottom">Payments</h4>
+        
                 <table className="table">
-                  <thead>
-                    <tr>
+                  <thead >
+                    <tr >
                       <th scope="col">Clients</th>
                       <th scope="col">Date</th>
                       <th scope="col">Service</th>

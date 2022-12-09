@@ -22,8 +22,6 @@ const Services = () => {
           <div className="row ">
             <div className="col">
               <div className="booking-table shadow rounded">
-                <h4 className="table-title ps-4">Recent Booking</h4>
-                <hr />
                 <table className="table ">
                   <thead>
                     <tr>
