@@ -1,78 +1,24 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useSWR from "swr";
 import { FaQrcode, FaRegUser, FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import useSWR, { useSWRConfig } from "swr";
-import useFirebase from "../../../hooks/useFirebase";
-import AdminDashHeader from "./AdminDashHeader";
-import { BsBookmarkStarFill, BsCheckCircleFill, BsShieldFillCheck } from "react-icons/bs";
+import { BsBookmarkStarFill } from "react-icons/bs";
 import { RiPaypalFill } from "react-icons/ri";
 import { HiShieldCheck } from "react-icons/hi";
-import { AiTwotoneDelete } from "react-icons/ai";
-import { ToastContainer, toast } from "react-toastify";
+import { BiLoader } from "react-icons/bi";
+import AdminDashHeader from "./AdminDashHeader";
 
 // useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const MainDashboard = () => {
-  const { mutate } = useSWRConfig();
-
   //  useSwr fetching
   const { data: bookingData } = useSWR(`https://mr-travel-server.onrender.com/booking`, fetcher);
   const { data: allUserData } = useSWR(`https://mr-travel-server.onrender.com/allUser`, fetcher);
-  const { data: allTravelsData } = useSWR(`https://mr-travel-server.onrender.com/allTravelsData`, fetcher);
-
-  // here orders status update
-  const updateOrders = id => {
-    const url = `https://mr-travel-server.onrender.com/booking/${id}`;
-    fetch(url, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(bookingData),
-    })
-      .then(res => res.json())
-      .then(data => {
-        alert("Order Approved");
-        if (data?.acknowledged) {
-          toast.success("Booking Approved ", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
-        }
-        mutate("https://mr-travel-server.onrender.com/booking");
-      });
-  };
-
-  // Here orders delete
-  const handleDelete = id => {
-    const proceed = window.confirm("Are you sure , you want to delete ?");
-    if (proceed) {
-      const url = `https://mr-travel-server.onrender.com/booking/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then(res => res.json())
-        .then(data => {
-          if (data?.acknowledged) {
-            toast.success("Delete Successful", {
-              position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
-          }
-          mutate("https://mr-travel-server.onrender.com/booking");
-        });
-    }
-  };
+  const { data: allTravelsData } = useSWR(
+    `https://mr-travel-server.onrender.com/allTravelsData`,
+    fetcher
+  );
 
   return (
     <div>
@@ -134,7 +80,7 @@ const MainDashboard = () => {
             <div className="col">
               <div className="booking-table shadow rounded">
                 <h4 className="table-title ps-4">Recent Booking</h4>
-                <hr  />
+                <hr />
                 <table className="table ">
                   <thead>
                     <tr>
@@ -148,53 +94,30 @@ const MainDashboard = () => {
                   <tbody>
                     {bookingData?.map(data => (
                       <tr>
-                        <th >
-                          {data?.userImg ? 
-                          <img className="dash-img me-2" src={data?.userImg} alt="img" />
-                          :
-                          <FaUserCircle className="fs-1 me-2" />
-                        }
+                        <th>
+                          {data?.userImg ? (
+                            <img className="dash-img me-2" src={data?.userImg} alt="img" />
+                          ) : (
+                            <FaUserCircle className="fs-1 me-2" />
+                          )}
                           {data?.firstName}
-                          </th>
+                        </th>
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <td>{data?.types}</td>
                         <td>${data?.price || data?.sum}</td>
-                        <td className="d-flex ">
+                        <td>
                           {data?.status === "pending" ? (
                             <>
-                              <h6 className="text-primary mb-3">pending...</h6>
-                              {/* Approved btn */}
-                              <button
-                                onClick={() => updateOrders(data?._id)}
-                                className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded"
-                              >
-                                <HiShieldCheck /> Approve
-                              </button>
-                              {/* Delete btn */}
-                              <button
-                                onClick={() => handleDelete(data._id)}
-                                className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded"
-                              >
-                                <ToastContainer
-                                  position="top-right"
-                                  autoClose={5000}
-                                  hideProgressBar={false}
-                                  newestOnTop={false}
-                                  closeOnClick
-                                  rtl={false}
-                                  pauseOnFocusLoss
-                                  draggable
-                                  pauseOnHover
-                                />
-                                <AiTwotoneDelete className="me-1" />
-                                Delete
-                              </button>
+                              <h6 className="text-primary">
+                                <BiLoader /> Pending...
+                              </h6>
                             </>
                           ) : (
-                            <h6 className="text-success mb-3">
-                              {" "}
-                              <HiShieldCheck /> Approved
-                            </h6>
+                            <>
+                              <h6 className="text-success">
+                                <HiShieldCheck /> Approved
+                              </h6>
+                            </>
                           )}
                         </td>
                       </tr>
@@ -206,7 +129,7 @@ const MainDashboard = () => {
             <div className="col mt-5">
               <div className="booking-table shadow rounded">
                 <h4 className="table-title ps-4">Payments</h4>
-                <hr  />
+                <hr />
                 <table className="table">
                   <thead>
                     <tr>
@@ -220,43 +143,30 @@ const MainDashboard = () => {
                   <tbody>
                     {bookingData?.map(data => (
                       <tr>
-                          <th>
-                          {data?.userImg ? 
-                          <img className="dash-img me-2" src={data?.userImg} alt="img" />
-                          :
-                          <FaUserCircle className="fs-1 me-2" />
-                        }
+                        <th>
+                          {data?.userImg ? (
+                            <img className="dash-img me-2" src={data?.userImg} alt="img" />
+                          ) : (
+                            <FaUserCircle className="fs-1 me-2" />
+                          )}
                           {data?.firstName}
-                          </th>
+                        </th>
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <td>{data?.types}</td>
                         <td>${data?.price || data?.sum}</td>
-                        <td className="d-flex ">
+                        <td>
                           {data?.status === "pending" ? (
                             <>
-                              <h6 className="text-primary mb-3">pending...</h6>
-                              {/* approved btn */}
-                              <button
-                                onClick={() => updateOrders(data?._id)}
-                                className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded"
-                              >
-                                <HiShieldCheck /> Approve
-                              </button>
-
-                              {/* delete btn */}
-                              <button
-                                onClick={() => handleDelete(data?._id)}
-                                className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded"
-                              >
-                                <AiTwotoneDelete className="me-1" />
-                                Delete
-                              </button>
+                              <h6 className="text-primary">
+                                <BiLoader /> Pending...
+                              </h6>
                             </>
                           ) : (
-                            <h6 className="text-success mb-3">
-                              {" "}
-                              <HiShieldCheck /> Approved
-                            </h6>
+                            <>
+                              <h6 className="text-success">
+                                <HiShieldCheck /> Approved
+                              </h6>
+                            </>
                           )}
                         </td>
                       </tr>

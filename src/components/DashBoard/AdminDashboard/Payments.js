@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { HiShieldCheck } from "react-icons/hi";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
+import { BiLoader } from "react-icons/bi";
 
 // useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -102,7 +103,7 @@ const Payments = () => {
                          <div className="d-flex">
                          {data?.status === "pending" ? (
                             <>
-                              <h6 className="text-primary mb-3">pending...</h6>
+                              <h6 className="text-primary mb-3"><BiLoader/> pending...</h6>
                               {/* Approved btn */}
                               <button
                                 onClick={() => updateOrders(data?._id)}
