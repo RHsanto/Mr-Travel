@@ -8,7 +8,7 @@ import { FiLogOut, FiLogIn } from "react-icons/fi";
 import { FaUserCircle, FaTags, FaUserAlt } from "react-icons/fa";
 import logos from "../../../images/t-logo.png";
 import useSWR from "swr";
-import { MdAdminPanelSettings } from "react-icons/md";
+import { RiAdminFill } from "react-icons/ri";
 
 //  use useSwr fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -58,7 +58,7 @@ const Banner = () => {
                     {data?.[0]?.role === 'user' ? "" :
                     <span>
                     <Link to="/admin-dash" className=" dropdown-item">
-                      <MdAdminPanelSettings className="me-1 fs-4" /> Admin Dashboard
+                      <RiAdminFill className="me-1 fs-4" /> Admin Dashboard
                     </Link>
                   </span>}
                     <span>
