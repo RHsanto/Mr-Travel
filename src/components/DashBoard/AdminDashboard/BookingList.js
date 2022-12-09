@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { HiShieldCheck } from "react-icons/hi";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
+
 // useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
@@ -73,8 +74,6 @@ const BookingList = () => {
           <div className="row">
             <div className="col">
               <div className="booking-table shadow rounded">
-                <h4 className="table-title ps-4">Recent Booking</h4>
-                <hr />
                 <table className="table ">
                   <thead>
                     <tr>
@@ -99,8 +98,9 @@ const BookingList = () => {
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <td>{data?.types}</td>
                         <td>${data?.price || data?.sum}</td>
-                        <td className="d-flex ">
-                          {data?.status === "pending" ? (
+                        <td >
+                         <div className="d-flex">
+                         {data?.status === "pending" ? (
                             <>
                               <h6 className="text-primary mb-3">pending...</h6>
                               {/* Approved btn */}
@@ -136,6 +136,7 @@ const BookingList = () => {
                               <HiShieldCheck /> Approved
                             </h6>
                           )}
+                         </div>
                         </td>
                       </tr>
                     ))}
