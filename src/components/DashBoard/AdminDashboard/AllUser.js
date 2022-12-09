@@ -24,8 +24,8 @@ const AllUser = () => {
                       <th scope="col">Name</th>
                       <th scope="col">Email</th>
                       <th scope="col">Contact No</th>
-                      <th scope="col">Role</th>
                       <th scope="col">Address</th>
+                      <th scope="col">Role</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -42,8 +42,8 @@ const AllUser = () => {
                         </td>
                         <td>{data?.email}</td>
                         <td>{data?.PhoneNumber || "N/A"}</td>
-                        <td>{data?.role}</td>
                         <td>{data?.Address || "N/A"}</td>
+                        <td>{data?.role}</td>
                         <td>
                           {data?.role === "user" 
                           ? <><button className='btn btn-primary'><ImUserPlus/> Make Admin</button></>

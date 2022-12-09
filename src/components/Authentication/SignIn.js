@@ -19,6 +19,7 @@ const SignIn = () => {
       const user = result.user;
       GoogleUser(user.email, user.displayName);
       navigate(redirect_uri);
+     
     });
   };
 
