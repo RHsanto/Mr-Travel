@@ -5,7 +5,6 @@ import { FiLogOut } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import useSWR from "swr";
 import useFirebase from "../../../hooks/useFirebase";
-
 //  use useSwr fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
@@ -16,16 +15,18 @@ const AdminDashHeader = () => {
 
   return (
     <div>
-      <div className="">
-        <div className=" dashboard-header">
+        <div className=" dashboard-header d-none d-lg-block">
           <div className="px-3 d-flex justify-content-between align-items-center">
-            <Link to="/">
+       {/* home btn section */}
+         <div className="home-btn">
+         <Link to="/">
               <h5 className="d-flex align-items-center text-dark ">
                 <FcHome className="me-1" /> Home
               </h5>
             </Link>
-            <div>
-              <div className="dropdown">
+         </div>
+      {/*div-2  */}
+          <div className="dropdown">
                 <div
                   className=" ms-2"
                   type="button"
@@ -49,11 +50,10 @@ const AdminDashHeader = () => {
                     <FiLogOut className="me-1" /> Sign-out
                   </span>
                 </ul>
-              </div>
-            </div>
+           </div>
+           
           </div>
         </div>
-      </div>
     </div>
   );
 };
