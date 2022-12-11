@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { AiFillStar, AiOutlineStar,} from "react-icons/ai";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import Slider from "react-slick";
 import "./Reviews.css";
@@ -13,13 +13,13 @@ const Reviews = () => {
   //     .then(data => setReviews(data));
   // }, []);
 
-  useEffect(()=>{
-    const fetchData = async ()=>{
-      const res = await axios.get('https://mr-travel-server.onrender.com/reviews')
-      setReviews(res.data)
-    }
-    fetchData()
-  },[])
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get("https://mr-travel-server.onrender.com/reviews");
+      setReviews(res.data);
+    };
+    fetchData();
+  }, []);
   // here slider settings
   var settings = {
     infinite: true,
@@ -62,11 +62,9 @@ const Reviews = () => {
     ],
   };
   return (
-    <div className="review-section">
+    <div className="review-section mx-5">
       <h1 className="text-center title py-5"> Traveler Experience</h1>
-      <div className="sub">
-
-      </div>
+      <div className="sub"></div>
       <div className="container">
         <div className="row ">
           <Slider {...settings}>
@@ -77,12 +75,12 @@ const Reviews = () => {
                     <img src={data?.client_image} alt="img" />
                   </div>
                   <Rating
-                            className=" mt-3 star-color d-flex justify-content-center"
-                            emptySymbol={<AiOutlineStar className="fs-5 " />}
-                            fullSymbol={<AiFillStar className="fs-5 " />}
-                            readonly
-                            initialRating={data?.ratings}
-                          />
+                    className=" mt-3 re-icons d-flex justify-content-center"
+                    emptySymbol={<AiOutlineStar className="fs-5 " />}
+                    fullSymbol={<AiFillStar className="fs-5 " />}
+                    readonly
+                    initialRating={data?.ratings}
+                  />
                   <div className="review-text p-4 text-center">
                     <p> {data?.description}</p>
                     <h5 className="clients">{data?.client}</h5>

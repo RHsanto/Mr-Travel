@@ -6,7 +6,9 @@ body {
 a {
   text-decoration: none;
 }
-
+li{
+  list-style: none;
+}
 .logo-image {
   width: 40px;
   height: 40px;
@@ -139,11 +141,11 @@ nav ul li a {
   padding: 100px 0;
 }
 .about-section .card {
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .about-section .card img {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .card-icons {
   background-color: white;
@@ -160,46 +162,7 @@ nav ul li a {
   font-weight: bold;
   font-size: 30px;
 }
-.offer-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.subs-title {
-  background-color: #fa9e1b;
-  padding: 5px;
-  font-weight: bold;
-  color: white;
-  width: 80%;
-  position: relative;
-  bottom: 50px;
-  font-size: 15px;
-  font-style: italic;
-}
-.offer-section .title {
-  padding: 100px 0px 50px 0px;
-}
-.offer-section .price h1 {
-  color: #fa9e1b;
-  font-weight: bold;
-}
 
-.offer-section .price li {
-  list-style: none;
-  color: #fa9e1b;
-  font-size: 18px;
-}
-
-.offer-icons li {
-  list-style: none;
-}
-
-.offer-info button {
-  margin-top: 50px;
-}
-.Second-row {
-  margin-top: 80px;
-}
 
 /* footer section css */
 

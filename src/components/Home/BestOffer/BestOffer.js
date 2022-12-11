@@ -35,8 +35,8 @@ const BestOffer = () => {
                 <div className="offer-info">
                     <div className="d-flex align-items-center">
                     <div className="price">
-                      <h1>${offer?.price}</h1>
-                     <div className="d-flex justify-content-around">
+                      <h1 className='text-warning fw-bold'>${offer?.price}</h1>
+                     <div className="d-flex justify-content-around text-warning">
                      <li><AiTwotoneStar/></li>
                      <li><AiTwotoneStar/></li>
                      <li><AiTwotoneStar/></li>

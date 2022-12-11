@@ -1,18 +1,10 @@
 /* review-section */
-.ratings{
-  color: #ffc60a;
-  margin-top: 20px;
-}
+
 .clients{
   font-weight: bold;
   color: #0A58CA;
   margin-top: 30px;
 }
-.review-section{
-  padding: 0px 0px 100px 0px;
-  position: relative;
-}
-
 
 .review-item{
   background: #F5F6FA;

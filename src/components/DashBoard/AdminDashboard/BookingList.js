@@ -12,7 +12,7 @@ const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const BookingList = () => {
   const { mutate } = useSWRConfig();
-  const { data: bookingData } = useSWR(`https://mr-travel-server.onrender.com/booking`, fetcher);
+  const { data: bookingData} = useSWR(`https://mr-travel-server.onrender.com/booking`, fetcher);
 
   // here orders status update
   const updateOrders = id => {
@@ -66,6 +66,7 @@ const BookingList = () => {
     }
   };
 
+  
   return (
     <div>
       <AdminDashHeader />
