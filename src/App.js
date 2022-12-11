@@ -19,35 +19,13 @@ import AddBooking from "./components/AddBookings/AddBooking";
 import Payment from "./components/DashBoard/Payment/Payment";
 import UserProfile from "./components/DashBoard/UserProfile/UserProfile";
 import AdminDash from "./components/DashBoard/AdminDashboard/AdminDash";
-import { useState } from "react";
-import { useEffect } from "react";
-import { Triangle } from "react-loader-spinner";
 
 
 function App() {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
 
   return (
     <div className="App">
-      {loading ? (
-        <div className="d-flex justify-content-center align-items-center ">
-          <Triangle
-            height="1000"
-            width="150"
-            color="#396cf0"
-            ariaLabel="triangle-loading"
-            visible={true}
-          />
-        </div>
-      ) : (
-        <>
+    
           <BrowserRouter>
             <Routes>
               <Route index element={<Home />} />
@@ -69,8 +47,6 @@ function App() {
             </Routes>
           </BrowserRouter>
           <Footer />
-        </>
-      )}
     </div>
   );
 }

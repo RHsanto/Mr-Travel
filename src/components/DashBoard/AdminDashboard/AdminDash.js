@@ -98,7 +98,7 @@ const AdminDash = () => {
           <div className=" dashboard-header d-block d-lg-none shadow">
             <div className="px-3 d-flex justify-content-between align-items-center">
               {/* menu bar btn*/}
-              <div className="mobile-view-section  ">
+              <div className="mobile-view--menu-section  ">
                 <a
                   data-bs-toggle="offcanvas"
                   href="#offcanvasExample"
