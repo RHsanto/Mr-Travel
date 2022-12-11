@@ -13,11 +13,13 @@ const AllUser = () => {
     <div>
       <AdminDashHeader/>
       <div className="allUser-section p-3">
-        <h3>Users</h3>
         <div className="container-fluid px-0 mt-5">
         <div className="row">
           <div className="col">
-          <div className="booking-table shadow rounded">    
+          <div className="title-box">
+            <h5>All User</h5>
+          </div>
+          <div className="booking-table shadow ">    
                 <table className="table ">
                   <thead>
                     <tr>

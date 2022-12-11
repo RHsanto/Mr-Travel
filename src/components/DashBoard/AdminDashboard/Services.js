@@ -16,12 +16,14 @@ const Services = () => {
     <div>
       <AdminDashHeader />
       <div className="service-info-section p-3">
-        <h3>Here All Services</h3>
         {/* here booking and payment table */}
         <div className="container-fluid px-1 mt-5">
           <div className="row ">
             <div className="col">
-              <div className="booking-table shadow rounded">
+            <div className="title-box">
+                  <h5>All Service</h5>
+            </div>
+              <div className="booking-table shadow ">
                 <table className="table ">
                   <thead>
                     <tr>

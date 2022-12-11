@@ -70,11 +70,13 @@ const Payments = () => {
     <div>
       <AdminDashHeader />
       <div className="booking-list-section p-3">
-        <h3>Payment History</h3>
         <div className="container-fluid px-0 pt-4">
           <div className="row">
             <div className="col">
-              <div className="booking-table shadow rounded">
+              <div className="title-box">
+                <h5>Payments</h5>
+              </div>
+              <div className="booking-table shadow ">
                 <table className="table ">
                   <thead>
                     <tr>
@@ -99,45 +101,47 @@ const Payments = () => {
                         <td>{data?.bookingDate ? data?.bookingDate : "8/2/2022"}</td>
                         <td>{data?.types}</td>
                         <td>${data?.price || data?.sum}</td>
-                        <td >
-                         <div className="d-flex">
-                         {data?.status === "pending" ? (
-                            <>
-                              <h6 className="text-primary mb-3"><BiLoader/> pending...</h6>
-                              {/* Approved btn */}
-                              <button
-                                onClick={() => updateOrders(data?._id)}
-                                className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded"
-                              >
-                                <HiShieldCheck /> Approve
-                              </button>
-                              {/* Delete btn */}
-                              <button
-                                onClick={() => handleDelete(data._id)}
-                                className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded"
-                              >
-                                <ToastContainer
-                                  position="top-right"
-                                  autoClose={5000}
-                                  hideProgressBar={false}
-                                  newestOnTop={false}
-                                  closeOnClick
-                                  rtl={false}
-                                  pauseOnFocusLoss
-                                  draggable
-                                  pauseOnHover
-                                />
-                                <AiTwotoneDelete className="me-1" />
-                                Delete
-                              </button>
-                            </>
-                          ) : (
-                            <h6 className="text-success mb-3">
-                              {" "}
-                              <HiShieldCheck /> Approved
-                            </h6>
-                          )}
-                         </div>
+                        <td>
+                          <div className="d-flex">
+                            {data?.status === "pending" ? (
+                              <>
+                                <h6 className="text-primary mb-3">
+                                  <BiLoader /> pending...
+                                </h6>
+                                {/* Approved btn */}
+                                <button
+                                  onClick={() => updateOrders(data?._id)}
+                                  className="border-0 fs-6 bg-success text-light  p-1 ms-3 rounded"
+                                >
+                                  <HiShieldCheck /> Approve
+                                </button>
+                                {/* Delete btn */}
+                                <button
+                                  onClick={() => handleDelete(data._id)}
+                                  className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded"
+                                >
+                                  <ToastContainer
+                                    position="top-right"
+                                    autoClose={5000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover
+                                  />
+                                  <AiTwotoneDelete className="me-1" />
+                                  Delete
+                                </button>
+                              </>
+                            ) : (
+                              <h6 className="text-success mb-3">
+                                {" "}
+                                <HiShieldCheck /> Approved
+                              </h6>
+                            )}
+                          </div>
                         </td>
                       </tr>
                     ))}

@@ -138,7 +138,7 @@ const MainDashboard = () => {
             <div className="col mt-5">
             <div className="title-box">
                   <h5>Payments</h5>
-                </div>
+              </div>
               <div className="booking-table shadow">
                 <table className="table">
                   <thead>
