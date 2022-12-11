@@ -66,7 +66,7 @@ const AdminDash = () => {
         <div className="row">
           <div className="col-lg-2 admin-sidebar d-none d-lg-block">
             <div className="d-flex my-3 ">
-              <img className="dash-logo" src={logo} alt="img" srcset="" />
+              <img className="dash-logo" src={logo} alt="img" srcSet="" />
               <h2 className="ms-3">MR TRAVEL</h2>
             </div>
             <hr />
@@ -108,23 +108,23 @@ const AdminDash = () => {
                   <RiMenuFoldFill className="fs-3 " />
                 </a>
                 <div
-                  class="offcanvas offcanvas-start"
+                  className="offcanvas offcanvas-start"
                   tabindex="-1"
                   id="offcanvasExample"
                   aria-labelledby="offcanvasExampleLabel"
                 >
-                  <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                  <div className="offcanvas-header">
+                    <h5 className="offcanvas-title" id="offcanvasExampleLabel">
                       <img className="dash-img" src={logo} alt="" /> MR TRAVEL
                     </h5>
                     <button
                       type="button"
-                      class="btn-close text-reset"
+                      className="btn-close text-reset"
                       data-bs-dismiss="offcanvas"
                       aria-label="Close"
                     ></button>
                   </div>
-                  <div class="offcanvas-body">
+                  <div className="offcanvas-body">
                     <div className="admin-menu">
                       <li onClick={handleDashboard} className="dropdown-item">
                         <MdOutlineDashboard className="me-2" /> Dashboard

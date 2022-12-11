@@ -74,7 +74,7 @@ const Navbar = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <IoIosArrowDown className=" fw-bold fs-5" />
+                    <IoIosArrowDown className=" fw-bold text-dark fs-5" />
                   </div>
 
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">

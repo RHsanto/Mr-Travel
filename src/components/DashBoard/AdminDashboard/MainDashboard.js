@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useSWR from "swr";
 import { FaQrcode, FaRegUser, FaUserCircle } from "react-icons/fa";
 import { BsBookmarkStarFill } from "react-icons/bs";
@@ -13,7 +13,15 @@ const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const MainDashboard = () => {
   //  useSwr fetching
-  const { data: bookingData } = useSWR(`https://mr-travel-server.onrender.com/booking`, fetcher);
+
+  const [bookingData,setBookingData]=useState([])
+  useEffect(()=>{
+    fetch("https://mr-travel-server.onrender.com/booking")
+    .then(res=>res.json())
+    .then(data=>setBookingData(data?.reverse()))
+  },[])
+
+
   const { data: allUserData } = useSWR(`https://mr-travel-server.onrender.com/allUser`, fetcher);
   const { data: allTravelsData } = useSWR(
     `https://mr-travel-server.onrender.com/allTravelsData`,
@@ -80,7 +88,7 @@ const MainDashboard = () => {
             <div className="col">
               <div className="booking-table shadow rounded">
                 <h4 className="table-title p-4 border-bottom">Recent Booking</h4>
-              
+
                 <table className="table ">
                   <thead>
                     <tr>
@@ -93,7 +101,7 @@ const MainDashboard = () => {
                   </thead>
                   <tbody>
                     {bookingData?.map(data => (
-                      <tr>
+                      <tr key={data?._id}>
                         <th>
                           {data?.userImg ? (
                             <img className="dash-img me-2" src={data?.userImg} alt="img" />
@@ -129,10 +137,10 @@ const MainDashboard = () => {
             <div className="col mt-5">
               <div className="booking-table shadow rounded">
                 <h4 className="table-title p-4 border-bottom">Payments</h4>
-        
+
                 <table className="table">
-                  <thead >
-                    <tr >
+                  <thead>
+                    <tr>
                       <th scope="col">Clients</th>
                       <th scope="col">Date</th>
                       <th scope="col">Service</th>

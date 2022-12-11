@@ -87,7 +87,7 @@ const Payments = () => {
                   </thead>
                   <tbody>
                     {bookingData?.map(data => (
-                      <tr>
+                      <tr key={data?._id}>
                         <th>
                           {data?.userImg ? (
                             <img className="dash-img me-2" src={data?.userImg} alt="img" />

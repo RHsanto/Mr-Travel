@@ -35,7 +35,7 @@ const Services = () => {
                   </thead>
                   <tbody>
                     {allTravelsData?.map(data => (
-                      <tr>
+                      <tr key={data?._id}>
                         <td>
                           <img className="service-img me-2" src={data?.img} alt="img" />
                           {data?.hotelName || data?.TourName || data?.types}{" "}
