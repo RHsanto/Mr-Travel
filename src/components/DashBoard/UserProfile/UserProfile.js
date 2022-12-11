@@ -16,7 +16,7 @@ const UserProfile = () => {
   const [userInfo, setUserInfo] = useState(<UserInfo />);
   
   // here use useSwr methods
-  const { data,error} = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
+  const { data} = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
 
 
   const handlePersonalInfo = () => {
@@ -27,8 +27,8 @@ const UserProfile = () => {
   };
 
 
-  if(!data && !error)
-  {return <div>Loading</div>}
+  // if(!data && !error)
+  // {return <div>Loading</div>}
 
 
 
