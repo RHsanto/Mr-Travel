@@ -54,7 +54,7 @@
   background-color: white;
   overflow: scroll;
   height: 600px;
-
+  border-radius: 25px;
 }
 .table>:not(:last-child)>:last-child>*, .table>:not(caption)>*>*{
   padding:20px 25px;
@@ -81,4 +81,15 @@ tr:hover{
 
 div#offcanvasExample {
   width: 250px;
+}
+
+.title-box{
+  background-color: #0a58ca ;
+  color: white;
+  width: 200px;
+  height: 80px;
+  padding: 20px;
+  border-radius: 15px 15px 15px 0px;
+  margin-bottom: -20px;
+  text-align: center;
 }

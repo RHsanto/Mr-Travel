@@ -86,9 +86,10 @@ const MainDashboard = () => {
         <div className="container-fluid px-1 mt-5">
           <div className="row ">
             <div className="col">
-              <div className="booking-table shadow rounded">
-                <h4 className="table-title p-4 border-bottom">Recent Booking</h4>
-
+                <div className="title-box">
+                  <h5>Recent Booking </h5>
+                </div>
+              <div className="booking-table shadow ">                
                 <table className="table ">
                   <thead>
                     <tr>
@@ -135,9 +136,10 @@ const MainDashboard = () => {
               </div>
             </div>
             <div className="col mt-5">
-              <div className="booking-table shadow rounded">
-                <h4 className="table-title p-4 border-bottom">Payments</h4>
-
+            <div className="title-box">
+                  <h5>Payments</h5>
+                </div>
+              <div className="booking-table shadow">
                 <table className="table">
                   <thead>
                     <tr>
