@@ -14,10 +14,10 @@ const fetcher = (...args) => fetch(...args).then(res => res.json());
 const MyBooking = () => {
   const { user } = useFirebase();
 
-  const { data: bookingData, error, isLoading } = useSWR(` https://mr-travel-server.onrender.com/booking/${user?.email}`, fetcher);
+  const { data: bookingData, error } = useSWR(` https://mr-travel-server.onrender.com/booking/${user?.email}`, fetcher);
 
-  if (error) return <div>failed to load</div>
-  if (isLoading) return <div>loading...</div>
+  if (!error && !bookingData) return <div>loading...</div>
+
   
   return (
     <div>

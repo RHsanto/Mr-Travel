@@ -14,6 +14,7 @@ const BookingList = () => {
   const { mutate } = useSWRConfig();
   const { data: bookingData} = useSWR(`https://mr-travel-server.onrender.com/booking`, fetcher);
 
+
   // here orders status update
   const updateOrders = id => {
     const url = `https://mr-travel-server.onrender.com/booking/${id}`;
