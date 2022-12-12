@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import { FaMapMarkedAlt, FaFacebookF, FaYoutube, FaInstagram, FaTwitter } from "react-icons/fa";
 import { MdCall, MdEmail } from "react-icons/md";
@@ -10,37 +11,49 @@ const Footer = () => {
             <div className="col-lg-4">
               <div className="footer-logo">
                 <h1>Mr. Travel </h1>
-                <p className="my-4 ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus eaque amet magni ea dolorem quas tenetur quasi ratione, odit dolor facere, repellat id laudantium. Quis.</p>
+                <p className="my-4 ">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus eaque amet
+                  magni ea dolorem quas tenetur quasi ratione, odit dolor facere, repellat id
+                  laudantium. Quis.
+                </p>
                 <div className="footer-icons">
                   <li>
-                    <FaFacebookF />
+                    <a href="https://www.facebook.com" target="_blank">
+                      <FaFacebookF className="text-light" />
+                    </a>
                   </li>
                   <li>
-                    <FaYoutube />
+                    <a href="https://www.youtube.com" target="_blank">
+                      <FaYoutube className="text-light" />
+                    </a>
                   </li>
                   <li>
-                    <FaInstagram />
+                    <a href="https://www.instagram.com" target="_blank">
+                      <FaInstagram className="text-light" />
+                    </a>
                   </li>
                   <li>
-                    <FaTwitter />
+                    <a href=" https://twitter.com" target="_blank">
+                      <FaTwitter className="text-light" />
+                    </a>
                   </li>
                 </div>
               </div>
             </div>
-           
+
             <div className="col-lg-4 ">
-             <div className="contact text-center">
-             <h4 className="mb-4">CONTACT</h4>
-              <li>
-                <FaMapMarkedAlt className="me-2" /> Dhaka, Bangladesh
-              </li>
-              <li>
-                <MdCall className="me-2" /> +8801887403752
-              </li>
-              <li>
-                <MdEmail className="me-2" /> mrtravel123@gmail.com
-              </li>
-             </div>
+              <div className="contact text-center">
+                <h4 className="mb-4">CONTACT</h4>
+                <li>
+                  <FaMapMarkedAlt className="me-2" /> Dhaka, Bangladesh
+                </li>
+                <li>
+                  <MdCall className="me-2" /> +8801887403752
+                </li>
+                <li>
+                  <MdEmail className="me-2" /> mrtravel123@gmail.com
+                </li>
+              </div>
             </div>
             <div className="col-lg-4">
               <h4>INSTAGRAM FEED</h4>
