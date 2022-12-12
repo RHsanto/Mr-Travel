@@ -63,7 +63,7 @@ const TourSearch = () => {
       <Navbar />
       <div className="modify-tour-data p-5">
         <div className="container">
-          <div className="d-flex ">
+          <div className="d-block d-lg-flex">
             <div className="form-floating w-100">
               <select
                 onChange={handleFrom}

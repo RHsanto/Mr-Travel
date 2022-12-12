@@ -19,10 +19,10 @@ const Navbar = () => {
 
   return (
     <div className="nav-sections ">
-      <div className="container  pt-3 px-5 px-lg-0  d-flex justify-content-between align-items-center">
+      <div className="container  py-3  d-flex justify-content-between align-items-center">
         <div className="logos">
           <Link to="/">
-            <div className="d-flex ">
+            <div className="d-flex align-items-center">
               <img src={logos} alt="img" className="logo-image" />
               <h1 className="text-dark ms-3"> Mr.Travel </h1>
             </div>
@@ -30,7 +30,7 @@ const Navbar = () => {
         </div>
         <div className="d-none d-lg-block">
           <nav>
-            <ul>
+            <ul className="mb-0">
               {/* <li>
                 <Link to="/">
                   <FaBus /> Bus
