@@ -21,11 +21,11 @@ const Tour = () => {
     setUpdatedValues(newUpdatedValues);
     localStorage.setItem("tourData", JSON.stringify(newUpdatedValues));
   };
+
   return (
     <div>
       <div className="form-floating w-100">
         <select
-          required
           onChange={handleFrom}
           name="TourName"
           className="form-select"
@@ -44,11 +44,20 @@ const Tour = () => {
       <div className="search-btn">
         <div className="container">
           <div className="row">
-            <div className="col-lg-1 mx-auto mt-3">
-              <Link to="/tour">
-                {" "}
-                <button> Search </button>
-              </Link>
+            <div className="col-lg-1 px-0 mx-auto mt-3">
+              {updatedValues ? (
+                <Link to="/tour">
+                  {" "}
+                  <button> Search </button>
+                </Link>
+              ) : (
+                <>
+                  <button className="bg-secondary" title="Please select destination">
+                    {" "}
+                    Search{" "}
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useSWR from "swr";
+
+// useSWR data fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const Hotel = () => {
+  const { data: hotelsData } = useSWR(`https://mr-travel-server.onrender.com/hotelInfo`, fetcher);
+
   const [updatedValues, setUpdatedValues] = useState();
 
   // get input items when selected
@@ -17,7 +23,8 @@ const Hotel = () => {
     <div>
       <div className="d-block  d-md-flex justify-content-center ">
         <div className="form-floating w-50 d-none d-md-block">
-          <input
+          {/* comment input field */}
+          {/* <input
             onChange={handleFrom}
             name="hotelName"
             type="text"
@@ -25,16 +32,46 @@ const Hotel = () => {
             id="floatingInput"
             placeholder="From"
           />
+          <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label> */}
+          <select
+            onChange={handleFrom}
+            name="hotelName"
+            className="form-select"
+            id="floatingSelect"
+            aria-label="Floating label select example"
+          >
+            <option>--Select Hotel--</option>
+            {hotelsData?.map(data => (
+              <option key={data?._id} value={data?.hotelName}>
+                {data?.hotelName}
+              </option>
+            ))}
+          </select>
           <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label>
         </div>
         {/* for mobile */}
         <div className="form-floating  d-block d-md-none mb-3">
-          <input 
+          {/* <input 
           onChange={handleFrom}
           type="text"
           className="form-control"
           id="floatingInput"
           placeholder="From" />
+          <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label> */}
+          <select
+            onChange={handleFrom}
+            name="hotelName"
+            className="form-select"
+            id="floatingSelect"
+            aria-label="Floating label select example"
+          >
+            <option>--Select Hotel --</option>
+            {hotelsData?.map(data => (
+              <option key={data?._id} value={data?.hotelName}>
+                {data?.hotelName}
+              </option>
+            ))}
+          </select>
           <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label>
         </div>
         <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-block d-lg-flex">
@@ -69,7 +106,7 @@ const Hotel = () => {
             id="floatingSelect"
             aria-label="Floating label select example"
           >
-            <option >--Select Room & Guests--</option>
+            <option>--Select Room & Guests--</option>
             <option value="1 Room, 3 Guests">1 Room, 3 Guests</option>
             <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
             <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
@@ -78,14 +115,14 @@ const Hotel = () => {
         </div>
 
         {/* for mobile device input */}
-     
+
         <div className="form-floating w-100 d-block d-lg-none  ms-0 ms-lg-3">
           <select
             className="form-select"
             id="floatingSelect"
             aria-label="Floating label select example"
           >
-            <option >1 Room, 2 Guests</option>
+            <option>1 Room, 2 Guests</option>
             <option value="1 Room, 3 Guests">1 Room, 3 Guests</option>
             <option value="1 Room, 2 Guests">1 Room, 2 Guests</option>
             <option value="2 Room, 5 Guests">2 Room, 5 Guests</option>
@@ -97,11 +134,20 @@ const Hotel = () => {
       <div className="search-btn">
         <div className="container">
           <div className="row">
-            <div className="col-lg-1 mx-auto ">
-              <Link to="/hotel">
-                {" "}
-                <button> Search </button>
-              </Link>
+            <div className="col-lg-1 px-0 mx-auto ">
+            {updatedValues ? (
+                <Link to="/hotel">
+                  {" "}
+                  <button> Search </button>
+                </Link>
+              ) : (
+                <>
+                  <button className="bg-secondary" title="Please select destination">
+                    {" "}
+                    Search{" "}
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
