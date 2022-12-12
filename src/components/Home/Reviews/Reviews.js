@@ -1,25 +1,16 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
+import React from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import Slider from "react-slick";
+import useSWR from "swr";
 import "./Reviews.css";
+// useSWR data fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
+
 const Reviews = () => {
-  const [reviews, setReviews] = useState([]);
+  const { data: reviewsData } = useSWR("https://mr-travel-server.onrender.com/reviews", fetcher);
 
-  // useEffect(() => {
-  //   fetch("https://mr-travel-server.onrender.com/reviews")
-  //     .then(res => res.json())
-  //     .then(data => setReviews(data));
-  // }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("https://mr-travel-server.onrender.com/reviews");
-      setReviews(res.data);
-    };
-    fetchData();
-  }, []);
   // here slider settings
   var settings = {
     infinite: true,
@@ -68,7 +59,7 @@ const Reviews = () => {
       <div className="container">
         <div className="row ">
           <Slider {...settings}>
-            {reviews.map(data => (
+            {reviewsData?.map(data => (
               <div key={data?._id} className="col-lg-4 ">
                 <div className=" review-item m-4 ">
                   <div className="reviewer">
