@@ -6,7 +6,7 @@ body {
 a {
   text-decoration: none;
 }
-li{
+li {
   list-style: none;
 }
 .logo-image {
@@ -34,7 +34,7 @@ li{
   background-color: #ffca28;
   border: 0;
   color: black;
-  padding: 10px ;
+  padding: 10px;
 }
 /* .sign-in button a{color: black;} */
 .UserImg {
@@ -59,7 +59,7 @@ li{
   display: flex;
   align-items: center;
 }
-.dropdown-item:hover{
+.dropdown-item:hover {
   background-color: #0a58ca;
   color: white;
 }
@@ -80,7 +80,8 @@ nav ul li {
 }
 nav ul li a {
   color: #0a58ca;
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .nav-img {
@@ -162,7 +163,6 @@ nav ul li a {
   font-weight: bold;
   font-size: 30px;
 }
-
 
 /* footer section css */
 

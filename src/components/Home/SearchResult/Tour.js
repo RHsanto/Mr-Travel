@@ -25,6 +25,7 @@ const Tour = () => {
     <div>
       <div className="form-floating w-100">
         <select
+          required
           onChange={handleFrom}
           name="TourName"
           className="form-select"
@@ -43,7 +44,7 @@ const Tour = () => {
       <div className="search-btn">
         <div className="container">
           <div className="row">
-            <div className="col-lg-1 mx-auto ">
+            <div className="col-lg-1 mx-auto mt-3">
               <Link to="/tour">
                 {" "}
                 <button> Search </button>

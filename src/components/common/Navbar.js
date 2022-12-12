@@ -6,7 +6,7 @@ import { GiCommercialAirplane, GiPalmTree } from "react-icons/gi";
 import { RiAdminFill, RiHotelFill } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
-import { FaUserCircle, FaBus, FaUserAlt, FaTags } from "react-icons/fa";
+import { FaUserCircle, FaUserAlt, FaTags } from "react-icons/fa";
 import logos from "../../images/t-logo.png";
 import useSWR from "swr";
 
@@ -30,12 +30,12 @@ const Navbar = () => {
         </div>
         <div className="d-none d-lg-block">
           <nav>
-            <ul className="">
-              <li>
+            <ul>
+              {/* <li>
                 <Link to="/">
                   <FaBus /> Bus
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/">
                   <GiCommercialAirplane /> Flight
@@ -55,62 +55,65 @@ const Navbar = () => {
           </nav>
         </div>
 
-           {/* here use login functionality */}
-           <div className="d-flex align-items-center">
-            {user?.email ? (
+        {/* here use login functionality */}
+        <div className="d-flex align-items-center">
+          {user?.email ? (
+            <>
               <>
-                <>
-                  {data?.[0]?.imageLink ? (
-                    <img className="nav-img" src={data?.[0]?.imageLink} alt="img" />
-                  ) : (
-                    <FaUserCircle className="fs-1 text-light" />
-                  )}
-                </>
-                <div className="dropdown">
-                  <div
-                    className="text-light ms-2"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <IoIosArrowDown className=" fw-bold text-dark fs-5" />
-                  </div>
-
-                  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    {data?.[0]?.role === 'user' ? "" :
-                    <span>
-                    <Link to="/admin-dash" className=" dropdown-item">
-                      <RiAdminFill className="me-1 fs-4" /> Admin Dashboard
-                    </Link>
-                  </span>}
-                    <span>
-                      <Link to="/user-profile" className=" dropdown-item">
-                        <FaUserAlt className="me-1" /> Profile
-                      </Link>
-                    </span>
-                    <span>
-                      <Link to="/my-booking" className="dropdown-item ">
-                        <FaTags className="me-1" /> My Booking
-                      </Link>
-                    </span>
-                    <span className="dropdown-item w-100" onClick={logOut}>
-                      <FiLogOut className="me-1" /> Sign-out
-                    </span>
-                  </ul>
-                </div>
+                {data?.[0]?.imageLink ? (
+                  <img className="nav-img" src={data?.[0]?.imageLink} alt="img" />
+                ) : (
+                  <FaUserCircle className="fs-1 text-light" />
+                )}
               </>
-            ) : (
-              <div className="sign-in">
-                <Link to="/sign-in">
-                  <button className="rounded ">
-                    {" "}
-                    <FiLogIn /> Sign-in
-                  </button>{" "}
-                </Link>
+              <div className="dropdown">
+                <div
+                  className="text-light ms-2"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <IoIosArrowDown className=" fw-bold text-dark fs-5" />
+                </div>
+
+                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  {data?.[0]?.role === "user" ? (
+                    ""
+                  ) : (
+                    <span>
+                      <Link to="/admin-dash" className=" dropdown-item">
+                        <RiAdminFill className="me-1 fs-4" /> Admin Dashboard
+                      </Link>
+                    </span>
+                  )}
+                  <span>
+                    <Link to="/user-profile" className=" dropdown-item">
+                      <FaUserAlt className="me-1" /> Profile
+                    </Link>
+                  </span>
+                  <span>
+                    <Link to="/my-booking" className="dropdown-item ">
+                      <FaTags className="me-1" /> My Booking
+                    </Link>
+                  </span>
+                  <span className="dropdown-item w-100" onClick={logOut}>
+                    <FiLogOut className="me-1" /> Sign-out
+                  </span>
+                </ul>
               </div>
-            )}
-          </div>
+            </>
+          ) : (
+            <div className="sign-in">
+              <Link to="/sign-in">
+                <button className="rounded ">
+                  {" "}
+                  <FiLogIn /> Sign-in
+                </button>{" "}
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

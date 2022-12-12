@@ -2,15 +2,13 @@
 import React from "react";
 import { GiCommercialAirplane, GiPalmTree } from "react-icons/gi";
 import { RiHotelFill } from "react-icons/ri";
-import { FaBus } from "react-icons/fa";
 import Flight from "./Flight";
 import Hotel from "./Hotel";
 import Tour from "./Tour";
-import Bus from "./Bus";
 import { useState } from "react";
 
 const SearchResult = () => {
-  const [info, setInfo] = useState(<Bus />);
+  const [info, setInfo] = useState(<Flight />);
 
   const handleFlight = e => {
     setInfo(<Flight />);
@@ -21,9 +19,10 @@ const SearchResult = () => {
   const handleHotel = e => {
     setInfo(<Hotel />);
   };
-  const handleBus = e => {
-    setInfo(<Bus />);
-  };
+
+  // const handleBus = e => {
+  //   setInfo(<Bus />);
+  // };
 
   return (
     <div className="search-section ">
@@ -33,10 +32,10 @@ const SearchResult = () => {
             <div className="col-lg-6 mx-auto col-11 ">
               <div className="all-category rounded shadow-lg">
                 <ul className="d-flex  ps-0 justify-content-between align-items-center ">
-                  <li onClick={handleBus} className="active">
+                  {/* <li onClick={handleBus} className="active">
                     <FaBus /> Bus
-                  </li>
-                  <li onClick={handleFlight}>
+                  </li> */}
+                  <li onClick={handleFlight} className="active">
                     <GiCommercialAirplane /> Flight
                   </li>
                   <li onClick={handleHotel}>

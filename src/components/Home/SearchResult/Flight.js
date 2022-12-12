@@ -119,7 +119,7 @@ const Flight = () => {
       <div className="search-btn">
         <div className="container">
           <div className="row">
-            <div className="col-lg-1 mx-auto ">
+            <div className="col-lg-1 mx-auto mt-3">
               <Link to="/flight">
                 {" "}
                 <button> Search </button>

@@ -15,7 +15,6 @@ import OffersDetails from "./components/Home/BestOffer/OffersDetails";
 import TourDetails from "./components/AllDetails/TourDetails";
 import FlightDetails from "./components/AllDetails/FlightDetails";
 import BusDetails from "./components/AllDetails/BusDetails";
-import AddBooking from "./components/AddBookings/AddBooking";
 import Payment from "./components/DashBoard/Payment/Payment";
 import UserProfile from "./components/DashBoard/UserProfile/UserProfile";
 import AdminDash from "./components/DashBoard/AdminDashboard/AdminDash";
@@ -42,7 +41,6 @@ function App() {
               <Route path="/tours/:id" element={<TourDetails />} />
               <Route path="/flights/:id" element={<FlightDetails />} />
               <Route path="/bus/:id" element={<BusDetails />} />
-              <Route path="/booking/:id" element={<AddBooking />} />
               <Route path="/payment/:id" element={<Payment />} />
             </Routes>
           </BrowserRouter>
