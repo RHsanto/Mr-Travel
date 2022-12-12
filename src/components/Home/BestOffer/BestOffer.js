@@ -1,22 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 import icon1 from '../../../images/icons-1.webp'
 import icon2 from '../../../images/icons-2.webp'
 import icon3 from '../../../images/icon-3.webp'
 import icon4 from '../../../images/icons-4.webp'
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import useSWR from 'swr';
+
+// useSWR data fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const BestOffer = () => {
-  const [offers,setOffers]=useState([])
+  const { data: offersData} = useSWR(`https://mr-travel-server.onrender.com/offersInfo`, fetcher);
 
-  useEffect(()=>{
-    const fetchData = async ()=>{
-      const res = await axios.get('https://mr-travel-server.onrender.com/offersInfo')
-      setOffers(res.data.slice(4,8))
-    }
-    fetchData()
-  },[])
+const dataSlice = offersData?.slice(4,8)
+
+  // const [offers,setOffers]=useState([])
+
+  // useEffect(()=>{
+  //   const fetchData = async ()=>{
+  //     const res = await axios.get('https://mr-travel-server.onrender.com/offersInfo')
+  //     setOffers(res.data.slice(4,8))
+  //   }
+  //   fetchData()
+  // },[])
 
 
   return (
@@ -24,7 +31,7 @@ const BestOffer = () => {
       <h2 className='text-center title'><b>THE BEST OFFERS WITH ROOMS</b></h2>
       <div className="container">
         <div className="row row-cols-1 row-cols-md-2 g-5 m-0">
-         {offers.map(offer=>(
+         {dataSlice?.map(offer=>(
             <div key={offer?._id} className="col-lg-6 ">
             <div className="row ">
               <div className="col-lg-6 offer-img">
