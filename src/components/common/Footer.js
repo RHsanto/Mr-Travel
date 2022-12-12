@@ -7,10 +7,10 @@ const Footer = () => {
       <footer>
         <div className="container">
           <div className="row g-4">
-            <div className="col-lg-3">
+            <div className="col-lg-4">
               <div className="footer-logo">
                 <h1>Mr. Travel </h1>
-                <p>Lorem ipsum dolor sit ametco nsec te tuer adipiscing elitae</p>
+                <p className="my-4 ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus eaque amet magni ea dolorem quas tenetur quasi ratione, odit dolor facere, repellat id laudantium. Quis.</p>
                 <div className="footer-icons">
                   <li>
                     <FaFacebookF />
@@ -27,15 +27,10 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 services px-5">
-              <h4>Services</h4>
-              <li>About Us</li>
-              <li>How It Works</li>
-              <li>Our Services</li>
-              <li>Contact Us</li>
-            </div>
-            <div className="col-lg-3 contact">
-              <h4>Contact Info</h4>
+           
+            <div className="col-lg-4 ">
+             <div className="contact text-center">
+             <h4 className="mb-4">CONTACT</h4>
               <li>
                 <FaMapMarkedAlt className="me-2" /> Dhaka, Bangladesh
               </li>
@@ -45,9 +40,10 @@ const Footer = () => {
               <li>
                 <MdEmail className="me-2" /> mrtravel123@gmail.com
               </li>
+             </div>
             </div>
-            <div className="col-lg-3">
-              <h4>Our Instagram</h4>
+            <div className="col-lg-4">
+              <h4>INSTAGRAM FEED</h4>
               <div className="gallery-img">
                 <div className="d-flex">
                   <li>
