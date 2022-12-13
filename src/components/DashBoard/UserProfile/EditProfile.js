@@ -8,9 +8,9 @@ import { FaUserCircle } from "react-icons/fa";
 import axios from "axios";
 import useFirebase from "../../../hooks/useFirebase";
 import useSWR, { useSWRConfig } from "swr";
-import CircularProgress from "@mui/material/CircularProgress";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ProgressBar } from 'react-loader-spinner';
 
 // useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -27,7 +27,7 @@ const EditProfile = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
     axios.post(`https://mr-travel-server.onrender.com/edit-user/${user.email}`, data).then(res => {
- // here show error msg
+      // here show error msg
       if (!res?.data?.success) {
         toast.error("🦄 Wow so easy!", {
           position: "top-center",
@@ -41,7 +41,7 @@ const EditProfile = () => {
         });
       }
 
-// here show success msg
+      // here show success msg
       if (res?.data?.success) {
         toast.success("Edit Profile Successful", {
           position: "top-center",
@@ -66,11 +66,11 @@ const EditProfile = () => {
       ...userInfo,
       file: event.target.files[0],
     });
-    
+
     // setCount(event.target.files?.length);
   };
-// console.log(count);
-// here img upload button 
+  // console.log(count);
+  // here img upload button
   const submit = async () => {
     setLoading(true);
     const formData = new FormData();
@@ -132,7 +132,15 @@ const EditProfile = () => {
                   </>
                 ) : (
                   //  loading spinner
-                  <CircularProgress />
+                  <ProgressBar
+                    height="100"
+                    width="90"
+                    ariaLabel="progress-bar-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="progress-bar-wrapper"
+                    borderColor="#000"
+                    barColor="#0A58CA"
+                  />
                 )}
               </>
             </div>
@@ -247,7 +255,6 @@ const EditProfile = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                   
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                   </select>
@@ -276,7 +283,6 @@ const EditProfile = () => {
                     className="form-select"
                     aria-label="Default select example"
                   >
-                    
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
                   </select>
@@ -297,7 +303,7 @@ const EditProfile = () => {
                 draggable
                 pauseOnHover
               />
-               {/* error animation */}
+              {/* error animation */}
               <ToastContainer
                 position="top-center"
                 autoClose={5000}

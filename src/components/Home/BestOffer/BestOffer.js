@@ -6,6 +6,7 @@ import icon3 from '../../../images/icon-3.webp'
 import icon4 from '../../../images/icons-4.webp'
 import { Link } from 'react-router-dom';
 import useSWR from 'swr';
+import { MagnifyingGlass } from 'react-loader-spinner';
 
 // useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -25,10 +26,26 @@ const dataSlice = offersData?.slice(4,8)
   //   fetchData()
   // },[])
 
-
+ if(!offersData)return(
+    <>
+    <h2 className='text-center title fw-bold'>THE BEST OFFERS WITH ROOMS</h2>
+    <div className='d-flex justify-content-center'>
+    <MagnifyingGlass
+  visible={true}
+  height="200"
+  width="120"
+  ariaLabel="MagnifyingGlass-loading"
+  wrapperStyle={{}}
+  wrapperClass="MagnifyingGlass-wrapper"
+  glassColor = '#c0efff'
+  color = '#e15b64'
+/>
+     </div>
+    </>
+ )
   return (
     <div className='offer-section '>
-      <h2 className='text-center title'><b>THE BEST OFFERS WITH ROOMS</b></h2>
+      <h2 className='text-center title fw-bold'>THE BEST OFFERS WITH ROOMS</h2>
       <div className="container">
         <div className="row row-cols-1 row-cols-md-2 g-5 m-0">
          {dataSlice?.map(offer=>(

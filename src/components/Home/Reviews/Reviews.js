@@ -1,6 +1,6 @@
-
 import React from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import {  RotatingSquare } from "react-loader-spinner";
 import Rating from "react-rating";
 import Slider from "react-slick";
 import useSWR from "swr";
@@ -11,6 +11,24 @@ const fetcher = (...args) => fetch(...args).then(res => res.json());
 const Reviews = () => {
   const { data: reviewsData } = useSWR("https://mr-travel-server.onrender.com/reviews", fetcher);
 
+  if (!reviewsData)
+    return (
+      <div>
+        <h1 className="text-center title py-5"> Traveler Experience</h1>
+        <div className="d-flex justify-content-center">
+          <RotatingSquare
+            height="200"
+            width="150"
+            color="#0A58CA"
+            ariaLabel="rotating-square-loading"
+            strokeWidth="4"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+      </div>
+    );
   // here slider settings
   var settings = {
     infinite: true,
@@ -55,7 +73,7 @@ const Reviews = () => {
   return (
     <div className="review-section mx-5">
       <h1 className="text-center title py-5"> Traveler Experience</h1>
-      <div className="sub"></div>
+
       <div className="container">
         <div className="row ">
           <Slider {...settings}>
