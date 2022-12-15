@@ -7,6 +7,7 @@ import payments from "../../../images/payments.jpg";
 
 const Payment = () => {
   const { id } = useParams();
+  // eslint-disable-next-line no-unused-vars
   const [payment, setPayment] = useState([]);
 
   useEffect(() => {
@@ -20,13 +21,12 @@ const Payment = () => {
       <div className="container my-5">
         <div className="row">
           <div className="col-lg-6">
-            <h1>Payment here</h1>
-            <h5>{payment?.price ? <>BDT{payment?.price}</> : <></>}</h5>
-            <h5>{payment?.sum ? <>${payment?.sum}</> : <></>}</h5>
-          </div>
-          <div className="col-lg-6">
+            <h3>Payment Gateway is coming soon...</h3>
             <img src={payments} alt="img " className="w-100" />
+            
           </div>
+          {/* <div className="col-lg-6">
+          </div> */}
         </div>
       </div>
     </div>

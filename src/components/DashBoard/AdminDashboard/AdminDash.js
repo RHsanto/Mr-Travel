@@ -11,7 +11,6 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import MainDashboard from "./MainDashboard";
-import Categories from "./Catergories";
 import Services from "./Services";
 import BookingList from "./BookingList";
 import Payments from "./Payments";
@@ -24,6 +23,7 @@ import { Link } from "react-router-dom";
 import { FcHome } from "react-icons/fc";
 import useFirebase from "../../../hooks/useFirebase";
 import useSWR from "swr";
+import AddServices from "./AddServices";
 
 //  use useSwr fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -37,8 +37,8 @@ const AdminDash = () => {
   const handleDashboard = () => {
     setDashList(<MainDashboard />);
   };
-  const handleCategories = () => {
-    setDashList(<Categories />);
+  const handleAddServices = () => {
+    setDashList(<AddServices />);
   };
 
   const handleServices = () => {
@@ -74,7 +74,7 @@ const AdminDash = () => {
               <li onClick={handleDashboard} className="dropdown-item">
                 <MdOutlineDashboard className="me-2" /> Dashboard
               </li>
-              <li onClick={handleCategories} className="dropdown-item">
+              <li onClick={handleAddServices} className="dropdown-item">
                 <FaLayerGroup className="me-2" /> Categories
               </li>
               <li onClick={handleServices} className="dropdown-item">
@@ -129,7 +129,7 @@ const AdminDash = () => {
                       <li onClick={handleDashboard} className="dropdown-item">
                         <MdOutlineDashboard className="me-2" /> Dashboard
                       </li>
-                      <li onClick={handleCategories} className="dropdown-item">
+                      <li onClick={handleAddServices} className="dropdown-item">
                         <FaLayerGroup className="me-2" /> Categories
                       </li>
                       <li onClick={handleServices} className="dropdown-item">
