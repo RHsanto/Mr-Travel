@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdOutlineDashboard } from "react-icons/md";
 import { BsBookmarkStarFill } from "react-icons/bs";
-import { RiMenuFoldFill, RiPaypalFill } from "react-icons/ri";
+import { RiImageAddFill, RiMenuFoldFill, RiPaypalFill } from "react-icons/ri";
 import {
   FaUsers,
   FaStarHalfAlt,
@@ -74,9 +74,6 @@ const AdminDash = () => {
               <li onClick={handleDashboard} className="dropdown-item">
                 <MdOutlineDashboard className="me-2" /> Dashboard
               </li>
-              <li onClick={handleAddServices} className="dropdown-item">
-                <FaLayerGroup className="me-2" /> Categories
-              </li>
               <li onClick={handleServices} className="dropdown-item">
                 <FaQrcode className="me-2" /> Services
               </li>
@@ -91,6 +88,9 @@ const AdminDash = () => {
               </li>
               <li onClick={handleUsers} className="dropdown-item">
                 <FaUsers className="me-2" /> Users
+              </li>
+              <li onClick={handleAddServices} className="dropdown-item">
+                <RiImageAddFill className="me-2" /> Add Services
               </li>
             </div>
           </div>
