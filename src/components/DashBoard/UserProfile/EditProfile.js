@@ -20,9 +20,7 @@ const EditProfile = () => {
   const { user } = useFirebase();
   const [loading, setLoading] = useState(false);
   const [userImg, setUserImg] = useState("");
-  // const [count, setCount] = useState("");
   const [userInfo, setUserInfo] = useState({ file: [] });
-
   //here react hook from
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
@@ -67,11 +65,10 @@ const EditProfile = () => {
       file: event.target.files[0],
     });
 
-    // setCount(event.target.files?.length);
   };
-  // console.log(count);
+
   // here img upload button
-  const submit = async () => {
+  const imgSubmit = async () => {
     setLoading(true);
     const formData = new FormData();
     formData.append("image", userInfo.file);
@@ -105,6 +102,7 @@ const EditProfile = () => {
       .finally(() => {
         setLoading(false);
       });
+   
     // console.log("Click");
   };
 
@@ -150,8 +148,7 @@ const EditProfile = () => {
               </div>
               <div>
                 <button
-                  // disabled={(count == 0 ? "disabled": loading )}
-                  onClick={() => submit()}
+                  onClick={() => imgSubmit()}
                   type="submit"
                   className="save-btn "
                 >
@@ -160,7 +157,7 @@ const EditProfile = () => {
               </div>
             </div>
           </div>
-          {/*edit form */}
+ {/*edit form */}
           {/*Basic Info  */}
           <form onSubmit={handleSubmit(onSubmit)} className="edit-form">
             <h5 className="mb-5 fw-bold">Basic Info :</h5>
