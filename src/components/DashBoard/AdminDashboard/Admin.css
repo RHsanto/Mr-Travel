@@ -93,3 +93,16 @@ div#offcanvasExample {
   margin-bottom: -20px;
   text-align: center;
 }
+
+.box-tour button{
+  background: #6c5ce7;
+  color: white;
+}
+.box-hotel button{
+  color: white;
+  background: #A3CB38;
+}
+.box-flight button{
+  color: white;
+  background: #12CBC4;
+}
