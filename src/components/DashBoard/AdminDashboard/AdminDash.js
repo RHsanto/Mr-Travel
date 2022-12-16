@@ -23,7 +23,8 @@ import { Link } from "react-router-dom";
 import { FcHome } from "react-icons/fc";
 import useFirebase from "../../../hooks/useFirebase";
 import useSWR from "swr";
-import AddServices from "./AddServices";
+import AddServices from "./AddServicesFrom/AddServices";
+
 
 //  use useSwr fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
