@@ -17,23 +17,26 @@ import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const OffersDetails = () => {
-  const {user}=useFirebase();
+  const { user } = useFirebase();
   const { id } = useParams();
   const [offer, setOffer] = useState([]);
   const sum = parseFloat(offer?.price) + parseFloat(offer?.service) + parseFloat(offer?.tax);
-// here pick booking date
+  // here pick booking date
   const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
- 
-  // here get user info
-  const { data:userData} = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
+  const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
-// console.log(userData?.[0]?.imageLink);
+  // here get user info
+  const { data: userData } = useSWR(
+    `https://mr-travel-server.onrender.com/user/${user.email}`,
+    fetcher
+  );
+
+  // console.log(userData?.[0]?.imageLink);
   useEffect(() => {
     fetch(`  https://mr-travel-server.onrender.com/offers/${id}`)
       .then(response => response.json())
       .then(data => setOffer(data));
-  },[id]);
+  }, [id]);
 
   // react hook form
   const { register, handleSubmit, reset } = useForm();
@@ -47,9 +50,9 @@ const OffersDetails = () => {
     data.room = offer.room;
     data.guest = offer.guest;
     data.sum = sum;
-    data.bookingDate=date;
-    data.userImg= userData?.[0]?.imageLink;
-    data.status ="pending";
+    data.bookingDate = date;
+    data.userImg = userData?.[0]?.imageLink;
+    data.status = "pending";
 
     axios.post("  https://mr-travel-server.onrender.com/booking", data).then(res => {
       if (res.data.insertedId) {
@@ -323,7 +326,6 @@ const OffersDetails = () => {
                         id="floatingInput"
                         placeholder="Email"
                         defaultValue={user?.email}
-                      
                       />
                       <label htmlFor="floatingInput">Email</label>
                     </div>
