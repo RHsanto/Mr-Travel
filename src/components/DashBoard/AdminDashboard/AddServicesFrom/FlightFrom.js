@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { GiCommercialAirplane } from "react-icons/gi";
+import { MdAddToPhotos } from "react-icons/md";
 import { toast, ToastContainer } from "react-toastify";
 
 const FlightFrom = () => {
@@ -185,22 +186,22 @@ const FlightFrom = () => {
                     </select>
                     <label for="floatingSelect">Service Type</label>
                   </div>
-                  <>
-                      <button type="submit" className="w-100 btn">
-                      Add Flight Services
-                        <ToastContainer
-                          position="top-right"
-                          autoClose={5000}
-                          hideProgressBar={false}
-                          newestOnTop={false}
-                          closeOnClick
-                          rtl={false}
-                          pauseOnFocusLoss
-                          draggable
-                          pauseOnHover
-                        />
-                      </button>
-                    </>
+                  <div className="ms-1 mt-3 ">
+                  <button type="submit" className="confirm w-100">
+                  <MdAddToPhotos/>  Add Flight Services
+                  </button>
+                  <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                  />
+                     </div>
                 </form>
                 </div>
               </div>

@@ -1,7 +1,29 @@
+import axios from "axios";
 import React from "react";
+import { useForm } from "react-hook-form";
+import { toast, ToastContainer } from "react-toastify";
 import { GiPalmTree } from "react-icons/gi";
+import { MdAddToPhotos } from "react-icons/md";
 
 const TourFrom = () => {
+   // react hook form
+   const { register, handleSubmit, reset } = useForm();
+   const onSubmit = data => {
+     axios.post("  https://mr-travel-server.onrender.com/add-hotel", data).then(res => {
+       if (res.data.insertedId) {
+         toast.success("Add Successfully", {
+           position: "top-center",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+         });
+         reset();
+       }
+     });
+   };
   return (
     <div className="tour-from">
       <div className="accordion accordion-flush" id="accordionFlushExample">
@@ -27,12 +49,21 @@ const TourFrom = () => {
             >
               <div className="accordion-body">
                 <div className="add-tour-from">
+                  <form onSubmit={handleSubmit(onSubmit)}>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="area" />
+                    <input 
+                     {...register("area")}
+                     required
+                    type="text" 
+                    class="form-control" 
+                    id="floatingInput" 
+                    placeholder="area" />
                     <label for="floatingInput">Location </label>
                   </div>
                   <div class="form-floating mb-3">
                     <input
+                     {...register("TourName")}
+                      required
                       type="text"
                       class="form-control"
                       id="floatingInput"
@@ -42,6 +73,8 @@ const TourFrom = () => {
                   </div>
                   <div class="form-floating mb-3">
                     <input
+                     {...register("checkIn")}
+                     required
                       type="date"
                       class="form-control"
                       id="floatingInput"
@@ -51,6 +84,8 @@ const TourFrom = () => {
                   </div>
                   <div class="form-floating mb-3">
                     <input
+                     {...register("checkOut")}
+                     required
                       type="date"
                       class="form-control"
                       id="floatingInput"
@@ -58,17 +93,11 @@ const TourFrom = () => {
                     />
                     <label for="floatingInput">Check Out</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="floatingInput"
-                      placeholder="checkout"
-                    />
-                    <label for="floatingInput">Check Out</label>
-                  </div>
-                  <div class="form-floating mb-3">
+      
+                 <div class="form-floating mb-3">
                     <select
+                     {...register("member")}
+                     required
                       class="form-select"
                       id="floatingSelect"
                       aria-label="Floating label select example"
@@ -81,6 +110,8 @@ const TourFrom = () => {
                   </div>
                   <div class="form-floating mb-3">
                     <input
+                     {...register("totalTime")}
+                      required
                       type="number"
                       class="form-control"
                       id="floatingInput"
@@ -90,6 +121,8 @@ const TourFrom = () => {
                   </div>
                   <div class="form-floating mb-3">
                     <input
+                     {...register("price")}
+                      required
                       type="number"
                       class="form-control"
                       id="floatingInput"
@@ -99,6 +132,8 @@ const TourFrom = () => {
                   </div>
                   <div class="form-floating mb-3">
                     <input
+                     {...register("img")}
+                     required
                       type="text"
                       class="form-control"
                       id="floatingInput"
@@ -108,6 +143,8 @@ const TourFrom = () => {
                   </div>
                   <div class="form-floating mb-3">
                     <select
+                     {...register("types")}
+                     required
                       class="form-select"
                       id="floatingSelect"
                       aria-label="Floating label select example"
@@ -116,6 +153,24 @@ const TourFrom = () => {
                     </select>
                     <label for="floatingSelect">Service Type</label>
                   </div>
+                  <div className="ms-1 mt-3 ">
+                  <button type="submit" className="confirm w-100">
+                  <MdAddToPhotos/>  Add Tour Services
+                  </button>
+                  <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                  />
+                    </div>
+                  </form>
+                 
                 </div>
               </div>
             </div>

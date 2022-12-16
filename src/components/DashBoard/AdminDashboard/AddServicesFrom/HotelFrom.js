@@ -3,6 +3,7 @@ import { FaHotel } from "react-icons/fa";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
+import { MdAddToPhotos } from "react-icons/md";
 
 const HotelFrom = () => {
   // react hook form
@@ -229,9 +230,9 @@ const HotelFrom = () => {
                       ></textarea>
                       <label for="floatingTextarea">Description</label>
                     </div>
-                    <div className="ms-1 mt-3 ">
+                   <div className="ms-1 mt-3 ">
                   <button type="submit" className="confirm w-100">
-                    Add Hotel Services
+                  <MdAddToPhotos/>  Add Hotel Services
                   </button>
                   <ToastContainer
                     position="top-right"
@@ -244,7 +245,7 @@ const HotelFrom = () => {
                     draggable
                     pauseOnHover
                   />
-                </div>
+                     </div>
                   </form>
                 </div>
               </div>
