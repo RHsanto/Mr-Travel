@@ -6,8 +6,7 @@ import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const Flight = () => {
-
-  const { data: flightsData} = useSWR(`https://mr-travel-server.onrender.com/flightInfo`, fetcher);
+  const { data: flightsData } = useSWR(`https://mr-travel-server.onrender.com/flightInfo`, fetcher);
 
   const [updatedValues, setUpdatedValues] = useState();
 
@@ -25,20 +24,22 @@ const Flight = () => {
       <div className="d-block  d-md-flex  justify-content-center ">
         <div className="d-flex w-100 ">
           <div className="form-floating w-100">
-          <select
+            <select
               onChange={handleFrom}
               name="from"
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
             >
-               <option>--Select From Destination--</option>
-              {flightsData?.map(data=>(
-                <option key={data?._id} value={data?.from}>{data?.from}</option>
+              <option>--Select From Destination--</option>
+              {flightsData?.map(data => (
+                <option key={data?._id} value={data?.from}>
+                  {data?.from}
+                </option>
               ))}
-          </select>
-          <label htmlFor="floatingSelect">FROM</label>
-       {/* comment input field */}
+            </select>
+            <label htmlFor="floatingSelect">FROM</label>
+            {/* comment input field */}
             {/* <input
               onChange={handleFrom}
               name="from"
@@ -58,19 +59,21 @@ const Flight = () => {
               id="floatingInput"
               placeholder="To"
             /> */}
-             <select
+            <select
               onChange={handleFrom}
               name="to"
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
             >
-               <option>--Select To Destination--</option>
-              {flightsData?.map(data=>(
-                <option key={data?._id} value={data?.to}>{data?.to}</option>
+              <option>--Select To Destination--</option>
+              {flightsData?.map(data => (
+                <option key={data?._id} value={data?.to}>
+                  {data?.to}
+                </option>
               ))}
-          </select>
-          <label htmlFor="floatingSelect">TO</label>
+            </select>
+            <label htmlFor="floatingSelect">TO</label>
             {/* <label htmlFor="floatingInput">TO</label> */}
           </div>
         </div>
@@ -153,7 +156,7 @@ const Flight = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-1 px-0  mx-auto mt-3">
-            {updatedValues ? (
+              {updatedValues ? (
                 <Link to="/flight">
                   {" "}
                   <button> Search </button>

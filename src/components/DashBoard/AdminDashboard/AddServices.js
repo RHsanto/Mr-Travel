@@ -22,7 +22,7 @@ const AddServices = () => {
                       aria-expanded="false"
                       aria-controls="flush-collapseOne"
                     >
-                    <GiCommercialAirplane className="me-2"/>  ADD FLIGHT ITEMS 
+                      <GiCommercialAirplane className="me-2" /> ADD FLIGHT ITEMS
                     </button>
                   </h2>
                   <div
@@ -32,8 +32,120 @@ const AddServices = () => {
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body">
-                      Placeholder content for this accordion, which is intended to demonstrate the{" "}
-                      <code>.accordion-flush</code> class. This is the first item's accordion body.
+                      <div className="add-flight-from">
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="From"
+                          />
+                          <label for="floatingInput">From </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="TO"
+                          />
+                          <label for="floatingInput">TO </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="journey Date"
+                          />
+                          <label for="floatingInput">Journey Date </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="Return Date"
+                          />
+                          <label for="floatingInput">Return Date </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <select
+                            class="form-select"
+                            id="floatingSelect"
+                            aria-label="Floating label select example"
+                          >
+                            <option selected>Open this select menu</option>
+                            <option value="Business">Business</option>
+                            <option value="Economic">Economic</option>
+                          </select>
+                          <label for="floatingSelect">Select Class Type</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="Price"
+                          />
+                          <label for="floatingInput">Price</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="planeName"
+                          />
+                          <label for="floatingInput">Plane Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="time"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="startDate"
+                          />
+                          <label for="floatingInput">Start Date</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="time"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="endDate"
+                          />
+                          <label for="floatingInput">End Date</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="totalTime"
+                          />
+                          <label for="floatingInput">Total Time</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="Imglink"
+                          />
+                          <label for="floatingInput">Img link</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <select
+                            class="form-select"
+                            id="floatingSelect"
+                            aria-label="Floating label select example"
+                          >
+                            <option defaultValue="Flight">Flight</option>
+                          </select>
+                          <label for="floatingSelect">Service Type</label>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -51,7 +163,7 @@ const AddServices = () => {
                       aria-expanded="false"
                       aria-controls="flush-collapseTwo"
                     >
-                      <FaHotel className="me-2"/> ADD HOTEL ITEMS
+                      <FaHotel className="me-2" /> ADD HOTEL ITEMS
                     </button>
                   </h2>
                   <div
@@ -81,7 +193,7 @@ const AddServices = () => {
                       aria-expanded="false"
                       aria-controls="flush-collapseThree"
                     >
-                      <GiPalmTree className="me-1"/> ADD TOUR ITEMS
+                      <GiPalmTree className="me-1" /> ADD TOUR ITEMS
                     </button>
                   </h2>
                   <div
