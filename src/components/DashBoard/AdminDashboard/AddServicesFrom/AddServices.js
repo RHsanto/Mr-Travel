@@ -10,13 +10,13 @@ const AddServices = () => {
       <AdminDashHeader />
       <div className="container-fluid px-1">
        <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 mb-5">
           <FlightFrom/>
         </div>
-        <div className="col-lg-4">
+        <div className="col-lg-4 mb-5">
           <HotelFrom/>
         </div>
-        <div className="col-lg-4">
+        <div className="col-lg-4 mb-5">
           <TourFrom/>
         </div>
        </div>

@@ -1,7 +1,5 @@
 import React from 'react';
 import { FaUserCircle } from 'react-icons/fa';
-import { ImUserPlus } from 'react-icons/im';
-import { RiAdminFill } from 'react-icons/ri';
 import useSWR from 'swr';
 import AdminDashHeader from './AdminDashHeader';
 // useSWR data fetcher
@@ -28,7 +26,6 @@ const AllUser = () => {
                       <th scope="col">Contact No</th>
                       <th scope="col">Address</th>
                       <th scope="col">Role</th>
-                      <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -46,14 +43,6 @@ const AllUser = () => {
                         <td>{data?.PhoneNumber || "N/A"}</td>
                         <td>{data?.Address || "N/A"}</td>
                         <td>{data?.role}</td>
-                        <td>
-                          {data?.role === "user" 
-                          ? <><button className='btn btn-primary'><ImUserPlus/> Make Admin</button></>
-                        :
-                        <>
-                        <button className='btn btn-success'> <RiAdminFill/> Admin</button>
-                        </>}
-                        </td>
                       </tr>
                     ))}
                   </tbody>
