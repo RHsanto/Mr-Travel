@@ -1,7 +1,6 @@
 import React from "react";
 import useSWR from "swr";
 import AdminDashHeader from "./AdminDashHeader";
-import { MdGridView } from "react-icons/md";
 
 // useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -36,7 +35,7 @@ const Services = () => {
                       <th scope="col">Category</th>
                       <th scope="col">Amount</th>
                       <th scope="col">Status</th>
-                      <th scope="col">Action</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
@@ -50,11 +49,7 @@ const Services = () => {
                         <td>{data?.types}</td>
                         <td>${data?.price}</td>
                         <td>{data?.types}</td>
-                        <td>
-                          <div className="view-btn">
-                            <MdGridView /> View
-                          </div>
-                        </td>
+                       
                       </tr>
                     ))}
                     {HotelData?.map(data => (
@@ -67,11 +62,7 @@ const Services = () => {
                         <td>{data?.types}</td>
                         <td>${data?.price}</td>
                         <td>{data?.types}</td>
-                        <td>
-                          <div className="view-btn">
-                            <MdGridView /> View
-                          </div>
-                        </td>
+                       
                       </tr>
                     ))}
                     {TourData?.map(data => (
@@ -84,12 +75,7 @@ const Services = () => {
                         <td>{data?.types}</td>
                         <td>${data?.price}</td>
                         <td>{data?.types}</td>
-                        <td>
-                          {" "}
-                          <div className="view-btn">
-                            <MdGridView /> View
-                          </div>{" "}
-                        </td>
+                      
                       </tr>
                     ))}
                   </tbody>
