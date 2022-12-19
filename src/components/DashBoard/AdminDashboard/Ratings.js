@@ -5,8 +5,7 @@ const Ratings = () => {
   return (
     <div>
       <AdminDashHeader/>
-      <h1>Ratings
-Ratings</h1>
+      <h3>Ratings Functionality is coming</h3>
     </div>
   );
 };

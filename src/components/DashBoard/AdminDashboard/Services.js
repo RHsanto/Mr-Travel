@@ -7,25 +7,15 @@ import { MdGridView } from "react-icons/md";
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const Services = () => {
-  // const { data: allTravelsData } = useSWR(
-  //   `https://mr-travel-server.onrender.com/allTravelsData`,
-  //   fetcher
-  // );
-  const { data: FlightData } = useSWR(
-    `https://mr-travel-server.onrender.com/flightInfo`,
-    fetcher
-  );
-  const { data: HotelData } = useSWR(
-    `https://mr-travel-server.onrender.com/hotelInfo`,
-    fetcher
-  );
-  const { data: TourData } = useSWR(
-    `https://mr-travel-server.onrender.com/tourInfo`,
-    fetcher
-  );
+  // const [singleData,setSingleData]=useState({})
+  const { data: FlightData } = useSWR(`https://mr-travel-server.onrender.com/flightInfo`, fetcher);
+  const { data: HotelData } = useSWR(`https://mr-travel-server.onrender.com/hotelInfo`, fetcher);
+  const { data: TourData } = useSWR(`https://mr-travel-server.onrender.com/tourInfo`, fetcher);
 
-
-
+  // const handleModal = (data)=>{
+  //   setSingleData(data)
+  // }
+  // console.log(singleData);
   return (
     <div>
       <AdminDashHeader />
@@ -34,9 +24,9 @@ const Services = () => {
         <div className="container-fluid px-1 mt-5">
           <div className="row ">
             <div className="col">
-            <div className="title-box">
-                  <h5>All Service</h5>
-            </div>
+              <div className="title-box">
+                <h5>All Service</h5>
+              </div>
               <div className="booking-table shadow ">
                 <table className="table ">
                   <thead>
@@ -61,10 +51,9 @@ const Services = () => {
                         <td>${data?.price}</td>
                         <td>{data?.types}</td>
                         <td>
-                          {" "}
                           <div className="view-btn">
                             <MdGridView /> View
-                          </div>{" "}
+                          </div>
                         </td>
                       </tr>
                     ))}
@@ -79,10 +68,9 @@ const Services = () => {
                         <td>${data?.price}</td>
                         <td>{data?.types}</td>
                         <td>
-                          {" "}
                           <div className="view-btn">
                             <MdGridView /> View
-                          </div>{" "}
+                          </div>
                         </td>
                       </tr>
                     ))}
