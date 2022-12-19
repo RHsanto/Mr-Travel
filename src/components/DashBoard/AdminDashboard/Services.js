@@ -7,8 +7,20 @@ import { MdGridView } from "react-icons/md";
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const Services = () => {
-  const { data: allTravelsData } = useSWR(
-    `https://mr-travel-server.onrender.com/allTravelsData`,
+  // const { data: allTravelsData } = useSWR(
+  //   `https://mr-travel-server.onrender.com/allTravelsData`,
+  //   fetcher
+  // );
+  const { data: FlightData } = useSWR(
+    `https://mr-travel-server.onrender.com/flightInfo`,
+    fetcher
+  );
+  const { data: HotelData } = useSWR(
+    `https://mr-travel-server.onrender.com/hotelInfo`,
+    fetcher
+  );
+  const { data: TourData } = useSWR(
+    `https://mr-travel-server.onrender.com/tourInfo`,
     fetcher
   );
 
@@ -38,11 +50,47 @@ const Services = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {allTravelsData?.map(data => (
+                    {FlightData?.map(data => (
                       <tr key={data?._id}>
                         <td>
                           <img className="service-img me-2" src={data?.img} alt="img" />
-                          {data?.hotelName || data?.TourName || data?.types}{" "}
+                          {data?.hotelName || data?.TourName || data?.planeName}{" "}
+                        </td>
+                        <td>{data?.location || "Dhaka"}</td>
+                        <td>{data?.types}</td>
+                        <td>${data?.price}</td>
+                        <td>{data?.types}</td>
+                        <td>
+                          {" "}
+                          <div className="view-btn">
+                            <MdGridView /> View
+                          </div>{" "}
+                        </td>
+                      </tr>
+                    ))}
+                    {HotelData?.map(data => (
+                      <tr key={data?._id}>
+                        <td>
+                          <img className="service-img me-2" src={data?.img} alt="img" />
+                          {data?.hotelName || data?.TourName || data?.planeName}{" "}
+                        </td>
+                        <td>{data?.location || "Dhaka"}</td>
+                        <td>{data?.types}</td>
+                        <td>${data?.price}</td>
+                        <td>{data?.types}</td>
+                        <td>
+                          {" "}
+                          <div className="view-btn">
+                            <MdGridView /> View
+                          </div>{" "}
+                        </td>
+                      </tr>
+                    ))}
+                    {TourData?.map(data => (
+                      <tr key={data?._id}>
+                        <td>
+                          <img className="service-img me-2" src={data?.img} alt="img" />
+                          {data?.hotelName || data?.TourName || data?.planeName}{" "}
                         </td>
                         <td>{data?.location || "Dhaka"}</td>
                         <td>{data?.types}</td>
