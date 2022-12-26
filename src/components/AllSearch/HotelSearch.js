@@ -23,14 +23,13 @@ const HotelSearch = () => {
   }
 
   // here fetch data
-  useEffect(()=>{
-    const fetchData = async ()=>{
-      const res = await axios.get("https://mr-travel-server.onrender.com/hotelInfo")
-      setHotels(res.data)
-    }
-    fetchData()
-  },[])
-
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get("https://mr-travel-server.onrender.com/hotelInfo");
+      setHotels(res.data);
+    };
+    fetchData();
+  }, []);
 
   // get modify input data
   const handleFrom = e => {
@@ -58,46 +57,53 @@ const HotelSearch = () => {
       if (updatedValues?.hotelName === items?.hotelName) {
         return items;
       }
-   
-      
     });
     setSearResult(searchResults);
     // console.log(searchResults);
-   
   };
 
   return (
     <div>
       <Navbar />
 
-  {/* here modify input section */}
+      {/* here modify input section */}
       <div className="modify-hotel-input p-5">
         <div className="container">
           <div className="input-section">
             <div className="d-block  d-md-flex justify-content-center ">
               <div className="form-floating w-50 d-none d-md-block">
-                <input
+                <select
                   onChange={handleFrom}
                   name="hotelName"
-                  type="text"
-                  className="form-control"
-                  id="floatingInput"
-                  placeholder="From"
-                  required
-                />
+                  className="form-select"
+                  id="floatingSelect"
+                  aria-label="Floating label select example"
+                >
+                  <option>--Select Hotel --</option>
+                  {hotels?.map(data => (
+                    <option key={data?._id} value={data?.hotelName}>
+                      {data?.hotelName}
+                    </option>
+                  ))}
+                </select>
                 <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label>
               </div>
               {/* for mobile */}
               <div className="form-floating  d-block d-md-none">
-                <input
+              <select
                   onChange={handleFrom}
                   name="hotelName"
-                  type="text"
-                  className="form-control"
-                  id="floatingInput"
-                  placeholder="From"
-                  required
-                />
+                  className="form-select"
+                  id="floatingSelect"
+                  aria-label="Floating label select example"
+                >
+                  <option>--Select Hotel --</option>
+                  {hotels?.map(data => (
+                    <option key={data?._id} value={data?.hotelName}>
+                      {data?.hotelName}
+                    </option>
+                  ))}
+                </select>
                 <label htmlFor="floatingInput">CITY/HOTEL/RESORT/AREA</label>
               </div>
               <div className="date ms-0  ms-lg-3 my-3 my-lg-0 d-lg-flex d-block">
