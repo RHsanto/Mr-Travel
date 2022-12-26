@@ -12,7 +12,6 @@ import {
 } from "firebase/auth";
 import initAuthentication from "../components/Firebase/Firebase-init";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 initAuthentication();
 
@@ -22,7 +21,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const redirect_uri = location.state?.from || "/";
@@ -139,7 +138,6 @@ const useFirebase = () => {
     error,
     setUser,
     setError,
-    email,
     isLoading,
     GoogleUser
   };
