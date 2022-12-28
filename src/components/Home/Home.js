@@ -15,7 +15,7 @@ const Home = () => {
     <BestOffer/> 
     <Popular/>
     <Reviews/>
- <Add/>
+    <Add/>
    </div>
   );
 };
