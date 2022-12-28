@@ -8,6 +8,9 @@
 
 /* user Profile section */
 .user-icons{
+  font-size: 50px;
+}
+.user-imgIcons{
   font-size: 100px;
 }
 .profile-title{

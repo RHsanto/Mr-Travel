@@ -21,7 +21,6 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
-  // const [email, setEmail] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const redirect_uri = location.state?.from || "/";

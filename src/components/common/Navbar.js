@@ -63,7 +63,7 @@ const Navbar = () => {
                 {data?.[0]?.imageLink ? (
                   <img className="nav-img" src={data?.[0]?.imageLink} alt="img" />
                 ) : (
-                  <FaUserCircle className="fs-1 text-light" />
+                  <FaUserCircle className="fs-1 text-dark" />
                 )}
               </>
               <div className="dropdown">
@@ -78,9 +78,10 @@ const Navbar = () => {
                 </div>
 
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  {data?.[0]?.role === "user" ? (
+                  {data?.[0]?.role === "user" || -1 ? (
                     ""
-                  ) : (
+                  ) : 
+                  (
                     <span>
                       <Link to="/admin-dash" className=" dropdown-item">
                         <RiAdminFill className="me-1 fs-4" /> Admin Dashboard

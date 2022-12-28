@@ -125,7 +125,7 @@ const EditProfile = () => {
                     {userImg || data?.[0]?.imageLink ? (
                       <img src={userImg ? userImg : data?.[0]?.imageLink} alt="img" />
                     ) : (
-                      <FaUserCircle className="user-icons" />
+                      <FaUserCircle className="user-imgIcons" />
                     )}
                   </>
                 ) : (
