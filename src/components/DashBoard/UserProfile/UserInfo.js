@@ -1,23 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import axios from "axios";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
+import useSWR from "swr";
 import useFirebase from "../../../hooks/useFirebase";
+
+//  use useSwr fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const UserInfo = () => {
   const { user } = useFirebase();
-  const[userInfo,setUserInfo]=useState([])
 
-  // here fetch user data
-  useEffect(()=>{
-   const fetchData = async ()=>{
-    const res = await axios.get(`https://mr-travel-server.onrender.com/user/${user.email}`)
-    setUserInfo(res.data)
-   };
-   fetchData();
-  },[user.email]) 
-
-  // console.log(userInfo?.[0]);
+ // here use useSwr methods
+ const { data:userInfo} = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher)
+  
 
   return (
     <div className="user-info-section">
