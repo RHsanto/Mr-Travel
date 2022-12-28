@@ -78,7 +78,7 @@ const Navbar = () => {
                 </div>
 
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  {data?.[0]?.role === "user" || -1 ? (
+                  {data?.[0]?.role === "user" ? (
                     ""
                   ) : 
                   (

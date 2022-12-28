@@ -105,7 +105,7 @@ const useFirebase = () => {
 
   //save user info to database
   const emailUser = (email, displayName) => {
-    const user = { email, displayName };
+    const user = { email, displayName,role:"user" };
     fetch("https://mr-travel-server.onrender.com/users", {
       method: "POST",
       headers: {
@@ -118,7 +118,7 @@ const useFirebase = () => {
   // save google user info to database
 
   const GoogleUser = (email, displayName) => {
-    const user = { email, displayName };
+    const user = { email, displayName,role:"user" };
     fetch("https://mr-travel-server.onrender.com/users", {
       method: "PUT",
       headers: {
