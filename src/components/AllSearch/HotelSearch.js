@@ -9,11 +9,13 @@ import { MdLocationPin } from "react-icons/md";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import useSWR from "swr";
+//  use useSwr fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const HotelSearch = () => {
   const results = localStorage.getItem("hotelData");
-  const [hotels, setHotels] = useState([]);
+  // const [hotels, setHotels] = useState([]);
   const [searchResults, setSearResult] = useState([]);
   const [updatedValues, setUpdatedValues] = useState();
   // here data parsed
@@ -21,15 +23,11 @@ const HotelSearch = () => {
   if (results != undefined) {
     parsed = JSON.parse(results);
   }
-
-  // here fetch data
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("https://mr-travel-server.onrender.com/hotelInfo");
-      setHotels(res.data);
-    };
-    fetchData();
-  }, []);
+  // here use useSwr methods
+  const { data: hotels } = useSWR(`https://mr-travel-server.onrender.com/hotelInfo`,
+    fetcher
+  );
+ 
 
   // get modify input data
   const handleFrom = e => {
@@ -43,7 +41,7 @@ const HotelSearch = () => {
 
   // here get data and fetch data filter
   useEffect(() => {
-    const searchResults = hotels.filter(items => {
+    const searchResults = hotels?.filter(items => {
       if (parsed?.hotelName === items?.hotelName) {
         return items;
       }
@@ -53,7 +51,7 @@ const HotelSearch = () => {
 
   // here click modify
   const handleResults = e => {
-    const searchResults = hotels.filter(items => {
+    const searchResults = hotels?.filter(items => {
       if (updatedValues?.hotelName === items?.hotelName) {
         return items;
       }

@@ -1,38 +1,38 @@
 /* eslint-disable array-callback-return */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable eqeqeq */ import React, { useState } from "react";
+ import React, { useState } from "react";
 import { useEffect } from "react";
 import { RiArrowRightLine } from "react-icons/ri";
 import { AiOutlineSwap } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Navbar from "../common/Navbar";
 import "../AllSearch/Allcss.css";
-import axios from "axios";
+import useSWR from "swr";
+
+//  use useSwr fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const FlightSearch = () => {
   // here get local storage items
   const results = localStorage.getItem("flightData");
-  const [flights, setFlights] = useState([]);
+  // const [flights, setFlights] = useState([]);
   const [searchResults, setSearResult] = useState([]);
   const [updatedValues, setUpdatedValues] = useState();
   // here data parsed
   let parsed;
-  if (results != undefined) {
+  if (results !== undefined) {
     parsed = JSON.parse(results);
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("https://mr-travel-server.onrender.com/flightInfo");
-      setFlights(res.data);
-    };
-    fetchData();
-  }, []);
+
+   // here use useSwr methods
+   const { data: flights } = useSWR(`https://mr-travel-server.onrender.com/flightInfo`,
+   fetcher
+ );
 
   // get modify input data
   const handleFrom = e => {
-    const name = e.target.name;
-    const value = e.target.value;
+    const name = e?.target?.name;
+    const value = e?.target?.value;
     const newUpdatedValues = { ...updatedValues };
     newUpdatedValues[name] = value;
     setUpdatedValues(newUpdatedValues);
@@ -42,13 +42,13 @@ const FlightSearch = () => {
 
   // here get data and fetch data filter
   useEffect(() => {
-    const searchResults = flights.filter(items => {
+    const searchResults = flights?.filter(items => {
       if (parsed?.from === items?.from) {
         return items;
       }
     });
     setSearResult(searchResults);
-  }, [flights]);
+  }, [flights, parsed?.from]);
 
   const handleResults = e => {
     const searchResults = flights.filter(items => {

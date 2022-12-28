@@ -1,19 +1,23 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable eqeqeq */
+// import ModifyTour from "../ModifySearch/ModifyTour";
 import React, { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
-// import ModifyTour from "../ModifySearch/ModifyTour";
 import { RiArrowRightLine } from "react-icons/ri";
 import { MdLocationPin } from "react-icons/md";
 import { HiClock } from "react-icons/hi";
 import { FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import useSWR from "swr";
+
+
+//  use useSwr fetcher
+const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const TourSearch = () => {
   // here get local storage items
   const results = localStorage.getItem("tourData");
-  const [tours, setTours] = useState([]);
+  // const [tours, setTours] = useState([]);
   const [searchResults, setSearResult] = useState([]);
   const [updatedValues, setUpdatedValues] = useState();
   // here data parsed
@@ -22,17 +26,15 @@ const TourSearch = () => {
     parsed = JSON.parse(results);
   }
 
-  useEffect(() => {
-      const fetchData = async () => {
-      const res = await axios.get("https://mr-travel-server.onrender.com/tourInfo");
-      setTours(res.data);
-    };
-    fetchData();
-  }, []);
+   // here use useSwr methods
+   const { data: tours } = useSWR(`https://mr-travel-server.onrender.com/tourInfo`,
+   fetcher
+ );
+
 
   const handleFrom = e => {
-    const name = e.target.name;
-    const value = e.target.value;
+    const name = e?.target?.name;
+    const value = e?.target?.value;
     const newUpdatedValues = { ...updatedValues };
     newUpdatedValues[name] = value;
     setUpdatedValues(newUpdatedValues);
@@ -41,7 +43,7 @@ const TourSearch = () => {
 
   // here get data and fetch data filter
   useEffect(() => {
-    const searchResults = tours.filter(items => {
+    const searchResults = tours?.filter(items => {
       if (parsed?.TourName === items?.TourName) {
         return items;
       }
@@ -50,7 +52,7 @@ const TourSearch = () => {
   }, [parsed?.TourName, tours]);
 
   const handleResults = e => {
-    const searchResults = tours.filter(items => {
+    const searchResults = tours?.filter(items => {
       if (updatedValues?.TourName === items?.TourName) {
         return items;
       }
@@ -92,7 +94,7 @@ const TourSearch = () => {
       <div className="common-section ">
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 g-4">
-            {searchResults.map(tour => (
+            {searchResults?.map(tour => (
               <div key={tour?._id} className="flight mt-5">
                 <div className="card mb-3 ps-0">
                   <div className="row g-0">
