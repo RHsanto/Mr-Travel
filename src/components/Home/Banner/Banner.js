@@ -55,7 +55,7 @@ const Banner = () => {
                   </div>
 
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    {data?.[0]?.role === 'user' ? "" :
+                    {data?.[0]?.role === 'user' || -1 ? "" :
                     <span>
                     <Link to="/admin-dash" className=" dropdown-item">
                       <RiAdminFill className="me-1 fs-4" /> Admin Dashboard
