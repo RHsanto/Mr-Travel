@@ -284,7 +284,7 @@ const EditProfile = () => {
               </div>
             </div>
 
-            <button type="submit" className="save-btn mt-5">
+            <button  type="submit" className="save-btn mt-5">
               {/* success animation */}
               <ToastContainer
                 position="top-right"
