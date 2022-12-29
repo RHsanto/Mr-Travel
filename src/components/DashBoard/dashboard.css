@@ -30,7 +30,7 @@
   border-radius: 50%;
   
 }
-.save-btn{
+.save-btn , .upload-btn{
   color: white;
   border: 0;
   border-radius: 5px;
@@ -43,6 +43,10 @@
   background-color: rgba(57,108,240,.1);
   color: #396cf0;
 
+}
+.upload-btn:disabled{
+  background-color: rgba(2, 0, 0, 0.1);
+  color: #7188c2;
 }
 
 .user-profile-section{

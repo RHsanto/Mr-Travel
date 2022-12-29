@@ -102,9 +102,7 @@ const EditProfile = () => {
         setLoading(false);
       });
 
-    // console.log("Click");
   };
-
   return (
     <div>
       <div className="card">
@@ -146,7 +144,9 @@ const EditProfile = () => {
                 <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
-                <button onClick={() => imgSubmit()} type="submit" className="save-btn ">
+                <button
+                 disabled={userInfo?.file?.length == 0}
+                 onClick={() => imgSubmit()} type="submit" className="upload-btn ">
                   <BsSaveFill /> Upload
                 </button>
               </div>

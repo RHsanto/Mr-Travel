@@ -18,7 +18,6 @@ const Banner = () => {
   
   const { data } = useSWR(`https://mr-travel-server.onrender.com/user/${user.email}`, fetcher);
 
-  console.log(data?.[0]?.role);
   return (
     <div className="banner-section">
       <header>
