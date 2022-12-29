@@ -36,7 +36,7 @@ const UserInfo = () => {
               <p className="item-result">
                 {userInfo?.[0]?.FirstName ? (
                   <>
-                    {userInfo?.[0]?.FirstName}
+                    {userInfo?.[0]?.FirstName}{" "}
                     {userInfo?.[0]?.LastName}
                   </>
                 ) : (

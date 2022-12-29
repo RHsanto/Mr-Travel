@@ -10,7 +10,7 @@ import useFirebase from "../../../hooks/useFirebase";
 import useSWR, { useSWRConfig } from "swr";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ProgressBar } from 'react-loader-spinner';
+import { ProgressBar } from "react-loader-spinner";
 
 // useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -41,7 +41,7 @@ const EditProfile = () => {
 
       // here show success msg
       if (res?.data?.success) {
-        toast.success("Edit Profile Successful", {
+        toast.success("Edit Profile Successfully", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -64,7 +64,6 @@ const EditProfile = () => {
       ...userInfo,
       file: event.target.files[0],
     });
-
   };
 
   // here img upload button
@@ -102,7 +101,7 @@ const EditProfile = () => {
       .finally(() => {
         setLoading(false);
       });
-   
+
     // console.log("Click");
   };
 
@@ -147,17 +146,13 @@ const EditProfile = () => {
                 <input onChange={handleImgUpload} type="file" name="upload-img" id="" />
               </div>
               <div>
-                <button
-                  onClick={() => imgSubmit()}
-                  type="submit"
-                  className="save-btn "
-                >
+                <button onClick={() => imgSubmit()} type="submit" className="save-btn ">
                   <BsSaveFill /> Upload
                 </button>
               </div>
             </div>
           </div>
- {/*edit form */}
+          {/*edit form */}
           {/*Basic Info  */}
           <form onSubmit={handleSubmit(onSubmit)} className="edit-form">
             <h5 className="mb-5 fw-bold">Basic Info :</h5>
@@ -181,6 +176,8 @@ const EditProfile = () => {
                   </label>
                   <input
                     {...register("NewEmail")}
+                    defaultValue={user?.email}
+                    disabled
                     type="email"
                     className="form-control"
                     id="exampleFormControlInput2"

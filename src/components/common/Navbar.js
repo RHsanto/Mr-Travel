@@ -78,16 +78,13 @@ const Navbar = () => {
                 </div>
 
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  {data?.[0]?.role === "user" ? (
-                    ""
-                  ) : 
-                  (
+                {data?.[0]?.role === 'admin' ? <>
                     <span>
-                      <Link to="/admin-dash" className=" dropdown-item">
-                        <RiAdminFill className="me-1 fs-4" /> Admin Dashboard
-                      </Link>
-                    </span>
-                  )}
+                    <Link to="/admin-dash" className=" dropdown-item">
+                      <RiAdminFill className="me-1 fs-4" /> Admin Dashboard
+                    </Link>
+                  </span></> : <></>
+                    }
                   <span>
                     <Link to="/user-profile" className=" dropdown-item">
                       <FaUserAlt className="me-1" /> Profile
