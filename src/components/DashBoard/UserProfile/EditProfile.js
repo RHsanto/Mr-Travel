@@ -39,6 +39,8 @@ const EditProfile = () => {
         });
       }
 
+      
+
       // here show success msg
       if (res?.data?.success) {
         toast.success("Edit Profile Successfully", {
