@@ -256,69 +256,66 @@ const TourDetails = () => {
                     </div>
                   </div>
                   {/* accordion 5*/}
-                  <div
-                    className="accordion accordion-flush bg-light border-bottom border-1"
-                    id="accordionFlushExample"
-                  >
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="flush-headingFive">
-                        <div
-                          className="accordion-button collapsed "
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#flush-collapseFive"
-                          aria-expanded="false"
-                          aria-controls="flush-collapseFive"
-                        >
-                          <h5>
-                            <MdPanTool className="re-icons" /> Inclusion & Exclusion
-                          </h5>
-                        </div>
-                      </h2>
+                  {/* <div className="accordion accordion-flush bg-light   border-bottom  border-1" d="accordionFlushExample"> */}
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingOne">
                       <div
-                        id="flush-collapseFive"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="flush-headingFive"
-                        data-bs-parent="#accordionFlushExample"
+                        className="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
                       >
-                        <div className="accordion-body">
-                          <div className="list">
-                            <li>
-                              <span>✔</span> All Entry Tickets of Hopping Destinations
-                            </li>
-                            <li>
-                              <span>✔</span> Welcome Breakfast
-                            </li>
-                            <li>
-                              <span>✔</span> Lunch Platter
-                            </li>
-                            <li>
-                              <span>✔</span> Evening Snacks
-                            </li>
-                            <li>
-                              <span>✔</span> Washroom
-                            </li>
-                            <li>
-                              <span>✔</span> Library
-                            </li>
-                            <li>
-                              <span>✔</span> WIFI
-                            </li>
-                            <li>
-                              <span>✔</span> First Aid Kit (In case of emergency)
-                            </li>
-                            <li>
-                              <span className="text-danger">✕</span> Personal expenses
-                            </li>
-                            <li>
-                              <span className="text-danger">✕</span> Anything else that isn't
-                              mentioned on Inclusions
-                            </li>
-                          </div>
+                        <h5>
+                          <MdPanTool className="re-icons" /> Inclusion & Exclusion
+                        </h5>
+                      </div>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      className="accordion-collapse collapse show"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div className="accordion-body">
+                        <div className="list">
+                          <li>
+                            <span>✔</span> All Entry Tickets of Hopping Destinations
+                          </li>
+                          <li>
+                            <span>✔</span> Welcome Breakfast
+                          </li>
+                          <li>
+                            <span>✔</span> Lunch Platter
+                          </li>
+                          <li>
+                            <span>✔</span> Evening Snacks
+                          </li>
+                          <li>
+                            <span>✔</span> Washroom
+                          </li>
+                          <li>
+                            <span>✔</span> Library
+                          </li>
+                          <li>
+                            <span>✔</span> WIFI
+                          </li>
+                          <li>
+                            <span>✔</span> First Aid Kit (In case of emergency)
+                          </li>
+                          <li>
+                            <span className="text-danger">✕</span> Personal expenses
+                          </li>
+                          <li>
+                            <span className="text-danger">✕</span> Anything else that isn't
+                            mentioned on Inclusions
+                          </li>
                         </div>
                       </div>
                     </div>
                   </div>
+                  {/* </div> */}
                 </div>
                 {/* booking form */}
                 <div className="col-lg-4 p-2 shadow-lg mt-5 mt-lg-0 ">
@@ -362,7 +359,8 @@ const TourDetails = () => {
                       <div className="form-floating mb-3 ">
                         <input
                           type="email"
-                          required
+                          disabled
+                          value={user?.email}
                           {...register("email")}
                           className="form-control"
                           id="floatingInput"
@@ -380,6 +378,17 @@ const TourDetails = () => {
                           placeholder="Number"
                         />
                         <label htmlFor="floatingInput">Phone Number</label>
+                      </div>
+                      <div className="form-floating mb-3 ">
+                        <input
+                          type="text"
+                          required
+                          {...register("Address")}
+                          className="form-control"
+                          id="phone"
+                          placeholder="Number"
+                        />
+                        <label htmlFor="floatingInput">Address</label>
                       </div>
 
                       <>

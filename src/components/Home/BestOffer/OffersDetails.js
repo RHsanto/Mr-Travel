@@ -230,18 +230,17 @@ const OffersDetails = () => {
                 </div>
               </div>
               {/* accordion 3 */}
-              <div className="accordion accordion-flush bg-light" id="accordionFlushExample">
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="flush-headingTwo">
-                    <div
-                      className="accordion-button collapsed "
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      <h5 className="re-icons">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="headingOne">
+                  <div
+                    className="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <h5 className="re-icons">
                         <HiCurrencyDollar /> Summary of Charges
                       </h5>
                       <span className=" subtotal d-none d-lg-block">
@@ -250,15 +249,15 @@ const OffersDetails = () => {
                         </>
                         USD Subtotal
                       </span>
-                    </div>
-                  </h2>
-                  <div
-                    id="flush-collapseTwo"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="flush-headingTwo"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div className="accordion-body">
+                  </div>
+                </h2>
+                <div
+                  id="collapseOne"
+                  className="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
+                   <div className="accordion-body">
                       <h6 className="fw-bold">Member Flexible Rate</h6>
                       <h6 className="re-icons fw-bold">RATE DETAILS</h6>
                       <div className="charge-info mt-5">
@@ -296,11 +295,9 @@ const OffersDetails = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
                 </div>
               </div>
-
-              {/* accordion */}
+           
             </div>
             <div className="col-lg-4 bg shadow p-3">
               <div className="confirm-form border rounded">
@@ -320,12 +317,12 @@ const OffersDetails = () => {
                     <div className="form-floating mb-3 ">
                       <input
                         type="email"
-                        required
+                        disabled
                         {...register("email")}
                         className="form-control"
                         id="floatingInput"
                         placeholder="Email"
-                        defaultValue={user?.email}
+                        value={user?.email}
                       />
                       <label htmlFor="floatingInput">Email</label>
                     </div>
@@ -339,6 +336,28 @@ const OffersDetails = () => {
                         placeholder="Number"
                       />
                       <label htmlFor="floatingInput">Phone Number</label>
+                    </div>
+                    <div className="form-floating mb-3 ">
+                      <input
+                        type="text"
+                        required
+                        {...register("Address")}
+                        className="form-control"
+                        id="phone"
+                        placeholder="Number"
+                      />
+                      <label htmlFor="floatingInput">Address</label>
+                    </div>
+                    <div className="form-floating mb-3 ">
+                      <input
+                        type="number"
+                        required
+                        {...register("NID")}
+                        className="form-control"
+                        id="phone"
+                        placeholder="Number"
+                      />
+                      <label htmlFor="floatingInput">NID</label>
                     </div>
 
                     <>

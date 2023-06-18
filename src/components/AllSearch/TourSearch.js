@@ -76,7 +76,7 @@ const TourSearch = () => {
                 required
               >
                 <option>--Select Tour Destination--</option>
-                {tours.map(tourData => (
+                {tours?.map(tourData => (
                   <option key={tourData?._id} value={tourData?.TourName}>
                     {tourData?.TourName}
                   </option>

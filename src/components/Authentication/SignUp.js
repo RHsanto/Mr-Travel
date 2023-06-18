@@ -11,8 +11,7 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user, registerUser, error, isLoading, GoogleUser, setError, signInUsingGoogle } =
-    useFirebase();
+  const { user, registerUser, error, isLoading, GoogleUser, setError, signInUsingGoogle } =useFirebase();
   const navigate = useNavigate();
   const location = useLocation();
   const redirect_uri = location.state?.from || "/";

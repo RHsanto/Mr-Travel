@@ -161,7 +161,8 @@ const FlightDetails = () => {
                         <div className="form-floating mb-3 w-100 me-lg-3 me-2">
                           <input
                             type="email"
-                            required
+                            disabled
+                            value={user?.email}
                             {...register("email")}
                             className="form-control"
                             id="floatingInput"
@@ -180,6 +181,40 @@ const FlightDetails = () => {
                           />
                           <label htmlFor="floatingInput">Phone Number</label>
                         </div>
+                      </div>
+                      <div className="d-flex justify-content-between ">
+                        <div className="form-floating mb-3 w-100 me-lg-3 me-2">
+                          <input
+                            type="text"
+                            {...register("Address")}
+                            className="form-control"
+                            id="floatingInput"
+                            placeholder="address"
+                          />
+                          <label htmlFor="floatingInput">Address</label>
+                        </div>
+                        <div className="form-floating mb-3 w-100">
+                          <input
+                            type="number"
+                            required
+                            {...register("NID")}
+                            className="form-control"
+                            id="phone"
+                            placeholder="Number"
+                          />
+                          <label htmlFor="floatingInput">NID</label>
+                        </div>
+                      </div>
+                      <div className="form-floating mb-3 w-50 ">
+                        <input
+                          type="text"
+                          required
+                          {...register("PassportNo")}
+                          className="form-control"
+                          id="phone"
+                          placeholder="Number"
+                        />
+                        <label htmlFor="floatingInput">Passport Number</label>
                       </div>
                     </div>
                   </div>
