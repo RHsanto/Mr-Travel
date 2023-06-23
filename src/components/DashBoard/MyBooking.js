@@ -1,13 +1,13 @@
 import React from "react";
-import { AiOutlineSwap } from "react-icons/ai";
-import { SiFampay } from "react-icons/si";
-import { MdDelete } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { AiOutlineSwap, AiTwotoneDelete } from "react-icons/ai";
+// import { SiFampay } from "react-icons/si";
+// import { Link } from "react-router-dom";
 import useFirebase from "../../hooks/useFirebase";
 import Navbar from "../common/Navbar";
 import "./dashboard.css";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import { Triangle } from "react-loader-spinner";
+import { ToastContainer, toast } from "react-toastify";
 
 // useSWR data fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -21,21 +21,44 @@ const MyBooking = () => {
   );
 
   if (!error && !bookingData)
-   return(
-    <div className="d-flex justify-content-center">
-    <Triangle
-      height="400"
-      width="150"
-      color="#396cf0"
-      ariaLabel="triangle-loading"
-      wrapperStyle={{}}
-      wrapperClassName=""
-      visible={true}
-    />
-  </div>
-   )
-;
-
+    return (
+      <div className="d-flex justify-content-center">
+        <Triangle
+          height="400"
+          width="150"
+          color="#396cf0"
+          ariaLabel="triangle-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
+        />
+      </div>
+    );
+ // Here orders delete
+ const handleDelete = id => {
+  const proceed = window.confirm("Are you sure , you want to delete ?");
+  if (proceed) {
+    const url = `https://mr-travel-server.onrender.com/booking/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data?.acknowledged) {
+          toast.success("Delete Successful", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        }
+        mutate("https://mr-travel-server.onrender.com/booking");
+      });
+  }
+};
   return (
     <div>
       <Navbar />
@@ -43,18 +66,7 @@ const MyBooking = () => {
         {/* here show order info */}
         <div className="my-5">
           <div className="container ">
-            {/* {!bookingData &&
-               (
-                <div className="text-center">
-                <h3 className="mb-5">Ooops. It's Empty </h3>
-                <img
-                  className=""
-                  src="https://ouch-cdn2.icons8.com/8ly2UKxjmBZ-vzfWTtRw0InBYa56IV277LHx1cSi5kI/rs:fit:256:256/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNTEw/L2ExNGNhNjM0LWMy/NTMtNDExMC05MmU5/LTY5Mzk3YzJkNzE4/Yy5zdmc.png"
-                  alt=""
-                />
-              </div>
-               )} */}
-            <div className="row row-cols-1 row-cols-md-2 g-4">
+          <div className="row row-cols-1 row-cols-md-2 g-4">
               {bookingData &&
                 bookingData.map(data => (
                   <div className="flight mt-3" key={data._id}>
@@ -100,14 +112,29 @@ const MyBooking = () => {
                                   <small>(Per Person)</small>
                                 </p>
                               </div>
-                              <div className="select-btn gap-2 d-flex">
-                                <Link to={`/payment/${data?._id}`}>
+                              <div className=" gap-2 d-flex">
+                                {/* <Link to={`/payment/${data?._id}`}>
                                   <button className="btn payment-btn">
                                     <SiFampay /> Payment
                                   </button>
-                                </Link>
-                                <button className="btn btn-danger">
-                                  <MdDelete /> Delete
+                                </Link>                              */}
+                                <button
+                                  onClick={() => handleDelete(data._id)}
+                                  className="border-0 fs-6 bg-danger text-light ms-3 px-2 py-1 rounded"
+                                >
+                                  <ToastContainer
+                                    position="top-right"
+                                    autoClose={5000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover
+                                  />
+                                  <AiTwotoneDelete className="me-1" />
+                                  Delete
                                 </button>
                               </div>
                             </div>

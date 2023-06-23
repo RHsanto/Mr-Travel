@@ -12,6 +12,7 @@ import "./offer.css";
 import Navbar from "../../common/Navbar";
 import useFirebase from "../../../hooks/useFirebase";
 import useSWR from "swr";
+import { SiFampay } from "react-icons/si";
 
 //  use useSwr fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -49,12 +50,14 @@ const OffersDetails = () => {
     data.hotelName = offer.hotelName;
     data.room = offer.room;
     data.guest = offer.guest;
-    data.sum = sum;
+    data.price = sum;
     data.bookingDate = date;
     data.userImg = userData?.[0]?.imageLink;
     data.status = "pending";
 
-    axios.post("  https://mr-travel-server.onrender.com/booking", data).then(res => {
+    axios.post("https://mr-travel-server.onrender.com/booking", data)
+    .then(res => {
+      window.location.replace(res.data.url);
       if (res.data.insertedId) {
         toast.success("Booking Successful", {
           position: "top-center",
@@ -67,7 +70,9 @@ const OffersDetails = () => {
         });
         reset();
       }
-    });
+    })
+   
+   
   };
   return (
     <div>
@@ -317,12 +322,11 @@ const OffersDetails = () => {
                     <div className="form-floating mb-3 ">
                       <input
                         type="email"
-                        disabled
                         {...register("email")}
                         className="form-control"
                         id="floatingInput"
                         placeholder="Email"
-                        value={user?.email}
+                        required
                       />
                       <label htmlFor="floatingInput">Email</label>
                     </div>
@@ -330,7 +334,7 @@ const OffersDetails = () => {
                       <input
                         type="tel"
                         required
-                        {...register("PhoneNumber")}
+                        {...register("phoneNumber")}
                         className="form-control"
                         id="phone"
                         placeholder="Number"
@@ -341,7 +345,7 @@ const OffersDetails = () => {
                       <input
                         type="text"
                         required
-                        {...register("Address")}
+                        {...register("address")}
                         className="form-control"
                         id="phone"
                         placeholder="Number"
@@ -361,8 +365,8 @@ const OffersDetails = () => {
                     </div>
 
                     <>
-                      <button type="submit" className="w-100 btn btn-warning">
-                        Confirm Booking
+                      <button type="submit" className="w-100 confirm">
+                      <SiFampay/>  Payment
                         <ToastContainer
                           position="top-right"
                           autoClose={5000}

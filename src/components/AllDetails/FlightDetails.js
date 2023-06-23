@@ -11,6 +11,7 @@ import "./Details.css";
 import axios from "axios";
 import useSWR from "swr";
 import useFirebase from "../../hooks/useFirebase";
+import { SiFampay } from "react-icons/si";
 //  use useSwr fetcher
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
@@ -36,7 +37,7 @@ const FlightDetails = () => {
   // react hook form
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
-    // console.log(data);
+    console.log(data);
 
     data.types = flight.types;
     data.img = flight.img;
@@ -49,7 +50,9 @@ const FlightDetails = () => {
     data.userImg = userData?.[0]?.imageLink;
     data.status = "pending";
 
-    axios.post("  https://mr-travel-server.onrender.com/booking", data).then(res => {
+    axios.post("https://mr-travel-server.onrender.com/booking", data)
+    .then(res => {
+      window.location.replace(res.data.url);
       if (res.data.insertedId) {
         toast.success("Booking Successful", {
           position: "top-center",
@@ -161,12 +164,11 @@ const FlightDetails = () => {
                         <div className="form-floating mb-3 w-100 me-lg-3 me-2">
                           <input
                             type="email"
-                            disabled
-                            value={user?.email}
                             {...register("email")}
                             className="form-control"
                             id="floatingInput"
                             placeholder="Email"
+                            required
                           />
                           <label htmlFor="floatingInput">Email</label>
                         </div>
@@ -174,7 +176,7 @@ const FlightDetails = () => {
                           <input
                             type="tel"
                             required
-                            {...register("PhoneNumber")}
+                            {...register("phoneNumber")}
                             className="form-control"
                             id="phone"
                             placeholder="Number"
@@ -186,7 +188,7 @@ const FlightDetails = () => {
                         <div className="form-floating mb-3 w-100 me-lg-3 me-2">
                           <input
                             type="text"
-                            {...register("Address")}
+                            {...register("address")}
                             className="form-control"
                             id="floatingInput"
                             placeholder="address"
@@ -209,7 +211,7 @@ const FlightDetails = () => {
                         <input
                           type="text"
                           required
-                          {...register("PassportNo")}
+                          {...register("passportNo")}
                           className="form-control"
                           id="phone"
                           placeholder="Number"
@@ -221,7 +223,7 @@ const FlightDetails = () => {
                 </div>
                 <div className="ms-1 mt-3 ">
                   <button type="submit" className="confirm w-100">
-                    Confirm Booking
+                  <SiFampay/>  Payment
                   </button>
                   <ToastContainer
                     position="top-right"

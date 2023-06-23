@@ -2,7 +2,9 @@
   "css.validate": false,
   "tailwindCSS.emmetCompletions": true,
   "cSpell.words": [
+    "Fampay",
     "labelledby",
-    "toastify"
+    "toastify",
+    "Twotone"
   ]
 }

@@ -19,6 +19,8 @@ import Payment from "./components/DashBoard/Payment/Payment";
 import UserProfile from "./components/DashBoard/UserProfile/UserProfile";
 import AdminDash from "./components/DashBoard/AdminDashboard/AdminDash";
 import PrivateRoute from "./components/Private/PrivateRoute";
+import PaymentSuccess from "./components/DashBoard/Payment/PaymentSuccess";
+import PaymentFail from "./components/DashBoard/Payment/PaymentFail";
 
 function App() {
   return (
@@ -68,6 +70,8 @@ function App() {
           />
           <Route path="/bus/:id" element={<BusDetails />} />
           <Route path="/payment/:id" element={<Payment />} />
+          <Route path="/payment/success/:tranId" element={<PaymentSuccess />} />
+          <Route path="/payment/fail/:tranId" element={<PaymentFail />} />
         </Routes>
       </BrowserRouter>
       <Footer />
