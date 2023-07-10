@@ -72,6 +72,7 @@ function App() {
           <Route path="/payment/:id" element={<Payment />} />
           <Route path="/payment/success/:tranId" element={<PaymentSuccess />} />
           <Route path="/payment/fail/:tranId" element={<PaymentFail />} />
+          <Route path="/payment/fail" element={<PaymentFail />} />
         </Routes>
       </BrowserRouter>
       <Footer />

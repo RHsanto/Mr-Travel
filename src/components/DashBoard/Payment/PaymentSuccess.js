@@ -1,11 +1,25 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import payment from '../../../images/3226836.jpg'
+import { Link } from 'react-router-dom';
 
 const PaymentSuccess = () => {
-  const {tranId}= useParams()
+ 
   return (
-    <div>
-      <h1>Payment Successful {tranId}</h1>
+    <div className='container mx-auto'>
+     <div className="row d-flex align-items-center">
+      <div className="col-lg-6">
+        <h2>Payment Successful</h2>
+        <p>Thank you for choosing MR.Travel.</p>
+        <Link to='/'>
+         <button className='confirm'>Back Home</button>
+          
+        </Link>
+      </div>
+      <div className="col-lg-6">
+      <img src={payment} alt="" srcset="" className='w-100' />
+      </div>
+
+     </div>
     </div>
   );
 };
