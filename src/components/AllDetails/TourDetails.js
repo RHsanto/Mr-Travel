@@ -53,7 +53,7 @@ const TourDetails = () => {
     data.userImg = userData?.[0]?.imageLink;
     data.status = "pending";
 
-    axios.post("  http://localhost:8000/booking", data)
+    axios.post("https://mr-travel-server.onrender.com/booking", data)
     .then(res => {
       window.location.replace(res.data.url);
       if (res.data.insertedId) {
